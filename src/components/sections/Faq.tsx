@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Plus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { useId, useState } from "react";
 import { FAQS } from "@/data/content";
 import { cn, EASE_OUT } from "@/lib/utils";
@@ -12,35 +12,29 @@ export function Faq() {
   const uid = useId();
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="relative border-b border-black/[0.08] bg-white py-[96px]">
+    <section id="faq" aria-labelledby="faq-title" className="relative border-b border-[#EAEAEA] bg-[#FBFBFA] py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         {/* 12-column header (Columns 2 to 10) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
           <div className="md:col-start-2 md:col-end-10">
             <SectionHeading
               id="faq-title"
-              eyebrow="FAQ"
-              title="Pertanyaan yang Sering Diajukan"
+              eyebrow="Tanya Jawab"
+              title="Pertanyaan yang sering diajukan"
               description="Pertanyaan umum seputar skema kerja sama, hak kepemilikan source code, dan SLA pemeliharaan sistem."
             />
           </div>
         </div>
 
-        {/* 12-column Accordion (Columns 2 to 12) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
-          <div className="md:col-start-2 md:col-end-12 flex flex-col space-y-3">
+        {/* 12-column Editorial Accordion: stripped container boxes, separated only by border-bottom (Columns 2 to 12) */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
+          <div className="md:col-start-2 md:col-end-12 divide-y divide-[#EAEAEA] border-t border-b border-[#EAEAEA]">
             {FAQS.map((f, i) => {
               const isOpen = open === i;
               const panelId = `${uid}-panel-${i}`;
               const btnId = `${uid}-btn-${i}`;
               return (
-                <div
-                  key={f.question}
-                  className={cn(
-                    "border transition-colors",
-                    isOpen ? "border-emerald-800 bg-slate-50/60" : "border-black/[0.08] bg-white hover:border-black/20",
-                  )}
-                >
+                <div key={f.question} className="py-2">
                   <h3>
                     <button
                       id={btnId}
@@ -48,19 +42,18 @@ export function Faq() {
                       aria-expanded={isOpen}
                       aria-controls={panelId}
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 p-5 text-left font-display text-base font-bold text-emerald-950 sm:p-6"
+                      className="flex w-full items-center justify-between gap-4 py-4 text-left transition-colors hover:text-[#111111]"
                     >
-                      <span>{f.question}</span>
-                      <motion.span
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.25, ease: EASE_OUT }}
-                        className={cn(
-                          "grid h-8 w-8 shrink-0 place-items-center border transition-colors",
-                          isOpen ? "border-amber-600 bg-amber-500 text-white" : "border-black/[0.1] bg-white text-emerald-950",
+                      <span className={cn("font-serif text-lg sm:text-xl font-normal transition-colors", isOpen ? "text-[#111111]" : "text-[#2F3437]")}>
+                        {f.question}
+                      </span>
+                      <span className="grid h-6 w-6 shrink-0 place-items-center text-[#787774]">
+                        {isOpen ? (
+                          <Minus className="h-4 w-4 text-[#111111]" aria-hidden />
+                        ) : (
+                          <Plus className="h-4 w-4 text-[#787774]" aria-hidden />
                         )}
-                      >
-                        <Plus className="h-4 w-4" aria-hidden />
-                      </motion.span>
+                      </span>
                     </button>
                   </h3>
                   <AnimatePresence initial={false}>
@@ -72,10 +65,10 @@ export function Faq() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: EASE_OUT }}
+                        transition={{ duration: 0.25, ease: EASE_OUT }}
                         className="overflow-hidden"
                       >
-                        <p className="border-t border-black/[0.06] p-5 text-xs sm:text-sm leading-relaxed text-slate-600 sm:p-6">
+                        <p className="pb-5 text-xs sm:text-sm leading-relaxed text-[#787774] max-w-3xl">
                           {f.answer}
                         </p>
                       </motion.div>

@@ -16,16 +16,16 @@ export function AfterMock({ kind }: { kind: MockupKind }) {
   return <CleanDashboard />;
 }
 
-function Chrome({ children, url, dark = false }: { children: ReactNode; url: string; dark?: boolean }) {
+function Chrome({ children, url }: { children: ReactNode; url: string; dark?: boolean }) {
   return (
-    <div className={`flex h-full flex-col overflow-hidden rounded-2xl border ${dark ? "border-slate-300 bg-slate-100" : "border-emerald-100 bg-white"} `}>
-      <div className={`flex items-center gap-2 border-b px-3 py-2 ${dark ? "border-slate-300 bg-slate-200" : "border-slate-100 bg-slate-50"}`}>
-        <span className="flex gap-1">
-          <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
-          <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+    <div className="flex h-full flex-col overflow-hidden rounded-lg border border-[#EAEAEA] bg-white">
+      <div className="flex items-center gap-2 border-b border-[#EAEAEA] bg-[#F9F9F8] px-3 py-2">
+        <span className="flex gap-1.5">
+          <span className="h-2 w-2 rounded-full bg-[#E5E5E5]" />
+          <span className="h-2 w-2 rounded-full bg-[#E5E5E5]" />
+          <span className="h-2 w-2 rounded-full bg-[#E5E5E5]" />
         </span>
-        <span className="ml-2 flex-1 truncate rounded-md bg-white px-2 py-0.5 text-[10px] text-slate-400">{url}</span>
+        <span className="ml-2 flex-1 truncate font-mono text-[10px] text-[#787774]">{url}</span>
       </div>
       <div className="relative flex-1 overflow-hidden">{children}</div>
     </div>
@@ -173,13 +173,13 @@ function CleanDashboard() {
             ))}
           </div>
           <div className="flex flex-1 flex-col rounded-lg border border-slate-100 bg-white p-2.5">
-            <p className="font-semibold text-slate-600">Penjualan Mingguan — Semua Cabang</p>
+            <p className="font-semibold text-slate-600">Penjualan Mingguan  -  Semua Cabang</p>
             <div className="mt-2 flex flex-1 items-end gap-1.5">
               {bars.map((h, i) => (
                 <span
                   key={i}
                   style={{ height: `${h}%` }}
-                  className={`flex-1 rounded-t ${i === bars.length - 1 ? "bg-amber-500" : "bg-emerald-500/80"}`}
+                  className={`flex-1 rounded-t ${i === bars.length - 1 ? "bg-emerald-600" : "bg-emerald-400/60"}`}
                 />
               ))}
             </div>
@@ -197,7 +197,7 @@ function ModernWebsite() {
   return (
     <Chrome url="https://arunikabangun.co.id">
       <div className="h-full bg-white">
-        <div className="relative bg-gradient-to-br from-emerald-800 to-emerald-950 px-5 pt-4 pb-6 text-white">
+        <div className="relative bg-emerald-950 px-5 pt-4 pb-6 text-white">
           <div className="flex items-center justify-between text-[10px]">
             <span className="font-display font-bold">ARUNIKA</span>
             <span className="flex gap-3 text-emerald-200">
@@ -209,7 +209,7 @@ function ModernWebsite() {
           <p className="mt-4 max-w-[70%] font-display text-base leading-tight font-bold sm:text-lg">
             Membangun Infrastruktur Berkelas Nasional
           </p>
-          <span className="mt-3 inline-block rounded-full bg-gradient-to-r from-amber-500 to-orange-600 px-3 py-1 text-[10px] font-semibold">
+          <span className="mt-3 inline-block rounded-full bg-white text-emerald-950 px-3 py-1 text-[10px] font-semibold">
             Unduh Company Profile
           </span>
         </div>
@@ -221,14 +221,14 @@ function ModernWebsite() {
             ["SBU", "Grade 7"],
           ].map(([v, l]) => (
             <div key={l} className="rounded-lg bg-emerald-50 p-1.5 text-center text-[10px]">
-              <p className="font-display font-bold text-emerald-900">{v}</p>
+              <p className="font-display font-bold text-emerald-950">{v}</p>
               <p className="text-slate-500">{l}</p>
             </div>
           ))}
         </div>
         <div className="grid grid-cols-3 gap-2 px-3">
-          {["from-emerald-200 to-emerald-400", "from-amber-100 to-amber-300", "from-slate-200 to-emerald-200"].map((g) => (
-            <div key={g} className={`aspect-[4/3] rounded-lg bg-gradient-to-br ${g}`} />
+          {["bg-slate-100", "bg-slate-200", "bg-emerald-50"].map((g) => (
+            <div key={g} className={`aspect-[4/3] rounded-lg ${g}`} />
           ))}
         </div>
       </div>

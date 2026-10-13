@@ -15,7 +15,7 @@ function CountUp({ stat }: { stat: TrustStat }) {
     if (!inView) return;
     const controls = animate(stat.value === 0 ? 100 : 0, stat.value, {
       duration: 1.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.32, 0.72, 0, 1],
       onUpdate: setVal,
     });
     return () => controls.stop();
@@ -27,7 +27,7 @@ function CountUp({ stat }: { stat: TrustStat }) {
   });
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref} className="font-mono tabular-nums">
       {stat.prefix}
       {formatted}
       {stat.suffix}
@@ -37,58 +37,64 @@ function CountUp({ stat }: { stat: TrustStat }) {
 
 export function TrustMetrics() {
   return (
-    <section aria-labelledby="trust-title" className="relative border-b border-black/[0.08] bg-white py-[96px]">
+    <section aria-labelledby="trust-title" className="relative border-b border-[#EAEAEA] bg-[#FBFBFA] py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <h2 id="trust-title" className="sr-only">
           Bukti dan metrik kepercayaan
         </h2>
 
         {/* 12-column layout (Columns 2 to 12) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-12">
-          {/* Stats Architectural Strip in Dark Emerald */}
+        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-10">
+          {/* Stats Double-Bezel Card (Cols 2 to 12) */}
           <div className="md:col-start-2 md:col-end-12">
             <Reveal>
-              <div className="border border-emerald-900 bg-emerald-950 p-6 sm:p-10 text-white">
-                <div className="border-b border-white/10 pb-6 flex items-center justify-between">
-                  <span className="font-mono text-xs uppercase text-amber-400 font-bold tracking-wider">
-                    Indikator Performa &amp; SLA
-                  </span>
-                  <span className="font-mono text-xs text-emerald-300">Audited 2026</span>
-                </div>
+              {/* Outer Shell */}
+              <div className="rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.03)]">
+                {/* Inner Core */}
+                <div className="rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-6 sm:p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
+                  <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-4">
+                    <span className="font-mono text-xs uppercase font-semibold tracking-wider text-[#787774]">
+                      Indikator Performa &amp; SLA
+                    </span>
+                    <span className="rounded-full bg-[#EDF3EC] px-2.5 py-0.5 font-mono text-[10px] font-semibold text-[#346538]">
+                      Audited 2026
+                    </span>
+                  </div>
 
-                <div className="mt-8 grid gap-8 md:grid-cols-3">
-                  {TRUST_STATS.map((s) => {
-                    const Icon = s.icon;
-                    return (
-                      <div key={s.label} className="border-l border-white/10 pl-6">
-                        <div className="flex items-center gap-3">
-                          <Icon className="h-5 w-5 text-emerald-400" />
-                          <p className="font-mono text-xs text-amber-300 font-bold uppercase">{s.label}</p>
+                  <div className="mt-6 grid gap-6 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#EAEAEA]">
+                    {TRUST_STATS.map((s, idx) => {
+                      const Icon = s.icon;
+                      return (
+                        <div key={s.label} className={idx > 0 ? "pt-6 md:pt-0 md:pl-6" : ""}>
+                          <div className="flex items-center gap-2">
+                            <Icon className="h-4 w-4 text-[#787774]" />
+                            <p className="font-mono text-[11px] font-semibold uppercase tracking-wider text-[#787774]">{s.label}</p>
+                          </div>
+                          <p className="mt-2 font-mono text-3xl sm:text-4xl font-semibold tracking-tight text-[#111111]">
+                            <CountUp stat={s} />
+                          </p>
+                          <p className="mt-1.5 text-xs text-[#787774] leading-relaxed">{s.description}</p>
                         </div>
-                        <p className="mt-3 font-display text-4xl font-extrabold tracking-tight text-white">
-                          <CountUp stat={s} />
-                        </p>
-                        <p className="mt-2 text-xs text-emerald-100/70 leading-relaxed">{s.description}</p>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </Reveal>
 
-            {/* Industry Strip with Hard 1px Borders */}
-            <div className="mt-12">
-              <p className="font-mono text-xs uppercase tracking-wider text-slate-500 font-bold">
+            {/* Industry Strip with Floating Squircles */}
+            <div className="mt-10">
+              <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#787774] font-medium">
                 Dipercaya pelaku usaha lintas sektor
               </p>
-              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
                 {INDUSTRIES.map(({ label, icon: Icon }) => (
                   <div
                     key={label}
-                    className="flex items-center justify-center gap-2 border border-black/[0.08] bg-slate-50 px-4 py-4 transition-colors hover:border-emerald-600 hover:bg-white"
+                    className="flex items-center justify-center gap-2 rounded-xl border border-[#EAEAEA] bg-white px-3.5 py-3.5 transition-all duration-300 hover:border-[#CCCCCC] hover:-translate-y-0.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
                   >
-                    <Icon className="h-4 w-4 text-slate-500" />
-                    <span className="font-mono text-xs font-bold text-slate-700">{label}</span>
+                    <Icon className="h-3.5 w-3.5 text-[#787774]" />
+                    <span className="font-mono text-xs text-[#2F3437]">{label}</span>
                   </div>
                 ))}
               </div>

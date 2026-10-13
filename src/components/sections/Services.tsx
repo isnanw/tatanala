@@ -19,6 +19,12 @@ const FILTERS: { id: Filter; hint: string }[] = [
   { id: "Hilir", hint: "Pertumbuhan" },
 ];
 
+const PILLAR_STYLES: Record<string, { bg: string; text: string }> = {
+  Hulu: { bg: "bg-[#EDF3EC]", text: "text-[#346538]" },
+  Tengah: { bg: "bg-[#E1F3FE]", text: "text-[#1F6C9F]" },
+  Hilir: { bg: "bg-[#FBF3DB]", text: "text-[#956400]" },
+};
+
 const CONSULT_TOPIC: Record<string, string> = {
   "company-profile": "profil",
   "information-system": "sistem",
@@ -34,31 +40,27 @@ export function Services() {
   const visible = SERVICES.filter((s) => filter === "Semua" || s.pillar === filter);
 
   return (
-    <section id="layanan" aria-labelledby="layanan-title" className="relative border-b border-black/[0.08] bg-white py-[96px]">
+    <section id="layanan" aria-labelledby="layanan-title" className="relative border-b border-[#EAEAEA] bg-[#FBFBFA] py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         {/* 12-column Header (columns 2 to 10) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
           <div className="md:col-start-2 md:col-end-10">
             <SectionHeading
               id="layanan-title"
               eyebrow="Layanan Inti"
-              title={
-                <>
-                  Satu Studio, <span className="text-gradient-brand">Hulu ke Hilir</span>
-                </>
-              }
-              description="Pilih titik masuk Anda. Klik setiap layanan untuk meninjau deliverables dan arsitektur teknologi yang kami gunakan."
+              title="Satu studio, hulu ke hilir"
+              description="Pilih titik masuk Anda. Tinjau deliverables dan arsitektur teknologi yang kami gunakan untuk tiap kebutuhan usaha."
             />
           </div>
         </div>
 
         {/* Filter Bar (Columns 2 to 12) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
           <div className="md:col-start-2 md:col-end-12">
             <div
               role="tablist"
               aria-label="Filter layanan berdasarkan pilar"
-              className="inline-flex flex-wrap gap-2 border border-black/[0.08] bg-slate-50 p-1.5"
+              className="inline-flex flex-wrap gap-1 rounded-full border border-[#EAEAEA] bg-white p-1"
             >
               {FILTERS.map((f) => {
                 const active = filter === f.id;
@@ -69,13 +71,15 @@ export function Services() {
                     aria-selected={active}
                     onClick={() => setFilter(f.id)}
                     className={cn(
-                      "relative px-4 py-2 font-mono text-xs font-semibold tracking-wider uppercase transition-colors",
-                      active ? "bg-emerald-950 text-white" : "text-slate-600 hover:text-emerald-950",
+                      "rounded-full px-4 py-1.5 font-mono text-xs font-medium tracking-wide transition-colors",
+                      active
+                        ? "bg-[#111111] text-white"
+                        : "text-[#787774] hover:text-[#111111] hover:bg-[#F7F6F3]",
                     )}
                   >
                     <span>
                       {f.id}
-                      <span className={cn("ml-2 text-[10px]", active ? "text-emerald-300" : "text-slate-400")}>
+                      <span className={cn("ml-1.5 text-[10px]", active ? "text-[#EAEAEA]" : "text-[#A8A8A8]")}>
                         ({f.hint})
                       </span>
                     </span>
@@ -86,8 +90,8 @@ export function Services() {
           </div>
         </div>
 
-        {/* 2x2 Architectural Grid with Hard 1px Borders (Columns 2 to 12) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
+        {/* 2x2 Double-Bezel Bento Grid with Concentric Radii (Columns 2 to 12) */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
           <div className="md:col-start-2 md:col-end-12">
             <LayoutGroup id="services">
               <motion.ul layout className="grid gap-6 md:grid-cols-2">
@@ -132,50 +136,54 @@ function ServiceCard({
   onSelect: (s: Service) => void;
 }) {
   const Icon = service.icon;
+  const style = PILLAR_STYLES[service.pillar] ?? { bg: "bg-[#EDF3EC]", text: "text-[#346538]" };
+
   return (
     <motion.button
       type="button"
       layoutId={`card-${service.id}`}
       onClick={() => onSelect(service)}
       aria-haspopup="dialog"
-      aria-label={`${service.title} — lihat detail`}
-      whileHover={{ y: -4 }}
+      aria-label={`${service.title} - lihat detail`}
+      whileHover={{ y: -3 }}
       whileTap={{ scale: 0.99 }}
-      transition={spring}
-      className="group relative flex h-full w-full flex-col border border-black/[0.08] bg-white p-6 text-left transition-colors hover:border-emerald-700 hover:bg-slate-50/50 sm:p-8"
+      transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
+      className="group relative flex h-full w-full flex-col rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 text-left transition-colors hover:border-[#CCCCCC] shadow-[0_20px_50px_rgba(0,0,0,0.03)]"
     >
-      <div className="flex items-start justify-between">
-        <span className="grid h-12 w-12 place-items-center border border-black/[0.08] bg-emerald-950 text-emerald-300">
-          <Icon className="h-5 w-5" aria-hidden />
-        </span>
-        <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-emerald-900 transition-colors">
-          0{index + 1}
-        </span>
-      </div>
-
-      <div className="mt-6">
-        <span className="border border-black/[0.08] bg-slate-100 px-2.5 py-1 font-mono text-[10px] font-bold tracking-wider text-emerald-900 uppercase">
-          {service.pillar} • {service.tag}
-        </span>
-        <motion.h3
-          layoutId={`title-${service.id}`}
-          className="mt-3 font-display text-xl font-bold tracking-tight text-emerald-950 sm:text-2xl"
-        >
-          {service.title}
-        </motion.h3>
-        <motion.p layoutId={`desc-${service.id}`} className="mt-2 text-sm leading-relaxed text-slate-600">
-          {service.shortDesc}
-        </motion.p>
-      </div>
-
-      <div className="mt-auto flex items-end justify-between border-t border-black/[0.08] pt-6 mt-6">
-        <div>
-          <p className="font-mono text-xs uppercase text-slate-500">{service.metric.label}</p>
-          <p className="font-display text-2xl font-bold text-emerald-900">{service.metric.value}</p>
+      <div className="flex h-full w-full flex-col rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-6 sm:p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
+        <div className="flex items-start justify-between">
+          <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] text-[#111111]">
+            <Icon className="h-4.5 w-4.5" aria-hidden />
+          </span>
+          <span className="font-mono text-xl font-normal text-[#D4D4D4] group-hover:text-[#111111] transition-colors">
+            0{index + 1}
+          </span>
         </div>
-        <span className="grid h-10 w-10 place-items-center border border-black/[0.08] bg-white text-emerald-900 transition-colors group-hover:bg-emerald-950 group-hover:text-white">
-          <ArrowUpRight className="h-4 w-4" aria-hidden />
-        </span>
+
+        <div className="mt-5">
+          <span className={`inline-block rounded-full px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider ${style.bg} ${style.text}`}>
+            {service.pillar} • {service.tag}
+          </span>
+          <motion.h3
+            layoutId={`title-${service.id}`}
+            className="mt-3 font-serif text-2xl font-normal text-[#111111]"
+          >
+            {service.title}
+          </motion.h3>
+          <motion.p layoutId={`desc-${service.id}`} className="mt-2 text-xs leading-relaxed text-[#787774] sm:text-sm">
+            {service.shortDesc}
+          </motion.p>
+        </div>
+
+        <div className="mt-auto flex items-end justify-between border-t border-[#EAEAEA] pt-5 mt-6">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-wider text-[#787774] font-medium">{service.metric.label}</p>
+            <p className="font-mono text-2xl font-semibold text-[#111111]">{service.metric.value}</p>
+          </div>
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-[#EAEAEA] bg-[#FBFBFA] text-[#111111] transition-all group-hover:bg-[#111111] group-hover:text-white group-hover:border-[#111111] group-hover:scale-105">
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </span>
+        </div>
       </div>
     </motion.button>
   );
@@ -194,7 +202,7 @@ function ServiceDetail({ service, onClose }: { service: Service; onClose: () => 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6">
       <motion.div
-        className="absolute inset-0 bg-emerald-950/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-[#111111]/40 backdrop-blur-xs"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -207,60 +215,60 @@ function ServiceDetail({ service, onClose }: { service: Service; onClose: () => 
         aria-modal="true"
         aria-labelledby={`detail-title-${service.id}`}
         transition={spring}
-        className="relative max-h-[90vh] w-full max-w-3xl overflow-hidden border border-black/[0.12] bg-white"
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-[2rem] border border-black/[0.08] bg-slate-100/80 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
       >
-        <div className="max-h-[90vh] overflow-y-auto p-6 sm:p-10">
+        <div className="max-h-[90vh] overflow-y-auto rounded-[calc(2rem-0.5rem)] border border-black/[0.06] bg-white p-6 sm:p-8">
           <div className="flex items-start justify-between gap-4">
-            <span className="grid h-12 w-12 place-items-center border border-black/[0.08] bg-emerald-950 text-emerald-300">
-              <Icon className="h-6 w-6" aria-hidden />
+            <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] text-[#111111]">
+              <Icon className="h-5 w-5" aria-hidden />
             </span>
             <button
               ref={closeRef}
               type="button"
               onClick={close}
               aria-label="Tutup detail layanan"
-              className="grid h-10 w-10 place-items-center border border-black/[0.08] bg-white text-emerald-900 hover:bg-slate-100 transition-colors"
+              className="grid h-8 w-8 place-items-center rounded-full border border-[#EAEAEA] bg-white text-[#111111] hover:bg-[#F7F6F3] transition-colors"
             >
-              <X className="h-5 w-5" aria-hidden />
+              <X className="h-4 w-4" aria-hidden />
             </button>
           </div>
 
           <motion.h3
             layoutId={`title-${service.id}`}
             id={`detail-title-${service.id}`}
-            className="mt-6 font-display text-2xl font-bold text-emerald-950 sm:text-3xl"
+            className="mt-5 font-serif text-2xl font-normal text-[#111111] sm:text-3xl"
           >
             {service.title}
           </motion.h3>
-          <motion.p layoutId={`desc-${service.id}`} className="mt-2 text-base font-semibold text-emerald-700">
+          <motion.p layoutId={`desc-${service.id}`} className="mt-1 text-sm font-medium text-[#787774]">
             {service.shortDesc}
           </motion.p>
 
-          <div className="mt-6 border-t border-black/[0.08] pt-6">
-            <p className="leading-relaxed text-slate-600 text-sm sm:text-base">{service.longDesc}</p>
+          <div className="mt-6 border-t border-[#EAEAEA] pt-5">
+            <p className="leading-relaxed text-[#2F3437] text-sm">{service.longDesc}</p>
 
             <div className="mt-6 grid gap-6 md:grid-cols-[1.4fr_1fr]">
               <div>
-                <h4 className="font-mono text-xs font-bold tracking-wider text-emerald-950 uppercase">Deliverables</h4>
-                <ul className="mt-4 flex flex-col space-y-2.5">
+                <h4 className="font-mono text-xs font-semibold tracking-wider text-[#111111] uppercase">Deliverables</h4>
+                <ul className="mt-3 flex flex-col space-y-2">
                   {service.deliverables.map((d) => (
-                    <li key={d} className="flex gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
+                    <li key={d} className="flex gap-2 text-xs text-[#2F3437]">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#346538]" aria-hidden />
                       {d}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="border border-emerald-900 bg-emerald-950 p-4 text-white">
-                  <p className="font-mono text-xs text-emerald-300 uppercase">{service.metric.label}</p>
-                  <p className="mt-1 font-display text-3xl font-bold text-amber-400">{service.metric.value}</p>
+              <div className="flex flex-col gap-3">
+                <div className="rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] p-3.5">
+                  <p className="font-mono text-[10px] text-[#787774] uppercase">{service.metric.label}</p>
+                  <p className="mt-0.5 font-mono text-2xl font-semibold text-[#111111]">{service.metric.value}</p>
                 </div>
                 <div>
-                  <h4 className="font-mono text-xs font-bold tracking-wider text-emerald-950 uppercase">Tech Highlights</h4>
-                  <ul className="mt-2.5 flex flex-wrap gap-1.5">
+                  <h4 className="font-mono text-xs font-semibold tracking-wider text-[#111111] uppercase">Tech Highlights</h4>
+                  <ul className="mt-2 flex flex-wrap gap-1.5">
                     {service.tech.map((t) => (
-                      <li key={t} className="border border-black/[0.08] bg-slate-50 px-2.5 py-1 font-mono text-[11px] font-semibold text-emerald-900">
+                      <li key={t} className="rounded-md border border-[#EAEAEA] bg-[#FBFBFA] px-2 py-0.5 font-mono text-[10px] text-[#2F3437]">
                         {t}
                       </li>
                     ))}
@@ -269,15 +277,16 @@ function ServiceDetail({ service, onClose }: { service: Service; onClose: () => 
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 border-t border-black/[0.08] pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs text-slate-500">Konsultasikan kebutuhan spesifik sistem dan website Anda.</p>
+            <div className="mt-8 flex flex-col gap-3 border-t border-[#EAEAEA] pt-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-xs text-[#787774]">Konsultasikan kebutuhan spesifik sistem dan website Anda.</p>
               <Button
+                size="sm"
                 onClick={() => {
                   close();
                   openConsult(CONSULT_TOPIC[service.id]);
                 }}
               >
-                <MessageCircle className="h-4 w-4" aria-hidden /> Konsultasi Layanan Ini
+                <MessageCircle className="h-3.5 w-3.5" aria-hidden /> Konsultasi Layanan Ini
               </Button>
             </div>
           </div>

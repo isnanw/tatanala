@@ -37,7 +37,7 @@ import type {
 export const SITE = {
   name: "Tatanala",
   tagline: "Menata Sistem, Menuntaskan Kendala.",
-  /** International format without "+" — used for wa.me links. */
+  /** International format without "+"  -  used for wa.me links. */
   whatsapp: "6281234567890",
   whatsappDisplay: "+62 812-3456-7890",
   email: "halo@tatanala.id",
@@ -108,14 +108,14 @@ export const SERVICES: Service[] = [
     pillar: "Hulu",
     title: "Website Company Profile",
     tag: "Reputasi",
-    shortDesc: "Membangun reputasi instan — cepat, responsif, dan siap tender.",
+    shortDesc: "Membangun reputasi instan  -  cepat, responsif, dan siap tender.",
     longDesc:
       "Situs profil yang dirancang seperti proposal bisnis: menjawab keraguan calon klien, menampilkan legalitas & portofolio, dan memuat di bawah 2 detik di jaringan seluler.",
     icon: Globe2,
     deliverables: [
       "Desain UI eksklusif sesuai identitas brand",
       "Halaman portofolio, legalitas & sertifikasi siap tender",
-      "CMS mudah — update konten tanpa developer",
+      "CMS mudah  -  update konten tanpa developer",
       "Domain, SSL, dan hosting cepat (CDN) tahun pertama",
       "Formulir prospek terhubung ke WhatsApp & email",
     ],
@@ -127,9 +127,9 @@ export const SERVICES: Service[] = [
     pillar: "Tengah",
     title: "Rancang Bangun Sistem Informasi",
     tag: "Operasional",
-    shortDesc: "Dashboard ERP, gudang, kasir, multi-cabang — berbasis web & realtime.",
+    shortDesc: "Dashboard ERP, gudang, kasir, multi-cabang  -  berbasis web & realtime.",
     longDesc:
-      "Kami petakan alur kerja Anda yang sebenarnya, lalu membangun sistem yang mengikuti cara bisnis Anda berjalan — bukan memaksa tim menyesuaikan diri dengan software generik.",
+      "Kami petakan alur kerja Anda yang sebenarnya, lalu membangun sistem yang mengikuti cara bisnis Anda berjalan  -  bukan memaksa tim menyesuaikan diri dengan software generik.",
     icon: Boxes,
     deliverables: [
       "Analisis proses bisnis & blueprint alur data",
@@ -146,7 +146,7 @@ export const SERVICES: Service[] = [
     pillar: "Hilir",
     title: "SEO Dominasi Pencarian",
     tag: "Organik",
-    shortDesc: "Aset jangka panjang — menjaring klien potensial tanpa biaya per klik.",
+    shortDesc: "Aset jangka panjang  -  menjaring klien potensial tanpa biaya per klik.",
     longDesc:
       "Strategi SEO berbasis niat pencarian: kami riset kata kunci yang benar-benar dicari pembeli, memperbaiki fondasi teknis, lalu membangun konten yang mendatangkan prospek setiap hari.",
     icon: Search,
@@ -165,7 +165,7 @@ export const SERVICES: Service[] = [
     pillar: "Hilir",
     title: "Iklan Digital Terukur",
     tag: "Performa",
-    shortDesc: "Google & Meta Ads terhubung ke CRM/WhatsApp — pantau ROAS nyata.",
+    shortDesc: "Google & Meta Ads terhubung ke CRM/WhatsApp  -  pantau ROAS nyata.",
     longDesc:
       "Setiap rupiah iklan dilacak hingga menjadi chat, prospek, dan transaksi. Kampanye dioptimasi mingguan berdasarkan data penjualan nyata, bukan sekadar klik.",
     icon: Megaphone,
@@ -344,12 +344,12 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     title: "Diagnosa Masalah",
     duration: "Minggu 1",
-    description: "Sesi gratis memetakan kendala operasional, alur data, dan target bisnis Anda — bukan langsung jualan fitur.",
+    description: "Sesi gratis memetakan kendala operasional, alur data, dan target bisnis Anda  -  bukan langsung jualan fitur.",
     icon: SearchCheck,
   },
   {
     title: "Blueprint & Prototipe",
-    duration: "Minggu 2–3",
+    duration: "Minggu 2-3",
     description: "Rancangan alur kerja dan prototipe interaktif yang bisa Anda klik sebelum satu baris kode ditulis.",
     icon: Workflow,
   },
@@ -361,7 +361,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
   {
     title: "Uji, Migrasi & Pelatihan",
-    duration: "1–2 minggu",
+    duration: "1-2 minggu",
     description: "Migrasi data lama, uji beban, dan pelatihan tim hingga sistem benar-benar dipakai sehari-hari.",
     icon: Gauge,
   },
@@ -377,17 +377,17 @@ export const FAQS: FaqItem[] = [
   {
     question: "Apa bedanya Tatanala dengan jasa pembuatan website biasa?",
     answer:
-      "Kami memulai dari masalah bisnis, bukan dari template. Website hanyalah satu bagian — kami juga menata sistem operasional di balik layar (stok, kasir, approval) dan menyalakan pemasaran terukur agar semuanya terhubung dalam satu ekosistem.",
+      "Kami memulai dari masalah bisnis, bukan dari template. Website hanyalah satu bagian  -  kami juga menata sistem operasional di balik layar (stok, kasir, approval) dan menyalakan pemasaran terukur agar semuanya terhubung dalam satu ekosistem.",
   },
   {
     question: "Berapa lama proses pembuatan sistem informasi kustom?",
     answer:
-      "Website company profile umumnya selesai 2–3 minggu. Sistem informasi kustom berkisar 6–12 minggu tergantung jumlah modul, dan dirilis bertahap sehingga sebagian fitur sudah bisa dipakai sebelum proyek rampung.",
+      "Website company profile umumnya selesai 2-3 minggu. Sistem informasi kustom berkisar 6-12 minggu tergantung jumlah modul, dan dirilis bertahap sehingga sebagian fitur sudah bisa dipakai sebelum proyek rampung.",
   },
   {
     question: "Apakah ada biaya bulanan atau maintenance tersembunyi?",
     answer:
-      "Tidak. Seluruh komponen biaya — hosting, domain, lisensi, dan pendampingan — dijabarkan di proposal sebelum kontrak ditandatangani. Setelah masa pendampingan, perpanjangan bersifat opsional.",
+      "Tidak. Seluruh komponen biaya  -  hosting, domain, lisensi, dan pendampingan  -  dijabarkan di proposal sebelum kontrak ditandatangani. Setelah masa pendampingan, perpanjangan bersifat opsional.",
   },
   {
     question: "Apakah data dan source code menjadi milik kami?",

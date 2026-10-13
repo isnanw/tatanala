@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import { JetBrains_Mono, Newsreader, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import { ConsultProvider } from "@/components/consult/ConsultProvider";
 import "./globals.css";
 
@@ -17,10 +17,25 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const newsreader = Newsreader({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Tatanala — Menata Sistem, Menuntaskan Kendala | Software House & Digital Studio",
+  title: "Tatanala - Menata Sistem, Menuntaskan Kendala | Software House & Digital Studio",
   description:
-    "Tatanala adalah digital tech studio & software house end-to-end: website company profile, sistem informasi kustom (ERP, inventaris, POS), SEO, dan Google/Meta Ads terukur untuk pengusaha & UMKM.",
+    "Tatanala adalah studio rekayasa software & pemasaran digital utilitarian: profil perusahaan, sistem informasi kustom (ERP, inventaris, POS), SEO, dan periklanan terarah.",
   keywords: [
     "software house",
     "jasa pembuatan website company profile",
@@ -31,7 +46,7 @@ export const metadata: Metadata = {
     "Meta Ads",
   ],
   openGraph: {
-    title: "Tatanala — Menata Sistem, Menuntaskan Kendala",
+    title: "Tatanala - Menata Sistem, Menuntaskan Kendala",
     description: "Bukan sekadar bikin website. Kami tuntaskan masalah operasional bisnis Anda.",
     locale: "id_ID",
     type: "website",
@@ -40,16 +55,19 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#064E3B",
+  themeColor: "#111111",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${jakartaSans.variable} ${spaceGrotesk.variable} antialiased`}>
-      <body className="bg-white text-slate-800 font-sans selection:bg-emerald-100 selection:text-emerald-950">
+    <html
+      lang="id"
+      className={`${jakartaSans.variable} ${spaceGrotesk.variable} ${newsreader.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
+    >
+      <body className="bg-[#FBFBFA] text-[#2F3437] font-sans selection:bg-[#EDF3EC] selection:text-[#346538]">
         <a
           href="#main"
-          className="sr-only z-[100] rounded-none border border-black bg-emerald-950 px-6 py-3 text-white focus:not-sr-only focus:fixed focus:top-6 focus:left-6"
+          className="sr-only z-[100] rounded-none border border-[#111111] bg-[#111111] px-6 py-3 text-white focus:not-sr-only focus:fixed focus:top-6 focus:left-6 font-mono text-xs"
         >
           Lewati ke konten utama
         </a>

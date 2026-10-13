@@ -5,7 +5,7 @@ import { CheckCheck, MessageCircle, Send, ShieldCheck } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 import { CONSULT_TOPICS, SITE } from "@/data/content";
 import { cn, EASE_OUT, waLink } from "@/lib/utils";
-import { ButtonLink } from "@/components/ui/Button";
+import { ButtonIconBadge, ButtonLink } from "@/components/ui/Button";
 
 interface WhatsAppComposerProps {
   initialTopic?: string;
@@ -19,8 +19,8 @@ function joinIndo(items: string[]) {
 }
 
 /**
- * Interactive WhatsApp message simulator:
- * User selects problems, inputs company/name, views live chat preview with hard 1px borders, zero shadows.
+ * Double-Bezel Machined WhatsApp message simulator:
+ * User selects problems, inputs company/name, views live chat preview with concentric radii and button-in-button CTA.
  */
 export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppComposerProps) {
   const uid = useId();
@@ -40,117 +40,122 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
     setTopics((prev) => (prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id]));
 
   return (
-    <div className={cn("grid gap-6 border border-black/[0.1] bg-white p-5 text-left sm:p-7 md:grid-cols-2", className)}>
-      {/* Form */}
-      <div className="flex flex-col justify-between space-y-6">
-        <div>
-          <fieldset>
-            <legend className="font-mono text-xs font-bold uppercase text-emerald-950">
-              Apa kendala utama bisnis Anda?
-            </legend>
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {CONSULT_TOPICS.map((t) => {
-                const active = topics.includes(t.id);
-                return (
-                  <button
-                    key={t.id}
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => toggle(t.id)}
-                    className={cn(
-                      "border px-3 py-1 font-mono text-xs font-medium transition-colors",
-                      active
-                        ? "border-emerald-900 bg-emerald-950 text-white"
-                        : "border-black/[0.08] bg-slate-50 text-slate-700 hover:border-emerald-700 hover:text-emerald-900",
-                    )}
-                  >
-                    {t.label}
-                  </button>
-                );
-              })}
+    <div className={cn("rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.03)]", className)}>
+      <div className="grid gap-6 rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-5 sm:p-7 text-left shadow-[inset_0_1px_1px_rgba(255,255,255,1)] md:grid-cols-2">
+        {/* Form */}
+        <div className="flex flex-col justify-between space-y-6">
+          <div>
+            <fieldset>
+              <legend className="font-mono text-xs font-semibold uppercase text-[#111111]">
+                Apa kendala utama bisnis Anda?
+              </legend>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {CONSULT_TOPICS.map((t) => {
+                  const active = topics.includes(t.id);
+                  return (
+                    <button
+                      key={t.id}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => toggle(t.id)}
+                      className={cn(
+                        "rounded-full px-3 py-1 font-mono text-xs font-medium transition-colors",
+                        active
+                          ? "bg-[#111111] text-white"
+                          : "border border-[#EAEAEA] bg-[#FBFBFA] text-[#787774] hover:border-[#D4D4D4] hover:text-[#111111]",
+                      )}
+                    >
+                      {t.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <label htmlFor={`${uid}-name`} className="font-mono text-xs font-medium text-[#787774]">
+                Nama Anda
+                <input
+                  id={`${uid}-name`}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="cth. Budi"
+                  autoComplete="name"
+                  className="mt-1.5 block h-10 w-full rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] px-3 text-xs text-[#111111] outline-none transition focus:border-[#111111] focus:bg-white"
+                />
+              </label>
+              <label htmlFor={`${uid}-biz`} className="font-mono text-xs font-medium text-[#787774]">
+                Nama Usaha
+                <input
+                  id={`${uid}-biz`}
+                  value={business}
+                  onChange={(e) => setBusiness(e.target.value)}
+                  placeholder="cth. CV Maju Jaya"
+                  autoComplete="organization"
+                  className="mt-1.5 block h-10 w-full rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] px-3 text-xs text-[#111111] outline-none transition focus:border-[#111111] focus:bg-white"
+                />
+              </label>
             </div>
-          </fieldset>
+          </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <label htmlFor={`${uid}-name`} className="font-mono text-xs font-semibold text-emerald-950">
-              Nama Anda
-              <input
-                id={`${uid}-name`}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="cth. Budi"
-                autoComplete="name"
-                className="mt-1.5 block h-10 w-full border border-black/[0.1] bg-slate-50 px-3 text-xs text-slate-900 outline-none transition focus:border-emerald-700 focus:bg-white"
-              />
-            </label>
-            <label htmlFor={`${uid}-biz`} className="font-mono text-xs font-semibold text-emerald-950">
-              Nama Usaha
-              <input
-                id={`${uid}-biz`}
-                value={business}
-                onChange={(e) => setBusiness(e.target.value)}
-                placeholder="cth. CV Maju Jaya"
-                autoComplete="organization"
-                className="mt-1.5 block h-10 w-full border border-black/[0.1] bg-slate-50 px-3 text-xs text-slate-900 outline-none transition focus:border-emerald-700 focus:bg-white"
-              />
-            </label>
+          <div className="flex flex-col space-y-2.5 border-t border-[#EAEAEA] pt-4">
+            <ButtonLink
+              href={waLink(SITE.whatsapp, message)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onSend}
+              size="md"
+              className="w-full justify-between group"
+            >
+              <span>Kirim via WhatsApp</span>
+              <ButtonIconBadge>
+                <Send className="h-3.5 w-3.5 text-white" aria-hidden />
+              </ButtonIconBadge>
+            </ButtonLink>
+            <p className="flex items-center justify-center gap-1.5 font-mono text-[11px] text-[#787774]">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#346538]" aria-hidden />
+              Konsultasi awal gratis • Tanpa komitmen
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col space-y-2 border-t border-black/[0.08] pt-4">
-          <ButtonLink
-            href={waLink(SITE.whatsapp, message)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={onSend}
-            size="md"
-            className="w-full"
-          >
-            <Send className="h-4 w-4" aria-hidden /> Kirim via WhatsApp
-          </ButtonLink>
-          <p className="flex items-center justify-center gap-1.5 font-mono text-[11px] text-slate-500">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-700" aria-hidden />
-            Konsultasi awal gratis • Tanpa komitmen
-          </p>
-        </div>
-      </div>
-
-      {/* Live chat preview with hard 1px border */}
-      <div
-        className="relative flex min-h-[300px] flex-col border border-emerald-900/20 bg-[#ECF5EF]"
-        aria-live="polite"
-        aria-label="Pratinjau pesan WhatsApp"
-      >
-        <div className="flex items-center gap-3 border-b border-emerald-900/10 bg-emerald-900 px-4 py-3 text-white">
-          <span className="relative grid h-8 w-8 place-items-center bg-emerald-700">
-            <MessageCircle className="h-4 w-4" aria-hidden />
-            <span className="absolute -right-0.5 -bottom-0.5 h-2 w-2 border border-emerald-900 bg-lime-400" />
-          </span>
-          <div className="leading-tight">
-            <p className="font-mono text-xs font-bold text-white">Tim Konsultan Tatanala</p>
-            <p className="text-[10px] text-emerald-200">online • balas &lt; 15 menit</p>
-          </div>
-        </div>
-
-        <div className="flex flex-1 flex-col justify-end gap-3 p-4">
-          <div className="ml-auto max-w-[90%] border border-emerald-300 bg-[#D9FDD3] p-3 text-xs leading-relaxed text-slate-900">
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.span
-                key={message}
-                initial={{ opacity: 0.4 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2, ease: EASE_OUT }}
-              >
-                {message}
-              </motion.span>
-            </AnimatePresence>
-            <span className="mt-1 flex items-center justify-end gap-1 font-mono text-[9px] text-slate-500">
-              09.41 <CheckCheck className="h-3.5 w-3.5 text-sky-600" aria-hidden />
+        {/* Live chat preview with faux window chrome */}
+        <div
+          className="relative flex min-h-[300px] flex-col overflow-hidden rounded-xl border border-[#EAEAEA] bg-[#FBFBFA]"
+          aria-live="polite"
+          aria-label="Pratinjau pesan WhatsApp"
+        >
+          <div className="flex items-center gap-2.5 border-b border-[#EAEAEA] bg-white px-4 py-3 text-[#111111]">
+            <span className="relative grid h-7 w-7 place-items-center rounded-lg bg-[#F7F6F3] border border-[#EAEAEA]">
+              <MessageCircle className="h-3.5 w-3.5 text-[#111111]" aria-hidden />
+              <span className="absolute -right-0.5 -bottom-0.5 h-2 w-2 rounded-full bg-[#346538]" />
             </span>
+            <div className="leading-tight">
+              <p className="font-mono text-xs font-semibold text-[#111111]">Tim Konsultan Tatanala</p>
+              <p className="text-[10px] text-[#787774]">online • respon cepat</p>
+            </div>
           </div>
 
-          <div className="max-w-[85%] border border-black/[0.08] bg-white p-3 text-xs leading-relaxed text-slate-700">
-            Halo! 👋 Terima kasih sudah menghubungi Tatanala. Kami siapkan sesi diagnosa alur sistem gratis untuk Anda.
+          <div className="flex flex-1 flex-col justify-end gap-3 p-4">
+            <div className="ml-auto max-w-[90%] rounded-xl border border-[#EAEAEA] bg-white p-3 text-xs leading-relaxed text-[#2F3437] shadow-[0_1px_4px_rgba(0,0,0,0.02)]">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.span
+                  key={message}
+                  initial={{ opacity: 0.4 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, ease: EASE_OUT }}
+                >
+                  {message}
+                </motion.span>
+              </AnimatePresence>
+              <span className="mt-1 flex items-center justify-end gap-1 font-mono text-[9px] text-[#787774]">
+                09.41 <CheckCheck className="h-3 w-3 text-[#1F6C9F]" aria-hidden />
+              </span>
+            </div>
+
+            <div className="max-w-[85%] rounded-xl border border-[#EAEAEA] bg-[#F7F6F3] p-3 text-xs leading-relaxed text-[#787774]">
+              Halo, terima kasih sudah menghubungi Tatanala. Kami siapkan sesi diagnosa alur sistem gratis untuk Anda.
+            </div>
           </div>
         </div>
       </div>

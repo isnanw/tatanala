@@ -1,4 +1,3 @@
-import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -7,31 +6,24 @@ interface LogoProps {
   showText?: boolean;
 }
 
-/** Geometric "T" built from architectural blocks — structure (emerald) + momentum (amber). */
+/** Utilitarian minimalist "Tatanala" mark with crisp geometric geometry and zero gradients. */
 export function Logo({ className, tone = "light", showText = true }: LogoProps) {
-  const id = useId();
+  const isDark = tone === "dark";
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <svg viewBox="0 0 40 40" className="h-9 w-9 shrink-0" aria-hidden>
-        <defs>
-          <linearGradient id={`${id}-bg`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#047857" />
-            <stop offset="1" stopColor="#064E3B" />
-          </linearGradient>
-        </defs>
-        <rect width="40" height="40" rx="11" fill={`url(#${id}-bg)`} />
-        <path d="M9 11h22v5h-8.5v14h-5V16H9z" fill="#A7F3D0" />
-        <rect x="25" y="20" width="6" height="10" rx="1.6" fill="#F59E0B" />
-        <rect x="9" y="24" width="6" height="6" rx="1.6" fill="#10B981" />
+      <svg viewBox="0 0 32 32" className="h-7 w-7 shrink-0" aria-hidden>
+        <rect width="32" height="32" rx="6" fill={isDark ? "#FFFFFF" : "#111111"} />
+        <path d="M7 8h18v4h-7v12h-4V12H7z" fill={isDark ? "#111111" : "#FFFFFF"} />
+        <rect x="20" y="16" width="5" height="8" rx="1.5" fill="#346538" />
       </svg>
       {showText && (
         <span
           className={cn(
-            "font-display text-xl font-extrabold tracking-tight",
-            tone === "dark" ? "text-white" : "text-emerald-950",
+            "font-serif text-lg font-normal tracking-[-0.02em]",
+            isDark ? "text-white" : "text-[#111111]",
           )}
         >
-          Tata<span className={tone === "dark" ? "text-emerald-300" : "text-emerald-600"}>nala</span>
+          tatanala<span className="text-[#787774]">.</span>
         </span>
       )}
     </span>

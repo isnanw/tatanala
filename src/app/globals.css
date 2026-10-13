@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Tatanala Design System (Editorial Tech Studio)
-   - Fonts: Space Grotesk (Display) & Plus Jakarta Sans (Sans)
-   - Colors: Deep Emerald (#064E3B, #047857), Mint (#10B981), Amber (#F59E0B, #EA580C)
-   - Architecture: 12-column grid, 80px gutters, 24px vertical rhythm
-   - Borders: Crisp 1px solid rgba(0,0,0,0.08), zero soft blurry shadows
+   Tatanala Design System: Premium Utilitarian Minimalism & Editorial UI
+   - Canvas: Warm Bone / Off-White #FBFBFA
+   - Primary Surface: #FFFFFF / #F9F9F8
+   - Typography: Newsreader (Editorial Serif) + Plus Jakarta Sans + JetBrains Mono
+   - Structural Borders: Ultra-light gray #EAEAEA
+   - Muted Pastels:
+     * Pale Green: #EDF3EC (Text: #346538)
+     * Pale Blue: #E1F3FE (Text: #1F6C9F)
+     * Pale Red: #FDEBEC (Text: #9F2F2D)
+     * Pale Yellow: #FBF3DB (Text: #956400)
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --color-mint-50: #f0fdf4;
-  --color-ink: #071912;
+  --color-canvas: #fbfbfa;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f9f9f8;
+  --color-border: #eaeaea;
+  --color-charcoal: #111111;
+  --color-body: #2f3437;
+  --color-muted: #787774;
 
   --animate-marquee: marquee 36s linear infinite;
 
@@ -23,34 +35,13 @@
 }
 
 /* ---------------------------- Utilities ---------------------------- */
+@utility bg-architectural-grid {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
 @utility section-divider {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-@utility section-divider-dark {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-@utility border-subtle {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-@utility border-subtle-emerald {
-  border: 1px solid rgba(6, 78, 59, 0.15);
-}
-
-@utility text-gradient-brand {
-  background-image: linear-gradient(110deg, #047857 0%, #10b981 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-@utility text-gradient-amber {
-  background-image: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  border-bottom: 1px solid #eaeaea;
 }
 
 @utility mask-fade-x {
@@ -66,22 +57,26 @@
     -webkit-tap-highlight-color: transparent;
   }
   body {
-    background-color: #ffffff;
-    color: #1e293b;
+    background-color: #fbfbfa;
+    color: #2f3437;
     font-family: var(--font-sans);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    color: #064e3b;
+    color: #111111;
     letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
   ::selection {
-    background-color: #a7f3d0;
-    color: #064e3b;
+    background-color: #edf3ec;
+    color: #346538;
   }
   :focus-visible {
-    outline: 2px solid #ea580c;
+    outline: 2px solid #111111;
     outline-offset: 2px;
   }
 }

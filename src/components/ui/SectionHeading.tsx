@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 
 interface SectionHeadingProps {
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
   align?: "left" | "center";
@@ -17,35 +17,28 @@ export function SectionHeading({
   title,
   description,
   align = "left",
-  tone = "light",
   id,
   className,
 }: SectionHeadingProps) {
-  const dark = tone === "dark";
   return (
     <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
-      <span
-        className={cn(
-          "inline-flex items-center gap-2 rounded-md border px-3 py-1 font-mono text-xs font-semibold uppercase tracking-[0.12em]",
-          dark
-            ? "border-emerald-700/80 bg-emerald-900/60 text-emerald-200"
-            : "border-black/[0.08] bg-slate-50 text-emerald-900",
-        )}
-      >
-        <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden />
-        {eyebrow}
-      </span>
+      {eyebrow && (
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#EDF3EC] px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.05em] text-[#346538]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#346538]" />
+          {eyebrow}
+        </span>
+      )}
       <h2
         id={id}
         className={cn(
-          "mt-6 text-3xl font-bold tracking-tight leading-[1.15] sm:text-4xl lg:text-[2.65rem]",
-          dark ? "text-white" : "text-emerald-950",
+          "font-serif text-3xl font-normal tracking-[-0.025em] leading-[1.12] sm:text-4xl lg:text-[2.75rem] text-[#111111]",
+          eyebrow ? "mt-4" : "mt-0",
         )}
       >
         {title}
       </h2>
       {description && (
-        <p className={cn("mt-6 text-base leading-relaxed sm:text-lg", dark ? "text-emerald-100/80" : "text-slate-600")}>
+        <p className="mt-3.5 text-base leading-relaxed text-[#787774] max-w-2xl sm:text-lg">
           {description}
         </p>
       )}

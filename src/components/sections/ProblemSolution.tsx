@@ -2,137 +2,155 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BarChart2,
-  CheckCircle2,
-  CircleAlert,
-  Cpu,
-  Layers,
-  Sparkles,
-  TrendingUp,
-} from "lucide-react";
+import { BarChart2, CheckCircle2 } from "lucide-react";
 import { PILLARS, PROBLEMS } from "@/data/content";
-import { EASE_OUT } from "@/lib/utils";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+
+const PILLAR_STYLES: Record<string, { bg: string; text: string }> = {
+  Hulu: { bg: "bg-[#EDF3EC]", text: "text-[#346538]" },
+  Tengah: { bg: "bg-[#E1F3FE]", text: "text-[#1F6C9F]" },
+  Hilir: { bg: "bg-[#FBF3DB]", text: "text-[#956400]" },
+};
 
 export function ProblemSolution() {
   return (
-    <section id="solusi" aria-labelledby="solusi-title" className="relative border-b border-black/[0.08] bg-white py-[96px]">
+    <section id="solusi" aria-labelledby="solusi-title" className="relative border-b border-[#EAEAEA] bg-[#FBFBFA] py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         {/* 12-column header row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
           <div className="md:col-start-2 md:col-end-10">
             <SectionHeading
               id="solusi-title"
-              eyebrow="The Tatanala Difference"
-              title={
-                <>
-                  Menata Sistem, <span className="text-gradient-brand">Menuntaskan Kendala.</span>
-                </>
-              }
-              description="Bukan sekadar kosmetik visual. Kami padukan strategi pertumbuhan pasar (marketing) dengan sistem operasional di balik layar (software engineering)."
+              eyebrow="Akar Permasalahan"
+              title="Menata sistem, menuntaskan kendala operasional"
+              description="Bukan sekadar kosmetik visual. Kami padukan strategi pertumbuhan pasar dengan sistem operasional di balik layar."
             />
           </div>
         </div>
 
-        {/* Feature Spotlight: Human Marketing & Tech Strategist with Laptop (Columns 2-12) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-12 items-center">
-          {/* Left: Photograph with hard 1px borders (Columns 2 to 6) */}
+        {/* Feature Spotlight: Double-Bezel Hardware Architecture (Columns 2-12) */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-10 items-start">
+          {/* Left: Double-Bezel Faux-OS Window (Columns 2 to 6) */}
           <div className="md:col-start-2 md:col-end-7">
             <Reveal>
-              <div className="relative border border-black/[0.1] bg-slate-50 p-2 sm:p-3">
-                <div className="relative aspect-[4/3] w-full overflow-hidden border border-black/[0.08] bg-slate-900">
-                  <Image
-                    src="/images/marketing-growth.jpg"
-                    alt="Tim marketing dan sistem analis Tatanala memantau dashboard performa bisnis pada laptop"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 520px"
-                    className="object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
-                  />
-                  {/* Hard 1px Badge overlay */}
-                  <div className="absolute inset-x-3 bottom-3 border border-white/20 bg-emerald-950/90 p-3 text-white backdrop-blur-sm">
-                    <div className="flex items-center justify-between text-xs">
+              <div className="rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.03)]">
+                <div className="overflow-hidden rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
+                  {/* Window Top Bar */}
+                  <div className="flex h-9 items-center justify-between border-b border-[#EAEAEA] bg-[#F9F9F8] px-4">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
+                    </div>
+                    <span className="font-mono text-[11px] font-medium text-[#787774]">
+                      operations-growth.internal
+                    </span>
+                    <div className="w-10" />
+                  </div>
+
+                  <div className="relative aspect-[4/3] w-full bg-[#F7F6F3]">
+                    <Image
+                      src="/images/marketing-growth.jpg"
+                      alt="Tim marketing dan sistem analis Tatanala memantau dashboard performa bisnis"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 500px"
+                      className="object-cover object-center grayscale-[12%]"
+                    />
+                    <div className="absolute inset-x-3.5 bottom-3.5 flex items-center justify-between rounded-xl border border-white/20 bg-emerald-950/90 p-3 text-white backdrop-blur-md">
                       <div className="flex items-center gap-2">
                         <BarChart2 className="h-4 w-4 text-emerald-400" />
-                        <span className="font-mono uppercase font-bold text-emerald-200">Arsitektur Kustom</span>
+                        <span className="font-mono text-xs font-semibold text-emerald-100">Arsitektur Kustom</span>
                       </div>
-                      <span className="font-mono text-amber-400">ERP &amp; Funnel</span>
+                      <span className="rounded bg-emerald-800/80 px-2 py-0.5 font-mono text-[10px] font-semibold text-emerald-200">
+                        ERP &amp; Funnel
+                      </span>
                     </div>
                   </div>
-                </div>
 
-                <div className="mt-2 border border-black/[0.08] bg-white p-3 text-xs">
-                  <p className="font-mono text-[10px] uppercase text-slate-500">Kolaborasi Langsung</p>
-                  <p className="font-semibold text-emerald-950">
-                    Marketer &amp; Software Engineer berada di satu meja kerja untuk bisnis Anda.
-                  </p>
+                  <div className="border-t border-[#EAEAEA] bg-[#FBFBFA] p-4 text-xs">
+                    <p className="font-mono text-[10px] uppercase tracking-wider text-[#787774] font-medium">Kolaborasi Terarah</p>
+                    <p className="mt-1 font-medium text-[#111111]">
+                      Marketer dan software engineer berada di satu meja kerja untuk akselerasi bisnis Anda.
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Right: Diagnosis & The 3 Pillars (Columns 7 to 12) */}
-          <div className="md:col-start-7 md:col-end-12">
-            <Reveal delay={0.1}>
-              <div className="border border-black/[0.08] bg-slate-50 p-6 sm:p-8">
-                <span className="font-mono text-xs font-semibold tracking-wider text-rose-700 uppercase">
-                  Masalah Umum Pengusaha
-                </span>
-                <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
-                  Pencatatan manual tercecer, stok bocor, dan website sepi?
-                </h3>
+          {/* Right: Diagnosis & Pain Points Double-Bezel (Columns 7 to 12) */}
+          <div className="md:col-start-7 md:col-end-13">
+            <Reveal delay={0.08}>
+              <div className="rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.03)]">
+                <div className="rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-6 sm:p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
+                  <span className="inline-block rounded-full bg-[#FDEBEC] px-3 py-1 font-mono text-[10px] font-semibold tracking-wider text-[#9F2F2D] uppercase">
+                    Diagnosa hambatan usaha
+                  </span>
+                  <h3 className="mt-3.5 font-serif text-2xl font-normal text-[#111111]">
+                    Pencatatan manual tercecer, stok bocor, dan website sepi?
+                  </h3>
 
-                <ul className="mt-6 flex flex-col space-y-3">
-                  {PROBLEMS.map((p, i) => (
-                    <li key={p.title} className="border border-black/[0.08] bg-white p-3.5 text-xs sm:text-sm">
-                      <p className="font-semibold text-slate-800">
-                        <span className="font-mono font-bold text-rose-600 mr-2">0{i + 1}.</span>
-                        {p.title}
-                      </p>
-                      <p className="mt-1 text-slate-500 text-xs leading-relaxed">{p.detail}</p>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-6 flex flex-col space-y-3">
+                    {PROBLEMS.map((p, i) => (
+                      <li
+                        key={p.title}
+                        className="rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] p-3.5 transition-colors hover:border-[#CCCCCC] hover:bg-white"
+                      >
+                        <p className="text-xs font-semibold text-[#111111]">
+                          <span className="font-mono text-[#787774] mr-2">0{i + 1}.</span>
+                          {p.title}
+                        </p>
+                        <p className="mt-1 text-xs leading-relaxed text-[#787774]">{p.detail}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </Reveal>
           </div>
         </div>
 
-        {/* The 3 Pillars Editorial Bento (Columns 2 to 12) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-20 gap-y-6">
+        {/* The 3 Pillars Bento Box with Double-Bezel (Columns 2 to 12) */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
           <div className="md:col-start-2 md:col-end-12">
-            <div className="border border-black/[0.08] bg-emerald-950 p-6 sm:p-8 text-white">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
-                <div>
-                  <span className="font-mono text-xs font-semibold tracking-wider text-amber-400 uppercase">
-                    Pondasi Hulu ke Hilir
-                  </span>
-                  <h3 className="mt-1 text-2xl font-bold tracking-tight text-white">
-                    Tiga Pilar Solusi Terintegrasi Tatanala
-                  </h3>
-                </div>
-                <span className="font-mono text-xs text-emerald-300">Ekosistem Mandiri</span>
-              </div>
-
-              {/* Bento Grid layout with hard 1px borders */}
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
-                {PILLARS.map(({ pillar, title, detail, icon: Icon }) => (
-                  <div
-                    key={pillar}
-                    className="border border-white/10 bg-white/5 p-5 transition-colors hover:bg-white/10"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 font-mono text-[11px] font-bold tracking-wider text-amber-300 uppercase">
-                        {pillar}
-                      </span>
-                      <Icon className="h-5 w-5 text-emerald-400" />
-                    </div>
-                    <h4 className="mt-4 font-display text-base font-bold text-white">{title}</h4>
-                    <p className="mt-2 text-xs leading-relaxed text-emerald-100/75">{detail}</p>
+            <div className="rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.03)]">
+              <div className="rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-6 sm:p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#EAEAEA] pb-5">
+                  <div>
+                    <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-[#787774]">
+                      Pondasi hulu ke hilir
+                    </span>
+                    <h3 className="mt-1 font-serif text-2xl font-normal text-[#111111]">
+                      Tiga pilar solusi terintegrasi Tatanala
+                    </h3>
                   </div>
-                ))}
+                  <span className="rounded-full bg-[#EDF3EC] px-3 py-1 font-mono text-[11px] font-semibold text-[#346538]">
+                    Ekosistem Mandiri
+                  </span>
+                </div>
+
+                {/* Bento Grid: 3 Equal Pillars */}
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                  {PILLARS.map(({ pillar, title, detail, icon: Icon }) => {
+                    const style = PILLAR_STYLES[pillar] ?? { bg: "bg-[#EDF3EC]", text: "text-[#346538]" };
+                    return (
+                      <div
+                        key={pillar}
+                        className="group rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] p-5 transition-all duration-300 hover:border-[#CCCCCC] hover:bg-white hover:-translate-y-0.5"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className={`rounded-full px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider ${style.bg} ${style.text}`}>
+                            {pillar}
+                          </span>
+                          <Icon className="h-4 w-4 text-[#787774] transition-colors group-hover:text-[#111111]" />
+                        </div>
+                        <h4 className="mt-3.5 font-serif text-lg font-normal text-[#111111]">{title}</h4>
+                        <p className="mt-2 text-xs leading-relaxed text-[#787774]">{detail}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
