@@ -4,7 +4,7 @@ import { motion, type HTMLMotionProps } from "framer-motion";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "emerald" | "outline" | "light" | "ghost";
+type Variant = "primary" | "blue" | "emerald" | "outline" | "light" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 interface StyleProps {
@@ -14,20 +14,22 @@ interface StyleProps {
 
 const base =
   "group relative inline-flex items-center justify-center gap-3 rounded-full font-medium tracking-tight whitespace-nowrap " +
-  "transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] select-none cursor-pointer " +
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111] disabled:pointer-events-none disabled:opacity-50";
+  "transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] select-none cursor-pointer " +
+  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[#111111] text-white border border-[#111111] hover:bg-[#262626] active:scale-[0.98] shadow-[0_2px_12px_rgba(0,0,0,0.08)]",
+    "bg-slate-900 text-white border border-slate-900 hover:bg-slate-800 active:scale-[0.98] shadow-sm",
+  blue:
+    "bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 active:scale-[0.98] shadow-sm shadow-blue-500/25",
   emerald:
-    "bg-[#064E3B] text-white border border-[#064E3B] hover:bg-[#047857] active:scale-[0.98] shadow-[0_2px_12px_rgba(6,78,59,0.15)]",
+    "bg-[#064E3B] text-white border border-[#064E3B] hover:bg-[#047857] active:scale-[0.98] shadow-sm",
   outline:
-    "border border-[#EAEAEA] bg-white text-[#111111] hover:bg-[#F9F9F8] hover:border-[#CCCCCC] active:scale-[0.98]",
+    "border border-slate-200 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] shadow-xs",
   light:
-    "bg-[#F7F6F3] text-[#111111] border border-[#EAEAEA] hover:bg-[#EAEAEA] active:scale-[0.98]",
+    "bg-slate-100 text-slate-900 border border-slate-200 hover:bg-slate-200 active:scale-[0.98]",
   ghost:
-    "text-[#2F3437] hover:bg-[#F7F6F3] hover:text-[#111111] active:scale-[0.98]",
+    "text-slate-600 hover:bg-slate-100 hover:text-slate-900 active:scale-[0.98]",
 };
 
 const sizes: Record<Size, string> = {

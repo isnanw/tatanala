@@ -1,83 +1,118 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Minus, Plus } from "lucide-react";
-import { useId, useState } from "react";
+import { ChevronDown, HelpCircle, Sparkles } from "lucide-react";
+import { useState } from "react";
 import { FAQS } from "@/data/content";
-import { cn, EASE_OUT } from "@/lib/utils";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { useConsult } from "@/components/consult/ConsultProvider";
 
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
-  const uid = useId();
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { openConsult } = useConsult();
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="relative border-b border-[#EAEAEA] bg-[#FBFBFA] py-24 sm:py-28">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        {/* 12-column header (Columns 2 to 10) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
-          <div className="md:col-start-2 md:col-end-10">
-            <SectionHeading
-              id="faq-title"
-              eyebrow="Tanya Jawab"
-              title="Pertanyaan yang sering diajukan"
-              description="Pertanyaan umum seputar skema kerja sama, hak kepemilikan source code, dan SLA pemeliharaan sistem."
-            />
-          </div>
+    <section id="faq" className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Tanya Jawab &bull; Transparansi Penuh</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
+          >
+            Pertanyaan Yang Sering Diajukan
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-4 text-base sm:text-lg text-slate-600"
+          >
+            Jawaban lugas seputar kepemilikan source code, waktu pengerjaan, dan skema kerja sama tanpa jebakan biaya tersembunyi.
+          </motion.p>
         </div>
 
-        {/* 12-column Editorial Accordion: stripped container boxes, separated only by border-bottom (Columns 2 to 12) */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
-          <div className="md:col-start-2 md:col-end-12 divide-y divide-[#EAEAEA] border-t border-b border-[#EAEAEA]">
-            {FAQS.map((f, i) => {
-              const isOpen = open === i;
-              const panelId = `${uid}-panel-${i}`;
-              const btnId = `${uid}-btn-${i}`;
-              return (
-                <div key={f.question} className="py-2">
-                  <h3>
-                    <button
-                      id={btnId}
-                      type="button"
-                      aria-expanded={isOpen}
-                      aria-controls={panelId}
-                      onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 py-4 text-left transition-colors hover:text-[#111111]"
+        {/* Morphing Accordion List */}
+        <div className="space-y-4">
+          {FAQS.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <motion.div
+                key={faq.question}
+                layout
+                transition={{ layout: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 } }}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? "bg-white border-blue-300 shadow-md ring-1 ring-blue-500/15"
+                    : "bg-white/80 border-slate-200/90 hover:bg-white hover:border-slate-300"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  className="w-full flex items-center justify-between p-6 text-left"
+                >
+                  <span className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-blue-600" : "text-slate-900"}`}>
+                    {faq.question}
+                  </span>
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ml-4 transition-colors ${
+                      isOpen ? "bg-blue-50 text-blue-600" : "bg-slate-100 text-slate-500"
+                    }`}
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <span className={cn("font-serif text-lg sm:text-xl font-normal transition-colors", isOpen ? "text-[#111111]" : "text-[#2F3437]")}>
-                        {f.question}
-                      </span>
-                      <span className="grid h-6 w-6 shrink-0 place-items-center text-[#787774]">
-                        {isOpen ? (
-                          <Minus className="h-4 w-4 text-[#111111]" aria-hidden />
-                        ) : (
-                          <Plus className="h-4 w-4 text-[#787774]" aria-hidden />
-                        )}
-                      </span>
-                    </button>
-                  </h3>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        id={panelId}
-                        role="region"
-                        aria-labelledby={btnId}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: EASE_OUT }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-5 text-xs sm:text-sm leading-relaxed text-[#787774] max-w-3xl">
-                          {f.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
+                      <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Still have questions banner */}
+        <div className="mt-12 text-center bg-blue-50/60 rounded-3xl border border-blue-200/70 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-left">
+            <h4 className="text-sm font-bold text-slate-900">Punya pertanyaan spesifik terkait bisnis Anda?</h4>
+            <p className="text-xs text-slate-500 mt-0.5">Diskusikan langsung dengan arsitek sistem kami via WhatsApp.</p>
           </div>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            type="button"
+            onClick={() => openConsult("faq-chat")}
+            className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 text-xs font-bold shrink-0 shadow-sm shadow-blue-500/25"
+          >
+            Tanya via WhatsApp
+          </motion.button>
         </div>
       </div>
     </section>

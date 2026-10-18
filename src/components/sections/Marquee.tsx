@@ -1,26 +1,62 @@
-import { MARQUEE_ITEMS } from "@/data/content";
+"use client";
 
-/** Minimalist marquee ticker with warm bone background and 1px #EAEAEA border. */
+import { motion } from "framer-motion";
+import {
+  BarChart3,
+  Bot,
+  Boxes,
+  Globe2,
+  Megaphone,
+  MessageCircle,
+  SearchCheck,
+  ShieldCheck,
+  Workflow,
+} from "lucide-react";
+
+const CAPABILITIES = [
+  { label: "Sistem Informasi Kustom", icon: Boxes },
+  { label: "Website Profil Siap Tender", icon: Globe2 },
+  { label: "Optimasi SEO Organik #1", icon: SearchCheck },
+  { label: "Google & Meta Ads Terukur", icon: Megaphone },
+  { label: "Integrasi AI & Otomasi Kerja", icon: Bot },
+  { label: "Dashboard Realtime Multi-Cabang", icon: BarChart3 },
+  { label: "Notifikasi Otomatis WhatsApp", icon: MessageCircle },
+  { label: "Arsitektur Zero-Downtime Cloud", icon: ShieldCheck },
+];
+
 export function Marquee() {
-  const items = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
+  const duplicated = [...CAPABILITIES, ...CAPABILITIES, ...CAPABILITIES];
+
   return (
-    <section aria-label="Sorotan layanan" className="relative border-b border-[#EAEAEA] bg-[#F9F9F8] py-4">
-      <div className="mask-fade-x group flex overflow-hidden">
-        <ul className="flex w-max shrink-0 animate-marquee items-center gap-6 pr-6 group-hover:[animation-play-state:paused]">
-          {items.map(({ label, icon: Icon }, i) => (
-            <li
-              key={`${label}-${i}`}
-              aria-hidden={i >= MARQUEE_ITEMS.length}
-              className="flex items-center gap-6"
-            >
-              <span className="inline-flex items-center gap-2 rounded-md border border-[#EAEAEA] bg-white px-3 py-1.5 text-xs font-medium tracking-wide whitespace-nowrap text-[#2F3437] font-mono">
-                <Icon className="h-3.5 w-3.5 text-[#787774]" aria-hidden />
-                {label}
-              </span>
-              <span className="h-1 w-1 rounded-full bg-[#D4D4D4]" aria-hidden />
-            </li>
-          ))}
-        </ul>
+    <section
+      aria-label="Kemampuan & Fokus Solusi Tatanala"
+      className="relative overflow-hidden border-y border-slate-200/80 bg-white py-6"
+    >
+      <div className="flex w-max">
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          className="flex items-center gap-8 pr-8 select-none"
+        >
+          {duplicated.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={`${item.label}-${idx}`}
+                className="flex items-center gap-2.5 rounded-full border border-slate-200/90 bg-[#F8FAFC] px-4 py-2 text-xs font-semibold text-slate-700 shadow-2xs hover:border-blue-300 hover:text-blue-600 transition-colors"
+              >
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-blue-100/80 text-blue-600">
+                  <Icon className="h-3 w-3" />
+                </span>
+                <span>{item.label}</span>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

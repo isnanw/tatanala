@@ -33,43 +33,43 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tatanala - Menata Sistem, Menuntaskan Kendala | Software House & Digital Studio",
+  title: "Tatanala - Smarter IT. Stronger Business. | Cloud & Infrastructure Solutions",
   description:
-    "Tatanala adalah studio rekayasa software & pemasaran digital utilitarian: profil perusahaan, sistem informasi kustom (ERP, inventaris, POS), SEO, dan periklanan terarah.",
+    "We deliver robust cloud, network and IT infrastructure solutions tailored to your business needs. 24/7 managed support, zero-trust security, and scalable cloud systems.",
   keywords: [
-    "software house",
-    "jasa pembuatan website company profile",
-    "sistem informasi kustom",
-    "ERP UMKM",
-    "jasa SEO",
-    "Google Ads",
-    "Meta Ads",
+    "IT solutions",
+    "cloud infrastructure",
+    "managed IT services",
+    "network security",
+    "cloud migration",
+    "cybersecurity",
+    "enterprise IT",
   ],
   openGraph: {
-    title: "Tatanala - Menata Sistem, Menuntaskan Kendala",
-    description: "Bukan sekadar bikin website. Kami tuntaskan masalah operasional bisnis Anda.",
-    locale: "id_ID",
+    title: "Tatanala - Smarter IT. Stronger Business.",
+    description: "Robust cloud, network and IT infrastructure solutions tailored to your enterprise.",
+    locale: "en_US",
     type: "website",
-    siteName: "Tatanala",
+    siteName: "Tatanala IT Solutions",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#111111",
+  themeColor: "#2563EB",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="id"
-      className={`${jakartaSans.variable} ${spaceGrotesk.variable} ${newsreader.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
+      lang="en"
+      className={`${jakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
     >
-      <body className="bg-[#FBFBFA] text-[#2F3437] font-sans selection:bg-[#EDF3EC] selection:text-[#346538]">
+      <body className="bg-[#F8FAFC] text-slate-800 font-sans selection:bg-blue-100 selection:text-blue-900">
         <a
           href="#main"
-          className="sr-only z-[100] rounded-none border border-[#111111] bg-[#111111] px-6 py-3 text-white focus:not-sr-only focus:fixed focus:top-6 focus:left-6 font-mono text-xs"
+          className="sr-only z-[100] rounded-none border border-blue-600 bg-blue-600 px-6 py-3 text-white focus:not-sr-only focus:fixed focus:top-6 focus:left-6 font-mono text-xs"
         >
-          Lewati ke konten utama
+          Skip to main content
         </a>
         <ConsultProvider>{children}</ConsultProvider>
       </body>

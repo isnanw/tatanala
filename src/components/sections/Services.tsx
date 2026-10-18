@@ -1,297 +1,337 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, MessageCircle, X } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { SERVICES } from "@/data/content";
-import { useEscape, useLockBody } from "@/lib/hooks";
-import { cn } from "@/lib/utils";
-import type { Pillar, Service } from "@/types";
-import { Button } from "@/components/ui/Button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Boxes, Globe2, Rocket, CheckCircle2, Sparkles, X, ShieldCheck, Cpu, Zap } from "lucide-react";
+import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
 
-type Filter = "Semua" | Pillar;
-const FILTERS: { id: Filter; hint: string }[] = [
-  { id: "Semua", hint: "Semua" },
-  { id: "Hulu", hint: "Kredibilitas" },
-  { id: "Tengah", hint: "Operasional" },
-  { id: "Hilir", hint: "Pertumbuhan" },
+interface PillarItem {
+  id: string;
+  pillar: string;
+  title: string;
+  icon: typeof Globe2;
+  badge: string;
+  metric: string;
+  metricLabel: string;
+  shortDesc: string;
+  fullDesc: string;
+  deliverables: string[];
+  techStack: string[];
+  highlighted?: boolean;
+}
+
+const PILLARS_DATA: PillarItem[] = [
+  {
+    id: "profil",
+    pillar: "Pilar Hulu",
+    title: "Website Profil Berbobot & Siap Tender",
+    icon: Globe2,
+    badge: "Reputasi Instan",
+    metric: "< 2 Detik",
+    metricLabel: "Kecepatan Muat Mobile",
+    shortDesc:
+      "Situs profil yang dirancang layaknya proposal bisnis: mematahkan keraguan calon klien, menampilkan legalitas & sertifikasi, serta siap tembus verifikasi tender BUMN.",
+    fullDesc:
+      "Website bukan sekadar brosur online. Bagi kontraktor, manufaktur, dan konsultan, website adalah garda depan evaluasi tender. Kami merancang arsitektur web yang lolos verifikasi SBU/LPSE, memuat di bawah 2 detik di jaringan seluler, dan menyajikan portofolio secara terverifikasi.",
+    deliverables: [
+      "Desain UI/UX eksklusif berorientasi kredibilitas bisnis",
+      "Halaman legalitas, struktur organisasi, dan galeri proyek tender",
+      "Headless CMS mandiri  -  update berita & portofolio tanpa programmer",
+      "Hosting Cloud CDN global + domain .com / .id + SSL kelas A+",
+      "Formulir penawaran langsung terintegrasi ke WhatsApp admin",
+    ],
+    techStack: ["Next.js App Router", "TailwindCSS", "Edge CDN", "Core Web Vitals 95+"],
+  },
+  {
+    id: "sistem",
+    pillar: "Pilar Tengah",
+    title: "Sistem Informasi Kustom (ERP, Stok & POS)",
+    icon: Boxes,
+    badge: "Operasional Rapi",
+    metric: "3x Lebih Cepat",
+    metricLabel: "Rekap & Laporan Otomatis",
+    shortDesc:
+      "Mengganti tumpukan nota manual dan 12 file Excel terpisah. Kami bangun sistem yang mengikuti alur kerja nyata bisnis Anda  -  bukan memaksa tim tunduk pada software generik.",
+    fullDesc:
+      "Software generik di pasaran seringkali kaku dan menuntut tim Anda mengubah kebiasaan kerja. Di Tatanala, kami memetakan alur fisik bisnis Anda: dari barang masuk ke gudang, approval nota oleh manajer, kasir POS, hingga rekap omzet harian otomatis ke WhatsApp owner tiap sore.",
+    deliverables: [
+      "Modul inventaris gudang dengan barcode & sistem mutasi bertingkat",
+      "Kasir POS multi-cabang dengan sinkronisasi database realtime",
+      "Alur approval berjenjang & audit trail (siapa input, edit, hapus)",
+      "Laporan harian otomatis terkirim langsung ke WhatsApp owner",
+      "Pelatihan langsung staf lapangan & garansi pendampingan 6 bulan",
+    ],
+    techStack: ["PostgreSQL", "Node.js / Go", "REST & WebSocket", "Automated Daily Backup"],
+    highlighted: true,
+  },
+  {
+    id: "pertumbuhan",
+    pillar: "Pilar Hilir",
+    title: "Pertumbuhan Terarah (SEO & Ads Terukur)",
+    icon: Rocket,
+    badge: "Mesin Prospek",
+    metric: "4.6x Rata-rata",
+    metricLabel: "ROAS Iklan Nyata",
+    shortDesc:
+      "Mendatangkan prospek berkualitas setiap hari. Strategi SEO dominasi halaman #1 Google dan iklan digital terarah yang dilacak hingga rupiah transaksi di WhatsApp.",
+    fullDesc:
+      "Banyak bisnis membakar anggaran iklan tanpa tahu berapa pasien atau klien yang benar-benar melakukan transaksi. Kami membangun pelacakan hulu-ke-hilir: setiap klik iklan dilacak hingga chat WhatsApp dan konversi riil di CRM bisnis Anda.",
+    deliverables: [
+      "Audit SEO teknis menyeluruh & optimasi Core Web Vitals",
+      "Riset kata kunci niat beli tinggi (commercial intent keywords)",
+      "Setup kampanye iklan Google Search, PMax, & Meta Ads",
+      "Integrasi Conversion API & pelacakan chat WhatsApp ke CRM",
+      "Dashboard laporan ROAS & biaya per prospek realtime",
+    ],
+    techStack: ["Google Ads PMax", "Meta Conversion API", "Google Search Console", "Looker Studio"],
+  },
 ];
 
-const PILLAR_STYLES: Record<string, { bg: string; text: string }> = {
-  Hulu: { bg: "bg-[#EDF3EC]", text: "text-[#346538]" },
-  Tengah: { bg: "bg-[#E1F3FE]", text: "text-[#1F6C9F]" },
-  Hilir: { bg: "bg-[#FBF3DB]", text: "text-[#956400]" },
-};
-
-const CONSULT_TOPIC: Record<string, string> = {
-  "company-profile": "profil",
-  "information-system": "sistem",
-  seo: "seo",
-  ads: "ads",
-};
-
-const spring = { type: "spring", stiffness: 350, damping: 28 } as const;
-
 export function Services() {
-  const [filter, setFilter] = useState<Filter>("Semua");
-  const [selected, setSelected] = useState<Service | null>(null);
-  const visible = SERVICES.filter((s) => filter === "Semua" || s.pillar === filter);
-
-  return (
-    <section id="layanan" aria-labelledby="layanan-title" className="relative border-b border-[#EAEAEA] bg-[#FBFBFA] py-24 sm:py-28">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        {/* 12-column Header (columns 2 to 10) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
-          <div className="md:col-start-2 md:col-end-10">
-            <SectionHeading
-              id="layanan-title"
-              eyebrow="Layanan Inti"
-              title="Satu studio, hulu ke hilir"
-              description="Pilih titik masuk Anda. Tinjau deliverables dan arsitektur teknologi yang kami gunakan untuk tiap kebutuhan usaha."
-            />
-          </div>
-        </div>
-
-        {/* Filter Bar (Columns 2 to 12) */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
-          <div className="md:col-start-2 md:col-end-12">
-            <div
-              role="tablist"
-              aria-label="Filter layanan berdasarkan pilar"
-              className="inline-flex flex-wrap gap-1 rounded-full border border-[#EAEAEA] bg-white p-1"
-            >
-              {FILTERS.map((f) => {
-                const active = filter === f.id;
-                return (
-                  <button
-                    key={f.id}
-                    role="tab"
-                    aria-selected={active}
-                    onClick={() => setFilter(f.id)}
-                    className={cn(
-                      "rounded-full px-4 py-1.5 font-mono text-xs font-medium tracking-wide transition-colors",
-                      active
-                        ? "bg-[#111111] text-white"
-                        : "text-[#787774] hover:text-[#111111] hover:bg-[#F7F6F3]",
-                    )}
-                  >
-                    <span>
-                      {f.id}
-                      <span className={cn("ml-1.5 text-[10px]", active ? "text-[#EAEAEA]" : "text-[#A8A8A8]")}>
-                        ({f.hint})
-                      </span>
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* 2x2 Double-Bezel Bento Grid with Concentric Radii (Columns 2 to 12) */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-12 lg:gap-x-16 gap-y-6">
-          <div className="md:col-start-2 md:col-end-12">
-            <LayoutGroup id="services">
-              <motion.ul layout className="grid gap-6 md:grid-cols-2">
-                <AnimatePresence mode="popLayout" initial={false}>
-                  {visible.map((service) => (
-                    <motion.li
-                      key={service.id}
-                      layout
-                      initial={{ opacity: 0, scale: 0.98 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.98 }}
-                      transition={spring}
-                    >
-                      <ServiceCard
-                        service={service}
-                        index={SERVICES.indexOf(service)}
-                        onSelect={setSelected}
-                      />
-                    </motion.li>
-                  ))}
-                </AnimatePresence>
-              </motion.ul>
-
-              <AnimatePresence>
-                {selected && <ServiceDetail key={selected.id} service={selected} onClose={() => setSelected(null)} />}
-              </AnimatePresence>
-            </LayoutGroup>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ServiceCard({
-  service,
-  index,
-  onSelect,
-}: {
-  service: Service;
-  index: number;
-  onSelect: (s: Service) => void;
-}) {
-  const Icon = service.icon;
-  const style = PILLAR_STYLES[service.pillar] ?? { bg: "bg-[#EDF3EC]", text: "text-[#346538]" };
-
-  return (
-    <motion.button
-      type="button"
-      layoutId={`card-${service.id}`}
-      onClick={() => onSelect(service)}
-      aria-haspopup="dialog"
-      aria-label={`${service.title} - lihat detail`}
-      whileHover={{ y: -3 }}
-      whileTap={{ scale: 0.99 }}
-      transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
-      className="group relative flex h-full w-full flex-col rounded-[2rem] border border-black/[0.08] bg-slate-100/70 p-2 sm:p-2.5 text-left transition-colors hover:border-[#CCCCCC] shadow-[0_20px_50px_rgba(0,0,0,0.03)]"
-    >
-      <div className="flex h-full w-full flex-col rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-6 sm:p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
-        <div className="flex items-start justify-between">
-          <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] text-[#111111]">
-            <Icon className="h-4.5 w-4.5" aria-hidden />
-          </span>
-          <span className="font-mono text-xl font-normal text-[#D4D4D4] group-hover:text-[#111111] transition-colors">
-            0{index + 1}
-          </span>
-        </div>
-
-        <div className="mt-5">
-          <span className={`inline-block rounded-full px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider ${style.bg} ${style.text}`}>
-            {service.pillar} • {service.tag}
-          </span>
-          <motion.h3
-            layoutId={`title-${service.id}`}
-            className="mt-3 font-serif text-2xl font-normal text-[#111111]"
-          >
-            {service.title}
-          </motion.h3>
-          <motion.p layoutId={`desc-${service.id}`} className="mt-2 text-xs leading-relaxed text-[#787774] sm:text-sm">
-            {service.shortDesc}
-          </motion.p>
-        </div>
-
-        <div className="mt-auto flex items-end justify-between border-t border-[#EAEAEA] pt-5 mt-6">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-wider text-[#787774] font-medium">{service.metric.label}</p>
-            <p className="font-mono text-2xl font-semibold text-[#111111]">{service.metric.value}</p>
-          </div>
-          <span className="grid h-9 w-9 place-items-center rounded-full border border-[#EAEAEA] bg-[#FBFBFA] text-[#111111] transition-all group-hover:bg-[#111111] group-hover:text-white group-hover:border-[#111111] group-hover:scale-105">
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
-          </span>
-        </div>
-      </div>
-    </motion.button>
-  );
-}
-
-function ServiceDetail({ service, onClose }: { service: Service; onClose: () => void }) {
   const { openConsult } = useConsult();
-  const closeRef = useRef<HTMLButtonElement>(null);
-  const Icon = service.icon;
-  const close = useCallback(() => onClose(), [onClose]);
-
-  useLockBody(true);
-  useEscape(true, close);
-  useEffect(() => closeRef.current?.focus(), []);
+  const [selectedService, setSelectedService] = useState<PillarItem | null>(null);
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 sm:p-6">
-      <motion.div
-        className="absolute inset-0 bg-[#111111]/40 backdrop-blur-xs"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        onClick={close}
-        aria-hidden
-      />
-      <motion.div
-        layoutId={`card-${service.id}`}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={`detail-title-${service.id}`}
-        transition={spring}
-        className="relative max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-[2rem] border border-black/[0.08] bg-slate-100/80 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
-      >
-        <div className="max-h-[90vh] overflow-y-auto rounded-[calc(2rem-0.5rem)] border border-black/[0.06] bg-white p-6 sm:p-8">
-          <div className="flex items-start justify-between gap-4">
-            <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] text-[#111111]">
-              <Icon className="h-5 w-5" aria-hidden />
-            </span>
-            <button
-              ref={closeRef}
-              type="button"
-              onClick={close}
-              aria-label="Tutup detail layanan"
-              className="grid h-8 w-8 place-items-center rounded-full border border-[#EAEAEA] bg-white text-[#111111] hover:bg-[#F7F6F3] transition-colors"
-            >
-              <X className="h-4 w-4" aria-hidden />
-            </button>
-          </div>
-
-          <motion.h3
-            layoutId={`title-${service.id}`}
-            id={`detail-title-${service.id}`}
-            className="mt-5 font-serif text-2xl font-normal text-[#111111] sm:text-3xl"
+    <section id="layanan" className="py-20 sm:py-28 bg-white border-y border-slate-200/80">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
           >
-            {service.title}
-          </motion.h3>
-          <motion.p layoutId={`desc-${service.id}`} className="mt-1 text-sm font-medium text-[#787774]">
-            {service.shortDesc}
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Ekosistem Hulu ke Hilir</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
+          >
+            Layanan Terintegrasi Tatanala
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto"
+          >
+            Klik kartu di bawah untuk melihat rincian alur arsitektur, deliverables, dan teknologi pendukungnya melalui animasi morphing.
           </motion.p>
+        </div>
 
-          <div className="mt-6 border-t border-[#EAEAEA] pt-5">
-            <p className="leading-relaxed text-[#2F3437] text-sm">{service.longDesc}</p>
-
-            <div className="mt-6 grid gap-6 md:grid-cols-[1.4fr_1fr]">
-              <div>
-                <h4 className="font-mono text-xs font-semibold tracking-wider text-[#111111] uppercase">Deliverables</h4>
-                <ul className="mt-3 flex flex-col space-y-2">
-                  {service.deliverables.map((d) => (
-                    <li key={d} className="flex gap-2 text-xs text-[#2F3437]">
-                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#346538]" aria-hidden />
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="flex flex-col gap-3">
-                <div className="rounded-xl border border-[#EAEAEA] bg-[#FBFBFA] p-3.5">
-                  <p className="font-mono text-[10px] text-[#787774] uppercase">{service.metric.label}</p>
-                  <p className="mt-0.5 font-mono text-2xl font-semibold text-[#111111]">{service.metric.value}</p>
-                </div>
+        {/* 3 Pillars Cards with layoutId morphing */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {PILLARS_DATA.map((srv, idx) => {
+            const Icon = srv.icon;
+            return (
+              <motion.div
+                key={srv.id}
+                layoutId={`service-card-${srv.id}`}
+                onClick={() => setSelectedService(srv)}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className={`group relative rounded-[2.25rem] border p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
+                  srv.highlighted
+                    ? "border-blue-600/30 bg-blue-50/25 shadow-[0_20px_50px_rgba(37,99,235,0.08)] ring-1 ring-blue-500/20"
+                    : "border-slate-200/90 bg-[#F8FAFC] hover:bg-white hover:border-blue-300 hover:shadow-2xl"
+                }`}
+              >
                 <div>
-                  <h4 className="font-mono text-xs font-semibold tracking-wider text-[#111111] uppercase">Tech Highlights</h4>
-                  <ul className="mt-2 flex flex-wrap gap-1.5">
-                    {service.tech.map((t) => (
-                      <li key={t} className="rounded-md border border-[#EAEAEA] bg-[#FBFBFA] px-2 py-0.5 font-mono text-[10px] text-[#2F3437]">
-                        {t}
+                  {/* Top Bar Pill */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                      {srv.pillar}
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-500">
+                      {srv.badge}
+                    </span>
+                  </div>
+
+                  {/* Icon Badge */}
+                  <motion.div
+                    layoutId={`service-icon-${srv.id}`}
+                    className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100/80 border border-blue-200 text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-xs"
+                  >
+                    <Icon className="h-8 w-8" />
+                  </motion.div>
+
+                  {/* Title & Description with layoutId */}
+                  <motion.h3
+                    layoutId={`service-title-${srv.id}`}
+                    className="text-xl font-bold text-slate-900 tracking-tight leading-snug"
+                  >
+                    {srv.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`service-desc-${srv.id}`}
+                    className="mt-3 text-sm leading-relaxed text-slate-600"
+                  >
+                    {srv.shortDesc}
+                  </motion.p>
+
+                  {/* Key Metric Strip */}
+                  <div className="mt-5 rounded-2xl bg-white border border-slate-200/70 p-3.5 flex items-center justify-between shadow-2xs">
+                    <div>
+                      <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                        {srv.metricLabel}
+                      </p>
+                      <p className="text-base font-bold text-slate-900">
+                        {srv.metric}
+                      </p>
+                    </div>
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                  </div>
+
+                  {/* Deliverables Checklist Preview */}
+                  <ul className="mt-6 space-y-2.5 pt-6 border-t border-slate-200/80">
+                    {srv.deliverables.slice(0, 3).map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-xs font-medium text-slate-700">
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </div>
-            </div>
 
-            <div className="mt-8 flex flex-col gap-3 border-t border-[#EAEAEA] pt-5 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs text-[#787774]">Konsultasikan kebutuhan spesifik sistem dan website Anda.</p>
-              <Button
-                size="sm"
-                onClick={() => {
-                  close();
-                  openConsult(CONSULT_TOPIC[service.id]);
-                }}
-              >
-                <MessageCircle className="h-3.5 w-3.5" aria-hidden /> Konsultasi Layanan Ini
-              </Button>
-            </div>
-          </div>
+                {/* Card CTA: Click to Expand Morphing */}
+                <div className="mt-8 pt-4">
+                  <div className="w-full flex items-center justify-center gap-2 rounded-full bg-slate-900 group-hover:bg-blue-600 text-white py-3.5 text-xs font-bold transition-colors duration-200 shadow-sm">
+                    <span>Buka Rincian &amp; Arsitektur</span>
+                    <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
-      </motion.div>
-    </div>
+
+        {/* Morphing Modal Expansion */}
+        <AnimatePresence>
+          {selectedService && (
+            <div className="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedService(null)}
+                className="fixed inset-0 bg-slate-950/70 backdrop-blur-md"
+              />
+
+              {/* Morphed Card Modal */}
+              <motion.div
+                layoutId={`service-card-${selectedService.id}`}
+                className="relative z-10 w-full max-w-3xl overflow-hidden rounded-[2.5rem] bg-white p-6 sm:p-10 shadow-2xl border border-slate-200 my-8"
+              >
+                {/* Close Button */}
+                <button
+                  type="button"
+                  onClick={() => setSelectedService(null)}
+                  aria-label="Tutup Detail"
+                  className="absolute top-6 right-6 grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                {/* Header Info */}
+                <div className="flex items-center gap-4 mb-6">
+                  <motion.div
+                    layoutId={`service-icon-${selectedService.id}`}
+                    className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/25"
+                  >
+                    <selectedService.icon className="h-8 w-8" />
+                  </motion.div>
+                  <div>
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                      {selectedService.pillar} &bull; {selectedService.badge}
+                    </span>
+                    <motion.h3
+                      layoutId={`service-title-${selectedService.id}`}
+                      className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight"
+                    >
+                      {selectedService.title}
+                    </motion.h3>
+                  </div>
+                </div>
+
+                {/* Short and Full Description */}
+                <motion.p
+                  layoutId={`service-desc-${selectedService.id}`}
+                  className="text-base sm:text-lg text-slate-700 leading-relaxed"
+                >
+                  {selectedService.shortDesc}
+                </motion.p>
+
+                <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+                  {selectedService.fullDesc}
+                </p>
+
+                {/* Deliverables in Full */}
+                <div className="mt-8">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4 text-blue-600" />
+                    Deliverables &amp; Output Nyata:
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {selectedService.deliverables.map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-start gap-2.5 rounded-xl border border-slate-200 bg-white p-3.5 text-xs font-medium text-slate-800 shadow-2xs"
+                      >
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tech Stack Chips */}
+                <div className="mt-8 pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-bold text-slate-500 mr-1 flex items-center gap-1">
+                      <Cpu className="h-3.5 w-3.5 text-blue-600" /> Teknologi:
+                    </span>
+                    {selectedService.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-slate-100 border border-slate-200/80 px-3 py-1 font-mono text-[11px] font-semibold text-slate-700"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Direct Consult Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="button"
+                    onClick={() => {
+                      const id = selectedService.id;
+                      setSelectedService(null);
+                      openConsult(id);
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 text-xs font-bold shadow-lg shadow-blue-500/25 transition-all"
+                  >
+                    <span>Konsultasi Solusi Ini di WhatsApp</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+      </div>
+    </section>
   );
 }
