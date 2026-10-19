@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Sparkles, TrendingUp, XCircle, X, ShieldCheck
 import Image from "next/image";
 import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { useEscape, useLockBody } from "@/lib/hooks";
 
 interface CaseItem {
   id: string;
@@ -111,6 +112,15 @@ const CASES: CaseItem[] = [
 export function CaseStudies() {
   const { openConsult } = useConsult();
   const [selectedCase, setSelectedCase] = useState<CaseItem | null>(null);
+  const [shake, setShake] = useState(false);
+
+  useLockBody(Boolean(selectedCase));
+  useEscape(Boolean(selectedCase), () => setSelectedCase(null));
+
+  const triggerShake = () => {
+    setShake(true);
+    setTimeout(() => setShake(false), 450);
+  };
 
   return (
     <section id="portofolio" className="py-20 sm:py-28 bg-[#F8FAFC]">
@@ -246,28 +256,40 @@ export function CaseStudies() {
         {/* Morphing Modal for Case Study Details */}
         <AnimatePresence>
           {selectedCase && (
-            <div className="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+            <div className="fixed inset-0 z-[90] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+              {/* Backdrop - Clicking outside triggers shake, does NOT close */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onClick={() => setSelectedCase(null)}
-                className="fixed inset-0 bg-slate-950/70 backdrop-blur-md"
+                onClick={triggerShake}
+                className="fixed inset-0 bg-slate-950/70 backdrop-blur-md cursor-not-allowed"
               />
 
+              {/* Morphed Card Modal with shake animation and internal scrolling */}
               <motion.div
                 layoutId={`case-card-${selectedCase.id}`}
-                className="relative z-10 w-full max-w-3xl overflow-hidden rounded-[2.5rem] bg-white p-6 sm:p-10 shadow-2xl border border-slate-200 my-8"
+                animate={
+                  shake
+                    ? {
+                        x: [-12, 12, -8, 8, -4, 4, 0],
+                        transition: { duration: 0.45, ease: "easeInOut" },
+                      }
+                    : { x: 0 }
+                }
+                className="relative z-10 w-full max-w-3xl max-h-[85vh] overflow-y-auto custom-scrollbar rounded-[2.5rem] bg-white p-6 sm:p-10 shadow-2xl border border-slate-200 my-auto overscroll-contain"
               >
-                {/* Close Button */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedCase(null)}
-                  aria-label="Tutup Studi Kasus"
-                  className="absolute top-6 right-6 z-20 grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/90 hover:bg-slate-100 text-slate-700 transition-colors shadow-sm"
-                >
-                  <X className="h-5 w-5" />
-                </button>
+                {/* Close Button - Sticky at top right */}
+                <div className="sticky top-0 z-30 flex justify-end -mt-2 -mr-2 pointer-events-none pb-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedCase(null)}
+                    aria-label="Tutup Studi Kasus (Esc)"
+                    className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/95 hover:bg-slate-100 text-slate-700 transition-colors shadow-md backdrop-blur-md"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
 
                 {/* Header Image */}
                 <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-100 mb-6">

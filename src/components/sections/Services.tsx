@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Boxes, Globe2, Rocket, CheckCircle2, Sparkles, X, ShieldCheck, Cpu, Zap } from "lucide-react";
 import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { useEscape, useLockBody } from "@/lib/hooks";
 
 interface PillarItem {
   id: string;
@@ -90,6 +91,15 @@ const PILLARS_DATA: PillarItem[] = [
 export function Services() {
   const { openConsult } = useConsult();
   const [selectedService, setSelectedService] = useState<PillarItem | null>(null);
+  const [shake, setShake] = useState(false);
+
+  useLockBody(Boolean(selectedService));
+  useEscape(Boolean(selectedService), () => setSelectedService(null));
+
+  const triggerShake = () => {
+    setShake(true);
+    setTimeout(() => setShake(false), 450);
+  };
 
   return (
     <section id="layanan" className="py-20 sm:py-28 bg-white border-y border-slate-200/80">
@@ -218,30 +228,40 @@ export function Services() {
         {/* Morphing Modal Expansion */}
         <AnimatePresence>
           {selectedService && (
-            <div className="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-              {/* Backdrop */}
+            <div className="fixed inset-0 z-[90] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+              {/* Backdrop - Clicking outside triggers shake, does NOT close */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onClick={() => setSelectedService(null)}
-                className="fixed inset-0 bg-slate-950/70 backdrop-blur-md"
+                onClick={triggerShake}
+                className="fixed inset-0 bg-slate-950/70 backdrop-blur-md cursor-not-allowed"
               />
 
-              {/* Morphed Card Modal */}
+              {/* Morphed Card Modal with shake animation and internal scrolling */}
               <motion.div
                 layoutId={`service-card-${selectedService.id}`}
-                className="relative z-10 w-full max-w-3xl overflow-hidden rounded-[2.5rem] bg-white p-6 sm:p-10 shadow-2xl border border-slate-200 my-8"
+                animate={
+                  shake
+                    ? {
+                        x: [-12, 12, -8, 8, -4, 4, 0],
+                        transition: { duration: 0.45, ease: "easeInOut" },
+                      }
+                    : { x: 0 }
+                }
+                className="relative z-10 w-full max-w-3xl max-h-[85vh] overflow-y-auto custom-scrollbar rounded-[2.5rem] bg-white p-6 sm:p-10 shadow-2xl border border-slate-200 my-auto overscroll-contain"
               >
-                {/* Close Button */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedService(null)}
-                  aria-label="Tutup Detail"
-                  className="absolute top-6 right-6 grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
-                >
-                  <X className="h-5 w-5" />
-                </button>
+                {/* Close Button - Sticky at top right so it's always visible while scrolling */}
+                <div className="sticky top-0 z-30 flex justify-end -mt-2 -mr-2 pointer-events-none pb-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedService(null)}
+                    aria-label="Tutup Detail (Esc)"
+                    className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/95 hover:bg-slate-100 text-slate-700 transition-colors shadow-md backdrop-blur-md"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
 
                 {/* Header Info */}
                 <div className="flex items-center gap-4 mb-6">

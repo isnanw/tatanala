@@ -52,11 +52,18 @@ function ConsultModal({
   onClose: () => void;
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const [shake, setShake] = useState(false);
+
   useLockBody(open);
   useEscape(open, onClose);
   useEffect(() => {
     if (open) closeRef.current?.focus();
   }, [open]);
+
+  const triggerShake = () => {
+    setShake(true);
+    setTimeout(() => setShake(false), 450);
+  };
 
   return (
     <AnimatePresence>
@@ -67,20 +74,33 @@ function ConsultModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <div className="absolute inset-0 bg-[#111111]/40 backdrop-blur-xs" onClick={onClose} aria-hidden />
+          <div
+            className="absolute inset-0 bg-slate-950/70 backdrop-blur-md cursor-not-allowed"
+            onClick={triggerShake}
+            aria-hidden
+          />
           <motion.div
             role="dialog"
             aria-modal="true"
             aria-labelledby="consult-title"
-            className="relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-xl border border-[#EAEAEA] bg-white p-3 sm:p-4 shadow-[0_16px_40px_rgba(0,0,0,0.08)]"
+            className="relative max-h-[88vh] w-full max-w-4xl overflow-y-auto custom-scrollbar rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-2xl overscroll-contain"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={
+              shake
+                ? {
+                    x: [-12, 12, -8, 8, -4, 4, 0],
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: "easeInOut" },
+                  }
+                : { x: 0, opacity: 1, y: 0 }
+            }
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.2, ease: EASE_OUT }}
           >
             <div className="flex items-start justify-between gap-4 px-4 pt-3 pb-2 sm:px-5">
               <div>
-                <h2 id="consult-title" className="font-serif text-2xl font-normal text-[#111111]">
+                <h2 id="consult-title" className="font-sans text-2xl font-bold text-slate-900">
                   Konsultasikan masalah bisnis Anda
                 </h2>
                 <p className="mt-1 text-xs text-[#787774]">
