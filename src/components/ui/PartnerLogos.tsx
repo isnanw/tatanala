@@ -4,22 +4,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-const PARTNERS = [
-  { name: "Bank BRI", src: "/images/partners/bank-bri.png", width: 140, height: 40 },
-  { name: "Bank Indonesia", src: "/images/partners/bank-indonesia.png", width: 160, height: 40 },
-  { name: "BNI", src: "/images/partners/bank-bni.png", width: 110, height: 40 },
-  { name: "Bank Mandiri", src: "/images/partners/bank-mandiri.png", width: 130, height: 40 },
-  { name: "Bank BCA", src: "/images/partners/bank-bca.png", width: 115, height: 40 },
-  { name: "Telin Telkom Group", src: "/images/partners/telin.png", width: 115, height: 40 },
-  { name: "Universitas Gadjah Mada", src: "/images/partners/ugm.png", width: 155, height: 40 },
-  { name: "Recare Professional", src: "/images/partners/recare.png", width: 130, height: 40 },
+const CLIENTS = [
+  // { name: "Kabupaten Mimika", src: "/images/client/kabupaten-mimika.png", width: 80, height: 105 },
+  { name: "PT Alger Karya Pratama", src: "/images/client/pt-alger.png", width: 230, height: 35 },
+  { name: "Provitas", src: "/images/client/provitas.png", width: 100, height: 100 },
+  { name: "KBPII", src: "/images/client/kbpii.png", width: 120, height: 46 },
+  // { name: "Kabupaten Puncak", src: "/images/client/kabupaten-puncak.png", width: 75, height: 110 },
+  { name: "Recehku", src: "/images/client/recehku.png", width: 90, height: 90 },
+  { name: "PT TRIJAYA ABADI SOLUTION", src: "/images/client/tas.png", width: 110, height: 62 },
 ];
 
 export function PartnerLogos() {
   const [isPaused, setIsPaused] = useState(false);
 
-  // Quadruple array to guarantee zero gap on any screen size
-  const duplicated = [...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS];
+  // Repeat array to guarantee smooth seamless infinite loop on any screen size
+  const duplicated = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS];
 
   return (
     <div
@@ -38,24 +37,24 @@ export function PartnerLogos() {
         <motion.div
           animate={isPaused ? {} : { x: ["0%", "-50%"] }}
           transition={{
-            duration: 25,
+            duration: 28,
             ease: "linear",
             repeat: Infinity,
           }}
-          className="flex items-center gap-12 sm:gap-16 pr-12 sm:pr-16"
+          className="flex items-center gap-10 sm:gap-14 pr-10 sm:pr-14"
         >
-          {duplicated.map((partner, idx) => (
+          {duplicated.map((client, idx) => (
             <div
-              key={`${partner.name}-${idx}`}
-              className="flex items-center justify-center shrink-0 opacity-85 hover:opacity-100 transition-all duration-300 hover:scale-105 cursor-pointer"
-              title={partner.name}
+              key={`${client.name}-${idx}`}
+              className="flex items-center justify-center shrink-0 opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105 cursor-pointer"
+              title={client.name}
             >
               <Image
-                src={partner.src}
-                alt={partner.name}
-                width={partner.width}
-                height={partner.height}
-                className="h-7 sm:h-8 w-auto object-contain transition-all duration-300"
+                src={client.src}
+                alt={client.name}
+                width={client.width}
+                height={client.height}
+                className="h-8 sm:h-9 w-auto max-h-9 object-contain transition-all duration-300"
               />
             </div>
           ))}
@@ -64,3 +63,5 @@ export function PartnerLogos() {
     </div>
   );
 }
+
+export { PartnerLogos as ClientLogos };
