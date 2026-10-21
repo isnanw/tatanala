@@ -1,47 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Sparkles, ShieldCheck, HelpCircle } from "lucide-react";
+import { ArrowRight, Check, ShieldCheck, Lock, FileCode, Clock, Server, Database } from "lucide-react";
 import { useConsult } from "@/components/consult/ConsultProvider";
-
-const STARTER_FEATURES = [
-  "Sistem informasi kustom (3 modul inti operasional)",
-  "Inventaris gudang, kasir POS & alur approval",
-  "Dashboard realtime multi-cabang & rekap omzet",
-  "Hak akses multi-pengguna & audit log staf",
-  "Laporan harian otomatis ke WhatsApp owner",
-  "Website company profile siap tender (termasuk)",
-  "Pelatihan tim intensif & pendampingan 6 bulan",
-  "100% hak kepemilikan source code & database",
-];
 
 const TIERS = [
   {
     id: "fondasi",
     name: "Paket Fondasi Profil",
-    tagline: "Untuk usaha yang ingin tampil kredibel di mata klien & siap tembus tender.",
-    price: "Rp 4,9 jt",
-    suffix: "sekali bayar",
-    badge: "Siap Tender",
-    highlightFeature: "Website profil hingga 7 halaman + CMS mandiri + domain/hosting 1 tahun",
+    tagline: "Dirancang khusus bagi korporasi dan kontraktor yang memerlukan kredibilitas legal dan kelulusan audit tender.",
+    price: "Rp 4.900.000",
+    period: "Investasi Sekali Bayar (Tanpa Royalti)",
+    badge: "Siap Audit Tender",
+    popular: false,
+    deliverables: [
+      "Website profil perusahaan arsitektur modern (hingga 7 halaman resmi)",
+      "Kepatuhan struktur dokumen ISO, K3, SBU, & kelengkapan LPSE BUMN",
+      "Sistem CMS mandiri (akses pengelolaan teks & portofolio independen)",
+      "Domain corporate (.com / .co.id) & SSL Enkripsi 256-bit selama 1 tahun",
+      "Setup email resmi bisnis profesional (nama@perusahaananda.com)",
+      "Optimasi teknis SEO standar Google (indeksasi dalam 48 jam kerja)",
+      "Garansi pemeliharaan sistem & perbaikan bug selama 3 bulan",
+      "100% kepemilikan source code & arsip digital diserahkan penuh",
+    ],
   },
   {
     id: "operasional",
     name: "Paket Sistem Operasional",
-    tagline: "Solusi tuntas operasional: hilangkan 12 Excel & stop kebocoran stok gudang.",
-    price: "Rp 18 jt",
-    suffix: "mulai dari",
-    badge: "Paling Diminati",
-    highlightFeature: "Sistem kustom multi-cabang + laporan otomatis WA + training staf",
+    tagline: "Pemberantasan tuntas pembukuan manual, penghapusan 12 file Excel tercecer, dan penataan stok multi-cabang.",
+    price: "Rp 18.000.000",
+    period: "Mulai Dari (Sesuai Kompleksitas Alur)",
+    badge: "Paling Banyak Diimplementasikan",
+    popular: true,
+    deliverables: [
+      "Seluruh modul pada Paket Fondasi Profil (sudah termasuk)",
+      "Aplikasi ERP kustom berbasis cloud: modul gudang, POS kasir, & approval",
+      "Penyatuan mutasi multi-cabang secara realtime tanpa jeda rekonsiliasi",
+      "Fitur Executive Reporting otomatis langsung ke WhatsApp direksi (pukul 21:00)",
+      "Audit trail anti-manipulasi: log aktivitas staf tercatat permanen",
+      "Hak akses berjenjang (Owner, Manajer Operasional, Kasir, Staff Gudang)",
+      "Pelatihan intensif tim lapangan (SOP tertulis + video tutorial in-house)",
+      "Pendampingan operasional eksklusif & SLA responsif selama 6 bulan",
+      "Serah terima total basis data, skema database, dan repositori server",
+    ],
   },
   {
     id: "ekosistem",
-    name: "Paket Ekosistem Lengkap",
-    tagline: "Hulu-ke-hilir: sistem rapi di belakang, mesin omzet kencang di depan.",
-    price: "Rp 35 jt",
-    suffix: "mulai dari",
-    badge: "Full Scale",
-    highlightFeature: "Semua modul kustom + SEO Google #1 + Google/Meta Ads + AI Otomasi",
+    name: "Paket Ekosistem Terpadu",
+    tagline: "Transformasi total hulu ke hilir: sistem operasional rapi di internal, mesin akuisisi omzet agresif di pasar eksternal.",
+    price: "Rp 35.000.000",
+    period: "Mulai Dari (Solusi Skala Penuh)",
+    badge: "Kedaulatan Usaha Penuh",
+    popular: false,
+    deliverables: [
+      "Seluruh modul kustom Paket Sistem Operasional tanpa batas fitur",
+      "Pembangunan Portal Pelanggan B2B / Aplikasi Mobile PWA mandiri",
+      "Integrasi Payment Gateway resmi (Virtual Account perbankan, QRIS dinamis)",
+      "Setup kampanye akuisisi pasar (Google Search Ads & Meta Ads terarah)",
+      "Optimasi SEO otoritas tinggi untuk dominasi kata kunci komersial di Google",
+      "Arsitektur server Dedicated Cloud dengan jaminan SLA Uptime 99.8%",
+      "Inhouse dedicated technical account manager & audit sistem berkala",
+      "Perjanjian Kerahasiaan Informasi (NDA) legal bermaterai & garansi 12 bulan",
+    ],
+  },
+];
+
+const FORMAL_GUARANTEES = [
+  {
+    title: "Akad Kontrak & Legalitas Berbadan Hukum",
+    desc: "Setiap kesepakatan dilindungi kontrak formal bermaterai dengan klausul ruang lingkup pekerjaan, jadwal eksekusi tertulis, dan denda keterlambatan.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "100% Kedaulatan Data & Kode Sumber",
+    desc: "Hak cipta software dan basis data mutlak beralih ke perusahaan Anda tanpa klausul royalti tahunan yang membebani neraca keuangan Anda di kemudian hari.",
+    icon: Database,
+  },
+  {
+    title: "Garansi Teknis & Komitmen Uptime SLA",
+    desc: "Dukungan insinyur siaga untuk memastikan sistem beroperasi tanpa gangguan pada jam sibuk operasional transaksi bisnis Anda.",
+    icon: Clock,
   },
 ];
 
@@ -49,180 +87,138 @@ export function Pricing() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="pricing" className="py-20 sm:py-28 bg-[#F8FAFC]">
+    <section id="investasi" className="py-20 sm:py-28 bg-[#07101E] text-white border-y border-slate-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
-            >
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>Transparan &amp; Tanpa Biaya Siluman</span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
-            >
-              Investasi Terukur Sesuai Skala Bisnis
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="mt-3 text-base sm:text-lg text-slate-600 max-w-xl"
-            >
-              Tanpa biaya perpanjangan paksaan, tanpa vendor lock-in. Seluruh source code dan database sepenuhnya menjadi milik Anda.
-            </motion.p>
-          </div>
-
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <button
-              type="button"
-              onClick={() => openConsult("biaya-kustom")}
-              className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
-            >
-              <span>Butuh Rincian Penawaran Kustom?</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </motion.div>
-        </div>
-
-        {/* Pricing Layout: Featured Card on Left + 3 Stacked Cards on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Column: Featured "Paket Sistem Operasional" Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5 rounded-[2.25rem] border-2 border-blue-600/30 bg-white p-8 sm:p-10 shadow-[0_20px_50px_rgba(37,99,235,0.08)] flex flex-col justify-between relative overflow-hidden ring-1 ring-blue-500/15"
+            className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-400/30 px-4 py-1 text-xs font-semibold text-blue-400 mb-4"
           >
-            {/* Top Glow Ambient */}
-            <div className="absolute top-0 right-0 h-44 w-44 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
-
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-xs">
-                  <Sparkles className="h-3.5 w-3.5" /> Rekomendasi Utama
-                </span>
-                <span className="text-xs font-semibold text-slate-400">100% Hak Milik</span>
-              </div>
-
-              <h3 className="mt-5 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Paket Sistem Operasional
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Paling banyak dipilih UMKM &amp; distributor untuk menata stok, alur kasir, dan laporan keuangan multi-cabang.
-              </p>
-
-              {/* Price Banner */}
-              <div className="mt-6 flex items-baseline gap-2 pb-6 border-b border-slate-100">
-                <span className="text-4xl font-extrabold text-blue-600 font-sans tracking-tight">
-                  Rp 18 jt
-                </span>
-                <span className="text-xs text-slate-500 font-medium">mulai dari &bull; sekali bayar</span>
-              </div>
-
-              {/* Checklist */}
-              <ul className="mt-6 space-y-3.5">
-                {STARTER_FEATURES.map((feat) => (
-                  <li key={feat} className="flex items-start gap-3 text-xs sm:text-sm font-medium text-slate-700">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white mt-0.5">
-                      <Check className="h-3 w-3 stroke-[3]" />
-                    </span>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* CTA Button */}
-            <div className="mt-8 pt-6 border-t border-slate-100">
-              <motion.button
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.98 }}
-                type="button"
-                onClick={() => openConsult("operasional")}
-                className="w-full flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-sm font-bold shadow-lg shadow-blue-500/25 transition-all"
-              >
-                <span>Tata Operasional Bisnis Saya</span>
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
-            </div>
+            <ShieldCheck className="h-3.5 w-3.5" />
+            <span>Struktur Investasi Transparan &amp; Mengikat</span>
           </motion.div>
 
-          {/* Right Column: 3 Stacked Tier Cards */}
-          <div className="lg:col-span-7 flex flex-col justify-between gap-5">
-            {TIERS.map((tier, idx) => (
-              <motion.div
-                key={tier.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                whileHover={{ y: -3 }}
-                className="group rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 hover:border-blue-300 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 cursor-pointer"
-                onClick={() => openConsult(tier.id)}
-              >
-                <div className="flex-1">
-                  <div className="flex items-center gap-3">
-                    <h4 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                      {tier.name}
-                    </h4>
-                    <span className="rounded-full bg-blue-50 border border-blue-100 px-3 py-0.5 text-[11px] font-bold text-blue-700">
-                      {tier.badge}
-                    </span>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white"
+          >
+            Pilihan Paket Investasi Sesuai Kebutuhan Strategis Usaha
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto"
+          >
+            Tanpa biaya siluman. Tanpa keterikatan biaya langganan software vendor. Satu kali investasi untuk kepemilikan aset digital permanen.
+          </motion.p>
+        </div>
+
+        {/* 3 Pricing Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 items-stretch">
+          {TIERS.map((tier, index) => (
+            <motion.div
+              key={tier.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.12 }}
+              className={`rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                tier.popular
+                  ? "bg-[#0C1A33] border-2 border-blue-500 shadow-2xl shadow-blue-900/50 scale-100 lg:-translate-y-2"
+                  : "bg-[#091528] border border-slate-800 shadow-lg hover:border-slate-700"
+              }`}
+            >
+              {tier.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[11px] font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  {tier.badge}
+                </div>
+              )}
+
+              <div>
+                {!tier.popular && (
+                  <span className="inline-block px-3 py-0.5 rounded-full bg-slate-800 text-[11px] font-bold text-slate-300 mb-3">
+                    {tier.badge}
+                  </span>
+                )}
+
+                <h3 className="text-xl font-bold text-white mt-1">
+                  {tier.name}
+                </h3>
+                <p className="mt-2 text-xs text-slate-400 leading-relaxed min-h-[40px]">
+                  {tier.tagline}
+                </p>
+
+                {/* Price Display */}
+                <div className="mt-6 pt-6 border-t border-slate-800">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    {tier.price}
                   </div>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed max-w-md">
-                    {tier.tagline}
-                  </p>
-                  <p className="mt-3 text-xs text-slate-500 flex items-center gap-1.5 font-medium">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                    {tier.highlightFeature}
-                  </p>
+                  <div className="text-xs text-blue-400 font-medium mt-1">
+                    {tier.period}
+                  </div>
                 </div>
 
-                {/* Price & Action */}
-                <div className="sm:text-right shrink-0">
-                  <div className="flex items-baseline sm:justify-end gap-1.5">
-                    <span className="text-3xl font-extrabold text-slate-900 font-sans tracking-tight">
-                      {tier.price}
-                    </span>
-                    <span className="text-xs text-slate-500 font-medium">
-                      {tier.suffix}
-                    </span>
-                  </div>
-                  <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 group-hover:text-blue-700">
-                    <span>Pilih Paket Ini</span>
-                    <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                {/* Deliverables List */}
+                <div className="mt-6 pt-6 border-t border-slate-800/80 space-y-3">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
+                    Spesifikasi Lingkup Kerja Resmi:
+                  </p>
+                  {tier.deliverables.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                      <Check className="h-4 w-4 text-blue-400 shrink-0 mt-0.5" />
+                      <span className="leading-snug">{item}</span>
+                    </div>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-
-            {/* Guarantee Note Banner */}
-            <div className="rounded-2xl bg-white border border-slate-200/80 p-4 flex items-center justify-between text-xs text-slate-600">
-              <div className="flex items-center gap-2.5">
-                <ShieldCheck className="h-5 w-5 text-emerald-600 shrink-0" />
-                <span>
-                  <strong>Jaminan Garansi:</strong> Gratis perbaikan bug dan pendampingan implementasi hingga sistem berjalan lancar di tangan tim Anda.
-                </span>
               </div>
-            </div>
-          </div>
+
+              {/* Action Button */}
+              <div className="mt-8 pt-6 border-t border-slate-800">
+                <button
+                  type="button"
+                  onClick={() => openConsult(tier.id)}
+                  className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 ${
+                    tier.popular
+                      ? "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30"
+                      : "bg-slate-800 hover:bg-slate-700 text-white border border-slate-700"
+                  }`}
+                >
+                  <span>Pilih Paket &amp; Minta Draf Kontrak</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* 3 Bottom Formal Guarantee Boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-slate-800">
+          {FORMAL_GUARANTEES.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="rounded-2xl bg-[#091528] border border-slate-800 p-6 flex items-start gap-4">
+                <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1 text-xs text-slate-400 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

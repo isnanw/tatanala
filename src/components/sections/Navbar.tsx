@@ -1,19 +1,20 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { ArrowRight, Menu, MessageSquare, X } from "lucide-react";
+import { ArrowRight, Menu, MessageSquare, ShieldCheck, X } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { label: "Solusi", href: "#solusi" },
+  { label: "Beranda", href: "#top" },
   { label: "Layanan", href: "#layanan" },
-  { label: "Portofolio", href: "#portofolio" },
+  { label: "Keunggulan", href: "#keunggulan" },
   { label: "Alur Kerja", href: "#alur-kerja" },
-  { label: "Biaya", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Portofolio", href: "#portofolio" },
+  { label: "Investasi", href: "#pricing" },
+  { label: "Kontak", href: "#kontak" },
 ];
 
 export function Navbar() {
@@ -21,7 +22,7 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("Solusi");
+  const [activeItem, setActiveItem] = useState("Beranda");
 
   useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 20));
 
@@ -34,17 +35,17 @@ export function Navbar() {
         className={cn(
           "pointer-events-auto mx-auto flex items-center justify-between max-w-6xl rounded-full border transition-all duration-300 px-4 sm:px-6",
           scrolled
-            ? "h-16 bg-white/90 backdrop-blur-xl border-slate-200/90 shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
-            : "h-16 sm:h-18 bg-white/75 backdrop-blur-md border-slate-200/60 shadow-[0_4px_20px_rgba(15,23,42,0.03)]",
+            ? "h-16 bg-white/95 backdrop-blur-xl border-slate-200/90 shadow-[0_12px_36px_rgba(15,23,42,0.08)]"
+            : "h-16 sm:h-18 bg-white/85 backdrop-blur-md border-slate-200/70 shadow-[0_4px_24px_rgba(15,23,42,0.04)]",
         )}
       >
-        {/* Logo */}
-        <a href="#top" aria-label="Tatanala Kembali ke Atas" className="outline-none flex items-center">
+        {/* Brand Logo */}
+        <a href="#top" aria-label="Tatanala Beranda" className="outline-none flex items-center">
           <Logo />
         </a>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden items-center gap-1 md:flex">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV_ITEMS.map((item) => {
             const isActive = activeItem === item.label;
             return (
@@ -53,9 +54,9 @@ export function Navbar() {
                 href={item.href}
                 onClick={() => setActiveItem(item.label)}
                 className={cn(
-                  "relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-200",
+                  "relative rounded-full px-3.5 py-2 text-xs font-semibold tracking-wide transition-all duration-200",
                   isActive
-                    ? "bg-slate-100 text-slate-900 font-semibold"
+                    ? "bg-slate-100 text-slate-900 font-bold"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
                 )}
               >
@@ -71,19 +72,19 @@ export function Navbar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="button"
-            onClick={() => openConsult("bingung")}
-            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 text-xs font-semibold shadow-md shadow-blue-500/20 transition-all duration-200"
+            onClick={() => openConsult("konsultasi-resmi")}
+            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 text-xs font-bold tracking-wide shadow-md shadow-blue-500/25 transition-all duration-200"
           >
-            <MessageSquare className="h-3.5 w-3.5" />
-            <span>Konsultasi Gratis</span>
+            <ShieldCheck className="h-3.5 w-3.5" />
+            <span>Konsultasi Teknis Resmi</span>
           </motion.button>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger Toggle */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Buka Menu Navigasi"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 md:hidden hover:bg-slate-50 transition-colors"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 lg:hidden hover:bg-slate-50 transition-colors shadow-2xs"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -98,9 +99,9 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto mt-2 mx-auto max-w-sm rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl md:hidden"
+            className="pointer-events-auto mt-2 mx-auto max-w-sm rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl lg:hidden"
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               {NAV_ITEMS.map((item) => (
                 <a
                   key={item.label}
@@ -109,22 +110,22 @@ export function Navbar() {
                     setActiveItem(item.label);
                     setMobileOpen(false);
                   }}
-                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  className="rounded-xl px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-2 border-t border-slate-100">
+              <div className="pt-3 mt-1 border-t border-slate-100">
                 <button
                   type="button"
                   onClick={() => {
                     setMobileOpen(false);
-                    openConsult("bingung");
+                    openConsult("konsultasi-resmi");
                   }}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white shadow-md shadow-blue-500/25 active:scale-95"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-xs font-bold text-white shadow-md shadow-blue-500/25 active:scale-95"
                 >
                   <MessageSquare className="h-4 w-4" />
-                  <span>Konsultasi Masalah Bisnis</span>
+                  <span>Jadwalkan Konsultasi Resmi</span>
                 </button>
               </div>
             </div>

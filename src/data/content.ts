@@ -375,34 +375,34 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const FAQS: FaqItem[] = [
   {
-    question: "Apa bedanya Tatanala dengan jasa pembuatan website biasa?",
+    question: "Apakah status kepemilikan source code dan basis data mutlak menjadi hak milik perusahaan kami?",
     answer:
-      "Kami memulai dari masalah bisnis, bukan dari template. Website hanyalah satu bagian  -  kami juga menata sistem operasional di balik layar (stok, kasir, approval) dan menyalakan pemasaran terukur agar semuanya terhubung dalam satu ekosistem.",
+      "Mutlak 100% milik Anda. Setelah fase serah terima dan pelunasan selesai, seluruh akses repositori Git, skema database, kredensial server cloud, dan dokumentasi arsitektur diserahkan sepenuhnya ke entitas hukum bisnis Anda. Tidak ada klausul sewa lisensi tahunan tersembunyi (vendor lock-in). Anda bebas mengelola atau memodifikasi sistem ini secara mandiri di kemudian hari.",
   },
   {
-    question: "Berapa lama proses pembuatan sistem informasi kustom?",
+    question: "Bagaimana Tatanala menjamin kerahasiaan data omzet dan strategi bisnis kami?",
     answer:
-      "Website company profile umumnya selesai 2-3 minggu. Sistem informasi kustom berkisar 6-12 minggu tergantung jumlah modul, dan dirilis bertahap sehingga sebagian fitur sudah bisa dipakai sebelum proyek rampung.",
+      "Setiap perikatan kerja dilindungi secara hukum oleh Perjanjian Kerahasiaan Informasi (Non-Disclosure Agreement / NDA) resmi bermaterai sebelum sesi diagnosa mendalam atau penulisan kode dimulai. Data transaksi, rahasia dagang, daftar vendor, dan margin keuntungan klien dienkripsi dengan standar AES-256 dan dilindungi dari kebocoran ke pihak mana pun.",
   },
   {
-    question: "Apakah ada biaya bulanan atau maintenance tersembunyi?",
+    question: "Mengapa kami harus membangun sistem kustom, bukan memakai aplikasi SaaS berlangganan bulanan?",
     answer:
-      "Tidak. Seluruh komponen biaya  -  hosting, domain, lisensi, dan pendampingan  -  dijabarkan di proposal sebelum kontrak ditandatangani. Setelah masa pendampingan, perpanjangan bersifat opsional.",
+      "Aplikasi berlangganan generik memaksa alur kerja unik Anda beradaptasi pada batasan fitur mereka, memungut biaya per pengguna yang kian membengkak saat cabang bertambah, dan data Anda tersandera di server pihak ketiga. Bersama Tatanala, sistem direkayasa presisi mengikuti SOP internal Anda, tanpa batas jumlah kasir atau cabang, dan efisiensi operasional tercapai permanen.",
   },
   {
-    question: "Apakah data dan source code menjadi milik kami?",
+    question: "Apakah sistem profil yang dibangun Tatanala memenuhi syarat verifikasi tender BUMN dan LPSE?",
     answer:
-      "Ya. Anda memegang hak penuh atas data, domain, dan source code. Kami menyerahkan akses repositori, dokumentasi teknis, serta backup database secara berkala.",
+      "Tentu. Kami menerapkan standar kepatuhan format profil tender korporasi: mencakup struktur tata kelola direksi, kejelasan legalitas (K3, SBU, ISO), katalog portofolio terverifikasi, hingga kecepatan akses di bawah 1.8 detik yang memuaskan kriteria evaluasi verifikator tender.",
   },
   {
-    question: "Bisakah sistem terhubung dengan WhatsApp, marketplace, atau aplikasi akuntansi?",
+    question: "Bagaimana jika staf kasir atau operator gudang kami kesulitan menggunakan sistem?",
     answer:
-      "Bisa. Kami terbiasa mengintegrasikan WhatsApp API, payment gateway, marketplace, dan software akuntansi populer melalui API maupun otomasi terjadwal.",
+      "Kami menyelenggarakan pelatihan langsung (onsite/daring) berstruktur SOP tertulis dan video panduan operasional. Kami mendampingi tim lapangan Anda selama 6 bulan penuh hingga sistem benar-benar dioperasikan secara disiplin tanpa kesalahan input nota.",
   },
   {
-    question: "Usaha saya masih kecil, apakah cocok bekerja sama?",
+    question: "Bagaimana jaminan garansi jika terjadi kendala teknis atau bug pada sistem?",
     answer:
-      "Sangat cocok. Banyak klien kami UMKM yang memulai dari Paket Fondasi Profil, lalu menambah modul sistem seiring pertumbuhan. Arsitektur kami dirancang agar bisa berkembang tanpa membangun ulang.",
+      "Seluruh paket dilengkapi klausul Garansi Teknis Resmi dan komitmen SLA (Service Level Agreement). Setiap kendala kritis yang mengganggu jalannya transaksi kasir atau mutasi inventaris ditangani oleh tim insinyur siaga dengan waktu respon maksimal 1-2 jam kerja.",
   },
 ];
 
