@@ -19,9 +19,9 @@ export function Faq() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
+            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-blue-700 mb-4"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-4 w-4" />
             <span>Tanya Jawab &bull; Transparansi Penuh</span>
           </motion.div>
 
@@ -39,9 +39,9 @@ export function Faq() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-base sm:text-lg text-slate-600"
+            className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed"
           >
-            Jawaban lugas seputar kepemilikan source code, waktu pengerjaan, dan skema kerja sama tanpa jebakan biaya tersembunyi.
+            Jawaban lugas seputar proses pembuatan, waktu pengerjaan, dan skema kerja sama tanpa jebakan biaya tersembunyi.
           </motion.p>
         </div>
 
@@ -87,7 +87,7 @@ export function Faq() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
+                      <div className="px-6 pb-6 pt-2 text-base text-slate-700 leading-relaxed border-t border-slate-100">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -99,17 +99,17 @@ export function Faq() {
         </div>
 
         {/* Still have questions banner */}
-        <div className="mt-12 text-center bg-blue-50/60 rounded-3xl border border-blue-200/70 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 text-center bg-blue-50/60 rounded-3xl border border-blue-200/70 p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
-            <h4 className="text-sm font-bold text-slate-900">Punya pertanyaan spesifik terkait bisnis Anda?</h4>
-            <p className="text-xs text-slate-500 mt-0.5">Diskusikan langsung dengan arsitek sistem kami via WhatsApp.</p>
+            <h4 className="text-base font-bold text-slate-900">Punya pertanyaan spesifik terkait bisnis Anda?</h4>
+            <p className="text-sm text-slate-600 mt-1">Diskusikan langsung dengan tim analis sistem kami via WhatsApp.</p>
           </div>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="button"
             onClick={() => openConsult("faq-chat")}
-            className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 text-xs font-bold shrink-0 shadow-sm shadow-blue-500/25"
+            className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 text-sm font-bold shrink-0 shadow-md shadow-blue-500/25"
           >
             Tanya via WhatsApp
           </motion.button>

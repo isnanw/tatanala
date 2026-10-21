@@ -16,8 +16,8 @@ const LEADERS = [
   {
     name: "Sarah Amanda, S.Kom., CISSP",
     role: "Head of Information Security",
-    credential: "Lead ISO 27001 Auditor & SecOps",
-    responsibility: "Memastikan kepatuhan enkripsi AES-256 data korporasi, kontrol akses bertingkat, dan audit log anti-bocor.",
+    credential: "Cybersecurity & SecOps Specialist",
+    responsibility: "Memastikan enkripsi AES-256 data aplikasi, kontrol akses bertingkat, dan audit log anti-bocor.",
     image: "/images/avatar-sarah.jpg",
   },
   {
@@ -102,7 +102,7 @@ export function Leadership() {
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-[11px] font-semibold text-white tracking-wide">
+                  <span className="text-xs sm:text-[13px] font-semibold text-white tracking-wide">
                     {leader.credential}
                   </span>
                 </div>
@@ -111,13 +111,13 @@ export function Leadership() {
               {/* Leader Meta */}
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="inline-block px-2.5 py-0.5 rounded-md bg-blue-50 text-[11px] font-bold text-blue-700 tracking-tight uppercase mb-2">
+                  <span className="inline-block px-3 py-1 rounded-md bg-blue-50 text-xs font-bold text-blue-700 tracking-tight uppercase mb-2">
                     {leader.role}
                   </span>
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                     {leader.name}
                   </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
                     {leader.responsibility}
                   </p>
                 </div>
@@ -134,10 +134,10 @@ export function Leadership() {
                 <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 tracking-tight">
                   {metric.value}
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-slate-900 mt-1">
+                <div className="text-sm sm:text-base font-bold text-slate-900 mt-1">
                   {metric.label}
                 </div>
-                <div className="text-xs text-slate-500 mt-0.5">
+                <div className="text-xs sm:text-sm text-slate-600 mt-0.5 font-normal">
                   {metric.desc}
                 </div>
               </div>
@@ -145,16 +145,16 @@ export function Leadership() {
           </div>
 
           <div className="mt-8 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <div className="flex items-center gap-3.5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
                 <FileCode className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-slate-900">
-                  Transparansi Kontrak &amp; Serah Terima Total
+                <p className="text-sm sm:text-base font-bold text-slate-900">
+                  Transparansi Kontrak &amp; Serah Terima Menyeluruh
                 </p>
-                <p className="text-xs text-slate-500">
-                  Seluruh repository Git, kredensial server, dan skema database diserahkan penuh tanpa keterikatan lisensi berulang.
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Seluruh dokumentasi alur, kredensial akses akun admin, dan panduan operasional diserahkan lengkap untuk menjamin kemandirian tim Anda.
                 </p>
               </div>
             </div>
@@ -162,9 +162,9 @@ export function Leadership() {
             <button
               type="button"
               onClick={() => openConsult("rekayasa-arsitektur")}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-md shadow-blue-500/20 shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-500/20 shrink-0 cursor-pointer"
             >
-              <span>Jadwalkan Telaah Arsitektur</span>
+              <span>Jadwalkan Diskusi Kebutuhan</span>
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>

@@ -1,54 +1,59 @@
-import { BentoSolutions } from "@/components/sections/BentoSolutions";
+import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { ExecutiveTestimonial } from "@/components/sections/ExecutiveTestimonial";
 import { Faq } from "@/components/sections/Faq";
 import { FieldDocs } from "@/components/sections/FieldDocs";
 import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Leadership } from "@/components/sections/Leadership";
-import { Marquee } from "@/components/sections/Marquee";
-import { MobileShowcase } from "@/components/sections/MobileShowcase";
+import { NationalVision } from "@/components/sections/NationalVision";
 import { Navbar } from "@/components/sections/Navbar";
-import { Pricing } from "@/components/sections/Pricing";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { SystemFlow } from "@/components/sections/SystemFlow";
-import { VideoTestimonials } from "@/components/sections/VideoTestimonials";
+import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
+import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowcase";
+import { ThreePillarSolutions } from "@/components/sections/ThreePillarSolutions";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main id="main">
-        {/* 1. Hero with 6-card showcase grid */}
+        {/* 1. Split Hero Section with integrated Client Logos Bar */}
         <Hero />
-        {/* 2. Marquee partners & tech stack */}
-        <Marquee />
-        {/* 3. Leadership & Legal Integrity (4 Arch-top Portrait Cards) */}
-        <Leadership />
-        {/* 4. Bento Solutions Grid */}
-        <BentoSolutions />
-        {/* 5. System Flowchart Architecture (Diagnosa -> 3 Pillars -> WhatsApp) */}
-        <SystemFlow />
-        {/* 6. Case Studies with Morphing Modals */}
-        <CaseStudies />
-        {/* 7. Video Testimonials (3 Vertical Smartphone Cards) */}
-        <VideoTestimonials />
-        {/* 8. Formal Pricing Section (Deep Navy #07101E Theme) */}
-        <Pricing />
-        {/* 9. 5-Step Process Timeline */}
-        <ProcessTimeline />
-        {/* 10. Field Activities & Client Training Documentation Gallery */}
+
+        {/* 2. 3-Pillar Solution Cards (Web, ERP, Mobile Realtime) */}
+        <ThreePillarSolutions />
+
+        {/* 4. Kami Pahami Proses Bisnis Anda Sebelum Merancang Software */}
+        <BusinessProcessGuarantee />
+
+        {/* 5. Solusi Nyata Dari Berbagai Proyek (Tabbed Showcase) */}
+        <ProjectTabbedShowcase />
+
+        {/* 6. Membangun Kemandirian Digital Nasional */}
+        <NationalVision />
+
+        {/* 7. Executive Centered Testimonial with Concentric Rings */}
+        <ExecutiveTestimonial />
+
+        {/* 8. Field Activities & Engineering Quality Gallery */}
         <FieldDocs />
-        {/* 11. Mobile & Multi-Device Accessibility Showcase */}
-        <MobileShowcase />
-        {/* 12. Formal Corporate FAQ */}
+
+        {/* 9. Leadership & Legal Integrity */}
+        <Leadership />
+
+        {/* 10. Formal Corporate FAQ Accordion */}
         <Faq />
-        {/* 13. Official Inquiry Form & Registered Office Address */}
+
+        {/* 11. Pre-Footer Support Banner ("Masih Bertahan dengan Alur Kerja Manual yang Rentan?") */}
+        <PreFooterSupportBanner />
+
+        {/* 12. Official Inquiry Form & Registered Office Address */}
         <ContactSection />
       </main>
-      {/* 14. Formal Corporate Footer */}
+
+      {/* 13. Comprehensive Multi-Column Enterprise Sitemap Footer */}
       <Footer />
     </>
   );
 }
-

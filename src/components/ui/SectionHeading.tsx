@@ -23,8 +23,8 @@ export function SectionHeading({
   return (
     <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full bg-[#EDF3EC] px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.05em] text-[#346538]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#346538]" />
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#EDF3EC] px-3.5 py-1.5 text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-[#2d5830]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#2d5830]" />
           {eyebrow}
         </span>
       )}

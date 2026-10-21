@@ -31,8 +31,8 @@ export function Logo({ className, tone = "light", showText = true }: LogoProps) 
           </span>
           <span
             className={cn(
-              "text-[9px] font-semibold uppercase tracking-widest mt-0.5",
-              isDark ? "text-slate-400" : "text-slate-400",
+              "text-[10px] font-bold uppercase tracking-wider mt-0.5",
+              isDark ? "text-slate-400" : "text-slate-500",
             )}
           >
             IT Solutions

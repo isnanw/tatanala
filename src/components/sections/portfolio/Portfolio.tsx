@@ -74,13 +74,13 @@ export function Portfolio() {
                             : "border-[#EAEAEA] bg-white text-[#2F3437] hover:border-[#CCCCCC] hover:bg-[#F9F9F8]",
                         )}
                       >
-                        <span className={cn("font-mono text-[10px] font-semibold uppercase tracking-wider", active ? "text-[#EAEAEA]" : "text-[#787774]")}>
+                        <span className={cn("font-mono text-xs font-semibold uppercase tracking-wider", active ? "text-blue-300" : "text-[#787774]")}>
                           {c.industry}
                         </span>
-                        <p className={cn("mt-1 font-serif text-base font-normal leading-snug", active ? "text-white" : "text-[#111111]")}>
+                        <p className={cn("mt-1.5 text-base sm:text-lg font-bold leading-snug", active ? "text-white" : "text-[#111111]")}>
                           {c.title}
                         </p>
-                        <p className={cn("mt-1 text-xs", active ? "text-[#A8A8A8]" : "text-[#787774]")}>
+                        <p className={cn("mt-1 text-xs sm:text-[13px] font-medium", active ? "text-slate-300" : "text-slate-600")}>
                           {c.client}
                         </p>
                       </button>
@@ -99,7 +99,7 @@ export function Portfolio() {
                 {/* Inner Core */}
                 <div className="rounded-[calc(2rem-0.625rem)] border border-black/[0.06] bg-white p-5 sm:p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-[#EAEAEA] pb-4">
-                    <p className="max-w-md text-xs sm:text-sm text-[#787774] leading-relaxed">{cs.summary}</p>
+                    <p className="max-w-md text-sm sm:text-base text-slate-700 leading-relaxed">{cs.summary}</p>
                     <div role="tablist" aria-label="Tampilan sebelum atau sesudah" className="inline-flex shrink-0 rounded-full border border-[#EAEAEA] bg-[#F9F9F8] p-1">
                       {(["before", "after"] as View[]).map((v) => (
                         <button
@@ -108,12 +108,12 @@ export function Portfolio() {
                           aria-selected={view === v}
                           onClick={() => setView(v)}
                           className={cn(
-                            "rounded-full px-3.5 py-1 font-mono text-xs font-medium uppercase transition-colors",
+                            "rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold uppercase transition-colors cursor-pointer",
                             view === v
                               ? v === "after"
                                 ? "bg-[#111111] text-white"
                                 : "bg-white text-[#9F2F2D] border border-[#EAEAEA] shadow-xs"
-                              : "text-[#787774]",
+                              : "text-slate-600 hover:text-slate-900",
                           )}
                         >
                           {v === "before" ? "Sebelum" : "Sesudah"}
@@ -148,23 +148,23 @@ export function Portfolio() {
 
                   {/* Metrics & Checklist */}
                   <div className="mt-5 border-t border-[#EAEAEA] pt-5 grid gap-5 md:grid-cols-[1fr_auto]">
-                    <ul className="flex flex-col space-y-2">
+                    <ul className="flex flex-col space-y-2.5">
                       {(view === "before" ? cs.before : cs.after).map((p) => (
-                        <li key={p} className="flex gap-2 text-xs text-[#2F3437]">
+                        <li key={p} className="flex gap-2.5 text-sm sm:text-base text-slate-800 font-medium">
                           {view === "before" ? (
-                            <XCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#9F2F2D]" aria-hidden />
+                            <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#9F2F2D]" aria-hidden />
                           ) : (
-                            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#346538]" aria-hidden />
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#346538]" aria-hidden />
                           )}
                           <span>{p}</span>
                         </li>
                       ))}
                     </ul>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2.5">
                       {cs.metrics.map((m) => (
-                        <div key={m.label} className="rounded-lg border border-[#EAEAEA] bg-[#F9F9F8] px-3.5 py-2 text-center">
-                          <p className="font-mono text-base font-semibold text-[#111111]">{m.value}</p>
-                          <p className="font-mono text-[10px] text-[#787774] uppercase">{m.label}</p>
+                        <div key={m.label} className="rounded-xl border border-[#EAEAEA] bg-[#F9F9F8] px-4 py-2.5 text-center">
+                          <p className="font-mono text-base sm:text-lg font-bold text-slate-900">{m.value}</p>
+                          <p className="font-mono text-xs font-semibold text-slate-500 uppercase">{m.label}</p>
                         </div>
                       ))}
                     </div>

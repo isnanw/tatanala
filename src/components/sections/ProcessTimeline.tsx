@@ -15,7 +15,7 @@ const STEPS = [
     step: "02",
     title: "Penyusunan Kontrak Kerja & Kesepakatan NDA",
     desc: "Penetapan jadwal rilis mingguan (milestone), jaminan garansi hukum, dan penandatanganan Perjanjian Kerahasiaan Data bermaterai sebelum kode pertama ditulis.",
-    output: "Perjanjian Kerja Sama Resmi Berbadan Hukum",
+    output: "Dokumen Kesepakatan Kontrak Kerja & Perjanjian NDA",
   },
   {
     step: "03",
@@ -94,19 +94,19 @@ export function ProcessTimeline() {
                   <div className="h-10 w-10 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-sm shadow-md shadow-blue-500/20 mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 leading-snug">
+                  <h3 className="text-base font-bold text-slate-900 leading-snug">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 block mb-0.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-0.5">
                     Keluaran Fase:
                   </span>
-                  <span className="text-[11px] font-medium text-slate-800">
+                  <span className="text-xs sm:text-[13px] font-semibold text-slate-800">
                     {step.output}
                   </span>
                 </div>
@@ -120,7 +120,7 @@ export function ProcessTimeline() {
           <button
             type="button"
             onClick={() => openConsult("timeline-audit")}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-md shadow-blue-600/20"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-600/20"
           >
             <span>Mulai Fase 1: Diagnosa Sistem Tanpa Biaya</span>
             <ArrowRight className="h-4 w-4" />

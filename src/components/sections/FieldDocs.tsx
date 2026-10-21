@@ -90,18 +90,18 @@ export function FieldDocs() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-semibold border border-white/20">
+                  <span className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs sm:text-sm font-semibold border border-white/20">
                     {item.tag}
                   </span>
                 </div>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>
@@ -113,13 +113,13 @@ export function FieldDocs() {
         {/* Onsite Audit Callout Card */}
         <div className="rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-500/40 text-xs font-bold uppercase tracking-wider mb-3">
+            <span className="inline-block px-3.5 py-1.5 rounded-full bg-blue-500/40 text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">
               Layanan Audit Lapangan Eksklusif
             </span>
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-2xl sm:text-3xl font-bold">
               Ingin Tim Insinyur Kami Meninjau Langsung Kantor / Gudang Anda?
             </h3>
-            <p className="mt-2 text-xs sm:text-sm text-blue-100 leading-relaxed">
+            <p className="mt-2 text-sm sm:text-base text-blue-100 leading-relaxed">
               Kami melayani kunjungan onsite untuk inspeksi infrastruktur fisik, pemetaan alur operasional, dan wawancara kebutuhan sistem langsung dengan penanggung jawab operasional Anda.
             </p>
           </div>
@@ -127,7 +127,7 @@ export function FieldDocs() {
           <button
             type="button"
             onClick={() => openConsult("audit-onsite")}
-            className="px-6 py-3.5 rounded-xl bg-white text-blue-700 hover:bg-blue-50 font-extrabold text-xs shrink-0 transition-all shadow-lg shadow-black/10"
+            className="px-7 py-4 rounded-xl bg-white text-blue-700 hover:bg-blue-50 font-extrabold text-sm sm:text-base shrink-0 transition-all shadow-lg shadow-black/10 cursor-pointer"
           >
             Ajukan Jadwal Kunjungan Onsite
           </button>

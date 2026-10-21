@@ -101,15 +101,15 @@ function OldWebsite() {
           <div className="grid aspect-square place-items-center border border-dashed border-slate-400 bg-white text-slate-400">
             <ImageOff className="h-6 w-6" />
           </div>
-          <div className="space-y-1.5 text-[10px] leading-snug">
+          <div className="space-y-1.5 text-xs leading-snug">
             <p>Kami adalah perusahaan kontraktor yang bergerak di bidang...</p>
-            <p className="text-[9px] text-slate-400">Last update: 2016</p>
-            <p className="inline-block bg-yellow-200 px-1 text-[9px]">★ Pengunjung ke-000412 ★</p>
+            <p className="text-[11px] text-slate-500">Last update: 2016</p>
+            <p className="inline-block bg-yellow-200 px-1 text-[11px]">★ Pengunjung ke-000412 ★</p>
           </div>
         </div>
       </div>
-      <div className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-lg bg-rose-600 px-2.5 py-1.5 text-[10px] font-semibold text-white ">
-        <AlertTriangle className="h-3 w-3" /> Tidak aman • Tidak responsif
+      <div className="absolute right-4 bottom-4 flex items-center gap-1.5 rounded-lg bg-rose-600 px-3 py-1.5 text-xs font-semibold text-white">
+        <AlertTriangle className="h-3.5 w-3.5" /> Tidak aman • Tidak responsif
       </div>
     </Chrome>
   );
@@ -119,24 +119,24 @@ function LostInSearch() {
   return (
     <Chrome url="google.com/search?q=dokter+gigi+terdekat" dark>
       <div className="h-full bg-white p-4">
-        <div className="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1.5 text-[11px] text-slate-500">
+        <div className="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-600">
           <Search className="h-3.5 w-3.5" /> dokter gigi terdekat
         </div>
         <div className="mt-3 space-y-2.5">
           {["Klinik Gigi Pesaing A", "Klinik Pesaing B", "Direktori Klinik Kota", "Klinik Pesaing C"].map((t) => (
             <div key={t}>
-              <p className="text-[11px] font-medium text-blue-700">{t}</p>
+              <p className="text-xs font-medium text-blue-700">{t}</p>
               <div className="mt-1 h-1.5 w-4/5 rounded bg-slate-100" />
             </div>
           ))}
         </div>
-        <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-slate-400">
+        <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-500">
           <span>1</span>
           <span>2</span>
-          <span className="rounded bg-rose-100 px-1.5 font-semibold text-rose-600">3 ← klinik Anda</span>
+          <span className="rounded bg-rose-100 px-2 py-0.5 font-semibold text-rose-600">3 ← klinik Anda</span>
         </div>
       </div>
-      <div className="absolute right-4 bottom-4 rounded-lg bg-white px-2.5 py-1.5 text-[10px] text-slate-500 ">
+      <div className="absolute right-4 bottom-4 rounded-lg bg-white px-3 py-1.5 text-xs text-slate-600 shadow-sm">
         Boost post: 4.120 tayang • <b className="text-rose-600">0 booking</b>
       </div>
     </Chrome>
@@ -149,7 +149,7 @@ function CleanDashboard() {
   const bars = [30, 45, 40, 62, 55, 78, 70, 90];
   return (
     <Chrome url="app.sumberpangan.id/dashboard">
-      <div className="flex h-full text-[10px]">
+      <div className="flex h-full text-xs">
         <aside className="hidden w-24 flex-col gap-2 bg-emerald-950 p-3 sm:flex">
           <span className="mb-2 h-3 w-3 rounded bg-amber-400" />
           {["Dashboard", "Stok", "Penjualan", "Cabang", "Laporan"].map((m, i) => (
@@ -165,8 +165,8 @@ function CleanDashboard() {
               ["Selisih Stok", "0,6%", "-92%"],
               ["Order", "4.812", "+31%"],
             ].map(([l, v, d]) => (
-              <div key={l} className="rounded-lg border border-slate-100 bg-white p-2 -sm">
-                <p className="text-slate-400">{l}</p>
+              <div key={l} className="rounded-lg border border-slate-100 bg-white p-2 shadow-2xs">
+                <p className="text-slate-600 font-medium">{l}</p>
                 <p className="font-display text-sm font-bold text-emerald-950">{v}</p>
                 <p className="font-semibold text-emerald-600">{d}</p>
               </div>

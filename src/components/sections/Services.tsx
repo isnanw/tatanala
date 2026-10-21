@@ -162,7 +162,7 @@ export function Services() {
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
                       {srv.pillar}
                     </span>
-                    <span className="text-[11px] font-semibold text-slate-500">
+                    <span className="text-xs sm:text-[13px] font-semibold text-slate-600">
                       {srv.badge}
                     </span>
                   </div>
@@ -192,10 +192,10 @@ export function Services() {
                   {/* Key Metric Strip */}
                   <div className="mt-5 rounded-2xl bg-white border border-slate-200/70 p-3.5 flex items-center justify-between shadow-2xs">
                     <div>
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                      <p className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
                         {srv.metricLabel}
                       </p>
-                      <p className="text-base font-bold text-slate-900">
+                      <p className="text-base font-bold text-slate-900 mt-0.5">
                         {srv.metric}
                       </p>
                     </div>
@@ -203,9 +203,9 @@ export function Services() {
                   </div>
 
                   {/* Deliverables Checklist Preview */}
-                  <ul className="mt-6 space-y-2.5 pt-6 border-t border-slate-200/80">
+                  <ul className="mt-6 space-y-3 pt-6 border-t border-slate-200/80">
                     {srv.deliverables.slice(0, 3).map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-xs font-medium text-slate-700">
+                      <li key={item} className="flex items-start gap-3 text-sm font-medium text-slate-800 leading-snug">
                         <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
@@ -215,9 +215,9 @@ export function Services() {
 
                 {/* Card CTA: Click to Expand Morphing */}
                 <div className="mt-8 pt-4">
-                  <div className="w-full flex items-center justify-center gap-2 rounded-full bg-slate-900 group-hover:bg-blue-600 text-white py-3.5 text-xs font-bold transition-colors duration-200 shadow-sm">
+                  <div className="w-full flex items-center justify-center gap-2 rounded-full bg-slate-900 group-hover:bg-blue-600 text-white py-3.5 text-sm font-bold transition-colors duration-200 shadow-sm">
                     <span>Buka Rincian &amp; Arsitektur</span>
-                    <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </motion.div>
@@ -292,21 +292,21 @@ export function Services() {
                   {selectedService.shortDesc}
                 </motion.p>
 
-                <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
+                <p className="mt-4 text-base text-slate-700 leading-relaxed bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
                   {selectedService.fullDesc}
                 </p>
 
                 {/* Deliverables in Full */}
                 <div className="mt-8">
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
-                    <ShieldCheck className="h-4 w-4 text-blue-600" />
+                  <h4 className="text-base font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
+                    <ShieldCheck className="h-5 w-5 text-blue-600" />
                     Deliverables &amp; Output Nyata:
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {selectedService.deliverables.map((item) => (
                       <div
                         key={item}
-                        className="flex items-start gap-2.5 rounded-xl border border-slate-200 bg-white p-3.5 text-xs font-medium text-slate-800 shadow-2xs"
+                        className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-sm font-medium text-slate-800 shadow-2xs leading-snug"
                       >
                         <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
                         <span>{item}</span>
@@ -318,13 +318,13 @@ export function Services() {
                 {/* Tech Stack Chips */}
                 <div className="mt-8 pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-bold text-slate-500 mr-1 flex items-center gap-1">
-                      <Cpu className="h-3.5 w-3.5 text-blue-600" /> Teknologi:
+                    <span className="text-sm font-bold text-slate-700 mr-1 flex items-center gap-1.5">
+                      <Cpu className="h-4 w-4 text-blue-600" /> Teknologi:
                     </span>
                     {selectedService.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full bg-slate-100 border border-slate-200/80 px-3 py-1 font-mono text-[11px] font-semibold text-slate-700"
+                        className="rounded-full bg-slate-100 border border-slate-200/80 px-3.5 py-1.5 font-mono text-xs font-semibold text-slate-700"
                       >
                         {tech}
                       </span>
@@ -341,7 +341,7 @@ export function Services() {
                       setSelectedService(null);
                       openConsult(id);
                     }}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 text-xs font-bold shadow-lg shadow-blue-500/25 transition-all"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-blue-500/25 transition-all"
                   >
                     <span>Konsultasi Solusi Ini di WhatsApp</span>
                     <ArrowRight className="h-4 w-4" />
