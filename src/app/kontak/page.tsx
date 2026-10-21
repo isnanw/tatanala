@@ -9,13 +9,13 @@ import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBa
 export const metadata: Metadata = {
   title: "Hubungi Kami & Konsultasi Kebutuhan Sistem | Tatanala",
   description:
-    "Hubungi tim insinyur sistem informasi Tatanala untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom berbasis di Yogyakarta.",
+    "Hubungi tim insinyur sistem informasi Tatanala untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom dan sistem siap pakai.",
   keywords: [
     "Kontak Tatanala",
     "Konsultasi Software House",
-    "Alamat Studio Tatanala Yogyakarta",
     "Jasa Pembuatan Sistem Informasi",
     "Audit Kebutuhan Sistem",
+    "Konsultan IT Indonesia",
   ],
 };
 

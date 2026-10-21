@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Boxes, Globe2, Rocket, CheckCircle2, Sparkles, X, ShieldCheck, Cpu, Zap } from "lucide-react";
+import { ArrowRight, Boxes, Globe2, Rocket, CheckCircle2, X, ShieldCheck, Cpu, Zap } from "lucide-react";
 import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { useEscape, useLockBody } from "@/lib/hooks";
@@ -46,21 +46,21 @@ const PILLARS_DATA: PillarItem[] = [
   {
     id: "sistem",
     pillar: "Pilar Tengah",
-    title: "Sistem Informasi Kustom (ERP, Stok & POS)",
+    title: "Sistem Informasi & Operasional Kustom",
     icon: Boxes,
-    badge: "Operasional Rapi",
-    metric: "3x Lebih Cepat",
-    metricLabel: "Rekap & Laporan Otomatis",
+    badge: "100% Sesuai SOP",
+    metric: "100% Akurat",
+    metricLabel: "Sesuai Alur Nyata",
     shortDesc:
-      "Mengganti tumpukan nota manual dan 12 file Excel terpisah. Kami bangun sistem yang mengikuti alur kerja nyata bisnis Anda  -  bukan memaksa tim tunduk pada software generik.",
+      "Dirancang khusus persis mengikuti alur kerja dan SOP nyata usaha Anda — bukan software kaku. Adapun contoh penerapan terbukti yang kami bangun mencakup Sistem HRD (presensi & payroll) dan Booking Realtime.",
     fullDesc:
-      "Software generik di pasaran seringkali kaku dan menuntut tim Anda mengubah kebiasaan kerja. Di Tatanala, kami memetakan alur fisik bisnis Anda: dari barang masuk ke gudang, approval nota oleh manajer, kasir POS, hingga rekap omzet harian otomatis ke WhatsApp owner tiap sore.",
+      "Software generik di pasaran seringkali kaku dan memaksa tim Anda mengubah kebiasaan kerja. Di Tatanala, kami memetakan alur fisik bisnis Anda untuk membangun sistem custom yang fleksibel. Contoh implementasi yang kami kembangkan mulai dari otomasi HRD (presensi GPS, kelola shift, cuti & slip gaji otomatis) hingga mesin reservasi layanan pelanggan (booking mandiri 24/7 dan layar antrean realtime).",
     deliverables: [
-      "Modul inventaris gudang dengan barcode & sistem mutasi bertingkat",
-      "Kasir POS multi-cabang dengan sinkronisasi database realtime",
-      "Alur approval berjenjang & audit trail (siapa input, edit, hapus)",
-      "Laporan harian otomatis terkirim langsung ke WhatsApp owner",
-      "Pelatihan langsung staf lapangan & garansi pendampingan 6 bulan",
+      "Arsitektur Custom: Dibuat khusus mengikuti SOP & alur kerja unik bisnis Anda",
+      "Contoh Modul HRD: Presensi GPS anti-titip absen, pengaturan shift & cuti digital",
+      "Contoh Modul Payroll: Kalkulasi gaji pokok, lembur, BPJS & slip gaji otomatis",
+      "Contoh Modul Booking Realtime: Reservasi mandiri 24/7 tanpa bentrok jadwal",
+      "Layar Monitor Antrean Live & Bot WhatsApp: Pantau antrean & notifikasi otomatis",
     ],
     techStack: ["PostgreSQL", "Node.js / Go", "REST & WebSocket", "Automated Daily Backup"],
     highlighted: true,
@@ -112,7 +112,7 @@ export function Services() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Boxes className="h-3.5 w-3.5" />
             <span>Ekosistem Hulu ke Hilir</span>
           </motion.div>
 

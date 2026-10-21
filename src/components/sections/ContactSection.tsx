@@ -87,10 +87,10 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-xs sm:text-[13px] font-bold text-slate-500 uppercase tracking-wider">
-                      Alamat Operasional
+                      Jangkauan Layanan
                     </h4>
                     <p className="text-sm sm:text-base font-semibold text-slate-900 mt-1 leading-relaxed">
-                      Jl. Palagan Tentara Pelajar Km. 9, Sleman, D.I. Yogyakarta 55581, Indonesia
+                      Indonesia &bull; Melayani Mitra Bisnis &amp; Instansi di Seluruh Indonesia
                     </p>
                   </div>
                 </div>

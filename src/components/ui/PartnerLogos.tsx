@@ -9,7 +9,7 @@ const CLIENTS = [
   { name: "PT Alger Karya Pratama", src: "/images/client/pt-alger.png", width: 230, height: 35 },
   { name: "Provitas", src: "/images/client/provitas.png", width: 100, height: 100 },
   { name: "KBPII", src: "/images/client/kbpii.png", width: 120, height: 46 },
-  // { name: "Kabupaten Puncak", src: "/images/client/kabupaten-puncak.png", width: 75, height: 110 },
+  { name: "Kabupaten Puncak", src: "/images/client/kabupaten-puncak.png", width: 75, height: 110 },
   { name: "Recehku", src: "/images/client/recehku.png", width: 90, height: 90 },
   { name: "PT TRIJAYA ABADI SOLUTION", src: "/images/client/tas.png", width: 110, height: 62 },
 ];

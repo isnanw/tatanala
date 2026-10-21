@@ -20,7 +20,7 @@ const STEPS = [
   {
     step: "03",
     title: "Rekayasa Arsitektur & Pengembangan Modular",
-    desc: "Pembangunan software dengan standar Next.js, basis data PostgreSQL terenkripsi, integrasi WhatsApp reporting engine, serta UI responsif multi-device.",
+    desc: "Pembangunan software berstandar modern, basis data terenkripsi, integrasi notifikasi sistem, serta antarmuka responsif multi-device.",
     output: "Sistem Teruji Bebas Celah Keamanan",
   },
   {

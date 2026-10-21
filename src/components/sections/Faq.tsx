@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, HelpCircle, Sparkles } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { useState } from "react";
 import { FAQS } from "@/data/content";
 import { useConsult } from "@/components/consult/ConsultProvider";
@@ -21,7 +21,7 @@ export function Faq() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-blue-700 mb-4"
           >
-            <Sparkles className="h-4 w-4" />
+            <HelpCircle className="h-4 w-4 text-blue-600" />
             <span>Tanya Jawab &bull; Transparansi Penuh</span>
           </motion.div>
 

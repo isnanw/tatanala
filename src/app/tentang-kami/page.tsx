@@ -10,10 +10,10 @@ import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBa
 export const metadata: Metadata = {
   title: "Tentang Kami & Rekayasa Software Terpercaya | Tatanala",
   description:
-    "Mengenal Tatanala: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi berbasis di Yogyakarta yang siap melayani sistem custom maupun platform siap pakai.",
+    "Mengenal Tatanala: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
   keywords: [
     "Tentang Tatanala",
-    "Software House Yogyakarta",
+    "Software House Indonesia",
     "Konsultan IT Terpercaya",
     "Solusi Sistem Informasi",
     "Studio Rekayasa Software",
@@ -35,7 +35,7 @@ export default function TentangKamiPage() {
               Membangun Kepercayaan Melalui Rekayasa Software yang Andal
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-              Berpusat di Yogyakarta, Tatanala hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi yang mengutamakan kerapian kode, keamanan data, dan kedaulatan teknologi.
+              Tatanala hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi di Indonesia yang mengutamakan kerapian arsitektur, keamanan data, dan keandalan sistem jangka panjang.
             </p>
           </div>
         </section>

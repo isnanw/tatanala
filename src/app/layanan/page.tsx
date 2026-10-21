@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Dashboard Laporan Otomatis",
     "Pembuatan Website Profesional",
     "Sistem Operasional Custom",
-    "Konsultan IT Yogyakarta",
+    "Konsultan IT Indonesia",
   ],
 };
 

@@ -41,7 +41,7 @@ export const SITE = {
   whatsapp: "6281234567890",
   whatsappDisplay: "+62 812-3456-7890",
   email: "halo@tatanala.id",
-  address: "Yogyakarta, Indonesia",
+  address: "Indonesia",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [

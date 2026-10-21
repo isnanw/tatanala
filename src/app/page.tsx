@@ -21,7 +21,10 @@ export default function Home() {
         {/* 1. Split Hero Section with integrated Client Logos Bar */}
         <Hero />
 
-        {/* 2. 3-Pillar Solution Cards (Web, ERP, Mobile Realtime) */}
+        {/* 2. Kedaulatan Teknologi & Visi (Company Identity & Core Principles) */}
+        <NationalVision />
+
+        {/* 3. 3-Pillar Solution Cards (Web, Sistem Custom, Dashboard Otomatis) */}
         <ThreePillarSolutions />
 
         {/* 4. Kami Pahami Proses Bisnis Anda Sebelum Merancang Software */}
@@ -29,9 +32,6 @@ export default function Home() {
 
         {/* 5. Solusi Nyata Dari Berbagai Proyek (Tabbed Showcase) */}
         <ProjectTabbedShowcase />
-
-        {/* 6. Membangun Kemandirian Digital Nasional */}
-        <NationalVision />
 
         {/* 7. Executive Centered Testimonial with Concentric Rings */}
         <ExecutiveTestimonial />

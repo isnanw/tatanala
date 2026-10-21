@@ -9,7 +9,6 @@ import {
   Database, 
   Cloud, 
   Zap, 
-  Sparkles, 
   Layers,
   Cpu 
 } from "lucide-react";
@@ -186,7 +185,7 @@ export function Hero() {
                       2
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
-                      Rancang &amp; Uji Coba
+                      Rancang &amp; Uji
                     </span>
                   </div>
                   <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-normal">
@@ -201,11 +200,11 @@ export function Hero() {
                       3
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
-                      Pendampingan Penuh
+                      Pendampingan
                     </span>
                   </div>
                   <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-normal">
-                    Garansi teknis &amp; panduan sampai staf lancar beroperasi.
+                    Garansi teknis &amp; panduan sampai beroperasi.
                   </p>
                 </div>
               </div>
@@ -243,37 +242,36 @@ export function Hero() {
               </motion.div>
             </div>
 
-            {/* 5. Floating Holographic Tech Nodes orbiting the talent */}
-            {/* Node A: PostgreSQL Realtime Sync (Upper-left behind shoulder) */}
+            {/* 5. Floating Tech Nodes orbiting the talent */}
+            {/* Node A: Data Terpusat (Upper-left behind shoulder) */}
             <motion.div
               animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
               transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-blue-200/90 shadow-xl shadow-blue-500/10 pointer-events-none"
+              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-blue-200/90 shadow-xl shadow-blue-500/10 pointer-events-none"
             >
               <div className="h-7 w-7 rounded-lg bg-blue-50 text-blue-600 grid place-items-center shrink-0">
                 <Database className="h-4 w-4" />
               </div>
               <div className="text-left">
-                <p className="text-[11px] font-bold text-slate-900 leading-tight">Database Cloud</p>
-                <p className="text-[10px] text-emerald-600 font-semibold flex items-center gap-1 mt-0.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-ping" />
-                  Realtime Sync
+                <p className="text-[11px] font-bold text-slate-900 leading-tight">Data Terpusat &amp; Rapi</p>
+                <p className="text-[10px] text-blue-600 font-medium mt-0.5">
+                  Otomatis Sinkron 24/7
                 </p>
               </div>
             </motion.div>
 
-            {/* Node B: Cloud Microservices Uptime (Lower-left near laptop) */}
+            {/* Node B: Akses Lancar (Lower-left near laptop) */}
             <motion.div
               animate={{ y: [0, 8, 0], x: [0, -3, 0] }}
               transition={{ duration: 5.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-sky-200/90 shadow-xl shadow-sky-500/10 pointer-events-none"
+              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-sky-200/90 shadow-xl shadow-sky-500/10 pointer-events-none"
             >
               <div className="h-7 w-7 rounded-lg bg-sky-50 text-sky-600 grid place-items-center shrink-0">
                 <Cloud className="h-4 w-4" />
               </div>
               <div className="text-left">
-                <p className="text-[11px] font-bold text-slate-900 leading-tight">Server Uptime SLA</p>
-                <p className="text-[10px] text-blue-600 font-semibold mt-0.5">99.9% Terjamin</p>
+                <p className="text-[11px] font-bold text-slate-900 leading-tight">Akses Lancar &amp; Stabil</p>
+                <p className="text-[10px] text-slate-500 font-medium mt-0.5">Siap Digunakan Kapan Saja</p>
               </div>
             </motion.div>
 

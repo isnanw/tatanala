@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, Sparkles, TrendingUp, XCircle, X, ShieldCheck, Database } from "lucide-react";
+import { ArrowRight, CheckCircle2, TrendingUp, XCircle, X, ShieldCheck, Database } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
@@ -36,9 +36,9 @@ const CASES: CaseItem[] = [
     metricLabel: "Selisih Stok",
     image: "/images/case-cloud-infra.jpg",
     fullStory:
-      "CV Sumber Pangan Lestari memiliki 4 cabang distributor sembako di Jawa Tengah dan Yogyakarta. Sebelum menggunakan Tatanala, setiap cabang mencatat penjualan di buku nota dan menginput ke Excel terpisah. Stok gudang seringkali tidak klop dengan data penjualan, dan rekap bulanan memakan waktu 3 hari lembur bagi owner. Tatanala merancang sistem ERP mini berbasis cloud yang mensinkronkan stok per detik, mencatat mutasi per staf, dan mengirim rekap omzet otomatis via WhatsApp bot tiap pukul 18.00.",
+      "CV Sumber Pangan Lestari memiliki 4 cabang distributor sembako di berbagai wilayah Jawa. Sebelum menggunakan Tatanala, setiap cabang mencatat penjualan di buku nota dan menginput ke Excel terpisah. Stok gudang seringkali tidak klop dengan data penjualan, dan rekap bulanan memakan waktu 3 hari lembur bagi owner. Tatanala merancang sistem ERP berbasis cloud yang mensinkronkan stok per detik, mencatat mutasi per staf, dan mengirim rekap omzet otomatis via bot notifikasi tiap pukul 18.00.",
     features: [
-      "Sinkronisasi database PostgreSQL multi-region",
+      "Sinkronisasi database cloud multi-cabang secara realtime",
       "Pencatatan mutasi stok per user admin gudang",
       "Notifikasi WhatsApp otomatis harian ke owner",
       "Dashboard performa sales & rekap margin laba bersih",
@@ -134,7 +134,7 @@ export function CaseStudies() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
             >
-              <Sparkles className="h-3.5 w-3.5" />
+              <TrendingUp className="h-3.5 w-3.5" />
               <span>Studi Kasus Riil</span>
             </motion.div>
 
