@@ -1,7 +1,18 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { MessageCircle, ArrowRight, ShieldCheck, Headphones } from "lucide-react";
+import { 
+  MessageCircle, 
+  ArrowRight, 
+  ShieldCheck, 
+  Headphones, 
+  Database, 
+  Cloud, 
+  Zap, 
+  Sparkles, 
+  Layers,
+  Cpu 
+} from "lucide-react";
 import Image from "next/image";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { PartnerLogos } from "@/components/ui/PartnerLogos";
@@ -22,17 +33,68 @@ const itemAnim: Variants = {
 export function Hero() {
   const { openConsult } = useConsult();
 
+  const handleScrollToSolutions = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("solusi");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
       id="top"
       aria-label="Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Tatanala"
       className="relative overflow-hidden bg-gradient-to-br from-[#EEF6FF] via-[#F8FAFC] to-white flex flex-col justify-between min-h-screen pt-20 sm:pt-22 lg:pt-24"
     >
-      {/* Background Soft Glow Elements */}
-      <div className="absolute top-10 right-1/4 w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute top-1/3 -left-20 w-[400px] h-[400px] bg-sky-200/25 rounded-full blur-3xl pointer-events-none -z-0" />
+      {/* 1. Animated Drifting Background Mesh Orbs */}
+      <motion.div
+        animate={{ 
+          x: [0, 35, -20, 0], 
+          y: [0, -30, 20, 0],
+          scale: [1, 1.1, 0.95, 1] 
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-10 right-1/4 w-[550px] h-[550px] bg-gradient-to-tr from-blue-400/25 via-indigo-300/20 to-sky-200/10 rounded-full blur-3xl pointer-events-none -z-0"
+      />
+      
+      <motion.div
+        animate={{ 
+          x: [0, -30, 25, 0], 
+          y: [0, 25, -20, 0],
+          scale: [1, 1.12, 1] 
+        }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/3 -left-20 w-[450px] h-[450px] bg-gradient-to-br from-sky-300/25 via-blue-200/20 to-transparent rounded-full blur-3xl pointer-events-none -z-0"
+      />
 
-      {/* Poin 4: Subtle Tech Dot Grid Pattern for modern texture */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.15, 1],
+          opacity: [0.5, 0.8, 0.5] 
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-400/15 rounded-full blur-3xl pointer-events-none -z-0"
+      />
+
+      {/* 2. Floating Twinkling Tech Particle Constellations */}
+      <motion.div
+        animate={{ scale: [1, 1.5, 1], opacity: [0.25, 0.85, 0.25] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-28 left-1/4 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-md shadow-blue-400 pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.4, 1], opacity: [0.2, 0.9, 0.2] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-1/2 left-[18%] h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300 pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.6, 1], opacity: [0.3, 0.85, 0.3] }}
+        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute top-36 right-1/3 h-2 w-2 rounded-full bg-indigo-500 shadow-md shadow-indigo-300 pointer-events-none"
+      />
+
+      {/* 3. Subtle Tech Dot Grid Pattern for modern texture */}
       <div 
         className="absolute inset-0 bg-[radial-gradient(#2563EB_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.08] pointer-events-none [mask-image:radial-gradient(ellipse_75%_70%_at_50%_40%,#000_60%,transparent_100%)] -z-0" 
         aria-hidden="true"
@@ -49,6 +111,7 @@ export function Hero() {
             animate="show"
             className="lg:col-span-6 xl:col-span-6 self-end pb-3 sm:pb-5 lg:pb-6 text-left"
           >
+
             {/* Direct Headline */}
             <motion.h1
               variants={itemAnim}
@@ -84,7 +147,8 @@ export function Hero() {
 
               <a
                 href="#solusi"
-                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors"
+                onClick={handleScrollToSolutions}
+                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors cursor-pointer"
               >
                 <span>Pelajari Ragam Solusi</span>
               </a>
@@ -155,6 +219,64 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="lg:col-span-6 xl:col-span-6 relative w-full h-[460px] sm:h-[520px] lg:h-[565px] xl:h-[600px] flex items-end justify-center lg:justify-end mt-2 lg:mt-0"
           >
+            {/* 4. Halo Glow & Orbital Tech Rings Behind Talent */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-0">
+              {/* Radiant Soft Center Glow */}
+              <div className="w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] rounded-full bg-gradient-to-tr from-blue-400/30 via-sky-300/25 to-indigo-400/20 blur-2xl animate-pulse" />
+
+              {/* Inner Rotating Dashed Orbit Ring with Satellite */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-400/35 border-dashed"
+              >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-lg shadow-blue-400/80" />
+              </motion.div>
+
+              {/* Outer Counter-Rotating Orbit Ring */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-sky-300/30"
+              >
+                <div className="absolute bottom-6 right-12 h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300" />
+              </motion.div>
+            </div>
+
+            {/* 5. Floating Holographic Tech Nodes orbiting the talent */}
+            {/* Node A: PostgreSQL Realtime Sync (Upper-left behind shoulder) */}
+            <motion.div
+              animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-blue-200/90 shadow-xl shadow-blue-500/10 pointer-events-none"
+            >
+              <div className="h-7 w-7 rounded-lg bg-blue-50 text-blue-600 grid place-items-center shrink-0">
+                <Database className="h-4 w-4" />
+              </div>
+              <div className="text-left">
+                <p className="text-[11px] font-bold text-slate-900 leading-tight">Database Cloud</p>
+                <p className="text-[10px] text-emerald-600 font-semibold flex items-center gap-1 mt-0.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-ping" />
+                  Realtime Sync
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Node B: Cloud Microservices Uptime (Lower-left near laptop) */}
+            <motion.div
+              animate={{ y: [0, 8, 0], x: [0, -3, 0] }}
+              transition={{ duration: 5.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-sky-200/90 shadow-xl shadow-sky-500/10 pointer-events-none"
+            >
+              <div className="h-7 w-7 rounded-lg bg-sky-50 text-sky-600 grid place-items-center shrink-0">
+                <Cloud className="h-4 w-4" />
+              </div>
+              <div className="text-left">
+                <p className="text-[11px] font-bold text-slate-900 leading-tight">Server Uptime SLA</p>
+                <p className="text-[10px] text-blue-600 font-semibold mt-0.5">99.9% Terjamin</p>
+              </div>
+            </motion.div>
+
             {/* Card "Sistem Siap Pakai" positioned directly by the pointing hand */}
             <motion.div
               animate={{ y: [0, -4, 0] }}
@@ -186,7 +308,7 @@ export function Hero() {
             </motion.div>
 
             {/* Dynamic Model Image: Anchored directly onto the bottom partner bar */}
-            <div className="relative w-full h-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px] xl:max-w-[520px]">
+            <div className="relative z-10 w-full h-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px] xl:max-w-[520px]">
               <Image
                 src="/images/tatanala-hero-woman-v2.png"
                 alt="Konsultan Rekayasa Software Tatanala"

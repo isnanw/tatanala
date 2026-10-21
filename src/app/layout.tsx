@@ -52,6 +52,15 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Tatanala IT Solutions",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/logo-icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/images/logo-icon.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
@@ -62,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${jakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
     >
       <body className="bg-[#F8FAFC] text-slate-800 font-sans selection:bg-blue-100 selection:text-blue-900">
