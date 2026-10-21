@@ -46,7 +46,7 @@ export function BusinessProcessGuarantee() {
   const { openConsult } = useConsult();
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
+    <section className="pt-10 sm:pt-14 pb-14 sm:pb-20 bg-white border-b border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">

@@ -19,7 +19,7 @@ export function NationalVision() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="identitas" className="relative py-20 sm:py-28 bg-white border-b border-slate-200/80 overflow-hidden">
+    <section id="identitas" className="relative pt-7 sm:pt-9 pb-7 sm:pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
       {/* Subtle ambient light blur */}
       <div 
         aria-hidden="true" 

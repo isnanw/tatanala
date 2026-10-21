@@ -1,233 +1,258 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Globe2, 
-  Layers, 
-  BarChart3, 
-  ArrowRight, 
-  ShieldCheck, 
-  CheckCircle2
-} from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { useConsult } from "@/components/consult/ConsultProvider";
-
-interface Pillar {
-  id: string;
-  title: string;
-  subtitle: string;
-  badge?: string;
-  description: string;
-  icon: typeof Globe2;
-  gradient: string;
-  isFeatured?: boolean;
-  btnColor: string;
-  features: string[];
-  consultTag: string;
-}
-
-const PILLARS: Pillar[] = [
-  {
-    id: "website-portal",
-    title: "Website & Portal Bisnis",
-    subtitle: "Kredibilitas & Siap Tender",
-    description: "Bangun citra profesional yang meyakinkan bagi calon klien, mitra, maupun instansi. Menampilkan profil usaha, legalitas, katalog layanan, dan galeri portofolio secara rapi, berbobot, dan mudah ditemukan di pencarian Google.",
-    icon: Globe2,
-    gradient: "from-blue-600 to-sky-500",
-    btnColor: "bg-slate-900 hover:bg-blue-600 text-white shadow-slate-900/15",
-    features: [
-      "Tampilan Eksklusif, Cepat & Siap Verifikasi Tender",
-      "Mudah Ditemukan Calon Klien di Google (SEO Lokal & Nasional)",
-      "Katalog Portofolio & Informasi Legalitas Terstruktur",
-      "Mudah Dikelola Mandiri Tanpa Ketergantungan Koding",
-    ],
-    consultTag: "profil",
-  },
-  {
-    id: "sistem-operasional",
-    title: "Sistem Operasional Custom",
-    subtitle: "Dibuat Persis Sesuai SOP Anda",
-    badge: "100% Sesuai Kebutuhan",
-    isFeatured: true,
-    description: "Tinggalkan software kaku yang memaksa tim Anda mengubah kebiasaan kerja. Kami kembangkan sistem berbasis web yang dirancang khusus mengikuti alur kerja nyata usaha Anda — mulai dari alur staf internal hingga pelayanan pelanggan.",
-    icon: Layers,
-    gradient: "from-blue-600 via-indigo-600 to-blue-700",
-    btnColor: "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/25",
-    features: [
-      "Dibuat Khusus Mengikuti Alur Kerja (SOP) Nyata Usaha Anda",
-      "Contoh HRD: Presensi GPS, Shift Kerja, Cuti & Hitung Payroll Otomatis",
-      "Contoh Booking: Reservasi Jadwal 24/7 Bebas Bentrok & Antrean Live",
-      "Otomasi Notifikasi WhatsApp, Hak Akses Staf & Data Aman Terenkripsi",
-    ],
-    consultTag: "sistem",
-  },
-  {
-    id: "dashboard-laporan",
-    title: "Dashboard & Laporan Otomatis",
-    subtitle: "Visibilitas & Keputusan Cepat",
-    description: "Pantau perkembangan bisnis dalam satu layar ringkas tanpa perlu menunggu rekap manual berhari-hari. Dapatkan informasi pendapatan, pengeluaran, kehadiran karyawan, dan kinerja operasional secara akurat dan real-time.",
-    icon: BarChart3,
-    gradient: "from-sky-600 to-teal-500",
-    btnColor: "bg-slate-900 hover:bg-sky-600 text-white shadow-slate-900/15",
-    features: [
-      "Rekap Laporan Pendapatan & Biaya Operasional Otomatis",
-      "Pantau Jam Kerja & Produktivitas Tim dari Satu Dasbor",
-      "Riwayat Transaksi Jelas & Bebas Selisih Angka",
-      "Unduh Laporan ke Excel atau PDF dalam 1 Kali Klik",
-    ],
-    consultTag: "sistem",
-  },
-];
 
 export function ThreePillarSolutions() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="solusi" className="relative py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 overflow-hidden">
-      {/* Subtle ambient backdrop */}
+    <section id="solusi" className="relative pt-3 sm:pt-4 pb-8 sm:pb-10 bg-[#F8FAFC] border-b border-slate-200/80 overflow-hidden">
+      {/* Subtle ambient lighting */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[480px] bg-gradient-to-tr from-blue-200/20 via-sky-200/15 to-transparent blur-3xl rounded-full" 
+        className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-blue-200/20 via-amber-100/15 to-transparent blur-3xl rounded-full" 
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 border border-blue-200/90 px-4 py-1.5 text-xs sm:text-sm font-semibold text-blue-700 mb-4 shadow-sm"
-          >
-            <ShieldCheck className="h-4 w-4 text-blue-600" />
-            <span>Pilar Solusi Utama</span>
-          </motion.div>
+        {/* Section Header - Refined Executive Typography (Soft, Prestigious & Comfortable) */}
+        <div className="text-center max-w-3xl mx-auto mb-5 sm:mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2.5 shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+            <span>Pilar Solusi Terintegrasi</span>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold tracking-tight text-slate-900 leading-[1.2]"
-          >
-            Solusi Software yang Menjawab Kebutuhan Nyata Usaha Anda
-          </motion.h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-bold tracking-tight text-[#0F172A] leading-tight">
+            Solusi Rekayasa Software yang{" "}
+            <span className="text-blue-600">
+              Menjawab Kebutuhan Nyata
+            </span>{" "}
+            Bisnis Anda
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
-          >
-            Membantu bisnis dan instansi Anda beralih dari proses manual yang lambat ke sistem digital yang rapi, mudah digunakan oleh seluruh staf, dan siap mendukung pertumbuhan operasional.
-          </motion.p>
+          <p className="mt-2 text-sm sm:text-[15px] text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Membantu bisnis Anda bertransformasi dari alur kerja manual yang lambat ke ekosistem sistem digital yang rapi, mudah digunakan oleh seluruh tim, dan siap menopang pertumbuhan skala besar.
+          </p>
         </div>
 
-        {/* 3 Pillar Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {PILLARS.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            const isFeatured = pillar.isFeatured;
+        {/* 3-Tier Solution Card Grid - High Visual Harmony */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-end max-w-6xl mx-auto">
+          
+          {/* ============================================================== */}
+          {/* CARD 1: WEBSITE & PORTAL BISNIS (Left - Rich Terracotta)       */}
+          {/* ============================================================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+            className="relative rounded-xl overflow-hidden border border-slate-200/90 bg-white shadow-md hover:shadow-2xl hover:border-[#C2562B]/50 transition-all duration-300 flex flex-col justify-between group cursor-default"
+          >
+            {/* Top Right Angled Corner Ribbon */}
+            <div className="absolute top-0 right-0 w-24 h-24 overflow-hidden pointer-events-none z-10">
+              <div className="absolute top-4 -right-8 w-28 bg-[#1E293B] text-white text-[10px] font-bold text-center py-1 uppercase tracking-wider rotate-45 shadow-sm">
+                PORTAL
+              </div>
+            </div>
 
-            return (
-              <motion.div
-                key={pillar.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.12 }}
-                className={`relative rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 group ${
-                  isFeatured
-                    ? "bg-gradient-to-b from-blue-50/50 via-white to-white border-2 border-blue-500/80 shadow-xl shadow-blue-500/10 ring-1 ring-blue-500/20 lg:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/15"
-                    : "bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 hover:border-slate-300"
-                }`}
+            {/* Solid Colored Header Block with Crisp White Typography */}
+            <div className="bg-[#C2562B] group-hover:bg-[#B34C24] transition-colors duration-300 text-white p-5 sm:p-6 text-center">
+              <h3 className="text-lg sm:text-xl font-bold uppercase tracking-wider text-white">
+                WEBSITE &amp; PORTAL
+              </h3>
+              <p className="text-xs sm:text-[13px] font-medium text-white/90 mt-1 tracking-normal">
+                Kredibilitas &amp; Profil Klien
+              </p>
+            </div>
+
+            {/* Alternating Striped Rows with Comfortable Contrast */}
+            <div className="flex-1 flex flex-col text-slate-600 text-xs sm:text-[13px]">
+              {/* Row 1: Intro Description */}
+              <div className="py-3 px-4 text-center bg-white border-b border-slate-100 leading-relaxed font-normal text-slate-600">
+                Profil usaha, legalitas, katalog layanan, dan galeri portofolio siap verifikasi tender.
+              </div>
+
+              {/* Row 2 */}
+              <div className="py-2.5 px-4 text-center bg-slate-50/80 hover:bg-[#C2562B]/10 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Tampilan Eksklusif, Cepat &amp; Mobile-Responsive
+              </div>
+
+              {/* Row 3 */}
+              <div className="py-2.5 px-4 text-center bg-white hover:bg-[#C2562B]/10 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Mudah Ditemukan Calon Klien di Google (SEO)
+              </div>
+
+              {/* Row 4 */}
+              <div className="py-2.5 px-4 text-center bg-slate-50/80 hover:bg-[#C2562B]/10 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Katalog Portofolio &amp; Legalitas Terstruktur
+              </div>
+
+              {/* Row 5 */}
+              <div className="py-2.5 px-4 text-center bg-white hover:bg-[#C2562B]/10 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Dapat Dikelola Mandiri Tanpa Koding
+              </div>
+            </div>
+
+            {/* Bottom Button Action */}
+            <div className="p-4 sm:p-5 bg-white flex justify-center border-t border-slate-50">
+              <motion.button
+                type="button"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => openConsult("profil")}
+                className="w-full sm:w-auto min-w-[180px] py-2.5 px-6 rounded-md bg-[#C2562B] hover:bg-[#A94720] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-[#C2562B]/30"
               >
-                {/* Floating Special Badge for Featured Pillar */}
-                {pillar.badge && (
-                  <div className="absolute -top-3.5 right-6 z-10">
-                    <span className="inline-flex items-center px-3.5 py-1 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white text-xs font-bold shadow-md shadow-blue-500/25 tracking-wide">
-                      {pillar.badge}
-                    </span>
-                  </div>
-                )}
+                KONSULTASI
+              </motion.button>
+            </div>
+          </motion.div>
 
-                <div>
-                  {/* Top Bar: Icon Container + Counter */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`h-14 w-14 rounded-2xl bg-gradient-to-tr ${pillar.gradient} text-white flex items-center justify-center shadow-md shadow-blue-500/15 group-hover:scale-105 transition-transform duration-300`}>
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <span className="font-mono text-xs font-bold text-slate-400 bg-slate-100/90 border border-slate-200/60 px-2.5 py-1 rounded-md">
-                      0{idx + 1}
-                    </span>
-                  </div>
+          {/* ============================================================== */}
+          {/* CARD 2: SISTEM OPERASIONAL (Center - Warm Ochre Gold)          */}
+          {/* ============================================================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8, transition: { duration: 0.25, ease: "easeOut" } }}
+            className="relative rounded-xl overflow-hidden border-2 border-[#D9822B] bg-white shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between lg:-translate-y-2.5 z-10 group cursor-default"
+          >
+            {/* Top Right Angled Corner Ribbon */}
+            <div className="absolute top-0 right-0 w-28 h-28 overflow-hidden pointer-events-none z-10">
+              <div className="absolute top-5 -right-8 w-32 bg-[#4C1D95] text-white text-[10px] font-bold text-center py-1 uppercase tracking-wider rotate-45 shadow-md">
+                CUSTOM
+              </div>
+            </div>
 
-                  {/* Eyebrow & Title */}
-                  <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1.5">
-                    {pillar.subtitle}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-snug">
-                    {pillar.title}
-                  </h3>
+            {/* Solid Colored Header Block with Crisp White Typography */}
+            <div className="bg-[#D9822B] group-hover:bg-[#C27324] transition-colors duration-300 text-white p-6 sm:p-7 text-center">
+              <h3 className="text-lg sm:text-[1.4rem] font-bold uppercase tracking-wider text-white">
+                SISTEM OPERASIONAL
+              </h3>
+              <p className="text-xs sm:text-[13px] font-medium text-white/95 mt-1 tracking-normal">
+                Dibuat Khusus Sesuai SOP Anda
+              </p>
+            </div>
 
-                  {/* Description */}
-                  <p className="mt-3 text-slate-600 text-sm sm:text-[15px] leading-relaxed">
-                    {pillar.description}
-                  </p>
+            {/* Alternating Striped Rows */}
+            <div className="flex-1 flex flex-col text-slate-700 text-xs sm:text-[13px]">
+              {/* Row 1: Intro Description */}
+              <div className="py-3 px-4 text-center bg-white border-b border-slate-100 leading-relaxed font-medium text-slate-700">
+                Dirancang khusus mengikuti alur kerja (SOP) nyata usaha Anda — dari tim internal hingga klien.
+              </div>
 
-                  {/* Features List with clear visual rhythm */}
-                  <div className="mt-6 pt-6 border-t border-slate-100">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3.5">
-                      Keunggulan & Cakupan
-                    </div>
-                    <ul className="space-y-3">
-                      {pillar.features.map((item) => {
-                        const parts = item.split(":");
-                        const hasPrefix = parts.length > 1;
+              {/* Row 2 */}
+              <div className="py-2.5 px-4 text-center bg-amber-50/50 hover:bg-amber-100/60 border-b border-slate-100 font-semibold text-slate-800 transition-colors cursor-default">
+                Alur Kerja &amp; Database Sesuai SOP Usaha
+              </div>
 
-                        return (
-                          <li key={item} className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 border border-blue-200/60 mt-0.5">
-                              <CheckCircle2 className="h-3.5 w-3.5" />
-                            </div>
-                            <span>
-                              {hasPrefix ? (
-                                <>
-                                  <strong className="font-semibold text-slate-900">{parts[0]}:</strong>{" "}
-                                  <span>{parts.slice(1).join(":")}</span>
-                                </>
-                              ) : (
-                                item
-                              )}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </div>
+              {/* Row 3 (HRD Example) */}
+              <div className="py-2.5 px-4 text-center bg-white hover:bg-amber-50/60 border-b border-slate-100 font-semibold text-slate-800 transition-colors cursor-default">
+                <span className="text-[#B45309] font-bold">Contoh HRD:</span> Presensi GPS, Shift &amp; Payroll
+              </div>
 
-                {/* Bottom CTA Button */}
-                <div className="mt-8 pt-6 border-t border-slate-100">
-                  <motion.button
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="button"
-                    onClick={() => openConsult(pillar.consultTag)}
-                    className={`w-full py-3.5 px-5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 ${pillar.btnColor} shadow-md transition-all duration-200 cursor-pointer group/btn`}
-                  >
-                    <span>Konsultasi Sekarang</span>
-                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                  </motion.button>
-                </div>
-              </motion.div>
-            );
-          })}
+              {/* Row 4 (Booking Example) */}
+              <div className="py-2.5 px-4 text-center bg-amber-50/50 hover:bg-amber-100/60 border-b border-slate-100 font-semibold text-slate-800 transition-colors cursor-default">
+                <span className="text-[#B45309] font-bold">Contoh Booking:</span> Reservasi 24/7 &amp; Antrean Realtime
+              </div>
+
+              {/* Row 5 */}
+              <div className="py-2.5 px-4 text-center bg-white hover:bg-amber-50/60 border-b border-slate-100 font-semibold text-slate-800 transition-colors cursor-default">
+                Otomasi Notifikasi WA &amp; Hak Akses Staf
+              </div>
+            </div>
+
+            {/* Bottom Button Action */}
+            <div className="p-4 sm:p-5 bg-white flex justify-center border-t border-slate-50">
+              <motion.button
+                type="button"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => openConsult("sistem")}
+                className="w-full sm:w-auto min-w-[180px] py-2.5 px-6 rounded-md bg-[#D9822B] hover:bg-[#C27324] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-[#D9822B]/30"
+              >
+                KONSULTASI
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* ============================================================== */}
+          {/* CARD 3: DASHBOARD & LAPORAN (Right - Modern Royal Blue)        */}
+          {/* ============================================================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+            className="relative rounded-xl overflow-hidden border border-slate-200/90 bg-white shadow-md hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group cursor-default"
+          >
+            {/* Top Right Angled Corner Ribbon */}
+            <div className="absolute top-0 right-0 w-24 h-24 overflow-hidden pointer-events-none z-10">
+              <div className="absolute top-4 -right-8 w-28 bg-[#991B1B] text-white text-[10px] font-bold text-center py-1 uppercase tracking-wider rotate-45 shadow-sm">
+                REALTIME
+              </div>
+            </div>
+
+            {/* Solid Colored Header Block with Crisp White Typography */}
+            <div className="bg-[#2563EB] group-hover:bg-[#1D4ED8] transition-colors duration-300 text-white p-5 sm:p-6 text-center">
+              <h3 className="text-lg sm:text-xl font-bold uppercase tracking-wider text-white">
+                DASHBOARD &amp; LAPORAN
+              </h3>
+              <p className="text-xs sm:text-[13px] font-medium text-white/90 mt-1 tracking-normal">
+                Visibilitas &amp; Analitik Otomatis
+              </p>
+            </div>
+
+            {/* Alternating Striped Rows */}
+            <div className="flex-1 flex flex-col text-slate-600 text-xs sm:text-[13px]">
+              {/* Row 1: Intro Description */}
+              <div className="py-3 px-4 text-center bg-white border-b border-slate-100 leading-relaxed font-normal text-slate-600">
+                Pantau omzet, biaya, kehadiran tim, dan performa operasional dalam satu layar tanpa rekap manual.
+              </div>
+
+              {/* Row 2 */}
+              <div className="py-2.5 px-4 text-center bg-slate-50/80 hover:bg-blue-50 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Rekap Pendapatan &amp; Biaya Operasional Otomatis
+              </div>
+
+              {/* Row 3 */}
+              <div className="py-2.5 px-4 text-center bg-white hover:bg-blue-50 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Pantau Jam Kerja &amp; Produktivitas Tim Terpadu
+              </div>
+
+              {/* Row 4 */}
+              <div className="py-2.5 px-4 text-center bg-slate-50/80 hover:bg-blue-50 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Riwayat Transaksi Jelas &amp; Bebas Selisih
+              </div>
+
+              {/* Row 5 */}
+              <div className="py-2.5 px-4 text-center bg-white hover:bg-blue-50 hover:text-slate-900 border-b border-slate-100 font-medium text-slate-700 transition-colors cursor-default">
+                Ekspor Laporan ke Excel &amp; PDF Sekali Klik
+              </div>
+            </div>
+
+            {/* Bottom Button Action */}
+            <div className="p-4 sm:p-5 bg-white flex justify-center border-t border-slate-50">
+              <motion.button
+                type="button"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => openConsult("sistem")}
+                className="w-full sm:w-auto min-w-[180px] py-2.5 px-6 rounded-md bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md hover:shadow-blue-500/30"
+              >
+                KONSULTASI
+              </motion.button>
+            </div>
+          </motion.div>
+
         </div>
 
       </div>
     </section>
   );
 }
+
+
 
