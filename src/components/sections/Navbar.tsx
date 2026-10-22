@@ -28,10 +28,7 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 pointer-events-none pt-4 sm:pt-6 px-4 sm:px-8">
-      <motion.div
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <div
         className={cn(
           "pointer-events-auto mx-auto flex items-center justify-between max-w-6xl rounded-full border transition-all duration-300 px-4 sm:px-6",
           scrolled
@@ -88,7 +85,7 @@ export function Navbar() {
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
-      </motion.div>
+      </div>
 
       {/* Mobile Drawer */}
       <AnimatePresence>

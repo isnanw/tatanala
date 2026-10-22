@@ -32,21 +32,21 @@ export function PartnerLogos() {
       <div className="pointer-events-none absolute left-0 inset-y-0 w-12 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 inset-y-0 w-12 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
 
-      {/* Animated Marquee Strip */}
-      <div className="flex w-max items-center py-1">
+      {/* Animated Marquee Strip - Slow, Calm, and Crisp */}
+      <div className="flex w-max items-center py-1.5 overflow-hidden">
         <motion.div
           animate={isPaused ? {} : { x: ["0%", "-50%"] }}
           transition={{
-            duration: 28,
+            duration: 60, // Slower, calmer and comfortable to the eyes
             ease: "linear",
             repeat: Infinity,
           }}
-          className="flex items-center gap-10 sm:gap-14 pr-10 sm:pr-14"
+          className="flex items-center gap-14 sm:gap-20 pr-14 sm:pr-20 will-change-transform"
         >
           {duplicated.map((client, idx) => (
             <div
               key={`${client.name}-${idx}`}
-              className="flex items-center justify-center shrink-0 opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="flex items-center justify-center shrink-0 opacity-75 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
               title={client.name}
             >
               <Image
@@ -56,7 +56,7 @@ export function PartnerLogos() {
                 height={client.height}
                 loading="eager"
                 priority={idx < 4}
-                className="h-8 sm:h-9 w-auto max-h-9 object-contain transition-all duration-300"
+                className="h-7 sm:h-8 w-auto max-h-8 object-contain"
               />
             </div>
           ))}

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { ContactHero } from "@/components/sections/ContactHero";
 import { SubpageHero } from "@/components/sections/SubpageHero";
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
 export default function KontakPage() {
   return (
     <>
-      <Navbar />
       <main className="bg-[#F8FAFC]">
         {/* Modern Executive Subpage Hero with 3 Fast Contact Points */}
         <SubpageHero

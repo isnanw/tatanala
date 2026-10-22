@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowcase";
 import { SubpageHero } from "@/components/sections/SubpageHero";
@@ -23,7 +22,6 @@ export const metadata: Metadata = {
 export default function PortofolioPage() {
   return (
     <>
-      <Navbar />
       <main className="bg-[#F8FAFC]">
         {/* Modern Executive Subpage Hero with 3 Sector Highlights */}
         <SubpageHero

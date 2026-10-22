@@ -33,12 +33,12 @@ export function NationalVision() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Image Showcase with Interactive Animated Floating Cards */}
+          {/* Left Column: Image Showcase with Interactive Animated Floating Cards (Repeating on Scroll) */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
             className="lg:col-span-5 relative order-2 lg:order-1"
           >
             {/* Visual Container */}
@@ -48,6 +48,8 @@ export function NationalVision() {
                   src="/images/team-office.jpg"
                   alt="Kolaborasi Tim Rekayasa Software Tatanala"
                   fill
+                  priority
+                  loading="eager"
                   sizes="(max-width: 768px) 100vw, 450px"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
@@ -99,12 +101,12 @@ export function NationalVision() {
 
           </motion.div>
 
-          {/* Right Column: Simplified Narrative, Flexible Value Props & CTAs */}
+          {/* Right Column: Simplified Narrative, Flexible Value Props & CTAs (Repeating Scroll Up & Down) */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
             className="lg:col-span-7 order-1 lg:order-2"
           >
             {/* Eyebrow Pill */}

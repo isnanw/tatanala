@@ -213,8 +213,14 @@ export function ProjectTabbedShowcase() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
+        {/* Section Header with repeating scroll animation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-7 sm:mb-9"
+        >
           <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
             <span>Studi Kasus &amp; Portofolio</span>
@@ -225,10 +231,16 @@ export function ProjectTabbedShowcase() {
           <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Implementasi nyata yang kami rancang untuk memecahkan hambatan operasional, keuangan, dan tata kelola digital klien secara presisi.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Executive Segmented Navigation Bar */}
-        <div className="flex justify-center mb-8">
+        {/* Executive Segmented Navigation Bar with repeating scroll animation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="flex justify-center mb-8"
+        >
           <div className="bg-slate-200/80 p-1 rounded-2xl border border-slate-200 inline-flex flex-wrap items-center justify-center gap-1 shadow-2xs">
             {PROJECTS.map((project) => {
               const isActive = activeTab === project.id;
@@ -253,18 +265,24 @@ export function ProjectTabbedShowcase() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Floating Spotlight Canvas Container */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentProject.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="rounded-3xl bg-white border border-slate-200/90 shadow-xl shadow-slate-900/5 overflow-hidden"
-          >
+        {/* Floating Spotlight Canvas Container with repeating scroll trigger */}
+        <motion.div
+          initial={{ opacity: 0, y: 35, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.15 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentProject.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="rounded-3xl bg-white border border-slate-200/90 shadow-xl shadow-slate-900/5 overflow-hidden"
+            >
             {/* Mac Window Chrome Header */}
             <div className="h-11 px-4 sm:px-6 bg-slate-100/90 border-b border-slate-200/80 flex items-center justify-between relative z-20">
               {/* Traffic Light Dots */}
@@ -406,6 +424,7 @@ export function ProjectTabbedShowcase() {
             </div>
           </motion.div>
         </AnimatePresence>
+        </motion.div>
 
       </div>
 

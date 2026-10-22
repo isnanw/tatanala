@@ -81,25 +81,34 @@ export function Leadership() {
           </motion.p>
         </div>
 
-        {/* 4 Arch-Pill Portrait Cards Grid */}
+        {/* 4 Arch-Pill Portrait Cards Grid with Varied 3D & Spring Hover */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {LEADERS.map((leader, index) => (
             <motion.div
               key={leader.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group rounded-3xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col"
+              initial={{ opacity: 0, y: 30, scale: 0.92 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: [0.34, 1.56, 0.64, 1]
+              }}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.25, ease: "easeOut" } 
+              }}
+              className="group rounded-3xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col"
             >
-              {/* Arch-shaped top portrait frame */}
+              {/* Arch-shaped top portrait frame with image zoom */}
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-[3rem] rounded-b-2xl bg-gradient-to-b from-blue-100/50 to-slate-200/60 mb-5">
                 <Image
                   src={leader.image}
                   alt={leader.name}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-108 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <span className="text-xs sm:text-[13px] font-semibold text-white tracking-wide">
@@ -111,7 +120,7 @@ export function Leadership() {
               {/* Leader Meta */}
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="inline-block px-3 py-1 rounded-md bg-blue-50 text-xs font-bold text-blue-700 tracking-tight uppercase mb-2">
+                  <span className="inline-block px-3 py-1 rounded-md bg-blue-50 text-xs font-bold text-blue-700 tracking-tight uppercase mb-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
                     {leader.role}
                   </span>
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">

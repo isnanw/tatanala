@@ -3,13 +3,11 @@ import { ExecutiveTestimonial } from "@/components/sections/ExecutiveTestimonial
 import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { NationalVision } from "@/components/sections/NationalVision";
-import { Navbar } from "@/components/sections/Navbar";
 import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowcase";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main id="main">
         {/* 1. Split Hero Section with integrated Client Logos Bar */}
         <Hero />

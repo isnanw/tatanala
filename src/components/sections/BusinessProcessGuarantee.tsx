@@ -49,8 +49,14 @@ export function BusinessProcessGuarantee() {
     <section id="proses-bisnis" className="pt-6 sm:pt-8 pb-10 sm:pb-12 bg-white border-b border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header - Top Centered / Full-Width for clean balance */}
-        <div className="max-w-3xl mb-6 sm:mb-8">
+        {/* Section Header with repeating scroll animation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="max-w-3xl mb-6 sm:mb-8"
+        >
           <div className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2 shadow-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
             <span>Tata Kelola &amp; Komitmen</span>
@@ -61,7 +67,7 @@ export function BusinessProcessGuarantee() {
           <p className="mt-1.5 text-slate-600 text-sm sm:text-base leading-relaxed">
             Software yang sukses bukan hanya yang memiliki baris kode rapi, tetapi yang benar-benar mempermudah staf Anda, mencegah kebocoran operasional, dan mempercepat pengambilan keputusan pimpinan.
           </p>
-        </div>
+        </motion.div>
 
         {/* 2-Column Content Grid: Left Cards & Right Image Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
@@ -73,11 +79,11 @@ export function BusinessProcessGuarantee() {
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: -14 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.06, duration: 0.25 }}
-                  whileHover={{ x: 3, transition: { duration: 0.15 } }}
+                  initial={{ opacity: 0, x: -16, scale: 0.98 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ delay: idx * 0.05, duration: 0.3 }}
+                  whileHover={{ x: 4, transition: { duration: 0.15 } }}
                   className="p-3 sm:p-3.5 rounded-xl border border-slate-200/80 bg-[#F8FAFC] hover:bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default"
                 >
                   <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 mt-0.5">
@@ -110,11 +116,14 @@ export function BusinessProcessGuarantee() {
             </div>
           </div>
 
-          {/* Right Column: Authentic Photography Showcase */}
+          {/* Right Column: Authentic Photography Showcase with repeating scroll trigger */}
           <div className="lg:col-span-5 flex flex-col justify-between order-1 lg:order-2">
             <motion.div 
+              initial={{ opacity: 0, x: 20, scale: 0.96 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
               whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               className="relative w-full h-full min-h-[380px] sm:min-h-[440px] rounded-2xl overflow-hidden border border-slate-200/90 shadow-md group flex flex-col"
             >
               {/* Primary Large Image */}

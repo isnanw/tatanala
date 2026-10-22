@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Leadership } from "@/components/sections/Leadership";
 import { SubpageHero } from "@/components/sections/SubpageHero";
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
 export default function TentangKamiPage() {
   return (
     <>
-      <Navbar />
       <main className="bg-[#F8FAFC]">
         {/* Modern Executive Subpage Hero with 3 Engineering Values */}
         <SubpageHero

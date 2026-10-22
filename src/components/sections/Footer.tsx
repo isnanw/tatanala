@@ -3,6 +3,7 @@
 import { ArrowUp, Mail, Phone, MapPin, MessageCircle, MessageSquare, ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 import { SITE } from "@/data/content";
 import { useConsult } from "@/components/consult/ConsultProvider";
@@ -19,7 +20,13 @@ export function Footer() {
       
       {/* 1. Floating Consultation Card Overlapping the Top of the Footer */}
       <div className="relative -mt-28 sm:-mt-36 lg:-mt-40 mb-14 sm:mb-20 z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-[#1E293B] border border-slate-700/80 shadow-2xl text-white">
+        <motion.div 
+          initial={{ opacity: 0, y: 35, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-[#1E293B] border border-slate-700/80 shadow-2xl text-white"
+        >
           
           {/* Subtle Organic Curve Watermark Accent matching reference */}
           <div className="absolute right-0 top-0 bottom-0 w-3/5 pointer-events-none opacity-[0.06] overflow-hidden flex items-center justify-end select-none">
@@ -73,7 +80,7 @@ export function Footer() {
 
           </div>
 
-        </div>
+        </motion.div>
       </div>
 
       {/* 2. Main Multi-Column Sitemap Grid (Matching the Reference Layout) */}

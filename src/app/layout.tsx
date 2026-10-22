@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Newsreader, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import { ConsultProvider } from "@/components/consult/ConsultProvider";
+import { Navbar } from "@/components/sections/Navbar";
+import { PageTransitionProvider } from "@/components/providers/PageTransitionProvider";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -81,7 +83,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
-        <ConsultProvider>{children}</ConsultProvider>
+        <ConsultProvider>
+          {/* Static Persistent Menu: Never moves or animates on route change */}
+          <Navbar />
+          <PageTransitionProvider>{children}</PageTransitionProvider>
+        </ConsultProvider>
       </body>
     </html>
   );

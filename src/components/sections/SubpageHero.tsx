@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useConsult } from "@/components/consult/ConsultProvider";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -72,46 +73,73 @@ export function SubpageHero({
       {/* 1. Header Banner: Compact, Image-tinted, Dark Brand Navy with Backdrop */}
       <section className="relative w-full overflow-hidden bg-[#07101E] pt-28 sm:pt-36 pb-36 sm:pb-44 text-white">
         
-        {/* Photographic Backdrop: Bright, vibrant, and clearly visible */}
-        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+        {/* Photographic Backdrop: Bright, vibrant, and clearly visible with subtle parallax zoom */}
+        <motion.div 
+          initial={{ scale: 1.08, opacity: 0.5 }}
+          animate={{ scale: 1, opacity: 0.75 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute inset-0 pointer-events-none select-none overflow-hidden"
+        >
           <Image
             src={headerBgImage}
             alt="Hero Backdrop"
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-75"
+            className="object-cover object-center"
             priority
+            loading="eager"
           />
           {/* Subtle Deep Navy Overlay & Vignette (Allows image to be bright and unmistakable while text stays sharp) */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#07101E]/90 via-[#07101E]/60 to-[#07101E]/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#07101E] via-transparent to-black/30" />
-        </div>
+        </motion.div>
 
         {/* Content Inside Header */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
           {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm text-slate-300/80 mb-4 sm:mb-5">
+          <motion.nav 
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            aria-label="Breadcrumb" 
+            className="flex items-center gap-2 text-xs sm:text-sm text-slate-300/80 mb-4 sm:mb-5"
+          >
             <Link href="/" className="hover:text-blue-400 transition-colors">
               Beranda
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
             <span className="text-blue-400 font-semibold">{breadcrumb}</span>
-          </nav>
+          </motion.nav>
 
           {/* Title & Description */}
           <div className="max-w-3xl">
             {badge && (
-              <span className="inline-block text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">
+              <motion.span 
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.05 }}
+                className="inline-block text-xs font-bold uppercase tracking-wider text-blue-400 mb-2"
+              >
                 {badge}
-              </span>
+              </motion.span>
             )}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            <motion.h1 
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight"
+            >
               {title}
-            </h1>
-            <p className="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-2xl">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-2xl"
+            >
               {description}
-            </p>
+            </motion.p>
           </div>
 
         </div>
@@ -120,27 +148,54 @@ export function SubpageHero({
 
       {/* 2. Overlapping White Sheet Container: Cuts and Overlaps the Header Boundary with 3 Core Page Points */}
       <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-24 sm:-mt-32">
-        <div className="rounded-2xl sm:rounded-3xl bg-white p-5 sm:p-7 lg:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.12)] border border-slate-200/90">
+        <motion.div 
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="rounded-2xl sm:rounded-3xl bg-white p-5 sm:p-7 lg:p-8 shadow-[0_20px_50px_rgba(15,23,42,0.12)] border border-slate-200/90"
+        >
           
-          {/* 3 Key Points Grid */}
+          {/* 3 Key Points Grid with Rich Varied Animations (Repeating on Scroll Up & Down) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {points.map((pt, idx) => {
               const Icon = ICON_MAP[pt.iconName] || Globe2;
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className="group relative rounded-2xl bg-[#F8FAFC] hover:bg-blue-50/40 border border-slate-200/80 hover:border-blue-300/80 p-6 flex flex-col justify-between transition-all duration-200 shadow-2xs hover:shadow-md"
+                  initial={{ opacity: 0, y: 36, scale: 0.94 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: idx * 0.1, 
+                    ease: [0.34, 1.56, 0.64, 1] // playful spring bounce
+                  }}
+                  whileHover={{ 
+                    y: -8, 
+                    scale: 1.02,
+                    boxShadow: "0 20px 35px -10px rgba(37, 99, 235, 0.15)",
+                    transition: { duration: 0.25, ease: "easeOut" } 
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-blue-400/80 p-6 flex flex-col justify-between transition-colors shadow-2xs hover:shadow-xl"
                 >
                   <div>
-                    {/* Top row: Icon and Badge */}
+                    {/* Top row: Icon and Badge with hover micro-animations */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
-                        <Icon className="h-6 w-6" />
-                      </div>
+                      <motion.div 
+                        whileHover={{ rotate: [0, -8, 8, 0], scale: 1.1 }}
+                        transition={{ duration: 0.35 }}
+                        className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/25 group-hover:shadow-blue-500/40"
+                      >
+                        <Icon className="h-6 w-6 transition-transform group-hover:scale-110" />
+                      </motion.div>
                       {pt.badge && (
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 px-2.5 py-1 rounded-full border border-blue-200/60">
+                        <motion.span 
+                          whileHover={{ scale: 1.05 }}
+                          className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 group-hover:bg-blue-600 group-hover:text-white px-2.5 py-1 rounded-full border border-blue-200/60 transition-colors duration-200"
+                        >
                           {pt.badge}
-                        </span>
+                        </motion.span>
                       )}
                     </div>
 
@@ -160,28 +215,28 @@ export function SubpageHero({
                         <button
                           type="button"
                           onClick={() => openConsult(pt.consultTopic)}
-                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 cursor-pointer"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 cursor-pointer group/btn"
                         >
                           <span>{pt.actionLabel}</span>
-                          <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
                         </button>
                       ) : pt.actionHref ? (
                         <Link
                           href={pt.actionHref}
-                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 group/btn"
                         >
                           <span>{pt.actionLabel}</span>
-                          <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
                         </Link>
                       ) : null}
                     </div>
                   )}
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
-        </div>
+        </motion.div>
       </div>
 
     </div>

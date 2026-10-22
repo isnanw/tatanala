@@ -84,17 +84,31 @@ export function ProcessTimeline() {
             {STEPS.map((step, idx) => (
               <motion.div
                 key={step.step}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between"
+                initial={{ opacity: 0, y: 35, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ 
+                  duration: 0.45, 
+                  delay: idx * 0.08,
+                  ease: [0.34, 1.56, 0.64, 1] 
+                }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: "0 15px 30px -10px rgba(37,99,235,0.15)",
+                  transition: { duration: 0.2 } 
+                }}
+                className="group rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm hover:border-blue-400 transition-colors flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-10 w-10 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-sm shadow-md shadow-blue-500/20 mb-4">
+                  <motion.div 
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white font-extrabold flex items-center justify-center text-sm shadow-md shadow-blue-500/20 mb-4"
+                  >
                     {step.step}
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 leading-snug">
+                  </motion.div>
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
                     {step.title}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">

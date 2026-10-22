@@ -96,18 +96,30 @@ export function ExecutiveTestimonial() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+        {/* Section Header with repeating scroll animation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10"
+        >
           <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 mb-2">
             Apa Kata Klien Kami
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
             Pengalaman bekerja sama dalam membangun software
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Carousel Content Stage */}
-        <div className="relative flex items-center justify-between gap-4 sm:gap-8">
+        {/* Carousel Content Stage with repeating scroll animation */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="relative flex items-center justify-between gap-4 sm:gap-8"
+        >
           
           {/* Left Arrow Button */}
           <button
@@ -178,7 +190,7 @@ export function ExecutiveTestimonial() {
             <ChevronRight className="w-5 h-5" />
           </button>
 
-        </div>
+        </motion.div>
 
         {/* Bottom Pagination Dots */}
         <div className="mt-8 sm:mt-10 flex items-center justify-center gap-2">
