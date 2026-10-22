@@ -5,7 +5,6 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 import { NationalVision } from "@/components/sections/NationalVision";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 
 export const metadata: Metadata = {
   title: "Tentang Kami & Rekayasa Software Terpercaya | Tatanala",
@@ -70,9 +69,6 @@ export default function TentangKamiPage() {
 
         {/* 5-Step Execution Methodology */}
         <ProcessTimeline />
-
-        {/* Pre-footer Support */}
-        <PreFooterSupportBanner />
       </main>
       <Footer />
     </>

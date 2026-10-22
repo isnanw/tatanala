@@ -4,7 +4,6 @@ import { ContactHero } from "@/components/sections/ContactHero";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { Faq } from "@/components/sections/Faq";
-import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 import { SITE } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -67,9 +66,6 @@ export default function KontakPage() {
 
         {/* Formal Corporate FAQ */}
         <Faq />
-
-        {/* Pre-footer Support Banner */}
-        <PreFooterSupportBanner />
       </main>
       <Footer />
     </>

@@ -4,7 +4,6 @@ import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowca
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { ExecutiveTestimonial } from "@/components/sections/ExecutiveTestimonial";
-import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 
 export const metadata: Metadata = {
   title: "Portofolio & Studi Kasus Proyek IT | Tatanala",
@@ -66,9 +65,6 @@ export default function PortofolioPage() {
 
         {/* Executive Testimonial */}
         <ExecutiveTestimonial />
-
-        {/* Support Banner */}
-        <PreFooterSupportBanner />
       </main>
       <Footer />
     </>

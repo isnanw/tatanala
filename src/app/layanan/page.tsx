@@ -3,7 +3,6 @@ import { Footer } from "@/components/sections/Footer";
 import { Services } from "@/components/sections/Services";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
-import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 import { Faq } from "@/components/sections/Faq";
 
 export const metadata: Metadata = {
@@ -67,9 +66,6 @@ export default function LayananPage() {
 
         {/* FAQ */}
         <Faq />
-
-        {/* Pre-footer Call to Action */}
-        <PreFooterSupportBanner />
       </main>
       <Footer />
     </>

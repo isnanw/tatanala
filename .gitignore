@@ -43,13 +43,15 @@ next-env.d.ts
 # ai agent & skills
 .agents/
 .agents/*
-skills/
-.aider-desk/
 .aider*
+.aider-desk/
+skills/
+skills/*
 skills-lock.json
 .gemini/
 .claude/
 .cursor/
 .windsurf/
+.copilot/
 
 
