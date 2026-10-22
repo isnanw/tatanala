@@ -5,13 +5,14 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 import { useState } from "react";
 import { FAQS } from "@/data/content";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const { openConsult } = useConsult();
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80">
+    <section id="faq" className="relative py-20 sm:py-28 bg-[#F8FAFC] overflow-hidden">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -115,6 +116,13 @@ export function Faq() {
           </motion.button>
         </div>
       </div>
+
+      {/* Smooth Transition Arch into Dark Corporate Footer */}
+      <ShapeDivider
+        variant="arch"
+        position="bottom"
+        nextBgColor="#07101E"
+      />
     </section>
   );
 }

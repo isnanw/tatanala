@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ShieldCheck, Award, FileCode, Users, CheckCircle2, Lock, ArrowRight } from "lucide-react";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 const LEADERS = [
   {
@@ -47,7 +48,7 @@ export function Leadership() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="rekayasa" className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80">
+    <section id="rekayasa" className="relative py-20 sm:py-28 bg-[#F8FAFC] overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -179,6 +180,14 @@ export function Leadership() {
           </div>
         </div>
       </div>
+
+      {/* Smooth Shape Divider transitioning to White */}
+      <ShapeDivider
+        variant="wave"
+        position="bottom"
+        nextBgColor="#FFFFFF"
+        secondaryColor="rgba(37, 99, 235, 0.04)"
+      />
     </section>
   );
 }

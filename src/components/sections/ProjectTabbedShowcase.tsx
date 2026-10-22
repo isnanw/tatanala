@@ -20,6 +20,7 @@ import {
 import Image from "next/image";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { useEscape, useLockBody } from "@/lib/hooks";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 interface ProjectItem {
   id: string;
@@ -209,7 +210,7 @@ export function ProjectTabbedShowcase() {
   return (
     <section 
       id="portofolio-showcase" 
-      className="scroll-mt-24 pt-10 sm:pt-14 pb-16 sm:pb-20 bg-[#F8FAFC] border-b border-slate-200/80"
+      className="relative scroll-mt-24 pt-14 sm:pt-20 pb-20 sm:pb-28 bg-white overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
@@ -507,6 +508,13 @@ export function ProjectTabbedShowcase() {
         )}
       </AnimatePresence>
 
+      {/* Modern Dynamic Slant Divider transitioning into #F8FAFC */}
+      <ShapeDivider
+        variant="slant"
+        position="bottom"
+        nextBgColor="#F8FAFC"
+        secondaryColor="rgba(37, 99, 235, 0.04)"
+      />
     </section>
   );
 }

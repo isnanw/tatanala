@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 interface TestimonialItem {
   id: string;
@@ -213,6 +214,13 @@ export function ExecutiveTestimonial() {
         </div>
 
       </div>
+
+      {/* Smooth Transition Arch into Dark Corporate Footer */}
+      <ShapeDivider
+        variant="arch"
+        position="bottom"
+        nextBgColor="#07101E"
+      />
     </section>
   );
 }

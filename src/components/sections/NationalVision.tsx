@@ -14,12 +14,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 export function NationalVision() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="identitas" className="relative pt-7 sm:pt-9 pb-7 sm:pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
+    <section id="identitas" className="relative pt-14 sm:pt-20 pb-20 sm:pb-28 bg-white overflow-hidden">
       {/* Subtle ambient light blur */}
       <div 
         aria-hidden="true" 
@@ -179,6 +180,14 @@ export function NationalVision() {
 
         </div>
       </div>
+
+      {/* Smooth Shape Divider transitioning to the next section */}
+      <ShapeDivider
+        variant="curve"
+        position="bottom"
+        nextBgColor="#F8FAFC"
+        secondaryColor="rgba(37, 99, 235, 0.04)"
+      />
     </section>
   );
 }

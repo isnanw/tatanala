@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, GitCommit, FileSpreadsheet, Code2, Users2, ShieldCheck, ArrowRight } from "lucide-react";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 const STEPS = [
   {
@@ -41,7 +42,7 @@ export function ProcessTimeline() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="alur-kerja" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
+    <section id="alur-kerja" className="relative py-20 sm:py-28 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -141,6 +142,13 @@ export function ProcessTimeline() {
           </button>
         </div>
       </div>
+
+      {/* Smooth Transition Arch into Dark Corporate Footer */}
+      <ShapeDivider
+        variant="arch"
+        position="bottom"
+        nextBgColor="#07101E"
+      />
     </section>
   );
 }

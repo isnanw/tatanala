@@ -5,6 +5,7 @@ import { ArrowRight, Boxes, Globe2, Rocket, CheckCircle2, X, ShieldCheck, Cpu, Z
 import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { useEscape, useLockBody } from "@/lib/hooks";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 interface PillarItem {
   id: string;
@@ -102,7 +103,7 @@ export function Services() {
   };
 
   return (
-    <section id="layanan" className="py-20 sm:py-28 bg-white border-y border-slate-200/80">
+    <section id="layanan" className="relative py-20 sm:py-28 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -352,6 +353,14 @@ export function Services() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Smooth Shape Divider transitioning to #F8FAFC */}
+      <ShapeDivider
+        variant="curve"
+        position="bottom"
+        nextBgColor="#F8FAFC"
+        secondaryColor="rgba(37, 99, 235, 0.04)"
+      />
     </section>
   );
 }

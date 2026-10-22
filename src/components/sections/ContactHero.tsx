@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { SITE } from "@/data/content";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 export function ContactHero() {
   const [submitted, setSubmitted] = useState(false);
@@ -340,6 +341,14 @@ export function ContactHero() {
         </div>
 
       </div>
+
+      {/* Smooth Shape Divider transitioning to next section */}
+      <ShapeDivider
+        variant="curve"
+        position="bottom"
+        nextBgColor="#F8FAFC"
+        secondaryColor="rgba(37, 99, 235, 0.04)"
+      />
     </section>
   );
 }

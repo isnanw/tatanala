@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { ShapeDivider } from "@/components/ui/ShapeDivider";
 
 const VALUES = [
   {
@@ -46,7 +47,7 @@ export function BusinessProcessGuarantee() {
   const { openConsult } = useConsult();
 
   return (
-    <section id="proses-bisnis" className="pt-6 sm:pt-8 pb-10 sm:pb-12 bg-white border-b border-slate-200/80">
+    <section id="proses-bisnis" className="relative pt-14 sm:pt-20 pb-20 sm:pb-28 bg-[#F8FAFC] overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with repeating scroll animation */}
@@ -84,7 +85,7 @@ export function BusinessProcessGuarantee() {
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ delay: idx * 0.05, duration: 0.3 }}
                   whileHover={{ x: 4, transition: { duration: 0.15 } }}
-                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/80 bg-[#F8FAFC] hover:bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default"
+                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default shadow-xs"
                 >
                   <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 mt-0.5">
                     <Icon className="h-4 w-4" />
@@ -166,6 +167,14 @@ export function BusinessProcessGuarantee() {
         </div>
 
       </div>
+
+      {/* Smooth Dynamic Wave Shape Divider transitioning into White */}
+      <ShapeDivider
+        variant="wave"
+        position="bottom"
+        nextBgColor="#FFFFFF"
+        secondaryColor="rgba(37, 99, 235, 0.05)"
+      />
     </section>
   );
 }
