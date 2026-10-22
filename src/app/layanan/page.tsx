@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Services } from "@/components/sections/Services";
-import { ThreePillarSolutions } from "@/components/sections/ThreePillarSolutions";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 import { Faq } from "@/components/sections/Faq";
@@ -40,9 +39,6 @@ export default function LayananPage() {
             </p>
           </div>
         </section>
-
-        {/* 3 Pillar Solutions */}
-        <ThreePillarSolutions />
 
         {/* Detailed Services Breakdown */}
         <Services />

@@ -11,7 +11,6 @@ import { NationalVision } from "@/components/sections/NationalVision";
 import { Navbar } from "@/components/sections/Navbar";
 import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowcase";
-import { ThreePillarSolutions } from "@/components/sections/ThreePillarSolutions";
 
 export default function Home() {
   return (
@@ -24,10 +23,7 @@ export default function Home() {
         {/* 2. Kedaulatan Teknologi & Visi (Company Identity & Core Principles) */}
         <NationalVision />
 
-        {/* 3. 3-Pillar Solution Cards (Web, Sistem Custom, Dashboard Otomatis) */}
-        <ThreePillarSolutions />
-
-        {/* 4. Kami Pahami Proses Bisnis Anda Sebelum Merancang Software */}
+        {/* 3. Kami Pahami Proses Bisnis Anda Sebelum Merancang Software */}
         <BusinessProcessGuarantee />
 
         {/* 5. Solusi Nyata Dari Berbagai Proyek (Tabbed Showcase) */}

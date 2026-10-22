@@ -46,102 +46,112 @@ export function BusinessProcessGuarantee() {
   const { openConsult } = useConsult();
 
   return (
-    <section className="pt-10 sm:pt-14 pb-14 sm:pb-20 bg-white border-b border-slate-200/80">
+    <section id="proses-bisnis" className="pt-6 sm:pt-8 pb-10 sm:pb-12 bg-white border-b border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        {/* Section Header - Top Centered / Full-Width for clean balance */}
+        <div className="max-w-3xl mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2 shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+            <span>Tata Kelola &amp; Komitmen</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-bold text-[#0F172A] tracking-tight leading-tight">
+            Kami Pahami Proses Bisnis Anda Sebelum Merancang Software
+          </h2>
+          <p className="mt-1.5 text-slate-600 text-sm sm:text-base leading-relaxed">
+            Software yang sukses bukan hanya yang memiliki baris kode rapi, tetapi yang benar-benar mempermudah staf Anda, mencegah kebocoran operasional, dan mempercepat pengambilan keputusan pimpinan.
+          </p>
+        </div>
+
+        {/* 2-Column Content Grid: Perfectly Aligned Left Image & Right Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left Column: Authentic Team Photography Collage */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              
+          {/* Left Column: Authentic Photography Showcase (Heights match cards) */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <motion.div 
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full h-full min-h-[380px] sm:min-h-[440px] rounded-2xl overflow-hidden border border-slate-200/90 shadow-md group flex flex-col"
+            >
               {/* Primary Large Image */}
-              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
+              <div className="relative flex-1 w-full bg-slate-100 min-h-[260px]">
                 <Image
                   src="/images/server-audit.jpg"
                   alt="Audit Sistem & Rekayasa Arsitektur Tatanala"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
-                  className="object-cover"
+                  className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
                 />
+                {/* Small Overlay Badge */}
+                <div className="absolute top-3.5 left-3.5 bg-slate-900/90 backdrop-blur-md text-white px-3 py-1 rounded-md border border-slate-700/80 text-xs font-medium flex items-center gap-1.5 shadow-sm">
+                  <FileCheck2 className="h-3.5 w-3.5 text-blue-400" />
+                  <span>Metodologi Agile &amp; UAT</span>
+                </div>
               </div>
 
-              {/* Secondary Overlapping Image */}
-              <div className="hidden sm:block absolute -bottom-8 -right-6 w-3/5 aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-slate-100">
-                <Image
-                  src="/images/client-training.jpg"
-                  alt="Pelatihan Tim Pengguna Sistem Tatanala"
-                  fill
-                  sizes="300px"
-                  className="object-cover"
-                />
+              {/* Bottom Inset Showcase Strip */}
+              <div className="relative h-32 sm:h-36 bg-slate-50 border-t border-slate-200/80 p-3.5 flex items-center gap-3.5">
+                <div className="relative w-28 sm:w-32 h-full rounded-xl overflow-hidden border border-slate-200 shrink-0">
+                  <Image
+                    src="/images/client-training.jpg"
+                    alt="Pelatihan Tim Pengguna Sistem Tatanala"
+                    fill
+                    sizes="150px"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs sm:text-sm font-bold text-[#0F172A] leading-snug">Pendampingan &amp; Pelatihan</p>
+                  <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 leading-relaxed">
+                    Pelatihan langsung untuk seluruh staf hingga mahir mengoperasikan sistem.
+                  </p>
+                </div>
               </div>
-
-              {/* Small Overlay Badge */}
-              <div className="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-slate-700/80 text-xs sm:text-sm font-semibold flex items-center gap-2">
-                <FileCheck2 className="h-4 w-4 text-blue-400" />
-                <span>Metodologi Agile &amp; UAT</span>
-              </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column: 5 Corporate Value Cards */}
-          <div className="lg:col-span-7">
-            <div className="mb-8">
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200/80 px-4 py-1.5 rounded-full">
-                Tata Kelola &amp; Komitmen
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-3">
-                Kami Pahami Proses Bisnis Anda Sebelum Merancang Software
-              </h2>
-              <p className="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">
-                Software yang sukses bukan hanya yang memiliki baris kode rapi, tetapi yang benar-benar mempermudah staf Anda, mencegah kebocoran finansial, dan mempercepat pengambilan keputusan pimpinan.
-              </p>
-            </div>
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-2.5">
+            {VALUES.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: 14 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.06, duration: 0.25 }}
+                  whileHover={{ x: 3, transition: { duration: 0.15 } }}
+                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/80 bg-[#F8FAFC] hover:bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default"
+                >
+                  <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 mt-0.5">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-blue-600 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="mt-0.5 text-xs text-slate-600 leading-relaxed font-normal">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
 
-            {/* 5 Value Items */}
-            <div className="space-y-4">
-              {VALUES.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 bg-[#F8FAFC] hover:bg-white hover:border-blue-300 hover:shadow-md transition-all duration-200 flex items-start gap-4"
-                  >
-                    <div className="h-11 w-11 shrink-0 rounded-xl bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Bottom Section Action */}
-            <div className="mt-8 pt-4">
+            {/* Bottom Action CTA */}
+            <div className="pt-2">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="button"
                 onClick={() => openConsult("audit-proses-bisnis")}
-                className="inline-flex items-center gap-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
               >
                 <span>Mulai Audit Kebutuhan Sistem Anda</span>
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
             </div>
-
           </div>
 
         </div>

@@ -54,6 +54,8 @@ export function PartnerLogos() {
                 alt={client.name}
                 width={client.width}
                 height={client.height}
+                loading="eager"
+                priority={idx < 4}
                 className="h-8 sm:h-9 w-auto max-h-9 object-contain transition-all duration-300"
               />
             </div>

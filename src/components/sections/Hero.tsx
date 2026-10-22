@@ -32,9 +32,9 @@ const itemAnim: Variants = {
 export function Hero() {
   const { openConsult } = useConsult();
 
-  const handleScrollToSolutions = (e: React.MouseEvent) => {
+  const handleScrollToProcess = (e: React.MouseEvent) => {
     e.preventDefault();
-    const el = document.getElementById("solusi");
+    const el = document.getElementById("proses-bisnis");
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -145,11 +145,11 @@ export function Hero() {
               </motion.button>
 
               <a
-                href="#solusi"
-                onClick={handleScrollToSolutions}
+                href="#proses-bisnis"
+                onClick={handleScrollToProcess}
                 className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors cursor-pointer"
               >
-                <span>Pelajari Ragam Solusi</span>
+                <span>Pelajari Alur Kerja</span>
               </a>
             </motion.div>
 
