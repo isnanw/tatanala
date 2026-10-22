@@ -1,15 +1,9 @@
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
-import { CaseStudies } from "@/components/sections/CaseStudies";
-import { ContactSection } from "@/components/sections/ContactSection";
 import { ExecutiveTestimonial } from "@/components/sections/ExecutiveTestimonial";
-import { Faq } from "@/components/sections/Faq";
-import { FieldDocs } from "@/components/sections/FieldDocs";
 import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Leadership } from "@/components/sections/Leadership";
 import { NationalVision } from "@/components/sections/NationalVision";
 import { Navbar } from "@/components/sections/Navbar";
-import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowcase";
 
 export default function Home() {
@@ -31,21 +25,6 @@ export default function Home() {
 
         {/* 7. Executive Centered Testimonial with Concentric Rings */}
         <ExecutiveTestimonial />
-
-        {/* 8. Field Activities & Engineering Quality Gallery */}
-        <FieldDocs />
-
-        {/* 9. Leadership & Legal Integrity */}
-        <Leadership />
-
-        {/* 10. Formal Corporate FAQ Accordion */}
-        <Faq />
-
-        {/* 11. Pre-Footer Support Banner ("Masih Bertahan dengan Alur Kerja Manual yang Rentan?") */}
-        <PreFooterSupportBanner />
-
-        {/* 12. Official Inquiry Form & Registered Office Address */}
-        <ContactSection />
       </main>
 
       {/* 13. Comprehensive Multi-Column Enterprise Sitemap Footer */}

@@ -3,7 +3,6 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { ProjectTabbedShowcase } from "@/components/sections/ProjectTabbedShowcase";
 import { CaseStudies } from "@/components/sections/CaseStudies";
-import { FieldDocs } from "@/components/sections/FieldDocs";
 import { ExecutiveTestimonial } from "@/components/sections/ExecutiveTestimonial";
 import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 
@@ -48,9 +47,6 @@ export default function PortofolioPage() {
 
         {/* Executive Testimonial */}
         <ExecutiveTestimonial />
-
-        {/* Real Field Activity Documentation */}
-        <FieldDocs />
 
         {/* Support Banner */}
         <PreFooterSupportBanner />

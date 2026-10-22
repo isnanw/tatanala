@@ -31,9 +31,9 @@ const STEPS = [
   },
   {
     step: "05",
-    title: "Serah Terima Total & Kedaulatan Sistem",
-    desc: "Penyerahan seluruh kredensial repositori Git, hak akses cloud, database dump, dan masa pendampingan berkala dengan jaminan SLA responsif.",
-    output: "100% Kedaulatan Source Code & DB Milik Anda",
+    title: "Peluncuran Sistem & Jaminan SLA Operasional",
+    desc: "Aktivasi sistem ke lingkungan produksi, penyerahan akses operasional resmi, serta pendampingan berkala dengan jaminan SLA pemeliharaan berkelanjutan.",
+    output: "Sistem Aktif & Terproteksi SLA Penuh",
   },
 ];
 

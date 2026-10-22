@@ -63,11 +63,55 @@ export function BusinessProcessGuarantee() {
           </p>
         </div>
 
-        {/* 2-Column Content Grid: Perfectly Aligned Left Image & Right Cards */}
+        {/* 2-Column Content Grid: Left Cards & Right Image Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left Column: Authentic Photography Showcase (Heights match cards) */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          {/* Left Column: 5 Corporate Value Cards */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-2.5 order-2 lg:order-1">
+            {VALUES.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: -14 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.06, duration: 0.25 }}
+                  whileHover={{ x: 3, transition: { duration: 0.15 } }}
+                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/80 bg-[#F8FAFC] hover:bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default"
+                >
+                  <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 mt-0.5">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-blue-600 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="mt-0.5 text-xs text-slate-600 leading-relaxed font-normal">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+
+            {/* Bottom Action CTA */}
+            <div className="pt-2">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="button"
+                onClick={() => openConsult("audit-proses-bisnis")}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
+              >
+                <span>Mulai Audit Kebutuhan Sistem Anda</span>
+                <ArrowRight className="h-4 w-4" />
+              </motion.button>
+            </div>
+          </div>
+
+          {/* Right Column: Authentic Photography Showcase */}
+          <div className="lg:col-span-5 flex flex-col justify-between order-1 lg:order-2">
             <motion.div 
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
@@ -108,50 +152,6 @@ export function BusinessProcessGuarantee() {
                 </div>
               </div>
             </motion.div>
-          </div>
-
-          {/* Right Column: 5 Corporate Value Cards */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-2.5">
-            {VALUES.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, x: 14 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.06, duration: 0.25 }}
-                  whileHover={{ x: 3, transition: { duration: 0.15 } }}
-                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/80 bg-[#F8FAFC] hover:bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default"
-                >
-                  <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 mt-0.5">
-                    <Icon className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-blue-600 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="mt-0.5 text-xs text-slate-600 leading-relaxed font-normal">
-                      {item.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-
-            {/* Bottom Action CTA */}
-            <div className="pt-2">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="button"
-                onClick={() => openConsult("audit-proses-bisnis")}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
-              >
-                <span>Mulai Audit Kebutuhan Sistem Anda</span>
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
-            </div>
           </div>
 
         </div>

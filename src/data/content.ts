@@ -375,9 +375,9 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const FAQS: FaqItem[] = [
   {
-    question: "Apakah status kepemilikan source code dan basis data mutlak menjadi hak milik perusahaan kami?",
+    question: "Bagaimana skema kerja sama dan lisensi penggunaan sistem di Tatanala?",
     answer:
-      "Mutlak 100% milik Anda. Setelah fase serah terima dan pelunasan selesai, seluruh akses repositori Git, skema database, kredensial server cloud, dan dokumentasi arsitektur diserahkan sepenuhnya ke entitas hukum bisnis Anda. Tidak ada klausul sewa lisensi tahunan tersembunyi (vendor lock-in). Anda bebas mengelola atau memodifikasi sistem ini secara mandiri di kemudian hari.",
+      "Kami menyediakan model implementasi fleksibel sesuai skala bisnis Anda, mulai dari pengembangan sistem kustom (private cloud/intranet) hingga skema langganan terkelola (SaaS). Seluruh data transaksi, basis data bisnis, dan rahasia operasional tetap sepenuhnya menjadi hak milik entitas Anda dengan proteksi enkripsi dan keamanan data terjamin.",
   },
   {
     question: "Bagaimana Tatanala menjamin kerahasiaan data omzet dan strategi bisnis kami?",
@@ -385,9 +385,9 @@ export const FAQS: FaqItem[] = [
       "Setiap perikatan kerja dilindungi secara hukum oleh Perjanjian Kerahasiaan Informasi (Non-Disclosure Agreement / NDA) resmi bermaterai sebelum sesi diagnosa mendalam atau penulisan kode dimulai. Data transaksi, rahasia dagang, daftar vendor, dan margin keuntungan klien dienkripsi dengan standar AES-256 dan dilindungi dari kebocoran ke pihak mana pun.",
   },
   {
-    question: "Mengapa kami harus membangun sistem kustom, bukan memakai aplikasi SaaS berlangganan bulanan?",
+    question: "Apakah Tatanala mendukung solusi langganan (SaaS) maupun pengembangan custom?",
     answer:
-      "Aplikasi berlangganan generik memaksa alur kerja unik Anda beradaptasi pada batasan fitur mereka, memungut biaya per pengguna yang kian membengkak saat cabang bertambah, dan data Anda tersandera di server pihak ketiga. Bersama Tatanala, sistem direkayasa presisi mengikuti SOP internal Anda, tanpa batas jumlah kasir atau cabang, dan efisiensi operasional tercapai permanen.",
+      "Ya. Kami memahami setiap institusi dan bisnis memiliki kebutuhan alokasi investasi yang berbeda. Bagi bisnis yang menginginkan kemudahan sistem terkelola penuh tanpa pusing memikirkan server, kami menyediakan skema langganan terkelola (SaaS). Untuk operasional korporasi dengan SOP unik, kami juga menyediakan opsi rekayasa kustom terintegrasi.",
   },
   {
     question: "Apakah sistem profil yang dibangun Tatanala memenuhi syarat verifikasi tender BUMN dan LPSE?",

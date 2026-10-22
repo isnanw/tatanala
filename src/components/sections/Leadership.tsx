@@ -37,8 +37,8 @@ const LEADERS = [
 ];
 
 const METRICS = [
-  { value: "100%", label: "Kepemilikan Hak Cipta", desc: "Source code & DB resmi diserahterimakan" },
-  { value: "0", label: "Vendor Lock-in", desc: "Arsitektur terbuka, dapat dikelola in-house" },
+  { value: "100%", label: "Kedaulatan Data Klien", desc: "Data transaksi terenkripsi & tersimpan privat" },
+  { value: "SLA", label: "Dukungan & Pemeliharaan", desc: "Layanan purnajual terikat kontrak resmi" },
   { value: "99.8%", label: "Komitmen SLA Uptime", desc: "Infrastruktur cloud dipantau kontinu" },
   { value: "100%", label: "Kepatuhan Hukum", desc: "Perjanjian Kerahasiaan (NDA) bermaterai" },
 ];
