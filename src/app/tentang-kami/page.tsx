@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Leadership } from "@/components/sections/Leadership";
+import { SubpageHero } from "@/components/sections/SubpageHero";
 import { NationalVision } from "@/components/sections/NationalVision";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
@@ -24,21 +25,41 @@ export default function TentangKamiPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-28 sm:pt-36 bg-[#F8FAFC]">
-        {/* Page Header */}
-        <section className="py-12 sm:py-16 bg-white border-b border-slate-200/80">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200/80 px-4 py-1.5 rounded-full">
-              Profil Studio Rekayasa &amp; Komitmen Teknis
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mt-5 max-w-3xl mx-auto">
-              Membangun Kepercayaan Melalui Rekayasa Software yang Andal
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-              Tatanala hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi di Indonesia yang mengutamakan kerapian arsitektur, keamanan data, dan keandalan sistem jangka panjang.
-            </p>
-          </div>
-        </section>
+      <main className="bg-[#F8FAFC]">
+        {/* Modern Executive Subpage Hero with 3 Engineering Values */}
+        <SubpageHero
+          breadcrumb="Tentang Tatanala"
+          badge="Profil Studio Rekayasa &amp; Komitmen Teknis"
+          title="Membangun Kepercayaan Melalui Rekayasa Software yang Andal"
+          description="Tatanala hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi di Indonesia yang mengutamakan kerapian arsitektur, keamanan data, dan keandalan sistem jangka panjang."
+          headerBgImage="/images/team-office.jpg"
+          points={[
+            {
+              iconName: "shield",
+              badge: "Kedaulatan & NDA",
+              title: "Kedaulatan Data & Privasi",
+              description: "Seluruh data bisnis, skema keuangan, dan alur operasional klien dilindungi NDA bermaterai dengan kontrol hak akses mandiri.",
+              actionLabel: "Tinjau Komitmen Legal",
+              actionHref: "#kepemimpinan",
+            },
+            {
+              iconName: "layers",
+              badge: "Arsitektur Bersih",
+              title: "Transparansi Rekayasa",
+              description: "Pengembangan sistem mengacu pada dokumen SRS terstruktur. Tanpa fitur tersembunyi dan mudah diintegrasikan ke ekosistem internal.",
+              actionLabel: "Lihat 5 Tahap Kerja",
+              actionHref: "#metodologi",
+            },
+            {
+              iconName: "headphones",
+              badge: "Garansi & SLA",
+              title: "Pendampingan & Pelatihan",
+              description: "Kami mendampingi operasional pasca-rilis dengan pelatihan staf menyeluruh, garansi bug 100%, serta hotline respon cepat.",
+              actionLabel: "Pelajari Jaminan SLA",
+              actionHref: "#jaminan-proses",
+            },
+          ]}
+        />
 
         {/* National Digital Vision */}
         <NationalVision />

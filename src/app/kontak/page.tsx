@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { ContactHero } from "@/components/sections/ContactHero";
+import { SubpageHero } from "@/components/sections/SubpageHero";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { Faq } from "@/components/sections/Faq";
 import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
+import { SITE } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Hubungi Kami & Konsultasi Kebutuhan Sistem | Tatanala",
@@ -23,7 +25,42 @@ export default function KontakPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="bg-[#F8FAFC]">
+        {/* Modern Executive Subpage Hero with 3 Fast Contact Points */}
+        <SubpageHero
+          breadcrumb="Hubungi Kami"
+          badge="Pusat Konsultasi &amp; Komunikasi Resmi"
+          title="Konsultasi Teknis & Jadwalkan Kebutuhan Sistem Anda"
+          description="Sampaikan permasalahan alur data, integrasi sistem, atau pengadaan proyek kelembagaan Anda. Insinyur senior kami menyusun telaah kebutuhan sistem (SRS) secara komprehensif."
+          headerBgImage="/images/support-consultant.jpg"
+          points={[
+            {
+              iconName: "message",
+              badge: "Respon Cepat",
+              title: "Hotline WhatsApp Resmi",
+              description: "Konsultasi langsung dengan tim insinyur via chat pesan instan untuk respon tanggap dan diskusi awal proyek.",
+              actionLabel: "Chat WhatsApp Sekarang",
+              actionHref: `https://wa.me/${SITE.whatsapp}?text=Halo%20Tatanala,%20saya%20ingin%20konsultasi%20kebutuhan%20sistem`,
+            },
+            {
+              iconName: "fileCheck",
+              badge: "Pengajuan SRS",
+              title: "Formulir Spesifikasi Teknis",
+              description: "Kirimkan ruang lingkup sistem, kendala alur data bisnis, dan estimasi waktu untuk telaah awal dalam 1x24 jam.",
+              actionLabel: "Lompat ke Formulir",
+              actionHref: "#konsultasi-form",
+            },
+            {
+              iconName: "mail",
+              badge: "Korespondensi",
+              title: "Surel Resmi & Perjanjian NDA",
+              description: "Pengiriman draf dokumen penawaran resmi, undangan tender kelembagaan, serta pertukaran draf kerahasiaan bermaterai.",
+              actionLabel: "Kirim Email Resmi",
+              actionHref: `mailto:${SITE.email}`,
+            },
+          ]}
+        />
+
         {/* Dedicated Full-Scale Contact & SRS Form Section */}
         <ContactHero />
 

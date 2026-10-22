@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Services } from "@/components/sections/Services";
+import { SubpageHero } from "@/components/sections/SubpageHero";
 import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessGuarantee";
 import { PreFooterSupportBanner } from "@/components/sections/PreFooterSupportBanner";
 import { Faq } from "@/components/sections/Faq";
@@ -24,21 +25,41 @@ export default function LayananPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-28 sm:pt-36 bg-[#F8FAFC]">
-        {/* Page Header */}
-        <section className="py-12 sm:py-16 bg-white border-b border-slate-200/80">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200/80 px-4 py-1.5 rounded-full">
-              Katalog Layanan &amp; Solusi Sistem
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mt-5 max-w-3xl mx-auto">
-              Solusi Rekayasa Software yang Mudah Dipahami &amp; Tepat Sasaran
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-              Membantu bisnis dan instansi merapikan alur kerja dari manual ke sistem digital yang rapi, akurat, dan mudah digunakan oleh seluruh tim operasional Anda.
-            </p>
-          </div>
-        </section>
+      <main className="bg-[#F8FAFC]">
+        {/* Modern Executive Subpage Hero with 3 Core Pillar Points */}
+        <SubpageHero
+          breadcrumb="Layanan &amp; Solusi"
+          badge="Katalog Layanan &amp; Solusi Sistem"
+          title="Solusi Rekayasa Software yang Mudah Dipahami & Tepat Sasaran"
+          description="Membantu bisnis dan instansi merapikan alur kerja manual menjadi sistem digital yang rapi, transparan, dan mudah digunakan oleh seluruh tim operasional."
+          headerBgImage="/images/server-audit.jpg"
+          points={[
+            {
+              iconName: "globe",
+              badge: "Pilar Hulu",
+              title: "Website & Portal Profesional",
+              description: "Situs profil berbobot dan siap tender. Menampilkan legalitas, portofolio terverifikasi, dan cepat dimuat di segala perangkat.",
+              actionLabel: "Lihat Rincian Deliverables",
+              actionHref: "#layanan",
+            },
+            {
+              iconName: "boxes",
+              badge: "Pilar Tengah",
+              title: "Sistem Informasi & Operasional",
+              description: "100% dirancang sesuai alur nyata & SOP unik bisnis Anda. Mulai dari sistem HRD, presensi, hingga transaksi & antrean realtime.",
+              actionLabel: "Pelajari Alur Sistem",
+              actionHref: "#layanan",
+            },
+            {
+              iconName: "rocket",
+              badge: "Pilar Hilir",
+              title: "Dashboard Laporan & Monitoring",
+              description: "Pusat visualisasi data otomatis. Rekap analitik performa cabang, stok, dan mutasi tanpa kompilasi spreadsheet manual.",
+              actionLabel: "Konsultasikan Kebutuhan",
+              consultTopic: "layanan-kustom",
+            },
+          ]}
+        />
 
         {/* Detailed Services Breakdown */}
         <Services />

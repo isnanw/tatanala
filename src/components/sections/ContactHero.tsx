@@ -42,7 +42,7 @@ export function ContactHero() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 bg-[#F8FAFC]">
+    <section id="konsultasi-form" className="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 bg-[#F8FAFC]">
       {/* Background Architectural Grid Lines */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-40 select-none"
