@@ -46,52 +46,60 @@ export function Hero() {
       aria-label="Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Tatanala"
       className="relative overflow-hidden bg-gradient-to-br from-[#EEF6FF] via-[#F8FAFC] to-white flex flex-col justify-between min-h-screen pt-20 sm:pt-22 lg:pt-24"
     >
-      {/* 1. Animated Drifting Background Mesh Orbs */}
+      {/* 1. Animated Drifting Background Mesh Orbs (Optimized: static on mobile, GPU-accelerated on desktop) */}
+      {/* Mobile Static High-Performance Gradients */}
+      <div
+        className="sm:hidden absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-tr from-blue-400/20 via-sky-200/15 to-transparent rounded-full blur-2xl pointer-events-none -z-0"
+        aria-hidden="true"
+      />
+      <div
+        className="sm:hidden absolute top-1/3 -left-10 w-[260px] h-[260px] bg-gradient-to-br from-sky-300/20 via-blue-200/15 to-transparent rounded-full blur-2xl pointer-events-none -z-0"
+        aria-hidden="true"
+      />
+
+      {/* Desktop Fluid GPU Mesh Orbs */}
       <motion.div
         animate={{ 
-          x: [0, 35, -20, 0], 
-          y: [0, -30, 20, 0],
-          scale: [1, 1.1, 0.95, 1] 
+          x: [0, 30, -20, 0], 
+          y: [0, -25, 15, 0],
+          scale: [1, 1.08, 0.96, 1] 
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-10 right-1/4 w-[550px] h-[550px] bg-gradient-to-tr from-blue-400/25 via-indigo-300/20 to-sky-200/10 rounded-full blur-3xl pointer-events-none -z-0"
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden sm:block absolute top-10 right-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-blue-400/20 via-indigo-300/15 to-sky-200/10 rounded-full blur-3xl pointer-events-none -z-0 transform-gpu will-change-transform"
       />
       
       <motion.div
         animate={{ 
-          x: [0, -30, 25, 0], 
-          y: [0, 25, -20, 0],
-          scale: [1, 1.12, 1] 
+          x: [0, -25, 20, 0], 
+          y: [0, 20, -15, 0],
+          scale: [1, 1.1, 1] 
         }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 -left-20 w-[450px] h-[450px] bg-gradient-to-br from-sky-300/25 via-blue-200/20 to-transparent rounded-full blur-3xl pointer-events-none -z-0"
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden sm:block absolute top-1/3 -left-20 w-[420px] h-[420px] bg-gradient-to-br from-sky-300/20 via-blue-200/15 to-transparent rounded-full blur-3xl pointer-events-none -z-0 transform-gpu will-change-transform"
       />
 
-      <motion.div
-        animate={{ 
-          scale: [1, 1.15, 1],
-          opacity: [0.5, 0.8, 0.5] 
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-400/15 rounded-full blur-3xl pointer-events-none -z-0"
+      <div
+        className="hidden sm:block absolute -top-10 left-1/2 -translate-x-1/2 w-[550px] h-[300px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-0"
       />
 
-      {/* 2. Floating Twinkling Tech Particle Constellations */}
-      <motion.div
-        animate={{ scale: [1, 1.5, 1], opacity: [0.25, 0.85, 0.25] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-28 left-1/4 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-md shadow-blue-400 pointer-events-none"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.4, 1], opacity: [0.2, 0.9, 0.2] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-1/2 left-[18%] h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300 pointer-events-none"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.6, 1], opacity: [0.3, 0.85, 0.3] }}
-        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute top-36 right-1/3 h-2 w-2 rounded-full bg-indigo-500 shadow-md shadow-indigo-300 pointer-events-none"
-      />
+      {/* 2. Floating Twinkling Tech Particle Constellations (Desktop only for zero mobile main-thread contention) */}
+      <div className="hidden sm:block">
+        <motion.div
+          animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0.8, 0.3] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-28 left-1/4 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-md shadow-blue-400 pointer-events-none transform-gpu"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], opacity: [0.25, 0.85, 0.25] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-1/2 left-[18%] h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300 pointer-events-none transform-gpu"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }}
+          transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute top-36 right-1/3 h-2 w-2 rounded-full bg-indigo-500 shadow-md shadow-indigo-300 pointer-events-none transform-gpu"
+        />
+      </div>
 
       {/* 3. Subtle Tech Dot Grid Pattern for modern texture */}
       <div 
@@ -227,7 +235,7 @@ export function Hero() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-400/35 border-dashed"
+                className="absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-400/35 border-dashed transform-gpu will-change-transform"
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-lg shadow-blue-400/80" />
               </motion.div>
@@ -236,7 +244,7 @@ export function Hero() {
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-sky-300/30"
+                className="absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-sky-300/30 transform-gpu will-change-transform"
               >
                 <div className="absolute bottom-6 right-12 h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300" />
               </motion.div>
@@ -247,7 +255,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
               transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-blue-200/90 shadow-xl shadow-blue-500/10 pointer-events-none"
+              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-blue-200/90 shadow-xl shadow-blue-500/10 pointer-events-none transform-gpu will-change-transform"
             >
               <div className="h-7 w-7 rounded-lg bg-blue-50 text-blue-600 grid place-items-center shrink-0">
                 <Database className="h-4 w-4" />
@@ -264,7 +272,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, 8, 0], x: [0, -3, 0] }}
               transition={{ duration: 5.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-sky-200/90 shadow-xl shadow-sky-500/10 pointer-events-none"
+              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-sky-200/90 shadow-xl shadow-sky-500/10 pointer-events-none transform-gpu will-change-transform"
             >
               <div className="h-7 w-7 rounded-lg bg-sky-50 text-sky-600 grid place-items-center shrink-0">
                 <Cloud className="h-4 w-4" />
@@ -279,7 +287,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 sm:top-10 lg:top-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-blue-500/10 pointer-events-none"
+              className="absolute top-8 sm:top-10 lg:top-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-blue-500/10 pointer-events-none transform-gpu will-change-transform"
             >
               <div className="h-9 w-9 rounded-xl bg-blue-50 text-blue-600 grid place-items-center shrink-0">
                 <ShieldCheck className="h-5 w-5" />
@@ -294,7 +302,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, 4, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute bottom-8 sm:bottom-10 lg:bottom-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-blue-900/10 pointer-events-none"
+              className="absolute bottom-8 sm:bottom-10 lg:bottom-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-blue-900/10 pointer-events-none transform-gpu will-change-transform"
             >
               <div className="h-9 w-9 rounded-xl bg-emerald-50 text-emerald-600 grid place-items-center shrink-0">
                 <Headphones className="h-5 w-5" />

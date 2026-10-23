@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -17,8 +16,8 @@ const CLIENTS = [
 export function PartnerLogos() {
   const [isPaused, setIsPaused] = useState(false);
 
-  // Repeat array to guarantee smooth seamless infinite loop on any screen size
-  const duplicated = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS];
+  // Duplicated twice for seamless pure CSS infinite marquee
+  const duplicated = [...CLIENTS, ...CLIENTS];
 
   return (
     <div
@@ -32,16 +31,11 @@ export function PartnerLogos() {
       <div className="pointer-events-none absolute left-0 inset-y-0 w-12 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 inset-y-0 w-12 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
 
-      {/* Animated Marquee Strip - Slow, Calm, and Crisp */}
+      {/* Animated Marquee Strip - Pure CSS Compositor Animation (0% JS Main Thread Overhead) */}
       <div className="flex w-max items-center py-1.5 overflow-hidden">
-        <motion.div
-          animate={isPaused ? {} : { x: ["0%", "-50%"] }}
-          transition={{
-            duration: 60, // Slower, calmer and comfortable to the eyes
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          className="flex items-center gap-14 sm:gap-20 pr-14 sm:pr-20 will-change-transform"
+        <div
+          style={{ animationPlayState: isPaused ? "paused" : "running" }}
+          className="flex items-center gap-14 sm:gap-20 pr-14 sm:pr-20 animate-[marquee_45s_linear_infinite] transform-gpu will-change-transform"
         >
           {duplicated.map((client, idx) => (
             <div
@@ -60,7 +54,7 @@ export function PartnerLogos() {
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

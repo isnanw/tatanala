@@ -34,13 +34,13 @@ export function NationalVision() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Image Showcase with Interactive Animated Floating Cards (Repeating on Scroll) */}
+          {/* Left Column: Image Showcase with Interactive Animated Floating Cards */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="lg:col-span-5 relative order-2 lg:order-1"
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="lg:col-span-5 relative order-2 lg:order-1 transform-gpu"
           >
             {/* Visual Container */}
             <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-2xl shadow-slate-200/70 group">
@@ -102,13 +102,13 @@ export function NationalVision() {
 
           </motion.div>
 
-          {/* Right Column: Simplified Narrative, Flexible Value Props & CTAs (Repeating Scroll Up & Down) */}
+          {/* Right Column: Simplified Narrative, Flexible Value Props & CTAs */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="lg:col-span-7 order-1 lg:order-2"
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="lg:col-span-7 order-1 lg:order-2 transform-gpu"
           >
             {/* Eyebrow Pill */}
             <div className="inline-flex items-center rounded-full bg-blue-50/90 border border-blue-200/90 px-3.5 py-1 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm mb-4">

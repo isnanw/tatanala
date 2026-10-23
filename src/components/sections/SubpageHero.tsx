@@ -162,22 +162,22 @@ export function SubpageHero({
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 36, scale: 0.94 }}
+                  initial={{ opacity: 0, y: 24, scale: 0.96 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: false, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.15 }}
                   transition={{ 
-                    duration: 0.5, 
-                    delay: idx * 0.1, 
-                    ease: [0.34, 1.56, 0.64, 1] // playful spring bounce
+                    duration: 0.45, 
+                    delay: idx * 0.08, 
+                    ease: "easeOut"
                   }}
                   whileHover={{ 
-                    y: -8, 
-                    scale: 1.02,
+                    y: -6, 
+                    scale: 1.015,
                     boxShadow: "0 20px 35px -10px rgba(37, 99, 235, 0.15)",
-                    transition: { duration: 0.25, ease: "easeOut" } 
+                    transition: { duration: 0.2, ease: "easeOut" } 
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-blue-400/80 p-6 flex flex-col justify-between transition-colors shadow-2xs hover:shadow-xl"
+                  className="group relative rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-blue-400/80 p-6 flex flex-col justify-between transition-colors shadow-2xs hover:shadow-xl transform-gpu"
                 >
                   <div>
                     {/* Top row: Icon and Badge with hover micro-animations */}

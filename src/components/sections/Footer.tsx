@@ -21,11 +21,11 @@ export function Footer() {
       {/* 1. Floating Consultation Card Overlapping the Top of the Footer */}
       <div className="relative -mt-28 sm:-mt-36 lg:-mt-40 mb-14 sm:mb-20 z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 35, scale: 0.98 }}
+          initial={{ opacity: 0, y: 25, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-[#1E293B] border border-slate-700/80 shadow-2xl text-white"
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-[#1E293B] border border-slate-700/80 shadow-2xl text-white transform-gpu"
         >
           
           {/* Subtle Organic Curve Watermark Accent matching reference */}

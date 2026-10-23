@@ -78,12 +78,22 @@
   }
 }
 
+@utility transform-gpu {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+@utility will-change-transform {
+  will-change: transform;
+}
+
 /* ------------------------------ Base ------------------------------- */
 @layer base {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
   }
   body {
     background-color: #f8fafc;
@@ -91,6 +101,7 @@
     font-family: var(--font-sans);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4, h5, h6 {
     color: #0f172a;
@@ -107,6 +118,15 @@
   :focus-visible {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
+  }
+}
+
+/* Mobile GPU Fill-rate Optimization */
+@media (max-width: 640px) {
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl {
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
   }
 }
 

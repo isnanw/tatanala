@@ -85,21 +85,21 @@ export function ProcessTimeline() {
             {STEPS.map((step, idx) => (
               <motion.div
                 key={step.step}
-                initial={{ opacity: 0, y: 35, scale: 0.9 }}
+                initial={{ opacity: 0, y: 24, scale: 0.96 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.15 }}
                 transition={{ 
-                  duration: 0.45, 
-                  delay: idx * 0.08,
-                  ease: [0.34, 1.56, 0.64, 1] 
+                  duration: 0.4, 
+                  delay: idx * 0.06,
+                  ease: "easeOut"
                 }}
                 whileHover={{ 
-                  y: -8, 
-                  scale: 1.02,
+                  y: -6, 
+                  scale: 1.015,
                   boxShadow: "0 15px 30px -10px rgba(37,99,235,0.15)",
                   transition: { duration: 0.2 } 
                 }}
-                className="group rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm hover:border-blue-400 transition-colors flex flex-col justify-between"
+                className="group rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm hover:border-blue-400 transition-colors flex flex-col justify-between transform-gpu"
               >
                 <div>
                   <motion.div 

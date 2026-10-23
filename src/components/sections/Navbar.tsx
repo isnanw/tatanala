@@ -24,16 +24,19 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 20));
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const isScrolled = y > 20;
+    setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
+  });
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 pointer-events-none pt-4 sm:pt-6 px-4 sm:px-8">
       <div
         className={cn(
-          "pointer-events-auto mx-auto flex items-center justify-between max-w-6xl rounded-full border transition-all duration-300 px-4 sm:px-6",
+          "pointer-events-auto mx-auto flex items-center justify-between max-w-6xl rounded-full border transition-all duration-300 px-4 sm:px-6 transform-gpu",
           scrolled
-            ? "h-16 bg-white/95 backdrop-blur-xl border-slate-200/90 shadow-[0_12px_36px_rgba(15,23,42,0.08)]"
-            : "h-16 sm:h-18 bg-white/90 backdrop-blur-md border-slate-200/70 shadow-[0_4px_24px_rgba(15,23,42,0.04)]",
+            ? "h-16 bg-white/95 backdrop-blur-md sm:backdrop-blur-xl border-slate-200/90 shadow-[0_12px_36px_rgba(15,23,42,0.08)]"
+            : "h-16 sm:h-18 bg-white/90 backdrop-blur-sm sm:backdrop-blur-md border-slate-200/70 shadow-[0_4px_24px_rgba(15,23,42,0.04)]",
         )}
       >
         {/* Brand Logo */}

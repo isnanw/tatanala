@@ -87,20 +87,20 @@ export function Leadership() {
           {LEADERS.map((leader, index) => (
             <motion.div
               key={leader.name}
-              initial={{ opacity: 0, y: 30, scale: 0.92 }}
+              initial={{ opacity: 0, y: 24, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.15 }}
+              viewport={{ once: true, amount: 0.15 }}
               transition={{ 
-                duration: 0.5, 
-                delay: index * 0.1,
-                ease: [0.34, 1.56, 0.64, 1]
+                duration: 0.45, 
+                delay: index * 0.08,
+                ease: "easeOut"
               }}
               whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { duration: 0.25, ease: "easeOut" } 
+                y: -6, 
+                scale: 1.015,
+                transition: { duration: 0.2, ease: "easeOut" } 
               }}
-              className="group rounded-3xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col"
+              className="group rounded-3xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col transform-gpu"
             >
               {/* Arch-shaped top portrait frame with image zoom */}
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-[3rem] rounded-b-2xl bg-gradient-to-b from-blue-100/50 to-slate-200/60 mb-5">

@@ -214,13 +214,13 @@ export function ProjectTabbedShowcase() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with repeating scroll animation */}
+        {/* Section Header */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-7 sm:mb-9"
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-7 sm:mb-9 transform-gpu"
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
@@ -234,13 +234,13 @@ export function ProjectTabbedShowcase() {
           </p>
         </motion.div>
 
-        {/* Executive Segmented Navigation Bar with repeating scroll animation */}
+        {/* Executive Segmented Navigation Bar */}
         <motion.div 
-          initial={{ opacity: 0, y: 20, scale: 0.96 }}
+          initial={{ opacity: 0, y: 15, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.45, delay: 0.1 }}
-          className="flex justify-center mb-8"
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
+          className="flex justify-center mb-8 transform-gpu"
         >
           <div className="bg-slate-200/80 p-1 rounded-2xl border border-slate-200 inline-flex flex-wrap items-center justify-center gap-1 shadow-2xs">
             {PROJECTS.map((project) => {
@@ -268,12 +268,13 @@ export function ProjectTabbedShowcase() {
           </div>
         </motion.div>
 
-        {/* Floating Spotlight Canvas Container with repeating scroll trigger */}
+        {/* Floating Spotlight Canvas Container */}
         <motion.div
-          initial={{ opacity: 0, y: 35, scale: 0.98 }}
+          initial={{ opacity: 0, y: 25, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.15 }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="transform-gpu"
         >
           <AnimatePresence mode="wait">
             <motion.div

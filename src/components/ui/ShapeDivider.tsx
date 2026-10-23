@@ -118,11 +118,11 @@ export function ShapeDivider({
       {ornament && (
         <div className="absolute inset-x-0 bottom-2 sm:bottom-3 flex justify-center items-center pointer-events-none">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            initial={{ opacity: 0, scale: 0.95, y: 8 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-xs text-slate-700"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-xs text-slate-700 transform-gpu"
           >
             {ornament.icon && (
               <span className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-50 text-blue-600">

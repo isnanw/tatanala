@@ -97,13 +97,13 @@ export function ExecutiveTestimonial() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with repeating scroll animation */}
+        {/* Section Header */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10"
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 transform-gpu"
         >
           <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 mb-2">
             Apa Kata Klien Kami
@@ -113,13 +113,13 @@ export function ExecutiveTestimonial() {
           </h2>
         </motion.div>
 
-        {/* Carousel Content Stage with repeating scroll animation */}
+        {/* Carousel Content Stage */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="relative flex items-center justify-between gap-4 sm:gap-8"
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="relative flex items-center justify-between gap-4 sm:gap-8 transform-gpu"
         >
           
           {/* Left Arrow Button */}
