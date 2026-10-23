@@ -32,10 +32,10 @@ export function Navbar() {
   });
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 pointer-events-none pt-4 sm:pt-6 px-4 sm:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 pointer-events-none pt-4 sm:pt-6 px-5 sm:px-8">
       <div
         className={cn(
-          "pointer-events-auto mx-auto flex items-center justify-between max-w-6xl rounded-full border transition-all duration-300 px-4 sm:px-6 transform-gpu",
+          "pointer-events-auto mx-auto flex items-center justify-between max-w-6xl rounded-full border transition-all duration-300 px-5 sm:px-6 transform-gpu",
           scrolled
             ? "h-16 bg-white/95 backdrop-blur-md sm:backdrop-blur-xl border-slate-200/90 shadow-[0_12px_36px_rgba(15,23,42,0.08)]"
             : "h-16 sm:h-18 bg-white/90 backdrop-blur-sm sm:backdrop-blur-md border-slate-200/70 shadow-[0_4px_24px_rgba(15,23,42,0.04)]",
@@ -69,12 +69,12 @@ export function Navbar() {
         </nav>
 
         {/* Right CTA Button */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <button
             type="button"
             onClick={toggleLanguage}
             aria-label={language === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
-            className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition-colors hover:border-blue-300 hover:text-blue-700"
+            className="rounded-full border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-bold text-slate-700 transition-colors hover:border-blue-300 hover:text-blue-700 sm:px-3 sm:py-2"
           >
             {language === "id" ? "ID | EN" : "EN | ID"}
           </button>
@@ -94,7 +94,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={localize("Buka Menu Navigasi", language)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 lg:hidden hover:bg-slate-50 transition-colors shadow-2xs"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 lg:hidden hover:bg-slate-50 transition-colors shadow-2xs sm:h-10 sm:w-10"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -109,16 +109,16 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto mt-2 mx-auto max-w-sm rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl lg:hidden"
+            className="pointer-events-auto mt-3 mx-auto max-w-sm rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-2xl backdrop-blur-2xl lg:hidden sm:mt-2 sm:p-5"
           >
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.label}
                   href={localizeHref(item.href, language)}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    "rounded-xl px-4 py-3 text-sm font-semibold transition-colors",
+                    "rounded-xl px-4 py-3.5 text-sm font-semibold transition-colors",
                     pathname === localizeHref(item.href, language)
                       ? "bg-blue-50 text-blue-700 font-bold"
                       : "text-slate-800 hover:bg-slate-50",

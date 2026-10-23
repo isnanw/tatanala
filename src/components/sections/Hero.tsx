@@ -46,7 +46,7 @@ export function Hero() {
     <section
       id="top"
       aria-label={localize("Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Tatanala", language)}
-      className="relative overflow-hidden bg-gradient-to-br from-[#EEF6FF] via-[#F8FAFC] to-white flex flex-col justify-between min-h-screen pt-20 sm:pt-22 lg:pt-24"
+      className="relative overflow-hidden bg-gradient-to-br from-[#EEF6FF] via-[#F8FAFC] to-white flex flex-col justify-between min-h-screen pt-28 sm:pt-22 lg:pt-24"
     >
       {/* 1. Animated Drifting Background Mesh Orbs (Optimized: static on mobile, GPU-accelerated on desktop) */}
       {/* Mobile Static High-Performance Gradients */}
@@ -110,7 +110,7 @@ export function Hero() {
       />
 
       {/* Main Hero Grid Content: Flexes to fill viewport cleanly */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-end">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-end">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 items-end h-full">
           
           {/* Left Column: Headline, Subtitle, CTA, & Trust Highlights */}
@@ -118,7 +118,7 @@ export function Hero() {
             variants={container}
             initial="hidden"
             animate="show"
-            className="lg:col-span-6 xl:col-span-6 self-end pb-3 sm:pb-5 lg:pb-6 text-left"
+            className="lg:col-span-6 xl:col-span-6 self-end pb-8 sm:pb-5 lg:pb-6 text-left"
           >
 
             {/* Direct Headline */}
