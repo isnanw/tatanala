@@ -18,14 +18,14 @@ export default function Home() {
         {/* 3. Kami Pahami Proses Bisnis Anda Sebelum Merancang Software */}
         <BusinessProcessGuarantee />
 
-        {/* 5. Solusi Nyata Dari Berbagai Proyek (Tabbed Showcase) */}
+        {/* 4. Solusi Nyata Dari Berbagai Proyek (Tabbed Showcase) */}
         <ProjectTabbedShowcase />
 
-        {/* 7. Executive Centered Testimonial with Concentric Rings */}
+        {/* 5. Executive Centered Testimonial with Concentric Rings */}
         <ExecutiveTestimonial />
       </main>
 
-      {/* 13. Comprehensive Multi-Column Enterprise Sitemap Footer */}
+      {/* 6. Comprehensive Multi-Column Enterprise Sitemap Footer */}
       <Footer />
     </>
   );

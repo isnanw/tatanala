@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { useEscape, useLockBody } from "@/lib/hooks";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 interface PillarItem {
   id: string;
@@ -91,6 +92,7 @@ const PILLARS_DATA: PillarItem[] = [
 
 export function Services() {
   const { openConsult } = useConsult();
+  const { language } = useLanguage();
   const [selectedService, setSelectedService] = useState<PillarItem | null>(null);
   const [shake, setShake] = useState(false);
 
@@ -114,7 +116,7 @@ export function Services() {
             className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
           >
             <Boxes className="h-3.5 w-3.5" />
-            <span>Ekosistem Hulu ke Hilir</span>
+            <span>{localize("Ekosistem Hulu ke Hilir", language)}</span>
           </motion.div>
 
           <motion.h2
@@ -124,7 +126,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
           >
-            Layanan Terintegrasi Tatanala
+            {localize("Layanan Terintegrasi Tatanala", language)}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -133,7 +135,7 @@ export function Services() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto"
           >
-            Klik kartu di bawah untuk melihat rincian alur arsitektur, deliverables, dan teknologi pendukungnya melalui animasi morphing.
+            {localize("Klik kartu di bawah untuk melihat rincian alur arsitektur, deliverables, dan teknologi pendukungnya melalui animasi morphing.", language)}
           </motion.p>
         </div>
 
@@ -161,10 +163,10 @@ export function Services() {
                   {/* Top Bar Pill */}
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                      {srv.pillar}
+                      {localize(srv.pillar, language)}
                     </span>
                     <span className="text-xs sm:text-[13px] font-semibold text-slate-600">
-                      {srv.badge}
+                      {localize(srv.badge, language)}
                     </span>
                   </div>
 
@@ -181,13 +183,13 @@ export function Services() {
                     layoutId={`service-title-${srv.id}`}
                     className="text-xl font-bold text-slate-900 tracking-tight leading-snug"
                   >
-                    {srv.title}
+                    {localize(srv.title, language)}
                   </motion.h3>
                   <motion.p
                     layoutId={`service-desc-${srv.id}`}
                     className="mt-3 text-sm leading-relaxed text-slate-600"
                   >
-                    {srv.shortDesc}
+                    {localize(srv.shortDesc, language)}
                   </motion.p>
 
                   {/* Key Metric Strip */}
@@ -208,7 +210,7 @@ export function Services() {
                     {srv.deliverables.slice(0, 3).map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm font-medium text-slate-800 leading-snug">
                         <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
-                        <span>{item}</span>
+                        <span>{localize(item, language)}</span>
                       </li>
                     ))}
                   </ul>
@@ -217,7 +219,7 @@ export function Services() {
                 {/* Card CTA: Click to Expand Morphing */}
                 <div className="mt-8 pt-4">
                   <div className="w-full flex items-center justify-center gap-2 rounded-full bg-slate-900 group-hover:bg-blue-600 text-white py-3.5 text-sm font-bold transition-colors duration-200 shadow-sm">
-                    <span>Buka Rincian &amp; Arsitektur</span>
+                    <span>{localize("Buka Rincian & Arsitektur", language)}</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -257,7 +259,7 @@ export function Services() {
                   <button
                     type="button"
                     onClick={() => setSelectedService(null)}
-                    aria-label="Tutup Detail (Esc)"
+                    aria-label={localize("Tutup Detail (Esc)", language)}
                     className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/95 hover:bg-slate-100 text-slate-700 transition-colors shadow-md backdrop-blur-md"
                   >
                     <X className="h-5 w-5" />
@@ -274,13 +276,13 @@ export function Services() {
                   </motion.div>
                   <div>
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                      {selectedService.pillar} &bull; {selectedService.badge}
+                      {localize(selectedService.pillar, language)} &bull; {localize(selectedService.badge, language)}
                     </span>
                     <motion.h3
                       layoutId={`service-title-${selectedService.id}`}
                       className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight"
                     >
-                      {selectedService.title}
+                      {localize(selectedService.title, language)}
                     </motion.h3>
                   </div>
                 </div>
@@ -290,18 +292,18 @@ export function Services() {
                   layoutId={`service-desc-${selectedService.id}`}
                   className="text-base sm:text-lg text-slate-700 leading-relaxed"
                 >
-                  {selectedService.shortDesc}
+                  {localize(selectedService.shortDesc, language)}
                 </motion.p>
 
                 <p className="mt-4 text-base text-slate-700 leading-relaxed bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
-                  {selectedService.fullDesc}
+                  {localize(selectedService.fullDesc, language)}
                 </p>
 
                 {/* Deliverables in Full */}
                 <div className="mt-8">
                   <h4 className="text-base font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
                     <ShieldCheck className="h-5 w-5 text-blue-600" />
-                    Deliverables &amp; Output Nyata:
+                    {localize("Deliverables & Output Nyata:", language)}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {selectedService.deliverables.map((item) => (
@@ -310,7 +312,7 @@ export function Services() {
                         className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-sm font-medium text-slate-800 shadow-2xs leading-snug"
                       >
                         <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
-                        <span>{item}</span>
+                        <span>{localize(item, language)}</span>
                       </div>
                     ))}
                   </div>
@@ -320,7 +322,7 @@ export function Services() {
                 <div className="mt-8 pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-sm font-bold text-slate-700 mr-1 flex items-center gap-1.5">
-                      <Cpu className="h-4 w-4 text-blue-600" /> Teknologi:
+                      <Cpu className="h-4 w-4 text-blue-600" /> {localize("Teknologi:", language)}
                     </span>
                     {selectedService.techStack.map((tech) => (
                       <span
@@ -344,7 +346,7 @@ export function Services() {
                     }}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-blue-500/25 transition-all"
                   >
-                    <span>Konsultasi Solusi Ini di WhatsApp</span>
+                    <span>{localize("Konsultasi Solusi Ini di WhatsApp", language)}</span>
                     <ArrowRight className="h-4 w-4" />
                   </motion.button>
                 </div>

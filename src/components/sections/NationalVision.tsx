@@ -15,9 +15,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, localizeHref, useLanguage } from "@/components/providers/LanguageProvider";
 
 export function NationalVision() {
   const { openConsult } = useConsult();
+  const { language } = useLanguage();
 
   return (
     <section id="identitas" className="relative pt-14 sm:pt-20 pb-20 sm:pb-28 bg-white overflow-hidden">
@@ -47,7 +49,7 @@ export function NationalVision() {
               <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
                 <Image
                   src="/images/team-office.jpg"
-                  alt="Kolaborasi Tim Rekayasa Software Tatanala"
+                  alt={localize("Kolaborasi Tim Rekayasa Software Tatanala", language)}
                   fill
                   priority
                   loading="eager"
@@ -62,10 +64,10 @@ export function NationalVision() {
               <div className="p-5 sm:p-6 pb-8 sm:pb-9 bg-white border-t border-slate-100">
                 <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
                   <Building2 className="h-4 w-4 text-blue-600" />
-                  <span>Studio Rekayasa Software</span>
+                  <span>{localize("Studio Rekayasa Software", language)}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed max-w-[85%]">
-                  Melayani konsultasi, rekayasa, dan implementasi sistem informasi terintegrasi untuk bisnis di seluruh Indonesia.
+                  {localize("Melayani konsultasi, rekayasa, dan implementasi sistem informasi terintegrasi untuk bisnis di seluruh Indonesia.", language)}
                 </p>
               </div>
             </div>
@@ -80,8 +82,8 @@ export function NationalVision() {
                 <Activity className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-900 leading-snug">99.9% Uptime SLA</p>
-                <p className="text-[11px] text-slate-500 mt-0.5">Performa Server Stabil &amp; Cepat</p>
+                <p className="text-xs font-bold text-slate-900 leading-snug">{localize("99.9% Uptime SLA", language)}</p>
+                <p className="text-[11px] text-slate-500 mt-0.5">{localize("Performa Server Stabil & Cepat", language)}</p>
               </div>
             </motion.div>
 
@@ -95,8 +97,8 @@ export function NationalVision() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Standar Keamanan Data</p>
-                <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">Enkripsi Data &bull; Proteksi Multi-Lapis</p>
+                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">{localize("Standar Keamanan Data", language)}</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">{localize("Enkripsi Data • Proteksi Multi-Lapis", language)}</p>
               </div>
             </motion.div>
 
@@ -112,17 +114,17 @@ export function NationalVision() {
           >
             {/* Eyebrow Pill */}
             <div className="inline-flex items-center rounded-full bg-blue-50/90 border border-blue-200/90 px-3.5 py-1 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm mb-4">
-              <span>Startup Teknologi &amp; Rekayasa Software</span>
+              <span>{localize("Startup Teknologi & Rekayasa Software", language)}</span>
             </div>
 
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold text-slate-900 tracking-tight leading-[1.2]">
-              Partner Rekayasa Software untuk Akselerasi Bisnis Anda
+              {localize("Partner Rekayasa Software untuk Akselerasi Bisnis Anda", language)}
             </h2>
 
             {/* Concise Narrative */}
             <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
-              Tatanala mengembangkan perangkat lunak dan sistem informasi modern untuk membantu bisnis mengotomasi proses operasional, meningkatkan efisiensi kerja, dan siap bertumbuh lebih cepat.
+              {localize("Tatanala mengembangkan perangkat lunak dan sistem informasi modern untuk membantu bisnis mengotomasi proses operasional, meningkatkan efisiensi kerja, dan siap bertumbuh lebih cepat.", language)}
             </p>
 
             {/* Key Advantages Grid (Updated: Solusi Fleksibel replacing 100% Hak Milik Klien) */}
@@ -131,9 +133,9 @@ export function NationalVision() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100/70 text-blue-600 mb-3">
                   <Layers className="h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900">Arsitektur Scalable</h4>
+                <h4 className="text-sm font-bold text-slate-900">{localize("Arsitektur Scalable", language)}</h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Fondasi sistem modern berbasis cloud yang cepat, andal, dan siap berkembang.
+                  {localize("Fondasi sistem modern berbasis cloud yang cepat, andal, dan siap berkembang.", language)}
                 </p>
               </div>
 
@@ -141,9 +143,9 @@ export function NationalVision() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100/70 text-emerald-600 mb-3">
                   <Boxes className="h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900">Solusi Fleksibel</h4>
+                <h4 className="text-sm font-bold text-slate-900">{localize("Solusi Fleksibel", language)}</h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Mendukung pengembangan kustom sesuai alur kerja maupun sistem siap pakai.
+                  {localize("Mendukung pengembangan kustom sesuai alur kerja maupun sistem siap pakai.", language)}
                 </p>
               </div>
 
@@ -151,9 +153,9 @@ export function NationalVision() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-100/70 text-indigo-600 mb-3">
                   <Zap className="h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900">Kolaborasi Tangkas</h4>
+                <h4 className="text-sm font-bold text-slate-900">{localize("Kolaborasi Tangkas", language)}</h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Siklus pengerjaan terarah, komunikasi transparan, dan respon teknis cepat.
+                  {localize("Siklus pengerjaan terarah, komunikasi transparan, dan respon teknis cepat.", language)}
                 </p>
               </div>
             </div>
@@ -165,14 +167,14 @@ export function NationalVision() {
                 onClick={() => openConsult("identitas-startup")}
                 className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-500/25 cursor-pointer"
               >
-                <span>Konsultasi Kebutuhan Sistem</span>
+                <span>{localize("Konsultasi Kebutuhan Sistem", language)}</span>
                 <ChevronRight className="h-4 w-4" />
               </button>
               <Link
-                href="/tentang-kami"
+                href={localizeHref("/tentang-kami", language)}
                 className="inline-flex items-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 px-5 py-3.5 text-sm sm:text-base font-bold transition-all"
               >
-                <span>Profil Selengkapnya</span>
+                <span>{localize("Profil Selengkapnya", language)}</span>
                 <ArrowUpRight className="h-4 w-4 text-slate-500" />
               </Link>
             </div>

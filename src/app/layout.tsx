@@ -3,6 +3,8 @@ import { JetBrains_Mono, Newsreader, Plus_Jakarta_Sans, Space_Grotesk } from "ne
 import { ConsultProvider } from "@/components/consult/ConsultProvider";
 import { Navbar } from "@/components/sections/Navbar";
 import { PageTransitionProvider } from "@/components/providers/PageTransitionProvider";
+import { LanguageProvider } from "@/components/providers/LanguageProvider";
+import { SkipLink } from "@/components/ui/SkipLink";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -35,10 +37,31 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tatanala - Smarter IT. Stronger Business. | Cloud & Infrastructure Solutions",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://tatanala.id"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "id-ID": "/",
+      "en-US": "/en",
+      "x-default": "/",
+    },
+  },
+  title: "Jasa Software & Custom IT Solutions Indonesia | Tatanala",
   description:
-    "We deliver robust cloud, network and IT infrastructure solutions tailored to your business needs. 24/7 managed support, zero-trust security, and scalable cloud systems.",
+    "Tatanala menyediakan jasa software, sistem informasi custom, cloud, dan infrastruktur IT di Indonesia. Custom software and managed IT solutions built for business growth.",
   keywords: [
+    "jasa pembuatan software",
+    "software house Indonesia",
+    "sistem informasi custom",
+    "konsultan IT Indonesia",
+    "jasa pembuatan aplikasi bisnis",
+    "custom software development Indonesia",
+    "software development company Indonesia",
+    "business software solutions",
+    "managed IT services",
+    "cloud infrastructure solutions",
+    "IT consulting Indonesia",
+    "enterprise software development",
     "IT solutions",
     "cloud infrastructure",
     "managed IT services",
@@ -48,11 +71,28 @@ export const metadata: Metadata = {
     "enterprise IT",
   ],
   openGraph: {
-    title: "Tatanala - Smarter IT. Stronger Business.",
-    description: "Robust cloud, network and IT infrastructure solutions tailored to your enterprise.",
-    locale: "en_US",
+    title: "Tatanala | Software & IT Solutions for Business",
+    description: "Jasa software dan solusi IT bisnis dari Indonesia. Custom software and managed IT solutions built for business growth.",
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
     type: "website",
     siteName: "Tatanala IT Solutions",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tatanala | Software & IT Solutions for Business",
+    description: "Jasa software dan solusi IT bisnis dari Indonesia. Custom software and managed IT solutions built for business growth.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: [
@@ -72,22 +112,19 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang="id"
       data-scroll-behavior="smooth"
       className={`${jakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
     >
       <body className="bg-[#F8FAFC] text-slate-800 font-sans selection:bg-blue-100 selection:text-blue-900">
-        <a
-          href="#main"
-          className="sr-only z-[100] rounded-none border border-blue-600 bg-blue-600 px-6 py-3 text-white focus:not-sr-only focus:fixed focus:top-6 focus:left-6 font-mono text-xs"
-        >
-          Skip to main content
-        </a>
-        <ConsultProvider>
-          {/* Static Persistent Menu: Never moves or animates on route change */}
-          <Navbar />
-          <PageTransitionProvider>{children}</PageTransitionProvider>
-        </ConsultProvider>
+        <LanguageProvider>
+          <SkipLink />
+          <ConsultProvider>
+            {/* Static Persistent Menu: Never moves or animates on route change */}
+            <Navbar />
+            <PageTransitionProvider>{children}</PageTransitionProvider>
+          </ConsultProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

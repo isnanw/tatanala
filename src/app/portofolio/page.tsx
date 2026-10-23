@@ -6,7 +6,11 @@ import { CaseStudies } from "@/components/sections/CaseStudies";
 import { ExecutiveTestimonial } from "@/components/sections/ExecutiveTestimonial";
 
 export const metadata: Metadata = {
-  title: "Portofolio & Studi Kasus Proyek IT | Tatanala",
+  alternates: {
+    canonical: "/portofolio",
+    languages: { "id-ID": "/portofolio", "en-US": "/en/portfolio", "x-default": "/portofolio" },
+  },
+  title: "Portofolio Software & IT Case Studies | Tatanala Indonesia",
   description:
     "Eksplorasi portofolio implementasi sistem informasi, antrean publik klinik, ERP pergudangan, dan web profil korporat yang telah dirilis Tatanala.",
   keywords: [
@@ -15,6 +19,11 @@ export const metadata: Metadata = {
     "Implementasi ERP Multi-Cabang",
     "Aplikasi Antrean Klinik",
     "Proyek Web Perusahaan",
+    "software development portfolio",
+    "IT project case studies",
+    "ERP implementation case study",
+    "business software portfolio Indonesia",
+    "enterprise IT projects",
   ],
 };
 

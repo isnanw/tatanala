@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { PartnerLogos } from "@/components/ui/PartnerLogos";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -30,6 +31,7 @@ const itemAnim: Variants = {
 };
 
 export function Hero() {
+  const { language } = useLanguage();
   const { openConsult } = useConsult();
 
   const handleScrollToProcess = (e: React.MouseEvent) => {
@@ -43,7 +45,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      aria-label="Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Tatanala"
+      aria-label={localize("Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Tatanala", language)}
       className="relative overflow-hidden bg-gradient-to-br from-[#EEF6FF] via-[#F8FAFC] to-white flex flex-col justify-between min-h-screen pt-20 sm:pt-22 lg:pt-24"
     >
       {/* 1. Animated Drifting Background Mesh Orbs (Optimized: static on mobile, GPU-accelerated on desktop) */}
@@ -124,9 +126,9 @@ export function Hero() {
               variants={itemAnim}
               className="font-sans text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.18] lg:leading-[1.14] text-slate-900"
             >
-              Software Berkualitas Dibuat Khusus{" "}
+              {localize("Software Berkualitas Dibuat Khusus", language)}{" "}
               <span className="text-blue-600 block mt-1">
-                Sesuai Kebutuhan Anda
+                {localize("Sesuai Kebutuhan Anda", language)}
               </span>
             </motion.h1>
 
@@ -135,7 +137,7 @@ export function Hero() {
               variants={itemAnim}
               className="mt-3.5 sm:mt-4 text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-xl"
             >
-              Kami bantu susun alur sistem Anda, kembangkan sesuai kebutuhan, uji coba hingga siap pakai, dan dampingi penuh operasionalnya.
+              {localize("Kami bantu susun alur sistem Anda, kembangkan sesuai kebutuhan, uji coba hingga siap pakai, dan dampingi penuh operasionalnya.", language)}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -148,7 +150,7 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold shadow-lg shadow-blue-500/25 transition-all duration-200 cursor-pointer"
               >
                 <MessageCircle className="h-5 w-5" />
-                <span>Konsultasikan Kebutuhan Sistem</span>
+                <span>{localize("Konsultasikan Kebutuhan Sistem", language)}</span>
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
 
@@ -157,7 +159,7 @@ export function Hero() {
                 onClick={handleScrollToProcess}
                 className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors cursor-pointer"
               >
-                <span>Pelajari Alur Kerja</span>
+                <span>{localize("Pelajari Alur Kerja", language)}</span>
               </a>
             </motion.div>
 
@@ -167,7 +169,7 @@ export function Hero() {
               className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-200/80"
             >
               <p className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-slate-600 mb-3">
-                Alur Pengerjaan Jelas &amp; Terarah:
+                {localize("Alur Pengerjaan Jelas & Terarah:", language)}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
@@ -178,11 +180,11 @@ export function Hero() {
                       1
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
-                      Diskusi Kebutuhan
+                      {localize("Diskusi Kebutuhan", language)}
                     </span>
                   </div>
                   <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-normal">
-                    Petakan alur &amp; kendala sistem tanpa biaya awal.
+                    {localize("Petakan alur & kendala sistem tanpa biaya awal.", language)}
                   </p>
                 </div>
 
@@ -193,11 +195,11 @@ export function Hero() {
                       2
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
-                      Rancang &amp; Uji
+                      {localize("Rancang & Uji", language)}
                     </span>
                   </div>
                   <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-normal">
-                    Dibuat persis SOP usaha &amp; diuji bersama tim Anda.
+                    {localize("Dibuat persis SOP usaha & diuji bersama tim Anda.", language)}
                   </p>
                 </div>
 
@@ -208,11 +210,11 @@ export function Hero() {
                       3
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
-                      Pendampingan
+                      {localize("Pendampingan", language)}
                     </span>
                   </div>
                   <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-normal">
-                    Garansi teknis &amp; panduan sampai beroperasi.
+                    {localize("Garansi teknis & panduan sampai beroperasi.", language)}
                   </p>
                 </div>
               </div>
@@ -261,7 +263,7 @@ export function Hero() {
                 <Database className="h-4 w-4" />
               </div>
               <div className="text-left">
-                <p className="text-[11px] font-bold text-slate-900 leading-tight">Data Terpusat &amp; Rapi</p>
+                <p className="text-[11px] font-bold text-slate-900 leading-tight">{localize("Data Terpusat & Rapi", language)}</p>
                 <p className="text-[10px] text-blue-600 font-medium mt-0.5">
                   Otomatis Sinkron 24/7
                 </p>
@@ -278,8 +280,8 @@ export function Hero() {
                 <Cloud className="h-4 w-4" />
               </div>
               <div className="text-left">
-                <p className="text-[11px] font-bold text-slate-900 leading-tight">Akses Lancar &amp; Stabil</p>
-                <p className="text-[10px] text-slate-500 font-medium mt-0.5">Siap Digunakan Kapan Saja</p>
+                <p className="text-[11px] font-bold text-slate-900 leading-tight">{localize("Akses Lancar & Stabil", language)}</p>
+                <p className="text-[10px] text-slate-500 font-medium mt-0.5">{localize("Siap Digunakan Kapan Saja", language)}</p>
               </div>
             </motion.div>
 
@@ -291,8 +293,8 @@ export function Hero() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Sistem Siap Pakai</p>
-                <p className="text-xs text-slate-600 mt-0.5 font-normal">Aman, Cepat &amp; Teruji</p>
+                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">{localize("Sistem Siap Pakai", language)}</p>
+                <p className="text-xs text-slate-600 mt-0.5 font-normal">{localize("Aman, Cepat & Teruji", language)}</p>
               </div>
             </div>
 
@@ -304,8 +306,8 @@ export function Hero() {
                 <Headphones className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Garansi &amp; Pendampingan</p>
-                <p className="text-xs text-slate-600 mt-0.5 font-normal">Dukungan penuh saat go-live</p>
+                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">{localize("Garansi & Pendampingan", language)}</p>
+                <p className="text-xs text-slate-600 mt-0.5 font-normal">{localize("Dukungan penuh saat go-live", language)}</p>
               </div>
             </div>
 
@@ -313,7 +315,7 @@ export function Hero() {
             <div className="relative z-10 w-full h-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px] xl:max-w-[520px]">
               <Image
                 src="/images/tatanala-hero-woman-v2.png"
-                alt="Konsultan Rekayasa Software Tatanala"
+                alt={localize("Konsultan Rekayasa Software Tatanala", language)}
                 fill
                 priority
                 sizes="(max-width: 640px) 420px, (max-width: 1024px) 460px, 520px"

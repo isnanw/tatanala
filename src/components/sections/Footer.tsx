@@ -6,9 +6,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 import { SITE } from "@/data/content";
+import { localize, localizeHref, useLanguage } from "@/components/providers/LanguageProvider";
 import { useConsult } from "@/components/consult/ConsultProvider";
 
 export function Footer() {
+  const { language } = useLanguage();
   const { openConsult } = useConsult();
 
   const scrollToTop = () => {
@@ -42,7 +44,7 @@ export function Footer() {
               <div className="relative w-[340px] sm:w-[400px] lg:w-[460px] h-[340px] sm:h-[400px] lg:h-[440px] -mb-1">
                 <Image
                   src="/images/tatanala-support-consultant-cutout.png"
-                  alt="Konsultan Layanan Tatanala"
+                  alt={localize("Konsultan Layanan Tatanala", language)}
                   fill
                   sizes="(max-width: 640px) 340px, (max-width: 1024px) 400px, 460px"
                   className="object-contain object-bottom select-none"
@@ -54,11 +56,11 @@ export function Footer() {
             {/* Right Column: Copy, Pill Button & Micro-copy */}
             <div className="lg:col-span-7 p-6 sm:p-10 lg:p-14 text-center lg:text-left flex flex-col justify-center">
               <h2 className="text-2xl sm:text-3xl lg:text-[2.6rem] font-extrabold text-white tracking-tight leading-tight">
-                Masih bertahan dengan sistem yang rumit?
+                {localize("Masih bertahan dengan sistem yang rumit?", language)}
               </h2>
               
               <p className="mt-3 text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Jangan sampai terlambat, beralih ke solusi digital Tatanala sekarang!
+                {localize("Jangan sampai terlambat, beralih ke solusi digital Tatanala sekarang!", language)}
               </p>
 
               {/* White Pill Consultation CTA Button */}
@@ -69,12 +71,12 @@ export function Footer() {
                   className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white hover:bg-slate-100 text-slate-900 px-8 py-3.5 text-sm sm:text-base font-bold shadow-xl transition-all duration-200 cursor-pointer hover:scale-[1.02]"
                 >
                   <MessageSquare className="h-4 w-4 text-blue-600" />
-                  <span>Konsultasi Sekarang!</span>
+                  <span>{localize("Konsultasi Sekarang!", language)}</span>
                 </button>
               </div>
 
               <p className="mt-3.5 text-xs sm:text-[13px] text-slate-400 font-medium">
-                Dapatkan penawaran menarik &amp; pendampingan teknis penuh
+                {localize("Dapatkan penawaran menarik & pendampingan teknis penuh", language)}
               </p>
             </div>
 
@@ -91,7 +93,7 @@ export function Footer() {
           <div>
             <Logo tone="dark" />
             <p className="mt-2 text-sm text-slate-400 max-w-md">
-              Software House &amp; Konsultan Rekayasa Sistem Digital: Solusi website bisnis profesional, sistem operasional custom, dan dashboard laporan otomatis.
+              {localize("Software House & Konsultan Rekayasa Sistem Digital: Solusi website bisnis profesional, sistem operasional custom, dan dashboard laporan otomatis.", language)}
             </p>
           </div>
 
@@ -116,20 +118,20 @@ export function Footer() {
           {/* Col 1: TENTANG */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Tentang
+              {localize("Tentang", language)}
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li>
-                <Link href="/tentang-kami" className="hover:text-white transition-colors">Tentang Kami</Link>
+                <Link href={localizeHref("/tentang-kami", language)} className="hover:text-white transition-colors">{localize("Tentang Kami", language)}</Link>
               </li>
               <li>
-                <Link href="/tentang-kami" className="hover:text-white transition-colors">Company Profile</Link>
+                <Link href={localizeHref("/tentang-kami", language)} className="hover:text-white transition-colors">Company Profile</Link>
               </li>
               <li>
-                <Link href="/portofolio" className="hover:text-white transition-colors">Portofolio &amp; Klien</Link>
+                <Link href={localizeHref("/portofolio", language)} className="hover:text-white transition-colors">{localize("Portofolio & Klien", language)}</Link>
               </li>
               <li>
-                <Link href="/kontak" className="hover:text-white transition-colors">Hubungi Kami</Link>
+                <Link href={localizeHref("/kontak", language)} className="hover:text-white transition-colors">{localize("Hubungi Kami", language)}</Link>
               </li>
             </ul>
           </div>
@@ -137,20 +139,20 @@ export function Footer() {
           {/* Col 2: WEBSITE & APLIKASI */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Website &amp; Aplikasi
+              {localize("Website & Aplikasi", language)}
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Portal Bisnis Korporasi</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Portal Bisnis Korporasi", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Web App Kustom</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Web App Kustom", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Optimasi SEO &amp; Performa Web</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Optimasi SEO & Performa Web", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Integrasi API &amp; Cloud</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Integrasi API & Cloud", language)}</Link>
               </li>
             </ul>
           </div>
@@ -158,20 +160,20 @@ export function Footer() {
           {/* Col 3: APLIKASI BISNIS ERP */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Aplikasi Bisnis ERP
+              {localize("Aplikasi Bisnis ERP", language)}
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Keuangan &amp; Petty Cash</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Keuangan & Petty Cash", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Manajemen Stok &amp; Gudang</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Manajemen Stok & Gudang", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">HRIS &amp; Absensi Pegawai</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("HRIS & Absensi Pegawai", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Dashboard Eksekutif</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Dashboard Eksekutif", language)}</Link>
               </li>
             </ul>
           </div>
@@ -179,20 +181,20 @@ export function Footer() {
           {/* Col 4: APLIKASI E-GOVERNMENT */}
           <div>
             <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white mb-4">
-              Aplikasi E-Government
+              {localize("Aplikasi E-Government", language)}
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Website &amp; Portal Pemda</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Website & Portal Pemda", language)}</Link>
               </li>
               <li>
-                <Link href="/portofolio" className="hover:text-white transition-colors">Sistem Pengaduan LAPOR</Link>
+                <Link href={localizeHref("/portofolio", language)} className="hover:text-white transition-colors">{localize("Sistem Pengaduan LAPOR", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">e-Data Sektoral &amp; Statistik</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("e-Data Sektoral & Statistik", language)}</Link>
               </li>
               <li>
-                <Link href="/layanan" className="hover:text-white transition-colors">Disposisi Antar-Dinas</Link>
+                <Link href={localizeHref("/layanan", language)} className="hover:text-white transition-colors">{localize("Disposisi Antar-Dinas", language)}</Link>
               </li>
             </ul>
           </div>
@@ -201,15 +203,15 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright & Compliance */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
-          <p>&copy; 2026 Tatanala. Menata Sistem, Menuntaskan Kendala. Seluruh hak cipta dilindungi undang-undang.</p>
+          <p>&copy; 2026 Tatanala. {localize("Menata Sistem, Menuntaskan Kendala. Seluruh hak cipta dilindungi undang-undang.", language)}</p>
           
           <div className="flex items-center gap-6">
-            <Link href="/tentang-kami" className="hover:text-white transition-colors">SLA &amp; Garansi</Link>
-            <Link href="/tentang-kami" className="hover:text-white transition-colors">Keamanan Kode</Link>
+            <Link href={localizeHref("/tentang-kami", language)} className="hover:text-white transition-colors">{localize("SLA & Garansi", language)}</Link>
+            <Link href={localizeHref("/tentang-kami", language)} className="hover:text-white transition-colors">{localize("Keamanan Kode", language)}</Link>
             <button
               type="button"
               onClick={scrollToTop}
-              aria-label="Kembali ke atas"
+              aria-label={localize("Kembali ke atas", language)}
               className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700 transition-colors ml-2 cursor-pointer"
             >
               <ArrowUp className="h-4 w-4" />
@@ -224,7 +226,7 @@ export function Footer() {
         href={`https://wa.me/${SITE.whatsapp}?text=Halo%20Tatanala,%20saya%20ingin%20konsultasi%20kebutuhan%20software`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Hubungi WhatsApp Tatanala"
+        aria-label={localize("Hubungi WhatsApp Tatanala", language)}
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
       >
         <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-white text-[#25D366]" />

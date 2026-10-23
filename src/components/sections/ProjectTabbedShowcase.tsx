@@ -21,6 +21,7 @@ import Image from "next/image";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { useEscape, useLockBody } from "@/lib/hooks";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 interface ProjectItem {
   id: string;
@@ -198,6 +199,7 @@ const PROJECTS: ProjectItem[] = [
 ];
 
 export function ProjectTabbedShowcase() {
+  const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState(PROJECTS[0].id);
   const [lightboxImage, setLightboxImage] = useState<ProjectItem | null>(null);
   const { openConsult } = useConsult();
@@ -224,13 +226,13 @@ export function ProjectTabbedShowcase() {
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2.5">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-            <span>Studi Kasus &amp; Portofolio</span>
+            <span>{localize("Studi Kasus & Portofolio", language)}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0F172A] tracking-tight leading-tight">
-            Solusi Rekayasa Software Teruji di Lapangan
+            {localize("Solusi Rekayasa Software Teruji di Lapangan", language)}
           </h2>
           <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Implementasi nyata yang kami rancang untuk memecahkan hambatan operasional, keuangan, dan tata kelola digital klien secara presisi.
+            {localize("Implementasi nyata yang kami rancang untuk memecahkan hambatan operasional, keuangan, dan tata kelola digital klien secara presisi.", language)}
           </p>
         </motion.div>
 
@@ -258,7 +260,7 @@ export function ProjectTabbedShowcase() {
                   }`}
                 >
                   <Icon className={`h-4 w-4 ${isActive ? "text-blue-600" : "text-slate-400"}`} />
-                  <span>{project.tabLabel}</span>
+                  <span>{localize(project.tabLabel, language)}</span>
                   {isActive && (
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                   )}
@@ -297,13 +299,13 @@ export function ProjectTabbedShowcase() {
               {/* System Name Address Bar */}
               <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-white border border-slate-200/90 text-[11px] font-semibold text-slate-700 shadow-2xs max-w-[260px] sm:max-w-md truncate">
                 <Lock className="w-3 h-3 text-emerald-600 shrink-0" />
-                <span className="truncate">{currentProject.systemName}</span>
+                <span className="truncate">{localize(currentProject.systemName, language)}</span>
               </div>
 
               {/* Verified Badge */}
               <div className="hidden sm:flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-50 border border-emerald-200/80 text-[11px] font-semibold text-emerald-700">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Terverifikasi</span>
+                <span>{localize("Terverifikasi", language)}</span>
               </div>
             </div>
 
@@ -317,7 +319,7 @@ export function ProjectTabbedShowcase() {
               >
                 <Image
                   src={currentProject.image}
-                  alt={currentProject.title}
+                  alt={localize(currentProject.title, language)}
                   fill
                   sizes="(max-width: 1024px) 100vw, 1280px"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.01]"
@@ -328,7 +330,7 @@ export function ProjectTabbedShowcase() {
                 <div className="absolute top-4 left-4 z-10 pointer-events-none">
                   <div className="bg-[#0F172A]/85 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-2 backdrop-blur-xs border border-slate-700/60">
                     <Maximize2 className="w-3.5 h-3.5 text-blue-400" />
-                    <span>Klik gambar untuk perbesar</span>
+                    <span>{localize("Klik gambar untuk perbesar", language)}</span>
                   </div>
                 </div>
               </div>
@@ -341,28 +343,28 @@ export function ProjectTabbedShowcase() {
                     {/* Category Pill & Client Header */}
                     <div className="flex items-center justify-between gap-2 mb-2">
                       <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200/80 px-3 py-0.5 rounded-full">
-                        {currentProject.category}
+                        {localize(currentProject.category, language)}
                       </span>
                       <span className="text-xs font-semibold text-slate-600 flex items-center gap-1">
                         <Building2 className="w-3.5 h-3.5 text-slate-400" />
-                        <span className="truncate max-w-[180px]">{currentProject.client}</span>
+                        <span className="truncate max-w-[180px]">{localize(currentProject.client, language)}</span>
                       </span>
                     </div>
 
                     {/* Project Title */}
                     <h3 className="text-lg sm:text-xl font-bold text-[#0F172A] tracking-tight leading-snug mt-1.5">
-                      {currentProject.title}
+                      {localize(currentProject.title, language)}
                     </h3>
 
                     {/* Editorial Description */}
                     <p className="mt-2 text-slate-600 text-xs sm:text-[13px] leading-relaxed line-clamp-3">
-                      {currentProject.description}
+                      {localize(currentProject.description, language)}
                     </p>
 
                     {/* Value Highlights */}
                     <div className="mt-4 pt-3.5 border-t border-slate-100">
                       <p className="text-[11px] font-bold uppercase tracking-wider text-slate-800 mb-2">
-                        Dampak &amp; Keunggulan Operasional:
+                        {localize("Dampak & Keunggulan Operasional:", language)}
                       </p>
                       <div className="space-y-1.5">
                         {currentProject.highlights.map((item, idx) => (
@@ -375,10 +377,10 @@ export function ProjectTabbedShowcase() {
                             </div>
                             <div>
                               <h4 className="text-xs font-bold text-slate-900 leading-snug">
-                                {item.title}
+                                {localize(item.title, language)}
                               </h4>
                               <p className="text-[11.5px] text-slate-600 mt-0.5 leading-relaxed">
-                                {item.desc}
+                                {localize(item.desc, language)}
                               </p>
                             </div>
                           </div>
@@ -393,7 +395,7 @@ export function ProjectTabbedShowcase() {
                           key={cap}
                           className="px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200/80 text-slate-700 text-[11px] font-medium"
                         >
-                          {cap}
+                          {localize(cap, language)}
                         </span>
                       ))}
                     </div>
@@ -406,7 +408,7 @@ export function ProjectTabbedShowcase() {
                       onClick={() => openConsult(`proyek-${currentProject.id}`)}
                       className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 text-xs sm:text-sm font-bold shadow-sm transition-all cursor-pointer"
                     >
-                      <span>Konsultasi Proyek</span>
+                      <span>{localize("Konsultasi Proyek", language)}</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
 
@@ -416,7 +418,7 @@ export function ProjectTabbedShowcase() {
                       className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 px-3 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer border border-slate-200 shadow-2xs"
                     >
                       <Maximize2 className="h-4 w-4 text-slate-500" />
-                      <span>Perbesar</span>
+                      <span>{localize("Perbesar", language)}</span>
                     </button>
                   </div>
 
@@ -447,10 +449,10 @@ export function ProjectTabbedShowcase() {
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
                   <div>
                     <h4 className="text-sm font-bold text-slate-900">
-                      {lightboxImage.title}
+                      {localize(lightboxImage.title, language)}
                     </h4>
                     <p className="text-xs text-slate-500">
-                      {lightboxImage.client} &bull; {lightboxImage.category}
+                      {localize(lightboxImage.client, language)} &bull; {localize(lightboxImage.category, language)}
                     </p>
                   </div>
                 </div>
@@ -458,6 +460,7 @@ export function ProjectTabbedShowcase() {
                 <button
                   type="button"
                   onClick={() => setLightboxImage(null)}
+                  aria-label={localize("Tutup", language)}
                   className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
@@ -469,7 +472,7 @@ export function ProjectTabbedShowcase() {
                 <div className="relative w-full h-[65vh] bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
                   <Image
                     src={lightboxImage.image}
-                    alt={lightboxImage.title}
+                    alt={localize(lightboxImage.title, language)}
                     fill
                     className="object-contain p-2"
                     sizes="1200px"
@@ -485,7 +488,7 @@ export function ProjectTabbedShowcase() {
                       key={cap}
                       className="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-700 text-xs font-medium shadow-2xs"
                     >
-                      {cap}
+                      {localize(cap, language)}
                     </span>
                   ))}
                 </div>
@@ -499,7 +502,7 @@ export function ProjectTabbedShowcase() {
                   }}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer"
                 >
-                  <span>Konsultasi Proyek Ini</span>
+                  <span>{localize("Konsultasi Proyek Ini", language)}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

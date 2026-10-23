@@ -22,8 +22,10 @@ import {
 import Image from "next/image";
 import { SITE } from "@/data/content";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 export function ContactHero() {
+  const { language } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -67,7 +69,7 @@ export function ContactHero() {
             className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/90 px-4 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 mb-4"
           >
             <ShieldCheck className="h-3.5 w-3.5" />
-            <span>Pusat Konsultasi Resmi &amp; Penjadwalan Audit SRS</span>
+            <span>{localize("Pusat Konsultasi Resmi & Penjadwalan Audit SRS", language)}</span>
           </motion.div>
 
           <motion.h1
@@ -76,8 +78,8 @@ export function ContactHero() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight"
           >
-            Mulai Konsultasi Arsitektur Digital &amp;{" "}
-            <span className="text-blue-600">Draf Kontrak Resmi</span>
+            {localize("Mulai Konsultasi Arsitektur Digital &", language)}{" "}
+            <span className="text-blue-600">{localize("Draf Kontrak Resmi", language)}</span>
           </motion.h1>
 
           <motion.p
@@ -86,7 +88,7 @@ export function ContactHero() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto"
           >
-            Sampaikan permasalahan alur data, integrasi sistem, atau pengadaan proyek kelembagaan Anda. Insinyur senior kami menyusun telaah kebutuhan sistem (SRS) dalam 1x24 jam kerja.
+            {localize("Sampaikan permasalahan alur data, integrasi sistem, atau pengadaan proyek kelembagaan Anda. Insinyur senior kami menyusun telaah kebutuhan sistem (SRS) dalam 1x24 jam kerja.", language)}
           </motion.p>
         </div>
 
@@ -100,7 +102,7 @@ export function ContactHero() {
             <div className="rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-8 shadow-sm">
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">
                 <Building2 className="h-4 w-4" />
-                <span>Kantor Operasional &amp; Engineering Hub</span>
+                <span>{localize("Kantor Operasional & Engineering Hub", language)}</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                 Tatanala &bull; Studio Rekayasa Sistem Digital
@@ -115,7 +117,7 @@ export function ContactHero() {
                     <Mail className="h-4 w-4" />
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-xs font-medium">Surel Korespondensi Resmi</span>
+                    <span className="text-slate-500 block text-xs font-medium">{localize("Surel Korespondensi Resmi", language)}</span>
                     <a href={`mailto:${SITE.email}`} className="text-sm sm:text-base font-semibold text-slate-900 hover:text-blue-600">
                       {SITE.email}
                     </a>
@@ -127,7 +129,7 @@ export function ContactHero() {
                     <Phone className="h-4 w-4" />
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-xs font-medium">WhatsApp &amp; Hotline Korporat</span>
+                    <span className="text-slate-500 block text-xs font-medium">{localize("WhatsApp & Hotline Korporat", language)}</span>
                     <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-semibold text-slate-900 hover:text-emerald-600">
                       {SITE.whatsappDisplay} (Respon Cepat)
                     </a>
@@ -139,8 +141,8 @@ export function ContactHero() {
                     <Clock className="h-4 w-4" />
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-xs font-medium">Jam Operasional Kantor</span>
-                    <span className="text-sm sm:text-base font-semibold text-slate-900">Senin &ndash; Jumat, 08:30 &ndash; 17:30 WIB</span>
+                    <span className="text-slate-500 block text-xs font-medium">{localize("Jam Operasional Kantor", language)}</span>
+                    <span className="text-sm sm:text-base font-semibold text-slate-900">{localize("Senin – Jumat, 08:30 – 17:30 WIB", language)}</span>
                   </div>
                 </div>
               </div>
@@ -154,7 +156,7 @@ export function ContactHero() {
                   className="w-full py-4 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition-all"
                 >
                   <MessageSquare className="h-4 w-4" />
-                  <span>Hubungi via WhatsApp Resmi</span>
+                  <span>{localize("Hubungi via WhatsApp Resmi", language)}</span>
                 </a>
               </div>
             </div>
@@ -165,27 +167,27 @@ export function ContactHero() {
               <div className="relative z-10">
                 <div className="flex items-center gap-2 text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">
                   <Lock className="h-4 w-4" />
-                  <span>Jaminan Kerahasiaan &amp; Legalitas</span>
+                  <span>{localize("Jaminan Kerahasiaan & Legalitas", language)}</span>
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
                   Non-Disclosure Agreement (NDA)
                 </h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Seluruh data alur bisnis, dokumen keuangan, dan skema operasional yang Anda sampaikan terlindungi oleh kesepakatan kerahasiaan bermaterai. Kami tidak membagikan informasi Anda kepada pihak ketiga.
+                  {localize("Seluruh data alur bisnis, dokumen keuangan, dan skema operasional yang Anda sampaikan terlindungi oleh kesepakatan kerahasiaan bermaterai. Kami tidak membagikan informasi Anda kepada pihak ketiga.", language)}
                 </p>
 
                 <div className="mt-5 space-y-2 text-xs text-slate-300 pt-4 border-t border-slate-800">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 shrink-0" />
-                    <span>Perjanjian Kontrak Kerja &amp; Surat Tugas Tertulis</span>
+                    <span>{localize("Perjanjian Kontrak Kerja & Surat Tugas Tertulis", language)}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 shrink-0" />
-                    <span>Perjanjian Kerahasiaan Data (NDA) Bermaterai</span>
+                    <span>{localize("Perjanjian Kerahasiaan Data (NDA) Bermaterai", language)}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 shrink-0" />
-                    <span>Keamanan Data &amp; Kontrol Akses Mandiri</span>
+                    <span>{localize("Keamanan Data & Kontrol Akses Mandiri", language)}</span>
                   </div>
                 </div>
               </div>
@@ -202,9 +204,9 @@ export function ContactHero() {
                   <div className="h-16 w-16 rounded-full bg-emerald-50 text-emerald-600 grid place-items-center mx-auto">
                     <CheckCircle2 className="h-8 w-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">Permohonan Konsultasi Diterima</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">{localize("Permohonan Konsultasi Diterima", language)}</h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Terima kasih telah mempercayai Tatanala. Insinyur sistem kami akan meninjau data kebutuhan Anda dan menghubungi Anda via WhatsApp/Surel dalam waktu 1x24 jam kerja.
+                    {localize("Terima kasih telah mempercayai Tatanala. Insinyur sistem kami akan meninjau data kebutuhan Anda dan menghubungi Anda via WhatsApp/Surel dalam waktu 1x24 jam kerja.", language)}
                   </p>
                   <div className="pt-4">
                     <button
@@ -212,7 +214,7 @@ export function ContactHero() {
                       onClick={() => setSubmitted(false)}
                       className="px-6 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors"
                     >
-                      Kirim Permohonan Lain
+                      {localize("Kirim Permohonan Lain", language)}
                     </button>
                   </div>
                 </div>
@@ -220,10 +222,10 @@ export function ContactHero() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="border-b border-slate-100 pb-4 mb-2">
                     <h3 className="text-lg font-bold text-slate-900">
-                      Formulir Pengajuan Spesifikasi Kebutuhan Sistem (SRS)
+                      {localize("Formulir Pengajuan Spesifikasi Kebutuhan Sistem (SRS)", language)}
                     </h3>
                     <p className="text-xs text-slate-500 mt-1">
-                      Lengkapi informasi di bawah ini untuk mempermudah arsitek kami menganalisis kompleksitas arsitektur Anda.
+                      {localize("Lengkapi informasi di bawah ini untuk mempermudah arsitek kami menganalisis kompleksitas arsitektur Anda.", language)}
                     </p>
                   </div>
 
@@ -231,12 +233,12 @@ export function ContactHero() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-800 mb-1.5">
-                        Nama Lengkap <span className="text-rose-500">*</span>
+                        {localize("Nama Lengkap", language)} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Contoh: Hendra Wijaya, S.T."
+                        placeholder={localize("Contoh: Hendra Wijaya, S.T.", language)}
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
@@ -244,12 +246,12 @@ export function ContactHero() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-800 mb-1.5">
-                        Nama Lembaga / Perusahaan <span className="text-rose-500">*</span>
+                        {localize("Nama Lembaga / Perusahaan", language)} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Contoh: PT Sinergi Abadi / Dinas PPID"
+                        placeholder={localize("Contoh: PT Sinergi Abadi / Dinas PPID", language)}
                         value={form.org}
                         onChange={(e) => setForm({ ...form, org: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
@@ -261,12 +263,12 @@ export function ContactHero() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-800 mb-1.5">
-                        Nomor WhatsApp Aktif <span className="text-rose-500">*</span>
+                        {localize("Nomor WhatsApp Aktif", language)} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="0812-XXXX-XXXX"
+                        placeholder={localize("0812-XXXX-XXXX", language)}
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
@@ -274,12 +276,12 @@ export function ContactHero() {
                     </div>
                     <div>
                       <label className="block text-sm font-bold text-slate-800 mb-1.5">
-                        Alamat Surel (Email Bisnis) <span className="text-rose-500">*</span>
+                        {localize("Alamat Surel (Email Bisnis)", language)} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="email"
                         required
-                        placeholder="nama@perusahaan.co.id"
+                        placeholder={localize("nama@perusahaan.co.id", language)}
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
@@ -290,29 +292,29 @@ export function ContactHero() {
                   {/* Service Pillar Selection */}
                   <div>
                     <label className="block text-sm font-bold text-slate-800 mb-1.5">
-                      Kategori Kebutuhan Sistem
+                      {localize("Kategori Kebutuhan Sistem", language)}
                     </label>
                     <select
                       value={form.type}
                       onChange={(e) => setForm({ ...form, type: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
                     >
-                      <option value="sistem-operasional-custom">Sistem Operasional Custom (Stok, Transaksi, SOP)</option>
-                      <option value="website-portal-bisnis">Website &amp; Portal Bisnis Profesional</option>
-                      <option value="dashboard-laporan-otomatis">Dashboard Monitoring &amp; Laporan Bisnis Otomatis</option>
-                      <option value="manajemen-sdm-tim">Sistem Administrasi &amp; Manajemen Tim</option>
-                      <option value="konsultasi-alur-kerja">Konsultasi Pemetaan Alur Sistem Digital</option>
+                      <option value="sistem-operasional-custom">{localize("Sistem Operasional Custom (Stok, Transaksi, SOP)", language)}</option>
+                      <option value="website-portal-bisnis">{localize("Website & Portal Bisnis Profesional", language)}</option>
+                      <option value="dashboard-laporan-otomatis">{localize("Dashboard Monitoring & Laporan Bisnis Otomatis", language)}</option>
+                      <option value="manajemen-sdm-tim">{localize("Sistem Administrasi & Manajemen Tim", language)}</option>
+                      <option value="konsultasi-alur-kerja">{localize("Konsultasi Pemetaan Alur Sistem Digital", language)}</option>
                     </select>
                   </div>
 
                   {/* Problem & Scope Description */}
                   <div>
                     <label className="block text-sm font-bold text-slate-800 mb-1.5">
-                      Deskripsi Masalah / Ruang Lingkup Sistem yang Diharapkan
+                      {localize("Deskripsi Masalah / Ruang Lingkup Sistem yang Diharapkan", language)}
                     </label>
                     <textarea
                       rows={4}
-                      placeholder="Jelaskan alur kendala saat ini, jumlah cabang/pengguna, atau fitur spesifik yang Anda butuhkan..."
+                      placeholder={localize("Jelaskan alur kendala saat ini, jumlah cabang/pengguna, atau fitur spesifik yang Anda butuhkan...", language)}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
@@ -326,10 +328,10 @@ export function ContactHero() {
                       className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all cursor-pointer"
                     >
                       <Send className="h-4 w-4" />
-                      <span>Kirimkan Spesifikasi Kebutuhan Proyek</span>
+                      <span>{localize("Kirimkan Spesifikasi Kebutuhan Proyek", language)}</span>
                     </button>
                     <p className="text-xs sm:text-sm text-center text-slate-600 mt-2.5">
-                      Seluruh pengajuan bersifat rahasia dan langsung ditangani oleh tim insinyur teknis internal.
+                      {localize("Seluruh pengajuan bersifat rahasia dan langsung ditangani oleh tim insinyur teknis internal.", language)}
                     </p>
                   </div>
                 </form>

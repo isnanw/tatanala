@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 const VALUES = [
   {
@@ -44,6 +45,7 @@ const VALUES = [
 ];
 
 export function BusinessProcessGuarantee() {
+  const { language } = useLanguage();
   const { openConsult } = useConsult();
 
   return (
@@ -60,13 +62,13 @@ export function BusinessProcessGuarantee() {
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2 shadow-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-            <span>Tata Kelola &amp; Komitmen</span>
+            <span>{localize("Tata Kelola & Komitmen", language)}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-bold text-[#0F172A] tracking-tight leading-tight">
-            Kami Pahami Proses Bisnis Anda Sebelum Merancang Software
+            {localize("Kami Pahami Proses Bisnis Anda Sebelum Merancang Software", language)}
           </h2>
           <p className="mt-1.5 text-slate-600 text-sm sm:text-base leading-relaxed">
-            Software yang sukses bukan hanya yang memiliki baris kode rapi, tetapi yang benar-benar mempermudah staf Anda, mencegah kebocoran operasional, dan mempercepat pengambilan keputusan pimpinan.
+            {localize("Software yang sukses bukan hanya yang memiliki baris kode rapi, tetapi yang benar-benar mempermudah staf Anda, mencegah kebocoran operasional, dan mempercepat pengambilan keputusan pimpinan.", language)}
           </p>
         </motion.div>
 
@@ -92,10 +94,10 @@ export function BusinessProcessGuarantee() {
                   </div>
                   <div>
                     <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-blue-600 transition-colors">
-                      {item.title}
+                      {localize(item.title, language)}
                     </h3>
                     <p className="mt-0.5 text-xs text-slate-600 leading-relaxed font-normal">
-                      {item.desc}
+                      {localize(item.desc, language)}
                     </p>
                   </div>
                 </motion.div>
@@ -111,7 +113,7 @@ export function BusinessProcessGuarantee() {
                 onClick={() => openConsult("audit-proses-bisnis")}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
               >
-                <span>Mulai Audit Kebutuhan Sistem Anda</span>
+                <span>{localize("Mulai Audit Kebutuhan Sistem Anda", language)}</span>
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
             </div>
@@ -131,7 +133,7 @@ export function BusinessProcessGuarantee() {
               <div className="relative flex-1 w-full bg-slate-100 min-h-[260px]">
                 <Image
                   src="/images/server-audit.jpg"
-                  alt="Audit Sistem & Rekayasa Arsitektur Tatanala"
+                  alt={localize("Audit Sistem & Rekayasa Arsitektur Tatanala", language)}
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
@@ -139,7 +141,7 @@ export function BusinessProcessGuarantee() {
                 {/* Small Overlay Badge */}
                 <div className="absolute top-3.5 left-3.5 bg-slate-900/90 backdrop-blur-md text-white px-3 py-1 rounded-md border border-slate-700/80 text-xs font-medium flex items-center gap-1.5 shadow-sm">
                   <FileCheck2 className="h-3.5 w-3.5 text-blue-400" />
-                  <span>Metodologi Agile &amp; UAT</span>
+                  <span>{localize("Metodologi Agile & UAT", language)}</span>
                 </div>
               </div>
 
@@ -148,16 +150,16 @@ export function BusinessProcessGuarantee() {
                 <div className="relative w-28 sm:w-32 h-full rounded-xl overflow-hidden border border-slate-200 shrink-0">
                   <Image
                     src="/images/client-training.jpg"
-                    alt="Pelatihan Tim Pengguna Sistem Tatanala"
+                    alt={localize("Pelatihan Tim Pengguna Sistem Tatanala", language)}
                     fill
                     sizes="150px"
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#0F172A] leading-snug">Pendampingan &amp; Pelatihan</p>
+                  <p className="text-xs sm:text-sm font-bold text-[#0F172A] leading-snug">{localize("Pendampingan & Pelatihan", language)}</p>
                   <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    Pelatihan langsung untuk seluruh staf hingga mahir mengoperasikan sistem.
+                    {localize("Pelatihan langsung untuk seluruh staf hingga mahir mengoperasikan sistem.", language)}
                   </p>
                 </div>
               </div>

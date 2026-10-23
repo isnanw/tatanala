@@ -6,6 +6,7 @@ import { useId, useMemo, useState } from "react";
 import { CONSULT_TOPICS, SITE } from "@/data/content";
 import { cn, EASE_OUT, waLink } from "@/lib/utils";
 import { ButtonIconBadge, ButtonLink } from "@/components/ui/Button";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 interface WhatsAppComposerProps {
   initialTopic?: string;
@@ -13,9 +14,10 @@ interface WhatsAppComposerProps {
   onSend?: () => void;
 }
 
-function joinIndo(items: string[]) {
+function joinItems(items: string[], language: "id" | "en") {
   if (items.length <= 1) return items[0] ?? "";
-  return `${items.slice(0, -1).join(", ")} serta ${items[items.length - 1]}`;
+  const conjunction = language === "en" ? "and" : "serta";
+  return `${items.slice(0, -1).join(", ")} ${conjunction} ${items[items.length - 1]}`;
 }
 
 /**
@@ -23,18 +25,25 @@ function joinIndo(items: string[]) {
  * User selects problems, inputs company/name, views live chat preview with concentric radii and button-in-button CTA.
  */
 export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppComposerProps) {
+  const { language } = useLanguage();
   const uid = useId();
   const [topics, setTopics] = useState<string[]>(initialTopic ? [initialTopic] : ["sistem"]);
   const [name, setName] = useState("");
   const [business, setBusiness] = useState("");
 
   const message = useMemo(() => {
-    const picked = CONSULT_TOPICS.filter((t) => topics.includes(t.id)).map((t) => t.message);
+    const picked = CONSULT_TOPICS.filter((t) => topics.includes(t.id)).map((t) => localize(t.message, language));
     const who = name.trim() ? `saya ${name.trim()}` : "saya";
     const from = business.trim() ? ` dari ${business.trim()}` : "";
-    const need = picked.length ? joinIndo(picked) : "kebutuhan digital usaha saya";
+    if (language === "en") {
+      const englishWho = name.trim() ? `I am ${name.trim()}` : "I";
+      const englishFrom = business.trim() ? ` from ${business.trim()}` : "";
+      const need = picked.length ? joinItems(picked, language) : "my business's digital needs";
+      return `Hello Tatanala, ${englishWho}${englishFrom}. I'd like to discuss ${need}. When can we schedule a free consultation?`;
+    }
+    const need = picked.length ? joinItems(picked, language) : "kebutuhan digital usaha saya";
     return `Halo Tatanala, ${who}${from}. Saya ingin berdiskusi tentang ${need}. Kapan bisa dijadwalkan sesi konsultasi gratis?`;
-  }, [topics, name, business]);
+  }, [topics, name, business, language]);
 
   const toggle = (id: string) =>
     setTopics((prev) => (prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id]));
@@ -47,7 +56,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
           <div>
             <fieldset>
               <legend className="text-sm font-bold uppercase tracking-wider text-slate-900">
-                Apa kendala utama bisnis Anda?
+                {localize("Apa kendala utama bisnis Anda?", language)}
               </legend>
               <div className="mt-3 flex flex-wrap gap-2">
                 {CONSULT_TOPICS.map((t) => {
@@ -65,7 +74,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
                           : "border border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:text-slate-900",
                       )}
                     >
-                      {t.label}
+                      {localize(t.label, language)}
                     </button>
                   );
                 })}
@@ -74,23 +83,23 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <label htmlFor={`${uid}-name`} className="text-sm font-semibold text-slate-700">
-                Nama Anda
+                {localize("Nama Anda", language)}
                 <input
                   id={`${uid}-name`}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="cth. Budi"
+                  placeholder={localize("cth. Budi", language)}
                   autoComplete="name"
                   className="mt-1.5 block h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:bg-white"
                 />
               </label>
               <label htmlFor={`${uid}-biz`} className="text-sm font-semibold text-slate-700">
-                Nama Usaha
+                {localize("Nama Usaha", language)}
                 <input
                   id={`${uid}-biz`}
                   value={business}
                   onChange={(e) => setBusiness(e.target.value)}
-                  placeholder="cth. CV Maju Jaya"
+                  placeholder={localize("cth. CV Maju Jaya", language)}
                   autoComplete="organization"
                   className="mt-1.5 block h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:bg-white"
                 />
@@ -107,14 +116,14 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
               size="md"
               className="w-full justify-between group"
             >
-              <span>Kirim via WhatsApp</span>
+              <span>{localize("Kirim via WhatsApp", language)}</span>
               <ButtonIconBadge>
                 <Send className="h-4 w-4 text-white" aria-hidden />
               </ButtonIconBadge>
             </ButtonLink>
             <p className="flex items-center justify-center gap-1.5 text-xs sm:text-sm text-slate-600 font-medium">
               <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden />
-              Konsultasi awal gratis • Tanpa komitmen
+              {localize("Konsultasi awal gratis • Tanpa komitmen", language)}
             </p>
           </div>
         </div>
@@ -123,7 +132,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
         <div
           className="relative flex min-h-[300px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-[#F8FAFC]"
           aria-live="polite"
-          aria-label="Pratinjau pesan WhatsApp"
+          aria-label={localize("Pratinjau pesan WhatsApp", language)}
         >
           <div className="flex items-center gap-3 border-b border-slate-200 bg-white px-4 py-3 text-slate-900">
             <span className="relative grid h-8 w-8 place-items-center rounded-lg bg-blue-50 border border-blue-100">
@@ -131,8 +140,8 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
               <span className="absolute -right-0.5 -bottom-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
             </span>
             <div className="leading-tight">
-              <p className="text-sm font-bold text-slate-900">Tim Konsultan Tatanala</p>
-              <p className="text-xs text-slate-500 font-normal">online • respon cepat</p>
+              <p className="text-sm font-bold text-slate-900">{localize("Tim Konsultan Tatanala", language)}</p>
+              <p className="text-xs text-slate-500 font-normal">{localize("online • respon cepat", language)}</p>
             </div>
           </div>
 
@@ -154,7 +163,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
             </div>
 
             <div className="max-w-[85%] rounded-xl border border-slate-200 bg-slate-100/90 p-3.5 text-sm leading-relaxed text-slate-700">
-              Halo, terima kasih sudah menghubungi Tatanala. Kami siapkan sesi diagnosa alur sistem gratis untuk Anda.
+              {localize("Halo, terima kasih sudah menghubungi Tatanala. Kami siapkan sesi diagnosa alur sistem gratis untuk Anda.", language)}
             </div>
           </div>
         </div>

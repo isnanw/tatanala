@@ -6,6 +6,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { useEscape, useLockBody } from "@/lib/hooks";
 import { EASE_OUT } from "@/lib/utils";
 import { WhatsAppComposer } from "./WhatsAppComposer";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 interface ConsultContextValue {
   openConsult: (topicId?: string) => void;
@@ -51,6 +52,7 @@ function ConsultModal({
   nonce: number;
   onClose: () => void;
 }) {
+  const { language } = useLanguage();
   const closeRef = useRef<HTMLButtonElement>(null);
   const [shake, setShake] = useState(false);
 
@@ -101,17 +103,17 @@ function ConsultModal({
             <div className="flex items-start justify-between gap-4 px-4 pt-3 pb-2 sm:px-5">
               <div>
                 <h2 id="consult-title" className="font-sans text-2xl font-bold text-slate-900">
-                  Konsultasikan masalah bisnis Anda
+                  {localize("Konsultasikan masalah bisnis Anda", language)}
                 </h2>
                 <p className="mt-1 text-xs text-[#787774]">
-                  Ceritakan kendalanya, kami bantu petakan solusinya — gratis.
+                  {localize("Ceritakan kendalanya, kami bantu petakan solusinya — gratis.", language)}
                 </p>
               </div>
               <button
                 ref={closeRef}
                 type="button"
                 onClick={onClose}
-                aria-label="Tutup"
+                aria-label={localize("Tutup", language)}
                 className="grid h-8 w-8 shrink-0 place-items-center rounded-md border border-[#EAEAEA] bg-white text-[#111111] hover:bg-[#F7F6F3] transition-colors"
               >
                 <X className="h-4 w-4" aria-hidden />

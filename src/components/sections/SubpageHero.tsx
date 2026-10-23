@@ -22,6 +22,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useConsult } from "@/components/consult/ConsultProvider";
+import { localize, localizeHref, useLanguage } from "@/components/providers/LanguageProvider";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   globe: Globe2,
@@ -66,6 +67,7 @@ export function SubpageHero({
   points,
 }: SubpageHeroProps) {
   const { openConsult } = useConsult();
+  const { language } = useLanguage();
 
   return (
     <div className="relative w-full bg-[#F8FAFC]">
@@ -102,14 +104,14 @@ export function SubpageHero({
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            aria-label="Breadcrumb" 
+            aria-label={localize("Breadcrumb", language)}
             className="flex items-center gap-2 text-xs sm:text-sm text-slate-300/80 mb-4 sm:mb-5"
           >
-            <Link href="/" className="hover:text-blue-400 transition-colors">
-              Beranda
+            <Link href={localizeHref("/", language)} className="hover:text-blue-400 transition-colors">
+              {localize("Beranda", language)}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-blue-400 font-semibold">{breadcrumb}</span>
+            <span className="text-blue-400 font-semibold">{localize(breadcrumb, language)}</span>
           </motion.nav>
 
           {/* Title & Description */}
@@ -121,7 +123,7 @@ export function SubpageHero({
                 transition={{ duration: 0.45, delay: 0.05 }}
                 className="inline-block text-xs font-bold uppercase tracking-wider text-blue-400 mb-2"
               >
-                {badge}
+                {localize(badge, language)}
               </motion.span>
             )}
             <motion.h1 
@@ -130,7 +132,7 @@ export function SubpageHero({
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight"
             >
-              {title}
+              {localize(title, language)}
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 14 }}
@@ -138,7 +140,7 @@ export function SubpageHero({
               transition={{ duration: 0.5, delay: 0.15 }}
               className="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-2xl"
             >
-              {description}
+              {localize(description, language)}
             </motion.p>
           </div>
 
@@ -194,17 +196,17 @@ export function SubpageHero({
                           whileHover={{ scale: 1.05 }}
                           className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 group-hover:bg-blue-600 group-hover:text-white px-2.5 py-1 rounded-full border border-blue-200/60 transition-colors duration-200"
                         >
-                          {pt.badge}
+                          {localize(pt.badge, language)}
                         </motion.span>
                       )}
                     </div>
 
                     {/* Title & Description */}
                     <h2 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                      {pt.title}
+                      {localize(pt.title, language)}
                     </h2>
                     <p className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {pt.description}
+                      {localize(pt.description, language)}
                     </p>
                   </div>
 
@@ -217,7 +219,7 @@ export function SubpageHero({
                           onClick={() => openConsult(pt.consultTopic)}
                           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 cursor-pointer group/btn"
                         >
-                          <span>{pt.actionLabel}</span>
+                          <span>{localize(pt.actionLabel, language)}</span>
                           <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
                         </button>
                       ) : pt.actionHref ? (

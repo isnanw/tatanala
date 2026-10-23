@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 interface TestimonialItem {
   id: string;
@@ -54,6 +55,7 @@ const TESTIMONIALS: TestimonialItem[] = [
 ];
 
 export function ExecutiveTestimonial() {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
 
@@ -106,10 +108,10 @@ export function ExecutiveTestimonial() {
           className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 transform-gpu"
         >
           <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 mb-2">
-            Apa Kata Klien Kami
+            {localize("Apa Kata Klien Kami", language)}
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
-            Pengalaman bekerja sama dalam membangun software
+            {localize("Pengalaman bekerja sama dalam membangun software", language)}
           </h2>
         </motion.div>
 
@@ -126,7 +128,7 @@ export function ExecutiveTestimonial() {
           <button
             type="button"
             onClick={handlePrev}
-            aria-label="Testimoni Sebelumnya"
+            aria-label={localize("Testimoni Sebelumnya", language)}
             className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-blue-600/70 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 flex items-center justify-center shadow-xs cursor-pointer z-20"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -147,7 +149,7 @@ export function ExecutiveTestimonial() {
                 <div className="relative h-9 w-28 sm:h-10 sm:w-32 mb-5 flex items-center justify-center">
                   <Image
                     src={current.logo}
-                    alt={current.logoAlt}
+                    alt={localize(current.logoAlt, language)}
                     fill
                     className="object-contain"
                     sizes="128px"
@@ -156,7 +158,7 @@ export function ExecutiveTestimonial() {
 
                 {/* Quote Text */}
                 <p className="text-sm sm:text-base lg:text-[17px] text-slate-700 font-normal leading-relaxed max-w-2xl sm:max-w-3xl mx-auto">
-                  {current.quote}
+                  {localize(current.quote, language)}
                 </p>
 
                 {/* Author Avatar & Identity */}
@@ -171,10 +173,10 @@ export function ExecutiveTestimonial() {
                     />
                   </div>
                   <h4 className="font-bold text-[#0F172A] text-sm sm:text-base">
-                    {current.authorName}
+                    {localize(current.authorName, language)}
                   </h4>
                   <p className="text-xs text-slate-500 mt-0.5 max-w-md">
-                    {current.authorRole} &bull; {current.authorOrg}
+                    {localize(current.authorRole, language)} &bull; {localize(current.authorOrg, language)}
                   </p>
                 </div>
               </motion.div>
@@ -185,7 +187,7 @@ export function ExecutiveTestimonial() {
           <button
             type="button"
             onClick={handleNext}
-            aria-label="Testimoni Selanjutnya"
+            aria-label={localize("Testimoni Selanjutnya", language)}
             className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-blue-600/70 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 flex items-center justify-center shadow-xs cursor-pointer z-20"
           >
             <ChevronRight className="w-5 h-5" />

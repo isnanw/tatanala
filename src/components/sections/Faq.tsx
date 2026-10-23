@@ -6,8 +6,10 @@ import { useState } from "react";
 import { FAQS } from "@/data/content";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 export function Faq() {
+  const { language } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const { openConsult } = useConsult();
 
@@ -23,7 +25,7 @@ export function Faq() {
             className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-blue-700 mb-4"
           >
             <HelpCircle className="h-4 w-4 text-blue-600" />
-            <span>Tanya Jawab &bull; Transparansi Penuh</span>
+            <span>{localize("Tanya Jawab • Transparansi Penuh", language)}</span>
           </motion.div>
 
           <motion.h2
@@ -33,7 +35,7 @@ export function Faq() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
           >
-            Pertanyaan Yang Sering Diajukan
+            {localize("Pertanyaan Yang Sering Diajukan", language)}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -42,7 +44,7 @@ export function Faq() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed"
           >
-            Jawaban lugas seputar proses pembuatan, waktu pengerjaan, dan skema kerja sama tanpa jebakan biaya tersembunyi.
+            {localize("Jawaban lugas seputar proses pembuatan, waktu pengerjaan, dan skema kerja sama tanpa jebakan biaya tersembunyi.", language)}
           </motion.p>
         </div>
 
@@ -67,7 +69,7 @@ export function Faq() {
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
                   <span className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-blue-600" : "text-slate-900"}`}>
-                    {faq.question}
+                    {localize(faq.question, language)}
                   </span>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
@@ -89,7 +91,7 @@ export function Faq() {
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
                       <div className="px-6 pb-6 pt-2 text-base text-slate-700 leading-relaxed border-t border-slate-100">
-                        {faq.answer}
+                        {localize(faq.answer, language)}
                       </div>
                     </motion.div>
                   )}
@@ -102,8 +104,8 @@ export function Faq() {
         {/* Still have questions banner */}
         <div className="mt-12 text-center bg-blue-50/60 rounded-3xl border border-blue-200/70 p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
-            <h4 className="text-base font-bold text-slate-900">Punya pertanyaan spesifik terkait bisnis Anda?</h4>
-            <p className="text-sm text-slate-600 mt-1">Diskusikan langsung dengan tim analis sistem kami via WhatsApp.</p>
+            <h4 className="text-base font-bold text-slate-900">{localize("Punya pertanyaan spesifik terkait bisnis Anda?", language)}</h4>
+            <p className="text-sm text-slate-600 mt-1">{localize("Diskusikan langsung dengan tim analis sistem kami via WhatsApp.", language)}</p>
           </div>
           <motion.button
             whileHover={{ scale: 1.02 }}
@@ -112,7 +114,7 @@ export function Faq() {
             onClick={() => openConsult("faq-chat")}
             className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 text-sm font-bold shrink-0 shadow-md shadow-blue-500/25"
           >
-            Tanya via WhatsApp
+            {localize("Tanya via WhatsApp", language)}
           </motion.button>
         </div>
       </div>

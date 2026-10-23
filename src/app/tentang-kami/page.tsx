@@ -7,7 +7,11 @@ import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessG
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 
 export const metadata: Metadata = {
-  title: "Tentang Kami & Rekayasa Software Terpercaya | Tatanala",
+  alternates: {
+    canonical: "/tentang-kami",
+    languages: { "id-ID": "/tentang-kami", "en-US": "/en/about", "x-default": "/tentang-kami" },
+  },
+  title: "Tentang Tatanala | Software Engineering Company Indonesia",
   description:
     "Mengenal Tatanala: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
   keywords: [
@@ -16,6 +20,10 @@ export const metadata: Metadata = {
     "Konsultan IT Terpercaya",
     "Solusi Sistem Informasi",
     "Studio Rekayasa Software",
+    "software engineering company Indonesia",
+    "IT solutions provider Indonesia",
+    "custom software development partner",
+    "trusted software development company",
   ],
 };
 

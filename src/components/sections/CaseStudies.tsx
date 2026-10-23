@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { useEscape, useLockBody } from "@/lib/hooks";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 interface CaseItem {
   id: string;
@@ -112,6 +113,7 @@ const CASES: CaseItem[] = [
 
 export function CaseStudies() {
   const { openConsult } = useConsult();
+  const { language } = useLanguage();
   const [selectedCase, setSelectedCase] = useState<CaseItem | null>(null);
   const [shake, setShake] = useState(false);
 
@@ -136,7 +138,7 @@ export function CaseStudies() {
               className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
             >
               <TrendingUp className="h-3.5 w-3.5" />
-              <span>Studi Kasus Riil</span>
+              <span>{localize("Studi Kasus Riil", language)}</span>
             </motion.div>
 
             <motion.h2
@@ -146,7 +148,7 @@ export function CaseStudies() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
             >
-              Hasil Nyata, Dampak Terukur
+              {localize("Hasil Nyata, Dampak Terukur", language)}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -155,7 +157,7 @@ export function CaseStudies() {
               transition={{ delay: 0.2 }}
               className="mt-3 text-base sm:text-lg text-slate-600 max-w-xl"
             >
-              Klik kartu studi kasus untuk melihat cerita lengkap, arsitektur teknis, dan hasil transformasinya melalui animasi morphing.
+              {localize("Klik kartu studi kasus untuk melihat cerita lengkap, arsitektur teknis, dan hasil transformasinya melalui animasi morphing.", language)}
             </motion.p>
           </div>
 
@@ -169,7 +171,7 @@ export function CaseStudies() {
               onClick={() => openConsult("portofolio")}
               className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
             >
-              <span>Pelajari Semua Solusi</span>
+              <span>{localize("Pelajari Semua Solusi", language)}</span>
               <ArrowRight className="h-4 w-4" />
             </button>
           </motion.div>
@@ -194,7 +196,7 @@ export function CaseStudies() {
                 <motion.div layoutId={`case-img-${item.id}`} className="relative h-full w-full">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={localize(item.title, language)}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -204,7 +206,7 @@ export function CaseStudies() {
                 {/* Metric Overlay Badge */}
                 <div className="absolute top-4 right-4 rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 text-xs sm:text-sm font-bold text-white shadow-lg flex items-center gap-2">
                   <span className="text-blue-400 font-extrabold">{item.metricValue}</span>
-                  <span className="text-slate-200 font-medium">{item.metricLabel}</span>
+                  <span className="text-slate-200 font-medium">{localize(item.metricLabel, language)}</span>
                 </div>
               </div>
 
@@ -214,30 +216,30 @@ export function CaseStudies() {
                   <div className="flex items-center justify-between text-sm font-semibold text-slate-600 mb-2.5">
                     <span
                       className="text-blue-600 font-bold uppercase tracking-wider text-xs sm:text-[13px]"
-                      dangerouslySetInnerHTML={{ __html: item.category }}
+                      dangerouslySetInnerHTML={{ __html: localize(item.category.replace("&bull;", "•"), language) }}
                     />
-                    <span className="text-slate-600 font-semibold">{item.client}</span>
+                    <span className="text-slate-600 font-semibold">{localize(item.client, language)}</span>
                   </div>
 
                   <motion.h3
                     layoutId={`case-title-${item.id}`}
                     className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug"
                   >
-                    {item.title}
+                    {localize(item.title, language)}
                   </motion.h3>
                   <p className="mt-3 text-base leading-relaxed text-slate-700 font-normal">
-                    {item.summary}
+                    {localize(item.summary, language)}
                   </p>
 
                   {/* Before vs After comparison */}
                   <div className="mt-5 rounded-2xl bg-[#F8FAFC] border border-slate-200/70 p-4 sm:p-5 space-y-2.5 text-sm leading-snug">
                     <div className="flex items-start gap-2.5 text-rose-800">
                       <XCircle className="h-4 w-4 shrink-0 mt-0.5 text-rose-500" />
-                      <span><strong>Sebelum:</strong> {item.before}</span>
+                      <span><strong>{localize("Sebelum:", language)}</strong> {localize(item.before, language)}</span>
                     </div>
                     <div className="flex items-start gap-2.5 text-emerald-900">
                       <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5 text-emerald-600" />
-                      <span><strong>Sesudah:</strong> {item.after}</span>
+                      <span><strong>{localize("Sesudah:", language)}</strong> {localize(item.after, language)}</span>
                     </div>
                   </div>
                 </div>
@@ -245,7 +247,7 @@ export function CaseStudies() {
                 {/* Action Link */}
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                   <span className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:text-blue-700">
-                    <span>Lihat Rincian Studi Kasus</span>
+                    <span>{localize("Lihat Rincian Studi Kasus", language)}</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -285,7 +287,7 @@ export function CaseStudies() {
                   <button
                     type="button"
                     onClick={() => setSelectedCase(null)}
-                    aria-label="Tutup Studi Kasus (Esc)"
+                    aria-label={localize("Tutup Studi Kasus (Esc)", language)}
                     className="pointer-events-auto grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white/95 hover:bg-slate-100 text-slate-700 transition-colors shadow-md backdrop-blur-md"
                   >
                     <X className="h-5 w-5" />
@@ -297,39 +299,39 @@ export function CaseStudies() {
                   <motion.div layoutId={`case-img-${selectedCase.id}`} className="relative h-full w-full">
                     <Image
                       src={selectedCase.image}
-                      alt={selectedCase.title}
+                      alt={localize(selectedCase.title, language)}
                       fill
                       sizes="(max-width: 768px) 100vw, 768px"
                       className="object-cover"
                     />
                   </motion.div>
                   <div className="absolute top-4 left-4 rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-1.5 text-xs font-bold text-white shadow-lg">
-                    {selectedCase.client}
+                    {localize(selectedCase.client, language)}
                   </div>
                 </div>
 
                 {/* Title & Category */}
                 <span
                   className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600"
-                  dangerouslySetInnerHTML={{ __html: selectedCase.category }}
+                  dangerouslySetInnerHTML={{ __html: localize(selectedCase.category.replace("&bull;", "•"), language) }}
                 />
                 <motion.h3
                   layoutId={`case-title-${selectedCase.id}`}
                   className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight"
                 >
-                  {selectedCase.title}
+                  {localize(selectedCase.title, language)}
                 </motion.h3>
 
                 {/* Full Story */}
                 <p className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed bg-slate-50 border border-slate-200/80 rounded-2xl p-5">
-                  {selectedCase.fullStory}
+                  {localize(selectedCase.fullStory, language)}
                 </p>
 
                 {/* Key Solutions Built */}
                 <div className="mt-6">
                   <h4 className="text-base font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
                     <ShieldCheck className="h-5 w-5 text-blue-600" />
-                    Solusi Yang Kami Bangun:
+                    {localize("Solusi Yang Kami Bangun:", language)}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {selectedCase.features.map((feat) => (
@@ -338,7 +340,7 @@ export function CaseStudies() {
                         className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white p-3.5 text-sm font-medium text-slate-800 leading-snug"
                       >
                         <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                        <span>{feat}</span>
+                        <span>{localize(feat, language)}</span>
                       </div>
                     ))}
                   </div>
@@ -351,7 +353,7 @@ export function CaseStudies() {
                       {selectedCase.metricValue}
                     </span>
                     <span className="text-sm text-slate-600 font-semibold ml-2">
-                      {selectedCase.metricLabel}
+                      {localize(selectedCase.metricLabel, language)}
                     </span>
                   </div>
 
@@ -366,7 +368,7 @@ export function CaseStudies() {
                     }}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-blue-500/25"
                   >
-                    <span>Konsultasi Solusi Serupa di WhatsApp</span>
+                    <span>{localize("Konsultasi Solusi Serupa di WhatsApp", language)}</span>
                     <ArrowRight className="h-4 w-4" />
                   </motion.button>
                 </div>

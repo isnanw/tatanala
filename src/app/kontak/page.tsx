@@ -7,7 +7,11 @@ import { Faq } from "@/components/sections/Faq";
 import { SITE } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Hubungi Kami & Konsultasi Kebutuhan Sistem | Tatanala",
+  alternates: {
+    canonical: "/kontak",
+    languages: { "id-ID": "/kontak", "en-US": "/en/contact", "x-default": "/kontak" },
+  },
+  title: "Kontak & Konsultasi IT | Software Development Indonesia - Tatanala",
   description:
     "Hubungi tim insinyur sistem informasi Tatanala untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom dan sistem siap pakai.",
   keywords: [
@@ -16,6 +20,10 @@ export const metadata: Metadata = {
     "Jasa Pembuatan Sistem Informasi",
     "Audit Kebutuhan Sistem",
     "Konsultan IT Indonesia",
+    "IT consultation Indonesia",
+    "software development consultation",
+    "hire software developers Indonesia",
+    "business systems consultation",
   ],
 };
 

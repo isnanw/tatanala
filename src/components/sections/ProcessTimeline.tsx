@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, GitCommit, FileSpreadsheet, Code2, Users2, ShieldCheck, ArrowRight } from "lucide-react";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { ShapeDivider } from "@/components/ui/ShapeDivider";
+import { localize, useLanguage } from "@/components/providers/LanguageProvider";
 
 const STEPS = [
   {
@@ -40,6 +41,7 @@ const STEPS = [
 
 export function ProcessTimeline() {
   const { openConsult } = useConsult();
+  const { language } = useLanguage();
 
   return (
     <section id="alur-kerja" className="relative py-20 sm:py-28 bg-white overflow-hidden">
@@ -53,7 +55,7 @@ export function ProcessTimeline() {
             className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
           >
             <GitCommit className="h-3.5 w-3.5" />
-            <span>Metodologi Eksekusi Terstruktur</span>
+            <span>{localize("Metodologi Eksekusi Terstruktur", language)}</span>
           </motion.div>
 
           <motion.h2
@@ -63,7 +65,7 @@ export function ProcessTimeline() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
           >
-            Alur Implementasi 5 Langkah Menuju Kemandirian Sistem
+            {localize("Alur Implementasi 5 Langkah Menuju Kemandirian Sistem", language)}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -72,7 +74,7 @@ export function ProcessTimeline() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto"
           >
-            Tanpa spekulasi, tanpa keterlambatan sepihak. Setiap fase memiliki tolok ukur keluaran (deliverables) tertulis yang diverifikasi bersama direksi Anda.
+            {localize("Tanpa spekulasi, tanpa keterlambatan sepihak. Setiap fase memiliki tolok ukur keluaran (deliverables) tertulis yang diverifikasi bersama direksi Anda.", language)}
           </motion.p>
         </div>
 
@@ -110,19 +112,19 @@ export function ProcessTimeline() {
                     {step.step}
                   </motion.div>
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                    {step.title}
+                    {localize(step.title, language)}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
-                    {step.desc}
+                    {localize(step.desc, language)}
                   </p>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-0.5">
-                    Keluaran Fase:
+                    {localize("Keluaran Fase:", language)}
                   </span>
                   <span className="text-xs sm:text-[13px] font-semibold text-slate-800">
-                    {step.output}
+                    {localize(step.output, language)}
                   </span>
                 </div>
               </motion.div>
@@ -137,7 +139,7 @@ export function ProcessTimeline() {
             onClick={() => openConsult("timeline-audit")}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-600/20"
           >
-            <span>Mulai Fase 1: Diagnosa Sistem Tanpa Biaya</span>
+            <span>{localize("Mulai Fase 1: Diagnosa Sistem Tanpa Biaya", language)}</span>
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>

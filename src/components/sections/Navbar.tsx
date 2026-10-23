@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { cn } from "@/lib/utils";
+import { localize, localizeHref, useLanguage } from "@/components/providers/LanguageProvider";
 
 const NAV_ITEMS = [
   { label: "Beranda", href: "/" },
@@ -18,6 +19,7 @@ const NAV_ITEMS = [
 ];
 
 export function Navbar() {
+  const { language, toggleLanguage } = useLanguage();
   const { openConsult } = useConsult();
   const { scrollY } = useScroll();
   const pathname = usePathname();
@@ -40,18 +42,19 @@ export function Navbar() {
         )}
       >
         {/* Brand Logo */}
-        <Link href="/" aria-label="Tatanala Beranda" className="outline-none flex items-center">
+        <Link href={localizeHref("/", language)} aria-label={localize("Tatanala Beranda", language)} className="outline-none flex items-center">
           <Logo />
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
+            const href = localizeHref(item.href, language);
+            const isActive = pathname === href;
             return (
               <Link
                 key={item.label}
-                href={item.href}
+                href={href}
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-semibold tracking-normal transition-all duration-200",
                   isActive
@@ -59,7 +62,7 @@ export function Navbar() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
                 )}
               >
-                {item.label}
+                {localize(item.label, language)}
               </Link>
             );
           })}
@@ -67,6 +70,14 @@ export function Navbar() {
 
         {/* Right CTA Button */}
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            aria-label={language === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
+            className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition-colors hover:border-blue-300 hover:text-blue-700"
+          >
+            {language === "id" ? "ID | EN" : "EN | ID"}
+          </button>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -75,14 +86,14 @@ export function Navbar() {
             className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 text-sm font-bold tracking-normal shadow-md shadow-blue-500/25 transition-all duration-200 cursor-pointer"
           >
             <ShieldCheck className="h-4 w-4" />
-            <span>Jadwalkan Konsultasi</span>
+            <span>{localize("Jadwalkan Konsultasi", language)}</span>
           </motion.button>
 
           {/* Mobile Hamburger Toggle */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Buka Menu Navigasi"
+            aria-label={localize("Buka Menu Navigasi", language)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 lg:hidden hover:bg-slate-50 transition-colors shadow-2xs"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -104,16 +115,16 @@ export function Navbar() {
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.label}
-                  href={item.href}
+                  href={localizeHref(item.href, language)}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
                     "rounded-xl px-4 py-3 text-sm font-semibold transition-colors",
-                    pathname === item.href
+                    pathname === localizeHref(item.href, language)
                       ? "bg-blue-50 text-blue-700 font-bold"
                       : "text-slate-800 hover:bg-slate-50",
                   )}
                 >
-                  {item.label}
+                  {localize(item.label, language)}
                 </Link>
               ))}
               <div className="pt-3 mt-1 border-t border-slate-100">
@@ -126,7 +137,7 @@ export function Navbar() {
                   className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 text-sm font-bold text-white shadow-md shadow-blue-500/25 active:scale-95 cursor-pointer"
                 >
                   <MessageSquare className="h-4 w-4" />
-                  <span>Jadwalkan Konsultasi Resmi</span>
+                  <span>{localize("Jadwalkan Konsultasi Resmi", language)}</span>
                 </button>
               </div>
             </div>

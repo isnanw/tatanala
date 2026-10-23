@@ -6,7 +6,11 @@ import { BusinessProcessGuarantee } from "@/components/sections/BusinessProcessG
 import { Faq } from "@/components/sections/Faq";
 
 export const metadata: Metadata = {
-  title: "Layanan & Solusi Rekayasa Software | Tatanala",
+  alternates: {
+    canonical: "/layanan",
+    languages: { "id-ID": "/layanan", "en-US": "/en/services", "x-default": "/layanan" },
+  },
+  title: "Jasa Software & IT Solutions | Custom Business Systems - Tatanala",
   description:
     "Solusi software bisnis terarah: website & portal profil profesional, sistem informasi operasional custom, manajemen stok & transaksi, dan dashboard monitoring laporan otomatis.",
   keywords: [
@@ -16,6 +20,12 @@ export const metadata: Metadata = {
     "Pembuatan Website Profesional",
     "Sistem Operasional Custom",
     "Konsultan IT Indonesia",
+    "jasa software Indonesia",
+    "pembuatan sistem informasi bisnis",
+    "custom software development",
+    "business process automation software",
+    "enterprise software solutions",
+    "custom business systems Indonesia",
   ],
 };
 
