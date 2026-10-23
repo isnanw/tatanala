@@ -90,10 +90,14 @@
 /* ------------------------------ Base ------------------------------- */
 @layer base {
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     -webkit-tap-highlight-color: transparent;
     -webkit-overflow-scrolling: touch;
+  }
+  @media (min-width: 768px) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
   body {
     background-color: #f8fafc;

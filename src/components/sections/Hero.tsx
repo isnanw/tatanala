@@ -229,22 +229,22 @@ export function Hero() {
             {/* 4. Halo Glow & Orbital Tech Rings Behind Talent */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-0">
               {/* Radiant Soft Center Glow */}
-              <div className="w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] rounded-full bg-gradient-to-tr from-blue-400/30 via-sky-300/25 to-indigo-400/20 blur-2xl animate-pulse" />
+              <div className="w-[300px] h-[300px] sm:w-[440px] sm:h-[440px] rounded-full bg-gradient-to-tr from-blue-400/25 via-sky-300/20 to-indigo-400/15 blur-2xl sm:animate-pulse" />
 
-              {/* Inner Rotating Dashed Orbit Ring with Satellite */}
+              {/* Inner Rotating Dashed Orbit Ring with Satellite (Desktop only) */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-400/35 border-dashed transform-gpu will-change-transform"
+                className="hidden sm:block absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-400/35 border-dashed transform-gpu will-change-transform"
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-lg shadow-blue-400/80" />
               </motion.div>
 
-              {/* Outer Counter-Rotating Orbit Ring */}
+              {/* Outer Counter-Rotating Orbit Ring (Desktop only) */}
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-sky-300/30 transform-gpu will-change-transform"
+                className="hidden sm:block absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-sky-300/30 transform-gpu will-change-transform"
               >
                 <div className="absolute bottom-6 right-12 h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300" />
               </motion.div>
@@ -284,10 +284,8 @@ export function Hero() {
             </motion.div>
 
             {/* Card "Sistem Siap Pakai" positioned directly by the pointing hand */}
-            <motion.div
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 sm:top-10 lg:top-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-blue-500/10 pointer-events-none transform-gpu will-change-transform"
+            <div
+              className="absolute top-8 sm:top-10 lg:top-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white sm:bg-white/95 sm:backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-lg shadow-blue-500/10 pointer-events-none transform-gpu"
             >
               <div className="h-9 w-9 rounded-xl bg-blue-50 text-blue-600 grid place-items-center shrink-0">
                 <ShieldCheck className="h-5 w-5" />
@@ -296,13 +294,11 @@ export function Hero() {
                 <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Sistem Siap Pakai</p>
                 <p className="text-xs text-slate-600 mt-0.5 font-normal">Aman, Cepat &amp; Teruji</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Secondary Floating Card: "Garansi & Pendampingan" balanced on the bottom-right of the model */}
-            <motion.div
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute bottom-8 sm:bottom-10 lg:bottom-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-blue-900/10 pointer-events-none transform-gpu will-change-transform"
+            <div
+              className="absolute bottom-8 sm:bottom-10 lg:bottom-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white sm:bg-white/95 sm:backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-lg shadow-blue-900/10 pointer-events-none transform-gpu"
             >
               <div className="h-9 w-9 rounded-xl bg-emerald-50 text-emerald-600 grid place-items-center shrink-0">
                 <Headphones className="h-5 w-5" />
@@ -311,7 +307,7 @@ export function Hero() {
                 <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Garansi &amp; Pendampingan</p>
                 <p className="text-xs text-slate-600 mt-0.5 font-normal">Dukungan penuh saat go-live</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Dynamic Model Image: Anchored directly onto the bottom partner bar */}
             <div className="relative z-10 w-full h-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px] xl:max-w-[520px]">
