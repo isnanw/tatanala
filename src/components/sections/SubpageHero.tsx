@@ -84,7 +84,7 @@ export function SubpageHero({
         >
           <Image
             src={headerBgImage}
-            alt="Hero Backdrop"
+            alt={`${localize(title, language)} | Vieria Techno`}
             fill
             sizes="100vw"
             className="object-cover object-center"

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/og-share.jpg",
+        secureUrl: "https://vieria.recehku.id/images/og-share.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",

@@ -126,9 +126,9 @@ export function Hero() {
               variants={itemAnim}
               className="font-sans text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.18] lg:leading-[1.14] text-slate-900"
             >
-              {localize("Built on Integrity.", language)}{" "}
+              {localize("Dibangun dengan Integritas.", language)}{" "}
               <span className="text-emerald-700 block mt-1">
-                {localize("Driven by Technology.", language)}
+                {localize("Digerakkan oleh Teknologi.", language)}
               </span>
             </motion.h1>
 

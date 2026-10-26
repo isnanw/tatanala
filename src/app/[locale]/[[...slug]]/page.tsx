@@ -46,6 +46,7 @@ const pages = {
     description:
       "Meet Vieria Techno, a software engineering partner building secure, reliable custom systems and digital solutions for businesses and organizations.",
     keywords: ["software engineering company Indonesia", "custom software partner", "IT solutions provider", "software development company"],
+    ogImage: "/images/og-share.jpg",
   },
   contact: {
     component: KontakPage,
@@ -54,6 +55,7 @@ const pages = {
     description:
       "Talk to Vieria Techno about custom software, business systems, cloud infrastructure, or your next digital project. Request an initial consultation.",
     keywords: ["software consultation", "IT consultation Indonesia", "custom software quote", "business systems consultation"],
+    ogImage: "/images/og-server.jpg",
   },
 } as const;
 
@@ -85,7 +87,9 @@ export async function generateMetadata({
   const page = pages[pageSlug];
   const englishPath = pageSlug === "" ? "/en" : `/en/${pageSlug}`;
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vieria.recehku.id";
   const shareImage = "ogImage" in page ? (page as { ogImage: string }).ogImage : "/images/og-share.jpg";
+  const fullShareImageUrl = shareImage.startsWith("http") ? shareImage : `${siteUrl}${shareImage}`;
 
   return {
     title: page.title,
@@ -110,6 +114,7 @@ export async function generateMetadata({
       images: [
         {
           url: shareImage,
+          secureUrl: fullShareImageUrl,
           width: 1200,
           height: 630,
           type: "image/jpeg",

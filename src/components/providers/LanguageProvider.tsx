@@ -632,6 +632,10 @@ const translations: Record<string, string> = {
   // --- VIERIA TECHNO Blueprint & Positioning ---
   "VIERIA TECHNO — SYSTEM INTEGRITY": "VIERIA TECHNO — SYSTEM INTEGRITY",
   "System Integrity & Digital Solutions": "System Integrity & Digital Solutions",
+  "Dibangun dengan Integritas.": "Built on Integrity.",
+  "Digerakkan oleh Teknologi.": "Driven by Technology.",
+  "Dibangun dengan Integritas. Digerakkan oleh Teknologi.": "Built on Integrity. Driven by Technology.",
+  "Dibangun dengan Integritas. Digerakkan oleh Teknologi": "Built on Integrity. Driven by Technology",
   "Built on Integrity. Driven by Technology": "Built on Integrity. Driven by Technology",
   "Built on Integrity.": "Built on Integrity.",
   "Driven by Technology.": "Driven by Technology.",

@@ -37,7 +37,7 @@ import type {
 export const SITE = {
   name: "Vieria Techno",
   descriptor: "System Integrity & Digital Solutions",
-  tagline: "Built on Integrity. Driven by Technology",
+  tagline: "Dibangun dengan Integritas. Digerakkan oleh Teknologi.",
   /** International format without "+"  -  used for wa.me links. */
   whatsapp: "6281234567890",
   whatsappDisplay: "+62 812-3456-7890",
