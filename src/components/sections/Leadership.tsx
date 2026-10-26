@@ -58,7 +58,7 @@ export function Leadership() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/80 px-4 py-1 text-xs font-semibold text-emerald-800 mb-4"
           >
             <ShieldCheck className="h-3.5 w-3.5" />
             <span>{localize("Integritas Rekayasa & Akuntabilitas Legal", language)}</span>
@@ -102,10 +102,10 @@ export function Leadership() {
                 scale: 1.015,
                 transition: { duration: 0.2, ease: "easeOut" } 
               }}
-              className="group rounded-3xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col transform-gpu"
+              className="group rounded-3xl bg-white border border-slate-200/90 p-5 shadow-sm hover:shadow-2xl hover:border-emerald-400 transition-all duration-300 flex flex-col transform-gpu"
             >
               {/* Arch-shaped top portrait frame with image zoom */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-[3rem] rounded-b-2xl bg-gradient-to-b from-blue-100/50 to-slate-200/60 mb-5">
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-[3rem] rounded-b-2xl bg-gradient-to-b from-emerald-100/50 to-slate-200/60 mb-5">
                 <Image
                   src={leader.image}
                   alt={localize(leader.name, language)}
@@ -123,10 +123,10 @@ export function Leadership() {
               {/* Leader Meta */}
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="inline-block px-3 py-1 rounded-md bg-blue-50 text-xs font-bold text-blue-700 tracking-tight uppercase mb-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                  <span className="inline-block px-3 py-1 rounded-md bg-emerald-50 text-xs font-bold text-emerald-800 tracking-tight uppercase mb-2 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-200">
                     {localize(leader.role, language)}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
                     {leader.name}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
@@ -143,7 +143,7 @@ export function Leadership() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
             {METRICS.map((metric, idx) => (
               <div key={metric.label} className={idx > 0 ? "pt-4 sm:pt-0 sm:pl-6" : ""}>
-                <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 tracking-tight">
+                <div className="text-3xl sm:text-4xl font-extrabold text-emerald-700 tracking-tight">
                   {metric.value}
                 </div>
                 <div className="text-sm sm:text-base font-bold text-slate-900 mt-1">
@@ -158,7 +158,7 @@ export function Leadership() {
 
           <div className="mt-8 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
                 <FileCode className="h-5 w-5" />
               </div>
               <div>
@@ -174,7 +174,7 @@ export function Leadership() {
             <button
               type="button"
               onClick={() => openConsult("rekayasa-arsitektur")}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-500/20 shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-emerald-600/20 shrink-0 cursor-pointer"
             >
               <span>{localize("Jadwalkan Diskusi Kebutuhan", language)}</span>
               <ArrowRight className="h-4 w-4" />

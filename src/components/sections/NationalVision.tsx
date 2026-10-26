@@ -26,11 +26,11 @@ export function NationalVision() {
       {/* Subtle ambient light blur */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute -top-40 left-0 w-[550px] h-[550px] bg-gradient-to-br from-blue-100/40 via-sky-50/20 to-transparent blur-3xl rounded-full" 
+        className="pointer-events-none absolute -top-40 left-0 w-[550px] h-[550px] bg-gradient-to-br from-emerald-100/30 via-teal-50/20 to-transparent blur-3xl rounded-full" 
       />
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute -bottom-40 right-0 w-[450px] h-[450px] bg-gradient-to-tl from-indigo-100/30 via-slate-50 to-transparent blur-3xl rounded-full" 
+        className="pointer-events-none absolute -bottom-40 right-0 w-[450px] h-[450px] bg-gradient-to-tl from-emerald-100/20 via-slate-50 to-transparent blur-3xl rounded-full" 
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ export function NationalVision() {
               {/* Bottom Card Information */}
               <div className="p-5 sm:p-6 pb-8 sm:pb-9 bg-white border-t border-slate-100">
                 <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-                  <Building2 className="h-4 w-4 text-blue-600" />
+                  <Building2 className="h-4 w-4 text-emerald-600" />
                   <span>{localize("Studio Rekayasa Software", language)}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed max-w-[85%]">
@@ -72,13 +72,13 @@ export function NationalVision() {
               </div>
             </div>
 
-            {/* Interactive Animated Floating Badge 1: Top Left */}
+            {/* Interactive Animated Floating Badge 1: Top Left - Gold Touch */}
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="absolute -top-5 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-900/10 flex items-center gap-3 cursor-pointer z-10"
+              className="absolute -top-5 -left-3 sm:-left-5 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl border border-amber-200/90 shadow-xl shadow-amber-500/10 flex items-center gap-3 cursor-pointer z-10"
             >
-              <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 flex items-center justify-center font-bold shrink-0">
                 <Activity className="h-5 w-5" />
               </div>
               <div>
@@ -91,7 +91,7 @@ export function NationalVision() {
             <motion.div
               whileHover={{ y: -4, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="absolute -bottom-6 sm:-bottom-7 right-2 sm:right-4 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 shadow-xl shadow-slate-900/10 flex items-center gap-3 cursor-pointer z-10"
+              className="absolute -bottom-6 sm:-bottom-7 right-2 sm:right-4 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl border border-emerald-200/90 shadow-xl shadow-emerald-600/10 flex items-center gap-3 cursor-pointer z-10"
             >
               <div className="h-10 w-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold shrink-0">
                 <ShieldCheck className="h-5 w-5" />
@@ -113,7 +113,7 @@ export function NationalVision() {
             className="lg:col-span-7 order-1 lg:order-2 transform-gpu"
           >
             {/* Eyebrow Pill */}
-            <div className="inline-flex items-center rounded-full bg-blue-50/90 border border-blue-200/90 px-3.5 py-1 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm mb-4">
+            <div className="inline-flex items-center rounded-full bg-emerald-50/90 border border-emerald-200/90 px-3.5 py-1 text-xs sm:text-sm font-semibold text-emerald-800 shadow-sm mb-4">
               <span>{localize("Startup Teknologi & Rekayasa Software", language)}</span>
             </div>
 
@@ -129,8 +129,8 @@ export function NationalVision() {
 
             {/* Key Advantages Grid (Updated: Solusi Fleksibel replacing 100% Hak Milik Klien) */}
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-100">
-              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/70 hover:border-blue-200 transition-colors">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100/70 text-blue-600 mb-3">
+              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/70 hover:border-emerald-200 transition-colors">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100/70 text-emerald-700 mb-3">
                   <Layers className="h-5 w-5" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900">{localize("Arsitektur Scalable", language)}</h4>
@@ -149,8 +149,8 @@ export function NationalVision() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/70 hover:border-indigo-200 transition-colors">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-100/70 text-indigo-600 mb-3">
+              <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/70 hover:border-amber-200 transition-colors">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-100/70 text-amber-700 mb-3">
                   <Zap className="h-5 w-5" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900">{localize("Kolaborasi Tangkas", language)}</h4>
@@ -165,7 +165,7 @@ export function NationalVision() {
               <button
                 type="button"
                 onClick={() => openConsult("identitas-startup")}
-                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-500/25 cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3.5 text-sm sm:text-base font-bold transition-all shadow-md shadow-emerald-600/25 cursor-pointer"
               >
                 <span>{localize("Konsultasi Kebutuhan Sistem", language)}</span>
                 <ChevronRight className="h-4 w-4" />

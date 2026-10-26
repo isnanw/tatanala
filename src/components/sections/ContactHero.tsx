@@ -66,7 +66,7 @@ export function ContactHero() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/90 px-4 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 mb-4"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/90 px-4 py-1 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-4"
           >
             <ShieldCheck className="h-3.5 w-3.5" />
             <span>{localize("Pusat Konsultasi Resmi & Penjadwalan Audit SRS", language)}</span>
@@ -79,7 +79,7 @@ export function ContactHero() {
             className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight"
           >
             {localize("Mulai Konsultasi Arsitektur Digital &", language)}{" "}
-            <span className="text-blue-600">{localize("Draf Kontrak Resmi", language)}</span>
+            <span className="text-emerald-700">{localize("Draf Kontrak Resmi", language)}</span>
           </motion.h1>
 
           <motion.p
@@ -100,7 +100,7 @@ export function ContactHero() {
             
             {/* Headquarters Card */}
             <div className="rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-8 shadow-sm">
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-700 uppercase tracking-wider mb-2">
                 <Building2 className="h-4 w-4" />
                 <span>{localize("Kantor Operasional & Engineering Hub", language)}</span>
               </div>
@@ -113,12 +113,12 @@ export function ContactHero() {
 
               <div className="mt-6 pt-6 border-t border-slate-100 space-y-4 text-sm text-slate-700 font-medium">
                 <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-xl bg-blue-50 text-blue-600 grid place-items-center shrink-0">
+                  <div className="h-9 w-9 rounded-xl bg-emerald-50 text-emerald-700 grid place-items-center shrink-0">
                     <Mail className="h-4 w-4" />
                   </div>
                   <div>
                     <span className="text-slate-500 block text-xs font-medium">{localize("Surel Korespondensi Resmi", language)}</span>
-                    <a href={`mailto:${SITE.email}`} className="text-sm sm:text-base font-semibold text-slate-900 hover:text-blue-600">
+                    <a href={`mailto:${SITE.email}`} className="text-sm sm:text-base font-semibold text-slate-900 hover:text-emerald-700">
                       {SITE.email}
                     </a>
                   </div>
@@ -163,9 +163,9 @@ export function ContactHero() {
 
             {/* Legal Commitment & NDA Assurance */}
             <div className="rounded-3xl bg-slate-900 text-white p-7 sm:p-8 shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
                   <Lock className="h-4 w-4" />
                   <span>{localize("Jaminan Kerahasiaan & Legalitas", language)}</span>
                 </div>
@@ -178,15 +178,15 @@ export function ContactHero() {
 
                 <div className="mt-5 space-y-2 text-xs text-slate-300 pt-4 border-t border-slate-800">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 shrink-0" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
                     <span>{localize("Perjanjian Kontrak Kerja & Surat Tugas Tertulis", language)}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 shrink-0" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
                     <span>{localize("Perjanjian Kerahasiaan Data (NDA) Bermaterai", language)}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-400 shrink-0" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
                     <span>{localize("Keamanan Data & Kontrol Akses Mandiri", language)}</span>
                   </div>
                 </div>
@@ -241,7 +241,7 @@ export function ContactHero() {
                         placeholder={localize("Contoh: Hendra Wijaya, S.T.", language)}
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
                       />
                     </div>
                     <div>
@@ -254,7 +254,7 @@ export function ContactHero() {
                         placeholder={localize("Contoh: PT Sinergi Abadi / Dinas PPID", language)}
                         value={form.org}
                         onChange={(e) => setForm({ ...form, org: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
                       />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export function ContactHero() {
                         placeholder={localize("0812-XXXX-XXXX", language)}
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
                       />
                     </div>
                     <div>
@@ -284,7 +284,7 @@ export function ContactHero() {
                         placeholder={localize("nama@perusahaan.co.id", language)}
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
                       />
                     </div>
                   </div>
@@ -297,7 +297,7 @@ export function ContactHero() {
                     <select
                       value={form.type}
                       onChange={(e) => setForm({ ...form, type: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
                     >
                       <option value="sistem-operasional-custom">{localize("Sistem Operasional Custom (Stok, Transaksi, SOP)", language)}</option>
                       <option value="website-portal-bisnis">{localize("Website & Portal Bisnis Profesional", language)}</option>
@@ -317,7 +317,7 @@ export function ContactHero() {
                       placeholder={localize("Jelaskan alur kendala saat ini, jumlah cabang/pengguna, atau fitur spesifik yang Anda butuhkan...", language)}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all"
                     />
                   </div>
 
@@ -325,7 +325,7 @@ export function ContactHero() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all cursor-pointer"
+                      className="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition-all cursor-pointer"
                     >
                       <Send className="h-4 w-4" />
                       <span>{localize("Kirimkan Spesifikasi Kebutuhan Proyek", language)}</span>

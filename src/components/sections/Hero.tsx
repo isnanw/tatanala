@@ -51,11 +51,11 @@ export function Hero() {
       {/* 1. Animated Drifting Background Mesh Orbs (Optimized: static on mobile, GPU-accelerated on desktop) */}
       {/* Mobile Static High-Performance Gradients */}
       <div
-        className="sm:hidden absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-tr from-blue-400/20 via-sky-200/15 to-transparent rounded-full blur-2xl pointer-events-none -z-0"
+        className="sm:hidden absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-tr from-emerald-400/20 via-teal-200/15 to-transparent rounded-full blur-2xl pointer-events-none -z-0"
         aria-hidden="true"
       />
       <div
-        className="sm:hidden absolute top-1/3 -left-10 w-[260px] h-[260px] bg-gradient-to-br from-sky-300/20 via-blue-200/15 to-transparent rounded-full blur-2xl pointer-events-none -z-0"
+        className="sm:hidden absolute top-1/3 -left-10 w-[260px] h-[260px] bg-gradient-to-br from-teal-300/20 via-emerald-200/15 to-transparent rounded-full blur-2xl pointer-events-none -z-0"
         aria-hidden="true"
       />
 
@@ -67,7 +67,7 @@ export function Hero() {
           scale: [1, 1.08, 0.96, 1] 
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:block absolute top-10 right-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-blue-400/20 via-indigo-300/15 to-sky-200/10 rounded-full blur-3xl pointer-events-none -z-0 transform-gpu will-change-transform"
+        className="hidden sm:block absolute top-10 right-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-emerald-400/20 via-teal-300/15 to-amber-200/10 rounded-full blur-3xl pointer-events-none -z-0 transform-gpu will-change-transform"
       />
       
       <motion.div
@@ -77,11 +77,11 @@ export function Hero() {
           scale: [1, 1.1, 1] 
         }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:block absolute top-1/3 -left-20 w-[420px] h-[420px] bg-gradient-to-br from-sky-300/20 via-blue-200/15 to-transparent rounded-full blur-3xl pointer-events-none -z-0 transform-gpu will-change-transform"
+        className="hidden sm:block absolute top-1/3 -left-20 w-[420px] h-[420px] bg-gradient-to-br from-teal-300/20 via-emerald-200/15 to-transparent rounded-full blur-3xl pointer-events-none -z-0 transform-gpu will-change-transform"
       />
 
       <div
-        className="hidden sm:block absolute -top-10 left-1/2 -translate-x-1/2 w-[550px] h-[300px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-0"
+        className="hidden sm:block absolute -top-10 left-1/2 -translate-x-1/2 w-[550px] h-[300px] bg-emerald-400/10 rounded-full blur-3xl pointer-events-none -z-0"
       />
 
       {/* 2. Floating Twinkling Tech Particle Constellations (Desktop only for zero mobile main-thread contention) */}
@@ -89,12 +89,12 @@ export function Hero() {
         <motion.div
           animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0.8, 0.3] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-28 left-1/4 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-md shadow-blue-400 pointer-events-none transform-gpu"
+          className="absolute top-28 left-1/4 h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-md shadow-emerald-400 pointer-events-none transform-gpu"
         />
         <motion.div
           animate={{ scale: [1, 1.3, 1], opacity: [0.25, 0.85, 0.25] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-1/2 left-[18%] h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300 pointer-events-none transform-gpu"
+          className="absolute top-1/2 left-[18%] h-2 w-2 rounded-full bg-teal-400 shadow-md shadow-teal-300 pointer-events-none transform-gpu"
         />
         <motion.div
           animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }}
@@ -127,7 +127,7 @@ export function Hero() {
               className="font-sans text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.18] lg:leading-[1.14] text-slate-900"
             >
               {localize("Software Berkualitas Dibuat Khusus", language)}{" "}
-              <span className="text-blue-600 block mt-1">
+              <span className="text-emerald-700 block mt-1">
                 {localize("Sesuai Kebutuhan Anda", language)}
               </span>
             </motion.h1>
@@ -147,7 +147,7 @@ export function Hero() {
                 whileTap={{ scale: 0.98 }}
                 type="button"
                 onClick={() => openConsult("diskusi-alur-kerja")}
-                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold shadow-lg shadow-blue-500/25 transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/25 transition-all duration-200 cursor-pointer"
               >
                 <MessageCircle className="h-5 w-5" />
                 <span>{localize("Konsultasikan Kebutuhan Sistem", language)}</span>
@@ -157,7 +157,7 @@ export function Hero() {
               <a
                 href="#proses-bisnis"
                 onClick={handleScrollToProcess}
-                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-slate-700 hover:text-blue-600 px-3 py-2 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-slate-700 hover:text-emerald-700 px-3 py-2 transition-colors cursor-pointer"
               >
                 <span>{localize("Pelajari Alur Kerja", language)}</span>
               </a>
@@ -174,9 +174,9 @@ export function Hero() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {/* Step 1 */}
-                <div className="rounded-2xl bg-white/80 border border-slate-200/90 p-3 sm:p-3.5 shadow-xs hover:border-blue-200 transition-colors">
+                <div className="rounded-2xl bg-white/80 border border-slate-200/90 p-3 sm:p-3.5 shadow-xs hover:border-emerald-300 transition-colors">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold items-center justify-center shrink-0">
+                    <span className="flex h-6 w-6 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold items-center justify-center shrink-0">
                       1
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
@@ -189,9 +189,9 @@ export function Hero() {
                 </div>
 
                 {/* Step 2 */}
-                <div className="rounded-2xl bg-white/80 border border-slate-200/90 p-3 sm:p-3.5 shadow-xs hover:border-blue-200 transition-colors">
+                <div className="rounded-2xl bg-white/80 border border-slate-200/90 p-3 sm:p-3.5 shadow-xs hover:border-emerald-300 transition-colors">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold items-center justify-center shrink-0">
+                    <span className="flex h-6 w-6 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold items-center justify-center shrink-0">
                       2
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
@@ -204,9 +204,9 @@ export function Hero() {
                 </div>
 
                 {/* Step 3 */}
-                <div className="rounded-2xl bg-white/80 border border-slate-200/90 p-3 sm:p-3.5 shadow-xs hover:border-blue-200 transition-colors">
+                <div className="rounded-2xl bg-white/80 border border-slate-200/90 p-3 sm:p-3.5 shadow-xs hover:border-emerald-300 transition-colors">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold items-center justify-center shrink-0">
+                    <span className="flex h-6 w-6 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold items-center justify-center shrink-0">
                       3
                     </span>
                     <span className="text-sm font-bold text-slate-900 leading-snug">
@@ -231,24 +231,24 @@ export function Hero() {
             {/* 4. Halo Glow & Orbital Tech Rings Behind Talent */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-0">
               {/* Radiant Soft Center Glow */}
-              <div className="w-[300px] h-[300px] sm:w-[440px] sm:h-[440px] rounded-full bg-gradient-to-tr from-blue-400/25 via-sky-300/20 to-indigo-400/15 blur-2xl sm:animate-pulse" />
+              <div className="w-[300px] h-[300px] sm:w-[440px] sm:h-[440px] rounded-full bg-gradient-to-tr from-emerald-400/20 via-teal-300/20 to-amber-400/15 blur-2xl sm:animate-pulse" />
 
               {/* Inner Rotating Dashed Orbit Ring with Satellite (Desktop only) */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="hidden sm:block absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-400/35 border-dashed transform-gpu will-change-transform"
+                className="hidden sm:block absolute inset-0 m-auto w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-emerald-500/30 border-dashed transform-gpu will-change-transform"
               >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-blue-500 shadow-lg shadow-blue-400/80" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-lg shadow-emerald-400/80" />
               </motion.div>
 
               {/* Outer Counter-Rotating Orbit Ring (Desktop only) */}
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-                className="hidden sm:block absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-sky-300/30 transform-gpu will-change-transform"
+                className="hidden sm:block absolute inset-0 m-auto w-[460px] h-[460px] sm:w-[520px] sm:h-[520px] rounded-full border border-teal-400/30 transform-gpu will-change-transform"
               >
-                <div className="absolute bottom-6 right-12 h-2 w-2 rounded-full bg-sky-400 shadow-md shadow-sky-300" />
+                <div className="absolute bottom-6 right-12 h-2 w-2 rounded-full bg-amber-400 shadow-md shadow-amber-300" />
               </motion.div>
             </div>
 
@@ -257,14 +257,14 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
               transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-blue-200/90 shadow-xl shadow-blue-500/10 pointer-events-none transform-gpu will-change-transform"
+              className="absolute top-20 sm:top-24 -left-2 sm:-left-6 lg:-left-10 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-emerald-200/90 shadow-xl shadow-emerald-600/10 pointer-events-none transform-gpu will-change-transform"
             >
-              <div className="h-7 w-7 rounded-lg bg-blue-50 text-blue-600 grid place-items-center shrink-0">
+              <div className="h-7 w-7 rounded-lg bg-emerald-50 text-emerald-700 grid place-items-center shrink-0">
                 <Database className="h-4 w-4" />
               </div>
               <div className="text-left">
                 <p className="text-[11px] font-bold text-slate-900 leading-tight">{localize("Data Terpusat & Rapi", language)}</p>
-                <p className="text-[10px] text-blue-600 font-medium mt-0.5">
+                <p className="text-[10px] text-emerald-700 font-medium mt-0.5">
                   Otomatis Sinkron 24/7
                 </p>
               </div>
@@ -274,9 +274,9 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, 8, 0], x: [0, -3, 0] }}
               transition={{ duration: 5.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-sky-200/90 shadow-xl shadow-sky-500/10 pointer-events-none transform-gpu will-change-transform"
+              className="absolute bottom-28 sm:bottom-32 -left-2 sm:-left-4 lg:-left-8 z-20 hidden sm:flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-teal-200/90 shadow-xl shadow-teal-500/10 pointer-events-none transform-gpu will-change-transform"
             >
-              <div className="h-7 w-7 rounded-lg bg-sky-50 text-sky-600 grid place-items-center shrink-0">
+              <div className="h-7 w-7 rounded-lg bg-teal-50 text-teal-700 grid place-items-center shrink-0">
                 <Cloud className="h-4 w-4" />
               </div>
               <div className="text-left">
@@ -285,11 +285,11 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Card "Sistem Siap Pakai" positioned directly by the pointing hand */}
+            {/* Card "Sistem Siap Pakai" positioned directly by the pointing hand - Gold Accent */}
             <div
-              className="absolute top-8 sm:top-10 lg:top-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white sm:bg-white/95 sm:backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-lg shadow-blue-500/10 pointer-events-none transform-gpu"
+              className="absolute top-8 sm:top-10 lg:top-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white sm:bg-white/95 sm:backdrop-blur-md px-4 py-2.5 rounded-2xl border border-amber-200/90 shadow-lg shadow-amber-500/10 pointer-events-none transform-gpu"
             >
-              <div className="h-9 w-9 rounded-xl bg-blue-50 text-blue-600 grid place-items-center shrink-0">
+              <div className="h-9 w-9 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 grid place-items-center shrink-0">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
@@ -300,7 +300,7 @@ export function Hero() {
 
             {/* Secondary Floating Card: "Garansi & Pendampingan" balanced on the bottom-right of the model */}
             <div
-              className="absolute bottom-8 sm:bottom-10 lg:bottom-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white sm:bg-white/95 sm:backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-lg shadow-blue-900/10 pointer-events-none transform-gpu"
+              className="absolute bottom-8 sm:bottom-10 lg:bottom-12 right-0 sm:right-2 lg:-right-4 xl:right-2 z-20 flex items-center gap-3 bg-white sm:bg-white/95 sm:backdrop-blur-md px-4 py-2.5 rounded-2xl border border-emerald-200/90 shadow-lg shadow-emerald-950/10 pointer-events-none transform-gpu"
             >
               <div className="h-9 w-9 rounded-xl bg-emerald-50 text-emerald-600 grid place-items-center shrink-0">
                 <Headphones className="h-5 w-5" />

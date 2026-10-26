@@ -224,8 +224,8 @@ export function ProjectTabbedShowcase() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-7 sm:mb-9 transform-gpu"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-800 mb-2.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
             <span>{localize("Studi Kasus & Portofolio", language)}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0F172A] tracking-tight leading-tight">
@@ -259,10 +259,10 @@ export function ProjectTabbedShowcase() {
                       : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                   }`}
                 >
-                  <Icon className={`h-4 w-4 ${isActive ? "text-blue-600" : "text-slate-400"}`} />
+                  <Icon className={`h-4 w-4 ${isActive ? "text-emerald-600" : "text-slate-400"}`} />
                   <span>{localize(project.tabLabel, language)}</span>
                   {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                   )}
                 </button>
               );
@@ -329,7 +329,7 @@ export function ProjectTabbedShowcase() {
                 {/* Floating Top-Left Zoom Indicator Pill */}
                 <div className="absolute top-4 left-4 z-10 pointer-events-none">
                   <div className="bg-[#0F172A]/85 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-2 backdrop-blur-xs border border-slate-700/60">
-                    <Maximize2 className="w-3.5 h-3.5 text-blue-400" />
+                    <Maximize2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>{localize("Klik gambar untuk perbesar", language)}</span>
                   </div>
                 </div>
@@ -342,7 +342,7 @@ export function ProjectTabbedShowcase() {
                   <div>
                     {/* Category Pill & Client Header */}
                     <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200/80 px-3 py-0.5 rounded-full">
+                      <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-3 py-0.5 rounded-full">
                         {localize(currentProject.category, language)}
                       </span>
                       <span className="text-xs font-semibold text-slate-600 flex items-center gap-1">
@@ -370,9 +370,9 @@ export function ProjectTabbedShowcase() {
                         {currentProject.highlights.map((item, idx) => (
                           <div 
                             key={idx}
-                            className="p-2 sm:p-2.5 rounded-xl bg-slate-50/90 hover:bg-blue-50/40 border border-slate-200/70 transition-colors flex items-start gap-2.5"
+                            className="p-2 sm:p-2.5 rounded-xl bg-slate-50/90 hover:bg-emerald-50/40 border border-slate-200/70 transition-colors flex items-start gap-2.5"
                           >
-                            <div className="h-5 w-5 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
+                            <div className="h-5 w-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
                               <CheckCircle2 className="h-3.5 w-3.5" />
                             </div>
                             <div>
@@ -406,7 +406,7 @@ export function ProjectTabbedShowcase() {
                     <button
                       type="button"
                       onClick={() => openConsult(`proyek-${currentProject.id}`)}
-                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 text-xs sm:text-sm font-bold shadow-sm transition-all cursor-pointer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 text-xs sm:text-sm font-bold shadow-sm shadow-emerald-600/20 transition-all cursor-pointer"
                     >
                       <span>{localize("Konsultasi Proyek", language)}</span>
                       <ArrowRight className="h-4 w-4" />
@@ -446,7 +446,7 @@ export function ProjectTabbedShowcase() {
               {/* Modal Header */}
               <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 bg-slate-50">
                 <div className="flex items-center gap-2.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
                   <div>
                     <h4 className="text-sm font-bold text-slate-900">
                       {localize(lightboxImage.title, language)}
@@ -500,7 +500,7 @@ export function ProjectTabbedShowcase() {
                     setLightboxImage(null);
                     openConsult(`proyek-${id}`);
                   }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   <span>{localize("Konsultasi Proyek Ini", language)}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -517,7 +517,7 @@ export function ProjectTabbedShowcase() {
         variant="slant"
         position="bottom"
         nextBgColor="#F8FAFC"
-        secondaryColor="rgba(37, 99, 235, 0.04)"
+        secondaryColor="rgba(16, 185, 129, 0.04)"
       />
     </section>
   );

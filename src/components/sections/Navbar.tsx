@@ -58,7 +58,7 @@ export function Navbar() {
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-semibold tracking-normal transition-all duration-200",
                   isActive
-                    ? "bg-blue-50 text-blue-700 font-bold border border-blue-200/80"
+                    ? "bg-emerald-50 text-emerald-800 font-bold border border-emerald-200/80"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50",
                 )}
               >
@@ -74,7 +74,7 @@ export function Navbar() {
             type="button"
             onClick={toggleLanguage}
             aria-label={language === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
-            className="rounded-full border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-bold text-slate-700 transition-colors hover:border-blue-300 hover:text-blue-700 sm:px-3 sm:py-2"
+            className="rounded-full border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-bold text-slate-700 transition-colors hover:border-emerald-300 hover:text-emerald-700 sm:px-3 sm:py-2"
           >
             {language === "id" ? "ID | EN" : "EN | ID"}
           </button>
@@ -83,7 +83,7 @@ export function Navbar() {
             whileTap={{ scale: 0.98 }}
             type="button"
             onClick={() => openConsult("navbar-konsultasi")}
-            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 text-sm font-bold tracking-normal shadow-md shadow-blue-500/25 transition-all duration-200 cursor-pointer"
+            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 text-sm font-bold tracking-normal shadow-md shadow-emerald-600/25 transition-all duration-200 cursor-pointer"
           >
             <ShieldCheck className="h-4 w-4" />
             <span>{localize("Jadwalkan Konsultasi", language)}</span>
@@ -120,7 +120,7 @@ export function Navbar() {
                   className={cn(
                     "rounded-xl px-4 py-3.5 text-sm font-semibold transition-colors",
                     pathname === localizeHref(item.href, language)
-                      ? "bg-blue-50 text-blue-700 font-bold"
+                      ? "bg-emerald-50 text-emerald-800 font-bold"
                       : "text-slate-800 hover:bg-slate-50",
                   )}
                 >
@@ -134,7 +134,7 @@ export function Navbar() {
                     setMobileOpen(false);
                     openConsult("navbar-konsultasi");
                   }}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 text-sm font-bold text-white shadow-md shadow-blue-500/25 active:scale-95 cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 py-3.5 text-sm font-bold text-white shadow-md shadow-emerald-600/25 active:scale-95 cursor-pointer"
                 >
                   <MessageSquare className="h-4 w-4" />
                   <span>{localize("Jadwalkan Konsultasi Resmi", language)}</span>

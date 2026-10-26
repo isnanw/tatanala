@@ -60,8 +60,8 @@ export function BusinessProcessGuarantee() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="max-w-3xl mb-6 sm:mb-8 transform-gpu"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-800 mb-2 shadow-xs">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 border border-emerald-200/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-800 mb-2 shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
             <span>{localize("Tata Kelola & Komitmen", language)}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-bold text-[#0F172A] tracking-tight leading-tight">
@@ -87,13 +87,13 @@ export function BusinessProcessGuarantee() {
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ delay: idx * 0.04, duration: 0.3 }}
                   whileHover={{ x: 4, transition: { duration: 0.15 } }}
-                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default shadow-xs transform-gpu"
+                  className="p-3 sm:p-3.5 rounded-xl border border-slate-200/90 bg-white hover:border-emerald-400 hover:shadow-md transition-all duration-200 flex items-start gap-3.5 group cursor-default shadow-xs transform-gpu"
                 >
-                  <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-100/70 text-blue-700 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 mt-0.5">
+                  <div className="h-8 w-8 shrink-0 rounded-lg bg-emerald-100/70 text-emerald-700 flex items-center justify-center font-bold group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-200 mt-0.5">
                     <Icon className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-emerald-700 transition-colors">
                       {localize(item.title, language)}
                     </h3>
                     <p className="mt-0.5 text-xs text-slate-600 leading-relaxed font-normal">
@@ -111,7 +111,7 @@ export function BusinessProcessGuarantee() {
                 whileTap={{ scale: 0.98 }}
                 type="button"
                 onClick={() => openConsult("audit-proses-bisnis")}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/25 transition-all cursor-pointer"
               >
                 <span>{localize("Mulai Audit Kebutuhan Sistem Anda", language)}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -140,7 +140,7 @@ export function BusinessProcessGuarantee() {
                 />
                 {/* Small Overlay Badge */}
                 <div className="absolute top-3.5 left-3.5 bg-slate-900/90 backdrop-blur-md text-white px-3 py-1 rounded-md border border-slate-700/80 text-xs font-medium flex items-center gap-1.5 shadow-sm">
-                  <FileCheck2 className="h-3.5 w-3.5 text-blue-400" />
+                  <FileCheck2 className="h-3.5 w-3.5 text-emerald-400" />
                   <span>{localize("Metodologi Agile & UAT", language)}</span>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export function BusinessProcessGuarantee() {
         variant="wave"
         position="bottom"
         nextBgColor="#FFFFFF"
-        secondaryColor="rgba(37, 99, 235, 0.05)"
+        secondaryColor="rgba(16, 185, 129, 0.05)"
       />
     </section>
   );

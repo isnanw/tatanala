@@ -79,21 +79,21 @@ export function ExecutiveTestimonial() {
       {/* Top Right Decorative Dot Matrix */}
       <div className="absolute top-8 right-8 sm:right-16 hidden sm:grid grid-cols-8 gap-2 opacity-40 pointer-events-none -z-0">
         {Array.from({ length: 24 }).map((_, i) => (
-          <span key={i} className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+          <span key={i} className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
         ))}
       </div>
 
       {/* Decorative Concentric Rings Matching Reference Layout */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-blue-200/40 pointer-events-none -z-0" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full border border-blue-200/30 pointer-events-none -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-emerald-200/40 pointer-events-none -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full border border-emerald-200/30 pointer-events-none -z-0" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[860px] h-[860px] rounded-full border border-slate-200/50 pointer-events-none -z-0" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] rounded-full border border-slate-200/30 pointer-events-none -z-0" />
 
       {/* Large Watermark Quotation Marks on the Sides */}
-      <div className="absolute left-4 sm:left-8 lg:left-14 top-1/2 -translate-y-1/2 text-[100px] sm:text-[140px] lg:text-[180px] font-serif font-bold text-blue-200/35 select-none pointer-events-none leading-none -z-0">
+      <div className="absolute left-4 sm:left-8 lg:left-14 top-1/2 -translate-y-1/2 text-[100px] sm:text-[140px] lg:text-[180px] font-serif font-bold text-emerald-200/35 select-none pointer-events-none leading-none -z-0">
         &ldquo;
       </div>
-      <div className="absolute right-4 sm:right-8 lg:right-14 top-1/2 -translate-y-1/2 text-[100px] sm:text-[140px] lg:text-[180px] font-serif font-bold text-blue-200/35 select-none pointer-events-none leading-none -z-0">
+      <div className="absolute right-4 sm:right-8 lg:right-14 top-1/2 -translate-y-1/2 text-[100px] sm:text-[140px] lg:text-[180px] font-serif font-bold text-emerald-200/35 select-none pointer-events-none leading-none -z-0">
         &rdquo;
       </div>
 
@@ -107,7 +107,7 @@ export function ExecutiveTestimonial() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 transform-gpu"
         >
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 mb-2">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-700 mb-2">
             {localize("Apa Kata Klien Kami", language)}
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
@@ -129,7 +129,7 @@ export function ExecutiveTestimonial() {
             type="button"
             onClick={handlePrev}
             aria-label={localize("Testimoni Sebelumnya", language)}
-            className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-blue-600/70 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 flex items-center justify-center shadow-xs cursor-pointer z-20"
+            className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-emerald-600/70 text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all duration-200 flex items-center justify-center shadow-xs cursor-pointer z-20"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -188,7 +188,7 @@ export function ExecutiveTestimonial() {
             type="button"
             onClick={handleNext}
             aria-label={localize("Testimoni Selanjutnya", language)}
-            className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-blue-600/70 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 flex items-center justify-center shadow-xs cursor-pointer z-20"
+            className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-emerald-600/70 text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all duration-200 flex items-center justify-center shadow-xs cursor-pointer z-20"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -208,7 +208,7 @@ export function ExecutiveTestimonial() {
               aria-label={`Slide ${idx + 1}`}
               className={`transition-all duration-300 rounded-full cursor-pointer ${
                 idx === currentIndex
-                  ? "w-2.5 h-2.5 bg-blue-600 scale-110"
+                  ? "w-2.5 h-2.5 bg-emerald-600 scale-110"
                   : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
               }`}
             />
@@ -221,7 +221,7 @@ export function ExecutiveTestimonial() {
       <ShapeDivider
         variant="arch"
         position="bottom"
-        nextBgColor="#07101E"
+        nextBgColor="#06140F"
       />
     </section>
   );

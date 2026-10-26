@@ -3,8 +3,8 @@
 /* ------------------------------------------------------------------
    Vieria Techno IT Solutions - Modern Enterprise Tech Design System
    - Clean White Surface & Slate Canvas
-   - Accent: Electric / Royal Blue (#2563EB)
-   - Secondary: Sky Blue (#0284C7, #38BDF8)
+   - Accent: Brand Emerald Green (#185840, #059669)
+   - Secondary: Warm Gold / Amber Accent (#C09840, #F59E0B)
    - Neutral: Slate-900 / Slate-800 / Slate-500
    - Crisp double-bezel cards & glassmorphism
 ------------------------------------------------------------------- */
@@ -17,8 +17,11 @@
   --color-surface: #ffffff;
   --color-surface-subtle: #f1f5f9;
   --color-border: #e2e8f0;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
+  --color-primary: #185840;
+  --color-primary-hover: #124230;
+  --color-accent: #059669;
+  --color-gold: #c09840;
+  --color-gold-hover: #a88230;
 
   --animate-marquee: marquee 36s linear infinite;
 
@@ -30,7 +33,7 @@
 
 /* ---------------------------- Utilities ---------------------------- */
 @utility bg-tech-grid {
-  background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -43,8 +46,8 @@
 
 @utility bg-tech-lines-subtle {
   background-image: 
-    linear-gradient(to right, rgba(37, 99, 235, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 185, 129, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
@@ -116,11 +119,11 @@
     text-wrap: pretty;
   }
   ::selection {
-    background-color: #dbeafe;
-    color: #1e40af;
+    background-color: #d1fae5;
+    color: #065f46;
   }
   :focus-visible {
-    outline: 2px solid #2563eb;
+    outline: 2px solid #059669;
     outline-offset: 2px;
   }
 }

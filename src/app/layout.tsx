@@ -114,7 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-scroll-behavior="smooth"
       className={`${jakartaSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
     >
-      <body className="bg-[#F8FAFC] text-slate-800 font-sans selection:bg-blue-100 selection:text-blue-900">
+      <body className="bg-[#F8FAFC] text-slate-800 font-sans selection:bg-emerald-100 selection:text-emerald-950">
         <LanguageProvider>
           <SkipLink />
           <ConsultProvider>

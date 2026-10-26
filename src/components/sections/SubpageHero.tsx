@@ -72,8 +72,8 @@ export function SubpageHero({
   return (
     <div className="relative w-full bg-[#F8FAFC]">
       
-      {/* 1. Header Banner: Compact, Image-tinted, Dark Brand Navy with Backdrop */}
-      <section className="relative w-full overflow-hidden bg-[#07101E] pt-28 sm:pt-36 pb-36 sm:pb-44 text-white">
+      {/* 1. Header Banner: Compact, Image-tinted, Dark Brand Pine with Backdrop */}
+      <section className="relative w-full overflow-hidden bg-[#06140F] pt-28 sm:pt-36 pb-36 sm:pb-44 text-white">
         
         {/* Photographic Backdrop: Bright, vibrant, and clearly visible with subtle parallax zoom */}
         <motion.div 
@@ -91,9 +91,9 @@ export function SubpageHero({
             priority
             loading="eager"
           />
-          {/* Subtle Deep Navy Overlay & Vignette (Allows image to be bright and unmistakable while text stays sharp) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07101E]/90 via-[#07101E]/60 to-[#07101E]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07101E] via-transparent to-black/30" />
+          {/* Subtle Deep Pine Overlay & Vignette (Allows image to be bright and unmistakable while text stays sharp) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#06140F]/90 via-[#06140F]/60 to-[#06140F]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#06140F] via-transparent to-black/30" />
         </motion.div>
 
         {/* Content Inside Header */}
@@ -107,11 +107,11 @@ export function SubpageHero({
             aria-label={localize("Breadcrumb", language)}
             className="flex items-center gap-2 text-xs sm:text-sm text-slate-300/80 mb-4 sm:mb-5"
           >
-            <Link href={localizeHref("/", language)} className="hover:text-blue-400 transition-colors">
+            <Link href={localizeHref("/", language)} className="hover:text-emerald-400 transition-colors">
               {localize("Beranda", language)}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-blue-400 font-semibold">{localize(breadcrumb, language)}</span>
+            <span className="text-emerald-400 font-semibold">{localize(breadcrumb, language)}</span>
           </motion.nav>
 
           {/* Title & Description */}
@@ -121,7 +121,7 @@ export function SubpageHero({
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.05 }}
-                className="inline-block text-xs font-bold uppercase tracking-wider text-blue-400 mb-2"
+                className="inline-block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2"
               >
                 {localize(badge, language)}
               </motion.span>
@@ -175,11 +175,11 @@ export function SubpageHero({
                   whileHover={{ 
                     y: -6, 
                     scale: 1.015,
-                    boxShadow: "0 20px 35px -10px rgba(37, 99, 235, 0.15)",
+                    boxShadow: "0 20px 35px -10px rgba(16, 185, 129, 0.15)",
                     transition: { duration: 0.2, ease: "easeOut" } 
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-blue-400/80 p-6 flex flex-col justify-between transition-colors shadow-2xs hover:shadow-xl transform-gpu"
+                  className="group relative rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-emerald-400/80 p-6 flex flex-col justify-between transition-colors shadow-2xs hover:shadow-xl transform-gpu"
                 >
                   <div>
                     {/* Top row: Icon and Badge with hover micro-animations */}
@@ -187,14 +187,14 @@ export function SubpageHero({
                       <motion.div 
                         whileHover={{ rotate: [0, -8, 8, 0], scale: 1.1 }}
                         transition={{ duration: 0.35 }}
-                        className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/25 group-hover:shadow-blue-500/40"
+                        className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white flex items-center justify-center shadow-md shadow-emerald-600/25 group-hover:shadow-emerald-600/40"
                       >
                         <Icon className="h-6 w-6 transition-transform group-hover:scale-110" />
                       </motion.div>
                       {pt.badge && (
                         <motion.span 
                           whileHover={{ scale: 1.05 }}
-                          className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 group-hover:bg-blue-600 group-hover:text-white px-2.5 py-1 rounded-full border border-blue-200/60 transition-colors duration-200"
+                          className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 group-hover:bg-emerald-600 group-hover:text-white px-2.5 py-1 rounded-full border border-emerald-200/60 transition-colors duration-200"
                         >
                           {localize(pt.badge, language)}
                         </motion.span>
@@ -202,7 +202,7 @@ export function SubpageHero({
                     </div>
 
                     {/* Title & Description */}
-                    <h2 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                    <h2 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
                       {localize(pt.title, language)}
                     </h2>
                     <p className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
@@ -217,7 +217,7 @@ export function SubpageHero({
                         <button
                           type="button"
                           onClick={() => openConsult(pt.consultTopic)}
-                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 cursor-pointer group/btn"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 hover:text-emerald-800 cursor-pointer group/btn"
                         >
                           <span>{localize(pt.actionLabel, language)}</span>
                           <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
@@ -225,7 +225,7 @@ export function SubpageHero({
                       ) : pt.actionHref ? (
                         <Link
                           href={pt.actionHref}
-                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 group/btn"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 hover:text-emerald-800 group/btn"
                         >
                           <span>{pt.actionLabel}</span>
                           <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-200" />

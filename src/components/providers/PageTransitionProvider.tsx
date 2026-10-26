@@ -11,7 +11,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
     <>
       {/* Top Subtle Scroll Progress Bar - Direct GPU Transform (No Heavy Spring Physics Lag) */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-600 via-sky-400 to-blue-500 origin-left z-[100] pointer-events-none transform-gpu"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-700 via-amber-400 to-emerald-500 origin-left z-[100] pointer-events-none transform-gpu"
         style={{ scaleX: scrollYProgress }}
       />
 

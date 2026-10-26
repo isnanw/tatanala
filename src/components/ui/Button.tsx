@@ -15,15 +15,15 @@ interface StyleProps {
 const base =
   "group relative inline-flex items-center justify-center gap-3 rounded-full font-medium tracking-tight whitespace-nowrap " +
   "transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] select-none cursor-pointer " +
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:pointer-events-none disabled:opacity-50";
+  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
   primary:
     "bg-slate-900 text-white border border-slate-900 hover:bg-slate-800 active:scale-[0.98] shadow-sm",
   blue:
-    "bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 active:scale-[0.98] shadow-sm shadow-blue-500/25",
+    "bg-emerald-600 text-white border border-emerald-600 hover:bg-emerald-700 active:scale-[0.98] shadow-sm shadow-emerald-500/25",
   emerald:
-    "bg-[#064E3B] text-white border border-[#064E3B] hover:bg-[#047857] active:scale-[0.98] shadow-sm",
+    "bg-[#185840] text-white border border-[#185840] hover:bg-[#124230] active:scale-[0.98] shadow-sm shadow-emerald-950/20",
   outline:
     "border border-slate-200 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] shadow-xs",
   light:

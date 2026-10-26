@@ -18,7 +18,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#07101E] text-slate-300 pt-10 pb-12 overflow-visible">
+    <footer className="relative bg-[#06140F] text-slate-300 pt-10 pb-12 overflow-visible">
       
       {/* 1. Floating Consultation Card Overlapping the Top of the Footer */}
       <div className="relative -mt-28 sm:-mt-36 lg:-mt-40 mb-14 sm:mb-20 z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,15 +27,16 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-[#1E293B] border border-slate-700/80 shadow-2xl text-white transform-gpu"
+          className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-[#0F3829] via-[#0A291E] to-[#051710] border border-emerald-700/40 shadow-[0_25px_60px_-15px_rgba(4,24,16,0.85)] text-white transform-gpu"
         >
           
-          {/* Subtle Organic Curve Watermark Accent matching reference */}
-          <div className="absolute right-0 top-0 bottom-0 w-3/5 pointer-events-none opacity-[0.06] overflow-hidden flex items-center justify-end select-none">
-            <svg viewBox="0 0 500 500" className="w-[620px] h-[620px] text-white fill-current">
+          {/* Subtle Organic Curve Watermark & Amber Glow Accent */}
+          <div className="absolute right-0 top-0 bottom-0 w-3/5 pointer-events-none opacity-[0.08] overflow-hidden flex items-center justify-end select-none">
+            <svg viewBox="0 0 500 500" className="w-[620px] h-[620px] text-emerald-300 fill-current">
               <path d="M250,0 C380,80 450,220 420,350 C390,480 280,520 150,470 C20,420 -30,290 10,160 C50,30 120,-80 250,0 Z" />
             </svg>
           </div>
+          <div className="absolute -top-24 -right-24 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 items-end">
             
@@ -60,7 +61,7 @@ export function Footer() {
                 {localize("Masih bertahan dengan sistem yang rumit?", language)}
               </h2>
               
-              <p className="mt-3 text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="mt-3 text-base sm:text-lg lg:text-xl text-emerald-100/90 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
                 {localize("Jangan sampai terlambat, beralih ke solusi digital Vieria Techno sekarang!", language)}
               </p>
 
@@ -69,14 +70,14 @@ export function Footer() {
                 <button
                   type="button"
                   onClick={() => openConsult("banner-footer")}
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white hover:bg-slate-100 text-slate-900 px-8 py-3.5 text-sm sm:text-base font-bold shadow-xl transition-all duration-200 cursor-pointer hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white hover:bg-emerald-50 text-emerald-950 px-8 py-3.5 text-sm sm:text-base font-bold shadow-xl transition-all duration-200 cursor-pointer hover:scale-[1.02]"
                 >
-                  <MessageSquare className="h-4 w-4 text-blue-600" />
+                  <MessageSquare className="h-4 w-4 text-emerald-600" />
                   <span>{localize("Konsultasi Sekarang!", language)}</span>
                 </button>
               </div>
 
-              <p className="mt-3.5 text-xs sm:text-[13px] text-slate-400 font-medium">
+              <p className="mt-3.5 text-xs sm:text-[13px] text-emerald-200/70 font-medium">
                 {localize("Dapatkan penawaran menarik & pendampingan teknis penuh", language)}
               </p>
             </div>
@@ -90,7 +91,7 @@ export function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Brand Bar */}
-        <div className="pb-10 mb-10 border-b border-slate-800 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div className="pb-10 mb-10 border-b border-emerald-950/80 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div>
             <Logo tone="dark" />
             <p className="mt-2 text-sm text-slate-400 max-w-md">
@@ -100,21 +101,21 @@ export function Footer() {
 
           <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300">
             <span className="flex items-center gap-1.5">
-              <MapPin className="h-4 w-4 text-blue-400 shrink-0" /> {SITE.address}
+              <MapPin className="h-4 w-4 text-emerald-400 shrink-0" /> {SITE.address}
             </span>
-            <span className="hidden sm:inline text-slate-600">&bull;</span>
+            <span className="hidden sm:inline text-emerald-900">&bull;</span>
             <span className="flex items-center gap-1.5">
-              <Mail className="h-4 w-4 text-blue-400 shrink-0" /> {SITE.email}
+              <Mail className="h-4 w-4 text-emerald-400 shrink-0" /> {SITE.email}
             </span>
-            <span className="hidden sm:inline text-slate-600">&bull;</span>
+            <span className="hidden sm:inline text-emerald-900">&bull;</span>
             <span className="flex items-center gap-1.5">
-              <Phone className="h-4 w-4 text-blue-400 shrink-0" /> {SITE.whatsappDisplay}
+              <Phone className="h-4 w-4 text-emerald-400 shrink-0" /> {SITE.whatsappDisplay}
             </span>
           </div>
         </div>
 
         {/* Sitemap 4-Column Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800/80 text-left">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-emerald-950/70 text-left">
           
           {/* Col 1: TENTANG */}
           <div>

@@ -22,9 +22,9 @@ export function Faq() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-blue-700 mb-4"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-emerald-800 mb-4"
           >
-            <HelpCircle className="h-4 w-4 text-blue-600" />
+            <HelpCircle className="h-4 w-4 text-emerald-600" />
             <span>{localize("Tanya Jawab • Transparansi Penuh", language)}</span>
           </motion.div>
 
@@ -59,7 +59,7 @@ export function Faq() {
                 transition={{ layout: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 } }}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-white border-blue-300 shadow-md ring-1 ring-blue-500/15"
+                    ? "bg-white border-emerald-300 shadow-md ring-1 ring-emerald-500/15"
                     : "bg-white/80 border-slate-200/90 hover:bg-white hover:border-slate-300"
                 }`}
               >
@@ -68,14 +68,14 @@ export function Faq() {
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
-                  <span className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-blue-600" : "text-slate-900"}`}>
+                  <span className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-emerald-700" : "text-slate-900"}`}>
                     {localize(faq.question, language)}
                   </span>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
                     className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ml-4 transition-colors ${
-                      isOpen ? "bg-blue-50 text-blue-600" : "bg-slate-100 text-slate-500"
+                      isOpen ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-500"
                     }`}
                   >
                     <ChevronDown className="h-4 w-4" />
@@ -102,7 +102,7 @@ export function Faq() {
         </div>
 
         {/* Still have questions banner */}
-        <div className="mt-12 text-center bg-blue-50/60 rounded-3xl border border-blue-200/70 p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 text-center bg-emerald-50/60 rounded-3xl border border-emerald-200/70 p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
             <h4 className="text-base font-bold text-slate-900">{localize("Punya pertanyaan spesifik terkait bisnis Anda?", language)}</h4>
             <p className="text-sm text-slate-600 mt-1">{localize("Diskusikan langsung dengan tim analis sistem kami via WhatsApp.", language)}</p>
@@ -112,7 +112,7 @@ export function Faq() {
             whileTap={{ scale: 0.98 }}
             type="button"
             onClick={() => openConsult("faq-chat")}
-            className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 text-sm font-bold shrink-0 shadow-md shadow-blue-500/25"
+            className="rounded-full bg-emerald-700 hover:bg-emerald-800 text-white px-7 py-3 text-sm font-bold shrink-0 shadow-md shadow-emerald-900/20"
           >
             {localize("Tanya via WhatsApp", language)}
           </motion.button>
@@ -123,7 +123,7 @@ export function Faq() {
       <ShapeDivider
         variant="arch"
         position="bottom"
-        nextBgColor="#07101E"
+        nextBgColor="#06140F"
       />
     </section>
   );

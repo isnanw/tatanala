@@ -70,7 +70,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
                       className={cn(
                         "rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-semibold transition-colors cursor-pointer",
                         active
-                          ? "bg-blue-600 text-white shadow-xs"
+                          ? "bg-emerald-600 text-white shadow-xs"
                           : "border border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:text-slate-900",
                       )}
                     >
@@ -90,7 +90,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
                   onChange={(e) => setName(e.target.value)}
                   placeholder={localize("cth. Budi", language)}
                   autoComplete="name"
-                  className="mt-1.5 block h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:bg-white"
+                  className="mt-1.5 block h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm text-slate-900 outline-none transition focus:border-emerald-600 focus:bg-white"
                 />
               </label>
               <label htmlFor={`${uid}-biz`} className="text-sm font-semibold text-slate-700">
@@ -101,7 +101,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
                   onChange={(e) => setBusiness(e.target.value)}
                   placeholder={localize("cth. CV Maju Jaya", language)}
                   autoComplete="organization"
-                  className="mt-1.5 block h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:bg-white"
+                  className="mt-1.5 block h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm text-slate-900 outline-none transition focus:border-emerald-600 focus:bg-white"
                 />
               </label>
             </div>
@@ -114,7 +114,8 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
               rel="noopener noreferrer"
               onClick={onSend}
               size="md"
-              className="w-full justify-between group"
+              variant="emerald"
+              className="w-full justify-between group shadow-md shadow-emerald-950/20"
             >
               <span>{localize("Kirim via WhatsApp", language)}</span>
               <ButtonIconBadge>
@@ -135,8 +136,8 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
           aria-label={localize("Pratinjau pesan WhatsApp", language)}
         >
           <div className="flex items-center gap-3 border-b border-slate-200 bg-white px-4 py-3 text-slate-900">
-            <span className="relative grid h-8 w-8 place-items-center rounded-lg bg-blue-50 border border-blue-100">
-              <MessageCircle className="h-4 w-4 text-blue-600" aria-hidden />
+            <span className="relative grid h-8 w-8 place-items-center rounded-lg bg-emerald-50 border border-emerald-100">
+              <MessageCircle className="h-4 w-4 text-emerald-700" aria-hidden />
               <span className="absolute -right-0.5 -bottom-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
             </span>
             <div className="leading-tight">

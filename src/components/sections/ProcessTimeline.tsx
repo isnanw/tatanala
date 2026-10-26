@@ -52,7 +52,7 @@ export function ProcessTimeline() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-4 py-1 text-xs font-semibold text-blue-700 mb-4"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/80 px-4 py-1 text-xs font-semibold text-emerald-800 mb-4"
           >
             <GitCommit className="h-3.5 w-3.5" />
             <span>{localize("Metodologi Eksekusi Terstruktur", language)}</span>
@@ -81,7 +81,7 @@ export function ProcessTimeline() {
         {/* 5-Step Process Timeline Horizontal / Vertical */}
         <div className="relative">
           {/* Connecting line on desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-blue-100 -translate-y-1/2 z-0" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-emerald-100 -translate-y-1/2 z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
             {STEPS.map((step, idx) => (
@@ -98,20 +98,20 @@ export function ProcessTimeline() {
                 whileHover={{ 
                   y: -6, 
                   scale: 1.015,
-                  boxShadow: "0 15px 30px -10px rgba(37,99,235,0.15)",
+                  boxShadow: "0 15px 30px -10px rgba(16,185,129,0.15)",
                   transition: { duration: 0.2 } 
                 }}
-                className="group rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm hover:border-blue-400 transition-colors flex flex-col justify-between transform-gpu"
+                className="group rounded-2xl bg-white border border-slate-200/90 p-5 shadow-sm hover:border-emerald-400 transition-colors flex flex-col justify-between transform-gpu"
               >
                 <div>
                   <motion.div 
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white font-extrabold flex items-center justify-center text-sm shadow-md shadow-blue-500/20 mb-4"
+                    className="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white font-extrabold flex items-center justify-center text-sm shadow-md shadow-emerald-600/20 mb-4"
                   >
                     {step.step}
                   </motion.div>
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
                     {localize(step.title, language)}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
@@ -120,7 +120,7 @@ export function ProcessTimeline() {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100">
-                  <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-0.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-0.5">
                     {localize("Keluaran Fase:", language)}
                   </span>
                   <span className="text-xs sm:text-[13px] font-semibold text-slate-800">
@@ -137,7 +137,7 @@ export function ProcessTimeline() {
           <button
             type="button"
             onClick={() => openConsult("timeline-audit")}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-blue-600/20"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-bold transition-all shadow-md shadow-emerald-600/20 cursor-pointer"
           >
             <span>{localize("Mulai Fase 1: Diagnosa Sistem Tanpa Biaya", language)}</span>
             <ArrowRight className="h-4 w-4" />
@@ -149,7 +149,7 @@ export function ProcessTimeline() {
       <ShapeDivider
         variant="arch"
         position="bottom"
-        nextBgColor="#07101E"
+        nextBgColor="#06140F"
       />
     </section>
   );
