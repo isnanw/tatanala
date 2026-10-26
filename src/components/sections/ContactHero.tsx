@@ -105,7 +105,7 @@ export function ContactHero() {
                 <span>{localize("Kantor Operasional & Engineering Hub", language)}</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
-                Tatanala &bull; Studio Rekayasa Sistem Digital
+                Vieria Techno &bull; Studio Rekayasa Sistem Digital
               </h2>
               <p className="text-base text-slate-700 leading-relaxed font-normal">
                 {SITE.address}
@@ -150,7 +150,7 @@ export function ContactHero() {
               {/* Fast WhatsApp CTA Button */}
               <div className="mt-7">
                 <a
-                  href={`https://wa.me/${SITE.whatsapp}?text=Halo%20Tatanala,%20saya%20ingin%20konsultasi%20kebutuhan%20sistem`}
+                  href={`https://wa.me/${SITE.whatsapp}?text=Halo%20Vieria%20Techno,%20saya%20ingin%20konsultasi%20kebutuhan%20sistem`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-4 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition-all"
@@ -206,7 +206,7 @@ export function ContactHero() {
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">{localize("Permohonan Konsultasi Diterima", language)}</h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    {localize("Terima kasih telah mempercayai Tatanala. Insinyur sistem kami akan meninjau data kebutuhan Anda dan menghubungi Anda via WhatsApp/Surel dalam waktu 1x24 jam kerja.", language)}
+                    {localize("Terima kasih telah mempercayai Vieria Techno. Insinyur sistem kami akan meninjau data kebutuhan Anda dan menghubungi Anda via WhatsApp/Surel dalam waktu 1x24 jam kerja.", language)}
                   </p>
                   <div className="pt-4">
                     <button

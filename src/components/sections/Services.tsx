@@ -56,7 +56,7 @@ const PILLARS_DATA: PillarItem[] = [
     shortDesc:
       "Dirancang khusus persis mengikuti alur kerja dan SOP nyata usaha Anda — bukan software kaku. Adapun contoh penerapan terbukti yang kami bangun mencakup Sistem HRD (presensi & payroll) dan Booking Realtime.",
     fullDesc:
-      "Software generik di pasaran seringkali kaku dan memaksa tim Anda mengubah kebiasaan kerja. Di Tatanala, kami memetakan alur fisik bisnis Anda untuk membangun sistem custom yang fleksibel. Contoh implementasi yang kami kembangkan mulai dari otomasi HRD (presensi GPS, kelola shift, cuti & slip gaji otomatis) hingga mesin reservasi layanan pelanggan (booking mandiri 24/7 dan layar antrean realtime).",
+      "Software generik di pasaran seringkali kaku dan memaksa tim Anda mengubah kebiasaan kerja. Di Vieria Techno, kami memetakan alur fisik bisnis Anda untuk membangun sistem custom yang fleksibel. Contoh implementasi yang kami kembangkan mulai dari otomasi HRD (presensi GPS, kelola shift, cuti & slip gaji otomatis) hingga mesin reservasi layanan pelanggan (booking mandiri 24/7 dan layar antrean realtime).",
     deliverables: [
       "Arsitektur Custom: Dibuat khusus mengikuti SOP & alur kerja unik bisnis Anda",
       "Contoh Modul HRD: Presensi GPS anti-titip absen, pengaturan shift & cuti digital",
@@ -126,7 +126,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
           >
-            {localize("Layanan Terintegrasi Tatanala", language)}
+            {localize("Layanan Terintegrasi Vieria Techno", language)}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}

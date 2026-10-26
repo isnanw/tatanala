@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      aria-label={localize("Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Tatanala", language)}
+      aria-label={localize("Software Berkualitas Dibuat Khusus Sesuai Kebutuhan Anda - Vieria Techno", language)}
       className="relative overflow-hidden bg-gradient-to-br from-[#EEF6FF] via-[#F8FAFC] to-white flex flex-col justify-between min-h-screen pt-28 sm:pt-22 lg:pt-24"
     >
       {/* 1. Animated Drifting Background Mesh Orbs (Optimized: static on mobile, GPU-accelerated on desktop) */}
@@ -312,14 +312,15 @@ export function Hero() {
             </div>
 
             {/* Dynamic Model Image: Anchored directly onto the bottom partner bar */}
-            <div className="relative z-10 w-full h-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px] xl:max-w-[520px]">
+            <div className="relative z-10 w-full h-full max-w-[420px] sm:max-w-[480px] lg:max-w-[520px] xl:max-w-[540px]">
               <Image
-                src="/images/tatanala-hero-woman-v2.png"
-                alt={localize("Konsultan Rekayasa Software Tatanala", language)}
+                src="/images/hero-header.png"
+                alt={localize("Konsultan Rekayasa Software Vieria Techno", language)}
                 fill
                 priority
-                sizes="(max-width: 640px) 420px, (max-width: 1024px) 460px, 520px"
-                className="object-contain object-bottom select-none"
+                unoptimized
+                sizes="(max-width: 640px) 420px, (max-width: 1024px) 480px, 540px"
+                className="object-contain object-bottom select-none drop-shadow-[0_16px_32px_rgba(15,23,42,0.05)]"
               />
             </div>
           </motion.div>
@@ -335,7 +336,7 @@ export function Hero() {
             {/* Left Tagline - HIG Clear text */}
             <div className="text-center sm:text-left shrink-0">
               <p className="text-sm sm:text-[15px] font-bold text-slate-900 leading-tight">
-                Tatanala dipercaya oleh berbagai sektor
+                Vieria Techno dipercaya oleh berbagai sektor
               </p>
             </div>
 

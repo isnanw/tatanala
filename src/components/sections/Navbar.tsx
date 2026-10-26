@@ -42,7 +42,7 @@ export function Navbar() {
         )}
       >
         {/* Brand Logo */}
-        <Link href={localizeHref("/", language)} aria-label={localize("Tatanala Beranda", language)} className="outline-none flex items-center">
+        <Link href={localizeHref("/", language)} aria-label={localize("Vieria Techno Beranda", language)} className="outline-none flex items-center">
           <Logo />
         </Link>
 

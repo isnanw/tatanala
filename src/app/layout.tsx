@@ -24,8 +24,6 @@ const spaceGrotesk = Space_Grotesk({
 const newsreader = Newsreader({
   variable: "--font-serif",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -46,9 +44,9 @@ export const metadata: Metadata = {
       "x-default": "/",
     },
   },
-  title: "Jasa Software & Custom IT Solutions Indonesia | Tatanala",
+  title: "Jasa Software & Custom IT Solutions Indonesia | Vieria Techno",
   description:
-    "Tatanala menyediakan jasa software, sistem informasi custom, cloud, dan infrastruktur IT di Indonesia. Custom software and managed IT solutions built for business growth.",
+    "Vieria Techno menyediakan jasa software, sistem informasi custom, cloud, dan infrastruktur IT di Indonesia. Custom software and managed IT solutions built for business growth.",
   keywords: [
     "jasa pembuatan software",
     "software house Indonesia",
@@ -71,16 +69,16 @@ export const metadata: Metadata = {
     "enterprise IT",
   ],
   openGraph: {
-    title: "Tatanala | Software & IT Solutions for Business",
+    title: "Vieria Techno | Software & IT Solutions for Business",
     description: "Jasa software dan solusi IT bisnis dari Indonesia. Custom software and managed IT solutions built for business growth.",
     locale: "id_ID",
     alternateLocale: ["en_US"],
     type: "website",
-    siteName: "Tatanala IT Solutions",
+    siteName: "Vieria Techno IT Solutions",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tatanala | Software & IT Solutions for Business",
+    title: "Vieria Techno | Software & IT Solutions for Business",
     description: "Jasa software dan solusi IT bisnis dari Indonesia. Custom software and managed IT solutions built for business growth.",
   },
   robots: {
@@ -106,7 +104,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2563EB",
+  themeColor: "#1E5E40",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

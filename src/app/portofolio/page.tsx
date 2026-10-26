@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     canonical: "/portofolio",
     languages: { "id-ID": "/portofolio", "en-US": "/en/portfolio", "x-default": "/portofolio" },
   },
-  title: "Portofolio Software & IT Case Studies | Tatanala Indonesia",
+  title: "Portofolio Software & IT Case Studies | Vieria Techno Indonesia",
   description:
-    "Eksplorasi portofolio implementasi sistem informasi, antrean publik klinik, ERP pergudangan, dan web profil korporat yang telah dirilis Tatanala.",
+    "Eksplorasi portofolio implementasi sistem informasi, antrean publik klinik, ERP pergudangan, dan web profil korporat yang telah dirilis Vieria Techno.",
   keywords: [
     "Portofolio Software House",
     "Studi Kasus Sistem Informasi",
@@ -36,7 +36,7 @@ export default function PortofolioPage() {
           breadcrumb="Portofolio Proyek"
           badge="Studi Kasus &amp; Bukti Keberhasilan"
           title="Portofolio Rekayasa Software & Sistem Informasi"
-          description="Telusuri bagaimana arsitektur perangkat lunak Tatanala memecahkan hambatan operasional nyata, meningkatkan efisiensi proses, dan memperkuat tata kelola digital klien."
+          description="Telusuri bagaimana arsitektur perangkat lunak Vieria Techno memecahkan hambatan operasional nyata, meningkatkan efisiensi proses, dan memperkuat tata kelola digital klien."
           headerBgImage="/images/client-training.jpg"
           points={[
             {

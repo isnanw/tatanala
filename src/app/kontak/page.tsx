@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     canonical: "/kontak",
     languages: { "id-ID": "/kontak", "en-US": "/en/contact", "x-default": "/kontak" },
   },
-  title: "Kontak & Konsultasi IT | Software Development Indonesia - Tatanala",
+  title: "Kontak & Konsultasi IT | Software Development Indonesia - Vieria Techno",
   description:
-    "Hubungi tim insinyur sistem informasi Tatanala untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom dan sistem siap pakai.",
+    "Hubungi tim insinyur sistem informasi Vieria Techno untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom dan sistem siap pakai.",
   keywords: [
-    "Kontak Tatanala",
+    "Kontak Vieria Techno",
     "Konsultasi Software House",
     "Jasa Pembuatan Sistem Informasi",
     "Audit Kebutuhan Sistem",
@@ -45,7 +45,7 @@ export default function KontakPage() {
               title: "Hotline WhatsApp Resmi",
               description: "Konsultasi langsung dengan tim insinyur via chat pesan instan untuk respon tanggap dan diskusi awal proyek.",
               actionLabel: "Chat WhatsApp Sekarang",
-              actionHref: `https://wa.me/${SITE.whatsapp}?text=Halo%20Tatanala,%20saya%20ingin%20konsultasi%20kebutuhan%20sistem`,
+              actionHref: `https://wa.me/${SITE.whatsapp}?text=Halo%20Vieria%20Techno,%20saya%20ingin%20konsultasi%20kebutuhan%20sistem`,
             },
             {
               iconName: "fileCheck",

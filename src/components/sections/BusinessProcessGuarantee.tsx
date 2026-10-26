@@ -133,7 +133,7 @@ export function BusinessProcessGuarantee() {
               <div className="relative flex-1 w-full bg-slate-100 min-h-[260px]">
                 <Image
                   src="/images/server-audit.jpg"
-                  alt={localize("Audit Sistem & Rekayasa Arsitektur Tatanala", language)}
+                  alt={localize("Audit Sistem & Rekayasa Arsitektur Vieria Techno", language)}
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
@@ -150,7 +150,7 @@ export function BusinessProcessGuarantee() {
                 <div className="relative w-28 sm:w-32 h-full rounded-xl overflow-hidden border border-slate-200 shrink-0">
                   <Image
                     src="/images/client-training.jpg"
-                    alt={localize("Pelatihan Tim Pengguna Sistem Tatanala", language)}
+                    alt={localize("Pelatihan Tim Pengguna Sistem Vieria Techno", language)}
                     fill
                     sizes="150px"
                     className="object-cover"

@@ -49,7 +49,7 @@ export function NationalVision() {
               <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
                 <Image
                   src="/images/team-office.jpg"
-                  alt={localize("Kolaborasi Tim Rekayasa Software Tatanala", language)}
+                  alt={localize("Kolaborasi Tim Rekayasa Software Vieria Techno", language)}
                   fill
                   priority
                   loading="eager"
@@ -124,7 +124,7 @@ export function NationalVision() {
 
             {/* Concise Narrative */}
             <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
-              {localize("Tatanala mengembangkan perangkat lunak dan sistem informasi modern untuk membantu bisnis mengotomasi proses operasional, meningkatkan efisiensi kerja, dan siap bertumbuh lebih cepat.", language)}
+              {localize("Vieria Techno mengembangkan perangkat lunak dan sistem informasi modern untuk membantu bisnis mengotomasi proses operasional, meningkatkan efisiensi kerja, dan siap bertumbuh lebih cepat.", language)}
             </p>
 
             {/* Key Advantages Grid (Updated: Solusi Fleksibel replacing 100% Hak Milik Klien) */}

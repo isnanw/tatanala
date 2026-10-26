@@ -43,9 +43,10 @@ export function Footer() {
             <div className="lg:col-span-5 flex justify-center lg:justify-start items-end pl-0 lg:pl-6 overflow-hidden">
               <div className="relative w-[340px] sm:w-[400px] lg:w-[460px] h-[340px] sm:h-[400px] lg:h-[440px] -mb-1">
                 <Image
-                  src="/images/tatanala-support-consultant-cutout.png"
-                  alt={localize("Konsultan Layanan Tatanala", language)}
+                  src="/images/hero-footer.png"
+                  alt={localize("Konsultan Layanan Vieria Techno", language)}
                   fill
+                  unoptimized
                   sizes="(max-width: 640px) 340px, (max-width: 1024px) 400px, 460px"
                   className="object-contain object-bottom select-none"
                   priority
@@ -60,7 +61,7 @@ export function Footer() {
               </h2>
               
               <p className="mt-3 text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
-                {localize("Jangan sampai terlambat, beralih ke solusi digital Tatanala sekarang!", language)}
+                {localize("Jangan sampai terlambat, beralih ke solusi digital Vieria Techno sekarang!", language)}
               </p>
 
               {/* White Pill Consultation CTA Button */}
@@ -203,7 +204,7 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright & Compliance */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
-          <p>&copy; 2026 Tatanala. {localize("Menata Sistem, Menuntaskan Kendala. Seluruh hak cipta dilindungi undang-undang.", language)}</p>
+          <p>&copy; 2026 Vieria Techno. {localize("IT Solutions: Menata Sistem, Menuntaskan Kendala. Seluruh hak cipta dilindungi undang-undang.", language)}</p>
           
           <div className="flex items-center gap-6">
             <Link href={localizeHref("/tentang-kami", language)} className="hover:text-white transition-colors">{localize("SLA & Garansi", language)}</Link>
@@ -223,10 +224,10 @@ export function Footer() {
 
       {/* Floating WhatsApp Quick Action Button (Bottom Right) */}
       <a
-        href={`https://wa.me/${SITE.whatsapp}?text=Halo%20Tatanala,%20saya%20ingin%20konsultasi%20kebutuhan%20software`}
+        href={`https://wa.me/${SITE.whatsapp}?text=Halo%20Vieria%20Techno,%20saya%20ingin%20konsultasi%20kebutuhan%20software`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={localize("Hubungi WhatsApp Tatanala", language)}
+        aria-label={localize("Hubungi WhatsApp Vieria Techno", language)}
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
       >
         <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-white text-[#25D366]" />

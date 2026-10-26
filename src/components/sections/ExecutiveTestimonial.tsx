@@ -24,7 +24,7 @@ const TESTIMONIALS: TestimonialItem[] = [
     logo: "/images/client/provitas.png",
     logoAlt: "RS Provita Jayapura",
     quote:
-      "Kami merasakan komitmen rekayasa yang sangat profesional dari Tatanala. Integrasi sub-modul petty cash ke dalam jaringan intranet SIMRS RS Provita membuat rekonsiliasi kas operasional harian bebas dari selisih pembukuan, alur otorisasi nota tertata digital, dan data keuangan kami tetap terproteksi aman di jaringan tertutup.",
+      "Kami merasakan komitmen rekayasa yang sangat profesional dari Vieria Techno. Integrasi sub-modul petty cash ke dalam jaringan intranet SIMRS RS Provita membuat rekonsiliasi kas operasional harian bebas dari selisih pembukuan, alur otorisasi nota tertata digital, dan data keuangan kami tetap terproteksi aman di jaringan tertutup.",
     avatar: "/images/avatar-david.jpg",
     authorName: "dr. Fransiskus Xaverius, Sp.PK",
     authorRole: "Koordinator SIMRS & Pengelolaan Keuangan",
@@ -35,7 +35,7 @@ const TESTIMONIALS: TestimonialItem[] = [
     logo: "/images/client/recehku.png",
     logoAlt: "Recehku Financial AI",
     quote:
-      "Kolaborasi rekayasa software bersama Tatanala melahirkan antarmuka web manajemen finansial yang luar biasa reaktif. Pipeline pemrosesan AI yang mereka bangun mampu mengotomasi kategorisasi transaksi pengeluaran secara cerdas dalam hitungan milidetik, dengan kestabilan REST API yang andal saat beban transaksi tinggi.",
+      "Kolaborasi rekayasa software bersama Vieria Techno melahirkan antarmuka web manajemen finansial yang luar biasa reaktif. Pipeline pemrosesan AI yang mereka bangun mampu mengotomasi kategorisasi transaksi pengeluaran secara cerdas dalam hitungan milidetik, dengan kestabilan REST API yang andal saat beban transaksi tinggi.",
     avatar: "/images/support-consultant.jpg",
     authorName: "Reza Adityatama, M.Sc.",
     authorRole: "Founder & Lead Product Engineer",
@@ -46,7 +46,7 @@ const TESTIMONIALS: TestimonialItem[] = [
     logo: "/images/client/pt-alger.png",
     logoAlt: "PT Alger Karya Pratama",
     quote:
-      "Kebutuhan portal perusahaan kami yang dinamis dijawab tuntas oleh Tatanala. Kami tidak lagi terkunci dalam template kaku yang monoton. Arsitektur modular page builder memungkinkan tim internal kami mempublikasikan update profil bisnis dan dokumen tender secara mandiri dengan kecepatan muat dan skor SEO yang prima.",
+      "Kebutuhan portal perusahaan kami yang dinamis dijawab tuntas oleh Vieria Techno. Kami tidak lagi terkunci dalam template kaku yang monoton. Arsitektur modular page builder memungkinkan tim internal kami mempublikasikan update profil bisnis dan dokumen tender secara mandiri dengan kecepatan muat dan skor SEO yang prima.",
     avatar: "/images/marketing-specialist.jpg",
     authorName: "Ir. Bambang Hermanto",
     authorRole: "Direktur Pengembangan Korporasi",

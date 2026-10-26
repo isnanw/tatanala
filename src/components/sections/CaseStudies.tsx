@@ -38,7 +38,7 @@ const CASES: CaseItem[] = [
     metricLabel: "Selisih Stok",
     image: "/images/case-cloud-infra.jpg",
     fullStory:
-      "CV Sumber Pangan Lestari memiliki 4 cabang distributor sembako di berbagai wilayah Jawa. Sebelum menggunakan Tatanala, setiap cabang mencatat penjualan di buku nota dan menginput ke Excel terpisah. Stok gudang seringkali tidak klop dengan data penjualan, dan rekap bulanan memakan waktu 3 hari lembur bagi owner. Tatanala merancang sistem ERP berbasis cloud yang mensinkronkan stok per detik, mencatat mutasi per staf, dan mengirim rekap omzet otomatis via bot notifikasi tiap pukul 18.00.",
+      "CV Sumber Pangan Lestari memiliki 4 cabang distributor sembako di berbagai wilayah Jawa. Sebelum menggunakan Vieria Techno, setiap cabang mencatat penjualan di buku nota dan menginput ke Excel terpisah. Stok gudang seringkali tidak klop dengan data penjualan, dan rekap bulanan memakan waktu 3 hari lembur bagi owner. Vieria Techno merancang sistem ERP berbasis cloud yang mensinkronkan stok per detik, mencatat mutasi per staf, dan mengirim rekap omzet otomatis via bot notifikasi tiap pukul 18.00.",
     features: [
       "Sinkronisasi database cloud multi-cabang secara realtime",
       "Pencatatan mutasi stok per user admin gudang",
@@ -59,7 +59,7 @@ const CASES: CaseItem[] = [
     metricLabel: "Lolos BUMN",
     image: "/images/case-network-security.jpg",
     fullStory:
-      "PT Arunika Bangun Persada sering tersandung pada tahap evaluasi prakualifikasi lelang tender proyek BUMN karena website lama lambat, tidak mobile-friendly, dan tidak memiliki struktur dokumentasi sertifikasi SBU/K3. Tatanala merancang ulang website dari nol dengan Next.js, menata galeri portofolio proyek dengan bukti verifikasi, dan memastikan kecepatan muat di bawah 1,8 detik.",
+      "PT Arunika Bangun Persada sering tersandung pada tahap evaluasi prakualifikasi lelang tender proyek BUMN karena website lama lambat, tidak mobile-friendly, dan tidak memiliki struktur dokumentasi sertifikasi SBU/K3. Vieria Techno merancang ulang website dari nol dengan Next.js, menata galeri portofolio proyek dengan bukti verifikasi, dan memastikan kecepatan muat di bawah 1,8 detik.",
     features: [
       "Struktur halaman siap verifikasi LPSE & tender",
       "Skor Google Lighthouse 97/100 di jaringan mobile",
@@ -80,7 +80,7 @@ const CASES: CaseItem[] = [
     metricLabel: "Booking Online",
     image: "/images/case-healthcare.jpg",
     fullStory:
-      "Klinik Gigi Senyum Sehat sebelumnya mengandalkan boost post media sosial tanpa pelacakan data, sehingga biaya iklan terbuang sia-sia tanpa tahu berapa pasien yang benar-benar datang. Tatanala mengimplementasikan strategi SEO lokal pada Google Business Profile dan merancang kampanye iklan digital yang melacak setiap chat WhatsApp hingga terkonfirmasi booking dokter.",
+      "Klinik Gigi Senyum Sehat sebelumnya mengandalkan boost post media sosial tanpa pelacakan data, sehingga biaya iklan terbuang sia-sia tanpa tahu berapa pasien yang benar-benar datang. Vieria Techno mengimplementasikan strategi SEO lokal pada Google Business Profile dan merancang kampanye iklan digital yang melacak setiap chat WhatsApp hingga terkonfirmasi booking dokter.",
     features: [
       "Dominasi peringkat #1 Google Maps & SEO lokal",
       "Pelacakan konversi WhatsApp Conversion API",
@@ -101,7 +101,7 @@ const CASES: CaseItem[] = [
     metricLabel: "Waste Material",
     image: "/images/case-hybrid-cloud.jpg",
     fullStory:
-      "Pabrik fabrikasi logam ini sering mengalami pemborosan bahan baku pelat baja karena pemotongan tidak terencana dan status SPK tercecer di lantai produksi. Tatanala membangun aplikasi berbasis tablet industri di tiap stasiun kerja yang memandu pemotongan bahan baku secara optimal dan mencatat status pengerjaan secara otomatis.",
+      "Pabrik fabrikasi logam ini sering mengalami pemborosan bahan baku pelat baja karena pemotongan tidak terencana dan status SPK tercecer di lantai produksi. Vieria Techno membangun aplikasi berbasis tablet industri di tiap stasiun kerja yang memandu pemotongan bahan baku secara optimal dan mencatat status pengerjaan secara otomatis.",
     features: [
       "Pelacakan SPK realtime dengan scan barcode",
       "Algoritma kalkulasi optimal pemotongan pelat logam",

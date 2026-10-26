@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     canonical: "/tentang-kami",
     languages: { "id-ID": "/tentang-kami", "en-US": "/en/about", "x-default": "/tentang-kami" },
   },
-  title: "Tentang Tatanala | Software Engineering Company Indonesia",
+  title: "Tentang Vieria Techno | Software Engineering Company Indonesia",
   description:
-    "Mengenal Tatanala: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
+    "Mengenal Vieria Techno: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
   keywords: [
-    "Tentang Tatanala",
+    "Tentang Vieria Techno",
     "Software House Indonesia",
     "Konsultan IT Terpercaya",
     "Solusi Sistem Informasi",
@@ -33,10 +33,10 @@ export default function TentangKamiPage() {
       <main className="bg-[#F8FAFC]">
         {/* Modern Executive Subpage Hero with 3 Engineering Values */}
         <SubpageHero
-          breadcrumb="Tentang Tatanala"
+          breadcrumb="Tentang Vieria Techno"
           badge="Profil Studio Rekayasa &amp; Komitmen Teknis"
           title="Membangun Kepercayaan Melalui Rekayasa Software yang Andal"
-          description="Tatanala hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi di Indonesia yang mengutamakan kerapian arsitektur, keamanan data, dan keandalan sistem jangka panjang."
+          description="Vieria Techno hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi di Indonesia yang mengutamakan kerapian arsitektur, keamanan data, dan keandalan sistem jangka panjang."
           headerBgImage="/images/team-office.jpg"
           points={[
             {

@@ -10,41 +10,41 @@ const pages = {
   "": {
     component: Home,
     idPath: "/",
-    title: "Custom Software & IT Solutions in Indonesia | Tatanala",
+    title: "Custom Software & IT Solutions in Indonesia | Vieria Techno",
     description:
-      "Build better business operations with Tatanala. Custom software development, business systems, cloud infrastructure, and managed IT solutions from Indonesia.",
+      "Build better business operations with Vieria Techno. Custom software development, business systems, cloud infrastructure, and managed IT solutions from Indonesia.",
     keywords: ["custom software development", "IT solutions Indonesia", "business software", "managed IT services", "cloud infrastructure"],
   },
   services: {
     component: LayananPage,
     idPath: "/layanan",
-    title: "Custom Software Development & IT Services | Tatanala",
+    title: "Custom Software Development & IT Services | Vieria Techno",
     description:
-      "Explore custom business software, operational systems, professional websites, SEO, and measurable digital growth services by Tatanala Indonesia.",
+      "Explore custom business software, operational systems, professional websites, SEO, and measurable digital growth services by Vieria Techno Indonesia.",
     keywords: ["custom software development", "business systems", "software development services", "IT consulting Indonesia", "business process automation"],
   },
   portfolio: {
     component: PortofolioPage,
     idPath: "/portofolio",
-    title: "Software Development Portfolio & IT Case Studies | Tatanala",
+    title: "Software Development Portfolio & IT Case Studies | Vieria Techno",
     description:
-      "See how Tatanala delivers business software, ERP, healthcare systems, public service platforms, and digital solutions for organizations in Indonesia.",
+      "See how Vieria Techno delivers business software, ERP, healthcare systems, public service platforms, and digital solutions for organizations in Indonesia.",
     keywords: ["software development portfolio", "IT case studies", "ERP implementation", "business software projects Indonesia"],
   },
   about: {
     component: TentangKamiPage,
     idPath: "/tentang-kami",
-    title: "About Tatanala | Software Engineering Company in Indonesia",
+    title: "About Vieria Techno | Software Engineering Company in Indonesia",
     description:
-      "Meet Tatanala, a software engineering partner building secure, reliable custom systems and digital solutions for businesses and organizations.",
+      "Meet Vieria Techno, a software engineering partner building secure, reliable custom systems and digital solutions for businesses and organizations.",
     keywords: ["software engineering company Indonesia", "custom software partner", "IT solutions provider", "software development company"],
   },
   contact: {
     component: KontakPage,
     idPath: "/kontak",
-    title: "Contact Tatanala | IT & Software Consultation",
+    title: "Contact Vieria Techno | IT & Software Consultation",
     description:
-      "Talk to Tatanala about custom software, business systems, cloud infrastructure, or your next digital project. Request an initial consultation.",
+      "Talk to Vieria Techno about custom software, business systems, cloud infrastructure, or your next digital project. Request an initial consultation.",
     keywords: ["software consultation", "IT consultation Indonesia", "custom software quote", "business systems consultation"],
   },
 } as const;
@@ -93,7 +93,7 @@ export async function generateMetadata({
       locale: "en_US",
       alternateLocale: ["id_ID"],
       type: "website",
-      siteName: "Tatanala IT Solutions",
+      siteName: "Vieria Techno IT Solutions",
     },
   };
 }

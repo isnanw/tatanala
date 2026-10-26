@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "/layanan",
     languages: { "id-ID": "/layanan", "en-US": "/en/services", "x-default": "/layanan" },
   },
-  title: "Jasa Software & IT Solutions | Custom Business Systems - Tatanala",
+  title: "Jasa Software & IT Solutions | Custom Business Systems - Vieria Techno",
   description:
     "Solusi software bisnis terarah: website & portal profil profesional, sistem informasi operasional custom, manajemen stok & transaksi, dan dashboard monitoring laporan otomatis.",
   keywords: [

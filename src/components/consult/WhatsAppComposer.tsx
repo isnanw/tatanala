@@ -39,10 +39,10 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
       const englishWho = name.trim() ? `I am ${name.trim()}` : "I";
       const englishFrom = business.trim() ? ` from ${business.trim()}` : "";
       const need = picked.length ? joinItems(picked, language) : "my business's digital needs";
-      return `Hello Tatanala, ${englishWho}${englishFrom}. I'd like to discuss ${need}. When can we schedule a free consultation?`;
+      return `Hello Vieria Techno, ${englishWho}${englishFrom}. I'd like to discuss ${need}. When can we schedule a free consultation?`;
     }
     const need = picked.length ? joinItems(picked, language) : "kebutuhan digital usaha saya";
-    return `Halo Tatanala, ${who}${from}. Saya ingin berdiskusi tentang ${need}. Kapan bisa dijadwalkan sesi konsultasi gratis?`;
+    return `Halo Vieria Techno, ${who}${from}. Saya ingin berdiskusi tentang ${need}. Kapan bisa dijadwalkan sesi konsultasi gratis?`;
   }, [topics, name, business, language]);
 
   const toggle = (id: string) =>
@@ -140,7 +140,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
               <span className="absolute -right-0.5 -bottom-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
             </span>
             <div className="leading-tight">
-              <p className="text-sm font-bold text-slate-900">{localize("Tim Konsultan Tatanala", language)}</p>
+              <p className="text-sm font-bold text-slate-900">{localize("Tim Konsultan Vieria Techno", language)}</p>
               <p className="text-xs text-slate-500 font-normal">{localize("online • respon cepat", language)}</p>
             </div>
           </div>
@@ -163,7 +163,7 @@ export function WhatsAppComposer({ initialTopic, className, onSend }: WhatsAppCo
             </div>
 
             <div className="max-w-[85%] rounded-xl border border-slate-200 bg-slate-100/90 p-3.5 text-sm leading-relaxed text-slate-700">
-              {localize("Halo, terima kasih sudah menghubungi Tatanala. Kami siapkan sesi diagnosa alur sistem gratis untuk Anda.", language)}
+              {localize("Halo, terima kasih sudah menghubungi Vieria Techno. Kami siapkan sesi diagnosa alur sistem gratis untuk Anda.", language)}
             </div>
           </div>
         </div>

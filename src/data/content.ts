@@ -35,12 +35,12 @@ import type {
 } from "@/types";
 
 export const SITE = {
-  name: "Tatanala",
-  tagline: "Menata Sistem, Menuntaskan Kendala.",
+  name: "Vieria Techno",
+  tagline: "IT Solutions: Menata Sistem, Menuntaskan Kendala.",
   /** International format without "+"  -  used for wa.me links. */
   whatsapp: "6281234567890",
   whatsappDisplay: "+62 812-3456-7890",
-  email: "halo@tatanala.id",
+  email: "halo@vieriatechno.com",
   address: "Indonesia",
 } as const;
 
@@ -375,22 +375,22 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const FAQS: FaqItem[] = [
   {
-    question: "Bagaimana skema kerja sama dan lisensi penggunaan sistem di Tatanala?",
+    question: "Bagaimana skema kerja sama dan lisensi penggunaan sistem di Vieria Techno?",
     answer:
       "Kami menyediakan model implementasi fleksibel sesuai skala bisnis Anda, mulai dari pengembangan sistem kustom (private cloud/intranet) hingga skema langganan terkelola (SaaS). Seluruh data transaksi, basis data bisnis, dan rahasia operasional tetap sepenuhnya menjadi hak milik entitas Anda dengan proteksi enkripsi dan keamanan data terjamin.",
   },
   {
-    question: "Bagaimana Tatanala menjamin kerahasiaan data omzet dan strategi bisnis kami?",
+    question: "Bagaimana Vieria Techno menjamin kerahasiaan data omzet dan strategi bisnis kami?",
     answer:
       "Setiap perikatan kerja dilindungi secara hukum oleh Perjanjian Kerahasiaan Informasi (Non-Disclosure Agreement / NDA) resmi bermaterai sebelum sesi diagnosa mendalam atau penulisan kode dimulai. Data transaksi, rahasia dagang, daftar vendor, dan margin keuntungan klien dienkripsi dengan standar AES-256 dan dilindungi dari kebocoran ke pihak mana pun.",
   },
   {
-    question: "Apakah Tatanala mendukung solusi langganan (SaaS) maupun pengembangan custom?",
+    question: "Apakah Vieria Techno mendukung solusi langganan (SaaS) maupun pengembangan custom?",
     answer:
       "Ya. Kami memahami setiap institusi dan bisnis memiliki kebutuhan alokasi investasi yang berbeda. Bagi bisnis yang menginginkan kemudahan sistem terkelola penuh tanpa pusing memikirkan server, kami menyediakan skema langganan terkelola (SaaS). Untuk operasional korporasi dengan SOP unik, kami juga menyediakan opsi rekayasa kustom terintegrasi.",
   },
   {
-    question: "Apakah sistem profil yang dibangun Tatanala memenuhi syarat verifikasi tender BUMN dan LPSE?",
+    question: "Apakah sistem profil yang dibangun Vieria Techno memenuhi syarat verifikasi tender BUMN dan LPSE?",
     answer:
       "Tentu. Kami menerapkan standar kepatuhan format profil tender korporasi: mencakup struktur tata kelola direksi, kejelasan legalitas (K3, SBU, ISO), katalog portofolio terverifikasi, hingga kecepatan akses di bawah 1.8 detik yang memuaskan kriteria evaluasi verifikator tender.",
   },
