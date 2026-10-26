@@ -32,7 +32,7 @@ export function ShapeDivider({
     <div
       aria-hidden="true"
       className={`absolute left-0 right-0 w-full overflow-hidden leading-none pointer-events-none select-none z-10 ${
-        isBottom ? "bottom-0" : "top-0"
+        isBottom ? "-bottom-px" : "-top-px"
       } ${className}`}
       style={{
         transform: `${flipX ? "scaleX(-1)" : ""} ${!isBottom ? "rotate(180deg)" : ""}`,

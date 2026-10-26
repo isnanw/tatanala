@@ -74,7 +74,7 @@ export function ExecutiveTestimonial() {
   return (
     <section 
       id="testimoni" 
-      className="scroll-mt-24 pt-16 sm:pt-24 pb-28 sm:pb-40 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden"
+      className="scroll-mt-24 pt-16 sm:pt-24 pb-28 sm:pb-40 bg-[#F8FAFC] relative overflow-hidden"
     >
       {/* Top Right Decorative Dot Matrix */}
       <div className="absolute top-8 right-8 sm:right-16 hidden sm:grid grid-cols-8 gap-2 opacity-40 pointer-events-none -z-0">
