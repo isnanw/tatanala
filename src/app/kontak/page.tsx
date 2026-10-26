@@ -36,9 +36,10 @@ export const metadata: Metadata = {
     siteName: "Vieria Techno IT Solutions",
     images: [
       {
-        url: "/images/server.jpg",
+        url: "/images/og-server.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Konsultasi IT Vieria Techno",
       },
     ],
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     title: "Kontak & Konsultasi IT | Vieria Techno Indonesia",
     description:
       "Hubungi tim insinyur sistem informasi Vieria Techno untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom.",
-    images: ["/images/server.jpg"],
+    images: ["/images/og-server.jpg"],
   },
 };
 

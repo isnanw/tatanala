@@ -99,9 +99,10 @@ export async function generateMetadata({
       siteName: "Vieria Techno IT Solutions",
       images: [
         {
-          url: "/images/team.jpg",
+          url: "/images/og-share.jpg",
           width: 1200,
           height: 630,
+          type: "image/jpeg",
           alt: page.title,
         },
       ],
@@ -110,7 +111,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: page.title,
       description: page.description,
-      images: ["/images/team.jpg"],
+      images: ["/images/og-share.jpg"],
     },
   };
 }

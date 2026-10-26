@@ -36,9 +36,10 @@ export const metadata: Metadata = {
     siteName: "Vieria Techno IT Solutions",
     images: [
       {
-        url: "/images/team.jpg",
+        url: "/images/og-share.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Portofolio Proyek Vieria Techno",
       },
     ],
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     title: "Portofolio Rekayasa Software & Studi Kasus | Vieria Techno",
     description:
       "Eksplorasi portofolio implementasi sistem informasi, antrean publik klinik, ERP pergudangan, dan web profil korporat yang telah dirilis Vieria Techno.",
-    images: ["/images/team.jpg"],
+    images: ["/images/og-share.jpg"],
   },
 };
 

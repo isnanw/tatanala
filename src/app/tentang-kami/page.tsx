@@ -36,9 +36,10 @@ export const metadata: Metadata = {
     siteName: "Vieria Techno IT Solutions",
     images: [
       {
-        url: "/images/team.jpg",
+        url: "/images/og-share.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Profil Studio Rekayasa Vieria Techno",
       },
     ],
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     title: "Tentang Vieria Techno | Software Engineering Company Indonesia",
     description:
       "Mengenal Vieria Techno: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
-    images: ["/images/team.jpg"],
+    images: ["/images/og-share.jpg"],
   },
 };
 

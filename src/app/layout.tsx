@@ -34,8 +34,10 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vieria.recehku.id";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://tatanala.id"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
     languages: {
@@ -72,17 +74,19 @@ export const metadata: Metadata = {
     title: "Vieria Techno | Jasa Pembuatan Software & IT Solutions Indonesia",
     description:
       "Software house dan konsultan IT profesional: Solusi website bisnis, sistem operasional custom, dan dashboard laporan otomatis.",
-    url: "/",
+    url: siteUrl,
     locale: "id_ID",
     alternateLocale: ["en_US"],
     type: "website",
     siteName: "Vieria Techno IT Solutions",
     images: [
       {
-        url: "/images/team.jpg",
+        url: "/images/og-share.jpg",
+        secureUrl: `${siteUrl}/images/og-share.jpg`,
         width: 1200,
         height: 630,
-        alt: "Vieria Techno - Software & IT Solutions Indonesia",
+        type: "image/jpeg",
+        alt: "Vieria Techno - Jasa Pembuatan Software & IT Solutions Indonesia",
       },
     ],
   },
@@ -91,7 +95,7 @@ export const metadata: Metadata = {
     title: "Vieria Techno | Jasa Pembuatan Software & IT Solutions Indonesia",
     description:
       "Software house dan konsultan IT profesional: Solusi website bisnis, sistem operasional custom, dan dashboard laporan otomatis.",
-    images: ["/images/team.jpg"],
+    images: ["/images/og-share.jpg"],
   },
   robots: {
     index: true,
