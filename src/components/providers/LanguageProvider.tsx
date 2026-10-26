@@ -628,6 +628,50 @@ const translations: Record<string, string> = {
   "Seluruh pengajuan bersifat rahasia dan langsung ditangani oleh tim insinyur teknis internal.": "All submissions are confidential and reviewed directly by our in-house engineering team.",
   "Konsultasi Solusi Ini di WhatsApp": "Discuss This Solution on WhatsApp",
   "< 2 Detik": "< 2 Seconds",
+
+  // --- VIERIA TECHNO Blueprint & Positioning ---
+  "VIERIA TECHNO — SYSTEM INTEGRITY": "VIERIA TECHNO — SYSTEM INTEGRITY",
+  "System Integrity & Digital Solutions": "System Integrity & Digital Solutions",
+  "Built to Last, Designed to Evolve.": "Built to Last, Designed to Evolve.",
+  "Integrity in Every System.": "Integrity in Every System.",
+  "Fondasi Sistem yang Tangguh": "Resilient System Foundations",
+  "untuk Bisnis yang Siap Tumbuh.": "for Businesses Ready to Scale.",
+  "Kami memadukan keandalan rekayasa sistem informasi, website profil berwibawa, dan strategi akuisisi pasar (SEO & Ads). Dibangun kokoh untuk menyelesaikan masalah operasional Anda hari ini, dirancang adaptif untuk skala bisnis Anda di masa depan.": "We combine dependable information systems engineering, authoritative corporate websites, and market acquisition strategies (SEO & Ads). Built to solve today's operational challenges, designed adaptively to scale with your business tomorrow.",
+  "Bangun Sistem Anda Sekarang": "Build Your System Now",
+
+  // --- 3 Pillars & Service Headings ---
+  "Rooted in Strength, Growing Through Innovation": "Rooted in Strength, Growing Through Innovation",
+  "The Strong Roots": "The Strong Roots",
+  "The Resilient Stem": "The Resilient Stem",
+  "Endless Growth": "Endless Growth",
+
+  "Penyelarasan 3 pilar solusi digital: merapikan akar operasional internal, membangun batang reputasi korporasi berwibawa, hingga mengakselerasi pertumbuhan pasar bisnis Anda.": "Aligning three pillars of digital solutions: streamlining internal operational roots, establishing an authoritative corporate reputation stem, and accelerating your market growth.",
+  "Fondasi sistem yang tangguh untuk bisnis yang siap tumbuh. Kami memadukan keandalan rekayasa sistem informasi, website profil berwibawa, dan strategi akuisisi pasar (SEO &amp; Ads).": "Resilient system foundations for businesses ready to scale. We combine dependable information systems engineering, authoritative corporate websites, and market acquisition strategies (SEO & Ads).",
+  "Fondasi sistem yang tangguh untuk bisnis yang siap tumbuh. Kami memadukan keandalan rekayasa sistem informasi, website profil berwibawa, dan strategi akuisisi pasar (SEO & Ads).": "Resilient system foundations for businesses ready to scale. We combine dependable information systems engineering, authoritative corporate websites, and market acquisition strategies (SEO & Ads).",
+
+  // --- Subpage Points & Actions ---
+  "Sistem Informasi & Otomasi": "Custom Information Systems & Automation",
+  "Pelajari Sistem": "Explore Systems",
+  "Lihat Deliverables": "View Deliverables",
+  "Konsultasikan Skema": "Consult on Solutions",
+  "Fondasi Operasional Stabil": "Stable Operational Foundation",
+  "Kredibel & Siap Tender": "Credible & Tender-Ready",
+  "Pertumbuhan Terukur": "Measurable Growth",
+
+  // --- 3 Pillars Card Content & Descriptions ---
+  "Sistem Informasi Kustom & Otomasi": "Custom Information Systems & Automation",
+  "Merapikan 'akar' operasional di belakang layar (stok, keuangan, rekap kerja) dengan prinsip System Integrity—kuat, stabil, dan konsisten.": "Organizing backend operational 'roots' (inventory, finance, reporting) with System Integrity—robust, stable, and consistent.",
+  "Merapikan akar operasional di belakang layar (stok, keuangan, rekap kerja) dengan prinsip System Integrity—kuat, stabil, dan konsisten.": "Organizing backend operational 'roots' (inventory, finance, reporting) with System Integrity—robust, stable, and consistent.",
+  "Seperti akar tanaman Sansevieria yang mencengkeram kuat dan berdaya tahan tinggi, fondasi operasional bisnis Anda harus bebas dari kebocoran data dan selisih manual. Kami merancang arsitektur sistem informasi kustom yang memetakan proses fisik bisnis Anda menjadi alur digital terpadu: dari kontrol inventaris multi-cabang, otorisasi petty cash, hingga otomasi rekonsiliasi laporan.": "Like the hardy roots of the Sansevieria plant that withstand harsh conditions, your business operations need a resilient foundation free from data leaks and manual errors. We build custom information systems that transform physical workflows into a unified digital ecosystem: multi-branch inventory control, petty cash authorizations, and automated financial reconciliations.",
+
+  "Website Company Profile Profesional": "Professional Corporate Profile Website",
+  "Membangun wajah perusahaan yang berwibawa, cepat, dan kredibel di mata mitra bisnis, investor, maupun tender.": "Creating an authoritative, fast, and credible corporate presence that earns trust from partners, investors, and tender committees.",
+  "Batang yang tangguh menjadi cerminan daya tahan tanaman Sansevieria di segala cuaca. Kami membangun website profil perusahaan berstandar korporasi: arsitektur berwibawa, verifikasi portofolio siap tender BUMN/swasta, keamanan SSL Grade A+, dan kecepatan muat kilat yang mematahkan keraguan calon klien sejak pandangan pertama.": "A resilient stem reflects Sansevieria's weather-hardy strength. We build corporate-grade profile websites: distinguished architecture, verified portfolios ready for corporate/state tender verification, Grade A+ SSL security, and blazing-fast loading speeds that eliminate doubt from the first click.",
+
+  "SEO Organik & Digital Ads Terukur": "Organic SEO & Measurable Digital Ads",
+  "SEO Organik & Digital Ads": "Organic SEO & Digital Ads",
+  "Membuka keran prospek dan penjualan baru secara terukur setelah fondasi web dan sistem internal klien siap.": "Opening a predictable stream of qualified leads and new sales once your website and internal systems are ready.",
+  "Setelah akar operasional rapi dan batang reputasi kokoh, Vieria Techno mengalirkan pertumbuhan pasar tanpa batas. Melalui strategi SEO berbasis commercial intent dan akuisisi iklan terukur (Google & Meta Ads), setiap rupiah anggaran promosi dilacak secara transparan hingga menjadi prospek valid dan konversi nyata.": "Once operational roots are organized and the corporate reputation stem stands strong, Vieria Techno drives limitless market growth. Through commercial-intent SEO and measurable paid ads (Google & Meta), every marketing rupiah is tracked transparently down to verified leads and real sales.",
 };
 
 const LanguageContext = createContext<{ 

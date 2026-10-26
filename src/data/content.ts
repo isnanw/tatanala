@@ -36,7 +36,8 @@ import type {
 
 export const SITE = {
   name: "Vieria Techno",
-  tagline: "IT Solutions: Menata Sistem, Menuntaskan Kendala.",
+  descriptor: "System Integrity & Digital Solutions",
+  tagline: "Built to Last, Designed to Evolve. Integrity in Every System.",
   /** International format without "+"  -  used for wa.me links. */
   whatsapp: "6281234567890",
   whatsappDisplay: "+62 812-3456-7890",
@@ -53,11 +54,11 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const MARQUEE_ITEMS: { label: string; icon: typeof Globe2 }[] = [
-  { label: "Sistem Informasi Kustom", icon: Boxes },
-  { label: "Website Company Profile", icon: Globe2 },
-  { label: "Optimasi SEO Organik", icon: SearchCheck },
+  { label: "Sistem Informasi Kustom & Otomasi", icon: Boxes },
+  { label: "Website Company Profile Profesional", icon: Globe2 },
+  { label: "Optimasi SEO Organik Berperingkat", icon: SearchCheck },
   { label: "Google & Meta Ads Terukur", icon: Megaphone },
-  { label: "Integrasi AI & Otomasi Kerja", icon: Bot },
+  { label: "System Integrity & Keamanan Data", icon: ShieldCheck },
   { label: "Dashboard Realtime Multi-Cabang", icon: BarChart3 },
 ];
 
@@ -77,27 +78,27 @@ export const PROBLEMS: { title: string; detail: string }[] = [
 ];
 
 export const PILLARS: {
-  pillar: "Hulu" | "Tengah" | "Hilir";
+  pillar: string;
   title: string;
   detail: string;
   icon: typeof Globe2;
 }[] = [
   {
-    pillar: "Hulu",
-    title: "Website Profil Berbobot",
-    detail: "Kredibilitas instan, siap tender, impresi profesional sejak klik pertama.",
+    pillar: "The Strong Roots",
+    title: "Sistem Informasi Kustom & Otomasi",
+    detail: "Merapikan 'akar' operasional di belakang layar (stok, keuangan, rekap kerja) dengan prinsip System Integrity—kuat, stabil, dan konsisten.",
+    icon: Boxes,
+  },
+  {
+    pillar: "The Resilient Stem",
+    title: "Website Company Profile Profesional",
+    detail: "Membangun wajah perusahaan yang berwibawa, cepat, dan kredibel di mata mitra bisnis, investor, maupun tender.",
     icon: Building2,
   },
   {
-    pillar: "Tengah",
-    title: "Sistem Informasi Kustom",
-    detail: "ERP mini, inventaris, POS, alur kerja tanpa kertas, rekap otomatis.",
-    icon: Workflow,
-  },
-  {
-    pillar: "Hilir",
-    title: "Pertumbuhan Terarah",
-    detail: "SEO halaman #1 dan iklan Google/Meta Ads yang terukur hingga rupiah.",
+    pillar: "Endless Growth",
+    title: "SEO Organik & Digital Ads",
+    detail: "Membuka keran prospek dan penjualan baru secara terukur setelah fondasi web dan sistem internal klien siap.",
     icon: Rocket,
   },
 ];

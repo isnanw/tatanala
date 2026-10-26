@@ -62,33 +62,33 @@ export default function LayananPage() {
         {/* Modern Executive Subpage Hero with 3 Core Pillar Points */}
         <SubpageHero
           breadcrumb="Layanan &amp; Solusi"
-          badge="Katalog Layanan &amp; Solusi Sistem"
-          title="Solusi Rekayasa Software yang Mudah Dipahami & Tepat Sasaran"
-          description="Membantu bisnis dan instansi merapikan alur kerja manual menjadi sistem digital yang rapi, transparan, dan mudah digunakan oleh seluruh tim operasional."
+          badge="VIERIA TECHNO — SYSTEM INTEGRITY"
+          title="Rooted in Strength, Growing Through Innovation"
+          description="Fondasi sistem yang tangguh untuk bisnis yang siap tumbuh. Kami memadukan keandalan rekayasa sistem informasi, website profil berwibawa, dan strategi akuisisi pasar (SEO &amp; Ads)."
           headerBgImage="/images/server.jpg"
           points={[
             {
-              iconName: "globe",
-              badge: "Pilar Hulu",
-              title: "Website & Portal Profesional",
-              description: "Situs profil berbobot dan siap tender. Menampilkan legalitas, portofolio terverifikasi, dan cepat dimuat di segala perangkat.",
-              actionLabel: "Lihat Rincian Deliverables",
+              iconName: "boxes",
+              badge: "The Strong Roots",
+              title: "Sistem Informasi & Otomasi",
+              description: "Merapikan 'akar' operasional di belakang layar (stok, keuangan, rekap kerja) dengan prinsip System Integrity—kuat, stabil, dan konsisten.",
+              actionLabel: "Pelajari Sistem",
               actionHref: "#layanan",
             },
             {
-              iconName: "boxes",
-              badge: "Pilar Tengah",
-              title: "Sistem Informasi & Operasional",
-              description: "100% dirancang sesuai alur nyata & SOP unik bisnis Anda. Mulai dari sistem HRD, presensi, hingga transaksi & antrean realtime.",
-              actionLabel: "Pelajari Alur Sistem",
+              iconName: "globe",
+              badge: "The Resilient Stem",
+              title: "Website Company Profile",
+              description: "Membangun wajah perusahaan yang berwibawa, cepat, dan kredibel di mata mitra bisnis, investor, maupun tender.",
+              actionLabel: "Lihat Deliverables",
               actionHref: "#layanan",
             },
             {
               iconName: "rocket",
-              badge: "Pilar Hilir",
-              title: "Dashboard Laporan & Monitoring",
-              description: "Pusat visualisasi data otomatis. Rekap analitik performa cabang, stok, dan mutasi tanpa kompilasi spreadsheet manual.",
-              actionLabel: "Konsultasikan Kebutuhan",
+              badge: "Endless Growth",
+              title: "SEO Organik & Digital Ads",
+              description: "Membuka keran prospek dan penjualan baru secara terukur setelah fondasi web dan sistem internal klien siap.",
+              actionLabel: "Konsultasikan Skema",
               consultTopic: "layanan-kustom",
             },
           ]}

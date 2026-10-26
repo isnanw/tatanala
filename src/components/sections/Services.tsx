@@ -25,38 +25,17 @@ interface PillarItem {
 
 const PILLARS_DATA: PillarItem[] = [
   {
-    id: "profil",
-    pillar: "Pilar Hulu",
-    title: "Website Profil Berbobot & Siap Tender",
-    icon: Globe2,
-    badge: "Reputasi Instan",
-    metric: "< 2 Detik",
-    metricLabel: "Kecepatan Muat Mobile",
-    shortDesc:
-      "Situs profil yang dirancang layaknya proposal bisnis: mematahkan keraguan calon klien, menampilkan legalitas & sertifikasi, serta siap tembus verifikasi tender BUMN.",
-    fullDesc:
-      "Website bukan sekadar brosur online. Bagi kontraktor, manufaktur, dan konsultan, website adalah garda depan evaluasi tender. Kami merancang arsitektur web yang lolos verifikasi SBU/LPSE, memuat di bawah 2 detik di jaringan seluler, dan menyajikan portofolio secara terverifikasi.",
-    deliverables: [
-      "Desain UI/UX eksklusif berorientasi kredibilitas bisnis",
-      "Halaman legalitas, struktur organisasi, dan galeri proyek tender",
-      "Headless CMS mandiri  -  update berita & portofolio tanpa programmer",
-      "Hosting Cloud CDN global + domain .com / .id + SSL kelas A+",
-      "Formulir penawaran langsung terintegrasi ke WhatsApp admin",
-    ],
-    techStack: ["Next.js App Router", "TailwindCSS", "Edge CDN", "Core Web Vitals 95+"],
-  },
-  {
     id: "sistem",
-    pillar: "Pilar Tengah",
-    title: "Sistem Informasi & Operasional Kustom",
+    pillar: "The Strong Roots",
+    title: "Sistem Informasi Kustom & Otomasi",
     icon: Boxes,
-    badge: "100% Sesuai SOP",
+    badge: "System Integrity",
     metric: "100% Akurat",
-    metricLabel: "Sesuai Alur Nyata",
+    metricLabel: "Fondasi Operasional Stabil",
     shortDesc:
-      "Dirancang khusus persis mengikuti alur kerja dan SOP nyata usaha Anda — bukan software kaku. Adapun contoh penerapan terbukti yang kami bangun mencakup Sistem HRD (presensi & payroll) dan Booking Realtime.",
+      "Merapikan 'akar' operasional di belakang layar (stok, keuangan, rekap kerja) dengan prinsip System Integrity—kuat, stabil, dan konsisten.",
     fullDesc:
-      "Software generik di pasaran seringkali kaku dan memaksa tim Anda mengubah kebiasaan kerja. Di Vieria Techno, kami memetakan alur fisik bisnis Anda untuk membangun sistem custom yang fleksibel. Contoh implementasi yang kami kembangkan mulai dari otomasi HRD (presensi GPS, kelola shift, cuti & slip gaji otomatis) hingga mesin reservasi layanan pelanggan (booking mandiri 24/7 dan layar antrean realtime).",
+      "Seperti akar tanaman Sansevieria yang mencengkeram kuat dan berdaya tahan tinggi, fondasi operasional bisnis Anda harus bebas dari kebocoran data dan selisih manual. Kami merancang arsitektur sistem informasi kustom yang memetakan proses fisik bisnis Anda menjadi alur digital terpadu: dari kontrol inventaris multi-cabang, otorisasi petty cash, hingga otomasi rekonsiliasi laporan.",
     deliverables: [
       "Arsitektur Custom: Dibuat khusus mengikuti SOP & alur kerja unik bisnis Anda",
       "Contoh Modul HRD: Presensi GPS anti-titip absen, pengaturan shift & cuti digital",
@@ -68,17 +47,38 @@ const PILLARS_DATA: PillarItem[] = [
     highlighted: true,
   },
   {
+    id: "profil",
+    pillar: "The Resilient Stem",
+    title: "Website Company Profile Profesional",
+    icon: Globe2,
+    badge: "Kredibel & Siap Tender",
+    metric: "< 2 Detik",
+    metricLabel: "Kecepatan Muat Mobile",
+    shortDesc:
+      "Membangun wajah perusahaan yang berwibawa, cepat, dan kredibel di mata mitra bisnis, investor, maupun tender.",
+    fullDesc:
+      "Batang yang tangguh menjadi cerminan daya tahan tanaman Sansevieria di segala cuaca. Kami membangun website profil perusahaan berstandar korporasi: arsitektur berwibawa, verifikasi portofolio siap tender BUMN/swasta, keamanan SSL Grade A+, dan kecepatan muat kilat yang mematahkan keraguan calon klien sejak pandangan pertama.",
+    deliverables: [
+      "Desain UI/UX eksklusif berorientasi kredibilitas bisnis",
+      "Halaman legalitas, struktur organisasi, dan galeri proyek tender",
+      "Headless CMS mandiri  -  update berita & portofolio tanpa programmer",
+      "Hosting Cloud CDN global + domain .com / .id + SSL kelas A+",
+      "Formulir penawaran langsung terintegrasi ke WhatsApp admin",
+    ],
+    techStack: ["Next.js App Router", "TailwindCSS", "Edge CDN", "Core Web Vitals 95+"],
+  },
+  {
     id: "pertumbuhan",
-    pillar: "Pilar Hilir",
-    title: "Pertumbuhan Terarah (SEO & Ads Terukur)",
+    pillar: "Endless Growth",
+    title: "SEO Organik & Digital Ads Terukur",
     icon: Rocket,
-    badge: "Mesin Prospek",
+    badge: "Pertumbuhan Terukur",
     metric: "4.6x Rata-rata",
     metricLabel: "ROAS Iklan Nyata",
     shortDesc:
-      "Mendatangkan prospek berkualitas setiap hari. Strategi SEO dominasi halaman #1 Google dan iklan digital terarah yang dilacak hingga rupiah transaksi di WhatsApp.",
+      "Membuka keran prospek dan penjualan baru secara terukur setelah fondasi web dan sistem internal klien siap.",
     fullDesc:
-      "Banyak bisnis membakar anggaran iklan tanpa tahu berapa pasien atau klien yang benar-benar melakukan transaksi. Kami membangun pelacakan hulu-ke-hilir: setiap klik iklan dilacak hingga chat WhatsApp dan konversi riil di CRM bisnis Anda.",
+      "Setelah akar operasional rapi dan batang reputasi kokoh, Vieria Techno mengalirkan pertumbuhan pasar tanpa batas. Melalui strategi SEO berbasis commercial intent dan akuisisi iklan terukur (Google & Meta Ads), setiap rupiah anggaran promosi dilacak secara transparan hingga menjadi prospek valid dan konversi nyata.",
     deliverables: [
       "Audit SEO teknis menyeluruh & optimasi Core Web Vitals",
       "Riset kata kunci niat beli tinggi (commercial intent keywords)",
@@ -115,8 +115,8 @@ export function Services() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/80 px-4 py-1 text-xs font-semibold text-emerald-800 mb-4"
           >
-            <Boxes className="h-3.5 w-3.5" />
-            <span>{localize("Ekosistem Hulu ke Hilir", language)}</span>
+            <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+            <span>{localize("VIERIA TECHNO — SYSTEM INTEGRITY", language)}</span>
           </motion.div>
 
           <motion.h2
@@ -126,7 +126,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900"
           >
-            {localize("Layanan Terintegrasi Vieria Techno", language)}
+            {localize("Rooted in Strength, Growing Through Innovation", language)}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -135,7 +135,7 @@ export function Services() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto"
           >
-            {localize("Klik kartu di bawah untuk melihat rincian alur arsitektur, deliverables, dan teknologi pendukungnya melalui animasi morphing.", language)}
+            {localize("Penyelarasan 3 pilar solusi digital: merapikan akar operasional internal, membangun batang reputasi korporasi berwibawa, hingga mengakselerasi pertumbuhan pasar bisnis Anda.", language)}
           </motion.p>
         </div>
 
@@ -196,10 +196,10 @@ export function Services() {
                   <div className="mt-5 rounded-2xl bg-white border border-slate-200/70 p-3.5 flex items-center justify-between shadow-2xs">
                     <div>
                       <p className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
-                        {srv.metricLabel}
+                        {localize(srv.metricLabel, language)}
                       </p>
                       <p className="text-base font-bold text-slate-900 mt-0.5">
-                        {srv.metric}
+                        {localize(srv.metric, language)}
                       </p>
                     </div>
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />

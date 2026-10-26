@@ -227,7 +227,7 @@ export function SubpageHero({
                           href={pt.actionHref}
                           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 hover:text-emerald-800 group/btn"
                         >
-                          <span>{pt.actionLabel}</span>
+                          <span>{localize(pt.actionLabel, language)}</span>
                           <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
                         </Link>
                       ) : null}

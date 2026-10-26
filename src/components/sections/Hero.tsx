@@ -121,14 +121,23 @@ export function Hero() {
             className="lg:col-span-6 xl:col-span-6 self-end pb-8 sm:pb-5 lg:pb-6 text-left"
           >
 
+            {/* Top Brand Badge */}
+            <motion.div
+              variants={itemAnim}
+              className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/90 px-3.5 py-1.5 text-xs font-bold text-emerald-800 mb-4 shadow-2xs"
+            >
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+              <span>{localize("VIERIA TECHNO — SYSTEM INTEGRITY", language)}</span>
+            </motion.div>
+
             {/* Direct Headline */}
             <motion.h1
               variants={itemAnim}
               className="font-sans text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.18] lg:leading-[1.14] text-slate-900"
             >
-              {localize("Software Berkualitas Dibuat Khusus", language)}{" "}
+              {localize("Fondasi Sistem yang Tangguh", language)}{" "}
               <span className="text-emerald-700 block mt-1">
-                {localize("Sesuai Kebutuhan Anda", language)}
+                {localize("untuk Bisnis yang Siap Tumbuh.", language)}
               </span>
             </motion.h1>
 
@@ -137,7 +146,7 @@ export function Hero() {
               variants={itemAnim}
               className="mt-3.5 sm:mt-4 text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-xl"
             >
-              {localize("Kami bantu susun alur sistem Anda, kembangkan sesuai kebutuhan, uji coba hingga siap pakai, dan dampingi penuh operasionalnya.", language)}
+              {localize("Kami memadukan keandalan rekayasa sistem informasi, website profil berwibawa, dan strategi akuisisi pasar (SEO & Ads). Dibangun kokoh untuk menyelesaikan masalah operasional Anda hari ini, dirancang adaptif untuk skala bisnis Anda di masa depan.", language)}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -150,7 +159,7 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/25 transition-all duration-200 cursor-pointer"
               >
                 <MessageCircle className="h-5 w-5" />
-                <span>{localize("Konsultasikan Kebutuhan Sistem", language)}</span>
+                <span>{localize("Bangun Sistem Anda Sekarang", language)}</span>
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
 

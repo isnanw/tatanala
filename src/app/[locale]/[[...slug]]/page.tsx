@@ -18,10 +18,18 @@ const pages = {
   services: {
     component: LayananPage,
     idPath: "/layanan",
-    title: "Custom Software Development & IT Services | Vieria Techno",
+    title: "System Integrity & Digital Solutions | Vieria Techno",
     description:
-      "Explore custom business software, operational systems, professional websites, SEO, and measurable digital growth services by Vieria Techno Indonesia.",
-    keywords: ["custom software development", "business systems", "software development services", "IT consulting Indonesia", "business process automation"],
+      "Rooted in Strength, Growing Through Innovation. Resilient custom information systems, professional corporate websites, and measurable SEO & digital ads in Indonesia.",
+    keywords: [
+      "system integrity",
+      "custom information systems",
+      "business automation software",
+      "corporate website development",
+      "SEO and digital ads Indonesia",
+      "enterprise software development",
+    ],
+    ogImage: "/images/og-server.jpg",
   },
   portfolio: {
     component: PortofolioPage,
@@ -77,6 +85,8 @@ export async function generateMetadata({
   const page = pages[pageSlug];
   const englishPath = pageSlug === "" ? "/en" : `/en/${pageSlug}`;
 
+  const shareImage = "ogImage" in page ? (page as { ogImage: string }).ogImage : "/images/og-share.jpg";
+
   return {
     title: page.title,
     description: page.description,
@@ -99,7 +109,7 @@ export async function generateMetadata({
       siteName: "Vieria Techno IT Solutions",
       images: [
         {
-          url: "/images/og-share.jpg",
+          url: shareImage,
           width: 1200,
           height: 630,
           type: "image/jpeg",
@@ -111,7 +121,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: page.title,
       description: page.description,
-      images: ["/images/og-share.jpg"],
+      images: [shareImage],
     },
   };
 }
