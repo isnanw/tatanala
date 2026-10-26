@@ -56,6 +56,8 @@ function getPageSlug(slug?: string[]): PageSlug | null {
   return value in pages ? (value as PageSlug) : null;
 }
 
+export const instant = false;
+
 export function generateStaticParams() {
   return Object.keys(pages).map((slug) => ({
     locale: "en",
@@ -90,10 +92,25 @@ export async function generateMetadata({
     openGraph: {
       title: page.title,
       description: page.description,
+      url: englishPath,
       locale: "en_US",
       alternateLocale: ["id_ID"],
       type: "website",
       siteName: "Vieria Techno IT Solutions",
+      images: [
+        {
+          url: "/images/team.jpg",
+          width: 1200,
+          height: 630,
+          alt: page.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: ["/images/team.jpg"],
     },
   };
 }

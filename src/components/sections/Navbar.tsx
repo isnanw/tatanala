@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Logo } from "@/components/ui/Logo";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { useConsult } from "@/components/consult/ConsultProvider";
 import { cn } from "@/lib/utils";
 import { localize, localizeHref, useLanguage } from "@/components/providers/LanguageProvider";
@@ -68,16 +69,10 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Right CTA Button */}
+        {/* Right CTA Button & Language Switcher */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <button
-            type="button"
-            onClick={toggleLanguage}
-            aria-label={language === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
-            className="rounded-full border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-bold text-slate-700 transition-colors hover:border-emerald-300 hover:text-emerald-700 sm:px-3 sm:py-2"
-          >
-            {language === "id" ? "ID | EN" : "EN | ID"}
-          </button>
+          <LanguageSwitcher />
+
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -127,7 +122,14 @@ export function Navbar() {
                   {localize(item.label, language)}
                 </Link>
               ))}
-              <div className="pt-3 mt-1 border-t border-slate-100">
+
+              {/* Mobile Language Switcher Row */}
+              <div className="flex items-center justify-between px-3 py-2.5 mt-1 rounded-xl bg-slate-50 border border-slate-100">
+                <span className="text-xs font-semibold text-slate-600">{localize("Pilihan Bahasa", language)}</span>
+                <LanguageSwitcher />
+              </div>
+
+              <div className="pt-2 mt-1 border-t border-slate-100">
                 <button
                   type="button"
                   onClick={() => {

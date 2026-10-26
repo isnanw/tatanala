@@ -25,6 +25,31 @@ export const metadata: Metadata = {
     "custom software development partner",
     "trusted software development company",
   ],
+  openGraph: {
+    title: "Tentang Vieria Techno | Software Engineering Company Indonesia",
+    description:
+      "Mengenal Vieria Techno: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
+    url: "/tentang-kami",
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
+    type: "website",
+    siteName: "Vieria Techno IT Solutions",
+    images: [
+      {
+        url: "/images/team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Profil Studio Rekayasa Vieria Techno",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tentang Vieria Techno | Software Engineering Company Indonesia",
+    description:
+      "Mengenal Vieria Techno: studio rekayasa perangkat lunak dan penyedia solusi sistem informasi yang siap melayani sistem custom maupun platform siap pakai.",
+    images: ["/images/team.jpg"],
+  },
 };
 
 export default function TentangKamiPage() {
@@ -37,7 +62,7 @@ export default function TentangKamiPage() {
           badge="Profil Studio Rekayasa &amp; Komitmen Teknis"
           title="Membangun Kepercayaan Melalui Rekayasa Software yang Andal"
           description="Vieria Techno hadir sebagai mitra rekayasa perangkat lunak bagi bisnis dan organisasi di Indonesia yang mengutamakan kerapian arsitektur, keamanan data, dan keandalan sistem jangka panjang."
-          headerBgImage="/images/team-office.jpg"
+          headerBgImage="/images/team.jpg"
           points={[
             {
               iconName: "shield",

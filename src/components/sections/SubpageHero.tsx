@@ -63,7 +63,7 @@ export function SubpageHero({
   badge,
   title,
   description,
-  headerBgImage = "/images/server-audit.jpg",
+  headerBgImage = "/images/server.jpg",
   points,
 }: SubpageHeroProps) {
   const { openConsult } = useConsult();

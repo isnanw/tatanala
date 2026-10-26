@@ -48,7 +48,7 @@ export function NationalVision() {
             <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-2xl shadow-slate-200/70 group">
               <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
                 <Image
-                  src="/images/team-office.jpg"
+                  src="/images/team.jpg"
                   alt={localize("Kolaborasi Tim Rekayasa Software Vieria Techno", language)}
                   fill
                   priority

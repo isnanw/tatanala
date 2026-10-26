@@ -27,6 +27,31 @@ export const metadata: Metadata = {
     "enterprise software solutions",
     "custom business systems Indonesia",
   ],
+  openGraph: {
+    title: "Layanan & Solusi Rekayasa Software | Vieria Techno",
+    description:
+      "Solusi software bisnis terarah: website & portal profil profesional, sistem informasi operasional custom, manajemen stok & transaksi, dan dashboard monitoring laporan otomatis.",
+    url: "/layanan",
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
+    type: "website",
+    siteName: "Vieria Techno IT Solutions",
+    images: [
+      {
+        url: "/images/server.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Layanan & Solusi Sistem Vieria Techno",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Layanan & Solusi Rekayasa Software | Vieria Techno",
+    description:
+      "Solusi software bisnis terarah: website & portal profil profesional, sistem informasi operasional custom, dan dashboard monitoring otomatis.",
+    images: ["/images/server.jpg"],
+  },
 };
 
 export default function LayananPage() {
@@ -39,7 +64,7 @@ export default function LayananPage() {
           badge="Katalog Layanan &amp; Solusi Sistem"
           title="Solusi Rekayasa Software yang Mudah Dipahami & Tepat Sasaran"
           description="Membantu bisnis dan instansi merapikan alur kerja manual menjadi sistem digital yang rapi, transparan, dan mudah digunakan oleh seluruh tim operasional."
-          headerBgImage="/images/server-audit.jpg"
+          headerBgImage="/images/server.jpg"
           points={[
             {
               iconName: "globe",

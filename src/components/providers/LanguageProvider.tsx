@@ -630,9 +630,14 @@ const translations: Record<string, string> = {
   "< 2 Detik": "< 2 Seconds",
 };
 
-const LanguageContext = createContext<{ language: Language; toggleLanguage: () => void }>({
+const LanguageContext = createContext<{ 
+  language: Language; 
+  toggleLanguage: () => void;
+  setLanguage: (lang: Language) => void;
+}>({
   language: "id",
   toggleLanguage: () => {},
+  setLanguage: () => {},
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -644,13 +649,18 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = language;
   }, [language]);
 
+  const setLanguage = (target: Language) => {
+    if (target === language) return;
+    router.push(localizeHref(pathname, target));
+  };
+
   const toggleLanguage = () => {
     const nextLanguage = language === "id" ? "en" : "id";
-    router.push(localizeHref(pathname, nextLanguage));
+    setLanguage(nextLanguage);
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

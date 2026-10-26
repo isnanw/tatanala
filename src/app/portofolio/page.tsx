@@ -25,6 +25,31 @@ export const metadata: Metadata = {
     "business software portfolio Indonesia",
     "enterprise IT projects",
   ],
+  openGraph: {
+    title: "Portofolio Rekayasa Software & Studi Kasus | Vieria Techno",
+    description:
+      "Eksplorasi portofolio implementasi sistem informasi, antrean publik klinik, ERP pergudangan, dan web profil korporat yang telah dirilis Vieria Techno.",
+    url: "/portofolio",
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
+    type: "website",
+    siteName: "Vieria Techno IT Solutions",
+    images: [
+      {
+        url: "/images/team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Portofolio Proyek Vieria Techno",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portofolio Rekayasa Software & Studi Kasus | Vieria Techno",
+    description:
+      "Eksplorasi portofolio implementasi sistem informasi, antrean publik klinik, ERP pergudangan, dan web profil korporat yang telah dirilis Vieria Techno.",
+    images: ["/images/team.jpg"],
+  },
 };
 
 export default function PortofolioPage() {

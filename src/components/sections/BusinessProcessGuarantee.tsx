@@ -132,7 +132,7 @@ export function BusinessProcessGuarantee() {
               {/* Primary Large Image */}
               <div className="relative flex-1 w-full bg-slate-100 min-h-[260px]">
                 <Image
-                  src="/images/server-audit.jpg"
+                  src="/images/server.jpg"
                   alt={localize("Audit Sistem & Rekayasa Arsitektur Vieria Techno", language)}
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"

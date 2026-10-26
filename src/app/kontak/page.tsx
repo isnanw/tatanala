@@ -25,6 +25,31 @@ export const metadata: Metadata = {
     "hire software developers Indonesia",
     "business systems consultation",
   ],
+  openGraph: {
+    title: "Kontak & Konsultasi IT | Vieria Techno Indonesia",
+    description:
+      "Hubungi tim insinyur sistem informasi Vieria Techno untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom dan sistem siap pakai.",
+    url: "/kontak",
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
+    type: "website",
+    siteName: "Vieria Techno IT Solutions",
+    images: [
+      {
+        url: "/images/server.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Konsultasi IT Vieria Techno",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kontak & Konsultasi IT | Vieria Techno Indonesia",
+    description:
+      "Hubungi tim insinyur sistem informasi Vieria Techno untuk konsultasi teknis awal, audit alur kerja bisnis, atau pembuatan sistem informasi kustom.",
+    images: ["/images/server.jpg"],
+  },
 };
 
 export default function KontakPage() {
