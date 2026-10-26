@@ -121,23 +121,14 @@ export function Hero() {
             className="lg:col-span-6 xl:col-span-6 self-end pb-8 sm:pb-5 lg:pb-6 text-left"
           >
 
-            {/* Top Brand Badge */}
-            <motion.div
-              variants={itemAnim}
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200/90 px-3.5 py-1.5 text-xs font-bold text-emerald-800 mb-4 shadow-2xs"
-            >
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-              <span>{localize("VIERIA TECHNO — SYSTEM INTEGRITY", language)}</span>
-            </motion.div>
-
             {/* Direct Headline */}
             <motion.h1
               variants={itemAnim}
               className="font-sans text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.18] lg:leading-[1.14] text-slate-900"
             >
-              {localize("Fondasi Sistem yang Tangguh", language)}{" "}
+              {localize("Built on Integrity.", language)}{" "}
               <span className="text-emerald-700 block mt-1">
-                {localize("untuk Bisnis yang Siap Tumbuh.", language)}
+                {localize("Driven by Technology.", language)}
               </span>
             </motion.h1>
 
